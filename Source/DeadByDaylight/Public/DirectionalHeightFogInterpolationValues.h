@@ -44,9 +44,6 @@ public:
 	UPROPERTY()
 	float SecondFogHeightOffset;
 
-	//UPROPERTY()
-	//TArray<FHeightFogGradientEntry> FogGradient;
-
 	UPROPERTY()
 	bool bReplaceVolumetricFogAlbedoWithColorGradient;
 

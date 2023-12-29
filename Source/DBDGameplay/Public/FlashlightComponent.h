@@ -56,7 +56,7 @@ public:
 	void TurnOff();
 
 private:
-	UFUNCTION(Server, Reliable, WithValidation)
+	UFUNCTION(Server, Reliable)
 	void Server_SetAndUpdateAutonomousLitFlashlightables(const TArray<UFlashlightableComponent*>& newLitFlashlightables);
 
 	UFUNCTION()

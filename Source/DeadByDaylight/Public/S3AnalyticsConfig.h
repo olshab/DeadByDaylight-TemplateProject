@@ -28,10 +28,40 @@ public:
 	bool ScoreTypeWhitelist_IsSet;
 
 	UPROPERTY()
+	TArray<FString> ScoreTypeBlacklist;
+
+	UPROPERTY(SkipSerialization)
+	bool ScoreTypeBlacklist_IsSet;
+
+	UPROPERTY()
 	TArray<FString> DetailedScoreTypeWhitelist;
 
 	UPROPERTY(SkipSerialization)
 	bool DetailedScoreTypeWhitelist_IsSet;
+
+	UPROPERTY()
+	TArray<FString> DetailedScoreTypeBlacklist;
+
+	UPROPERTY(SkipSerialization)
+	bool DetailedScoreTypeBlacklist_IsSet;
+
+	UPROPERTY()
+	uint32 PerformanceSamplingRate;
+
+	UPROPERTY()
+	TArray<FString> PerformanceSamplingWhitelist;
+
+	UPROPERTY(SkipSerialization)
+	bool PerformanceSamplingWhitelist_IsSet;
+
+	UPROPERTY()
+	TArray<FString> PerformanceContextWhitelist;
+
+	UPROPERTY(SkipSerialization)
+	bool PerformanceContextWhitelist_IsSet;
+
+	UPROPERTY()
+	FString PerformanceSamplingRule;
 
 public:
 	DEADBYDAYLIGHT_API FS3AnalyticsConfig();

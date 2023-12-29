@@ -61,6 +61,12 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	FDBDTunableRowHandle _thresholdForGraceTimerScoreEvent;
 
+	UPROPERTY(EditDefaultsOnly)
+	FDBDTunableRowHandle _minThresholdForLowLacerationScoreEvent;
+
+	UPROPERTY(EditDefaultsOnly)
+	FDBDTunableRowHandle _maxThresholdForLowLacerationScoreEvent;
+
 private:
 	UFUNCTION()
 	void OnRepLaceration(float oldLaceration);

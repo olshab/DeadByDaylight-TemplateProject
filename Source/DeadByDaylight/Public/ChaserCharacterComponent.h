@@ -35,6 +35,9 @@ private:
 	UPROPERTY(EditAnywhere)
 	bool _camperSensorUsesActorRotation;
 
+	UPROPERTY(EditAnywhere)
+	bool _camperSensorLocationUsesEyesViewPoint;
+
 private:
 	UFUNCTION()
 	void OnKillerLocallyObservedChanged(bool locallyObserved);

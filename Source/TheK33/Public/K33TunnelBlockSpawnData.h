@@ -1,25 +1,20 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "K33TunnelGridCellData.h"
-#include "UObject/NoExportTypes.h"
-#include "EK33TunnelBlockType.h"
+#include "K33TunnelBlockSpawnDatum.h"
 #include "K33TunnelBlockSpawnData.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FK33TunnelBlockSpawnData
 {
 	GENERATED_BODY()
 
-private:
+public:
 	UPROPERTY()
-	FRotator _worldRotation;
+	TArray<FK33TunnelBlockSpawnDatum> Data;
 
 	UPROPERTY()
-	EK33TunnelBlockType _blockType;
-
-	UPROPERTY()
-	FK33TunnelGridCellData _gridInfo;
+	bool IsDataSet;
 
 public:
 	THEK33_API FK33TunnelBlockSpawnData();

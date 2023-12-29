@@ -5,7 +5,7 @@
 
 class USkeletalMesh;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FCosmeticPieceMeshLoadingData
 {
 	GENERATED_BODY()

@@ -3,7 +3,7 @@
 #include "CoreMinimal.h"
 #include "DelegateHandleWrapper.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FDelegateHandleWrapper
 {
 	GENERATED_BODY()

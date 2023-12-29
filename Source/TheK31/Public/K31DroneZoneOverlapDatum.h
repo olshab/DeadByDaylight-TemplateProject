@@ -3,7 +3,7 @@
 #include "CoreMinimal.h"
 #include "K31DroneZoneOverlapDatum.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FK31DroneZoneOverlapDatum
 {
 	GENERATED_BODY()

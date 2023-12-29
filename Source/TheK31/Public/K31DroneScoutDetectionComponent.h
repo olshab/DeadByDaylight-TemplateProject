@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GameplayTagContainer.h"
 #include "DBDTunableRowHandle.h"
 #include "Components/ActorComponent.h"
 #include "K31DroneScoutDetectionSphereRaycastStruct.h"
@@ -38,6 +39,9 @@ private:
 
 	UPROPERTY(EditDefaultsOnly)
 	FDBDTunableRowHandle _sphereTraceRadius;
+
+	UPROPERTY(EditAnywhere)
+	FGameplayTagContainer _stateTagsPreventingSurvivorDetection;
 
 private:
 	UFUNCTION()

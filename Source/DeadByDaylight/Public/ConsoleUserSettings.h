@@ -165,6 +165,9 @@ public:
 	UPROPERTY(SaveGame)
 	bool HasAcceptedHapticsVibrationPopup;
 
+	UPROPERTY(SaveGame)
+	int32 PlayerCardAnimationMode;
+
 public:
 	DEADBYDAYLIGHT_API FConsoleUserSettings();
 };

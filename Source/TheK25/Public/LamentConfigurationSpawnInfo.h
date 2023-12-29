@@ -1,17 +1,18 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "LamentConfigurationSpawnInfo.generated.h"
 
-USTRUCT(BlueprintType)
+class UTileSpawnPoint;
+
+USTRUCT()
 struct FLamentConfigurationSpawnInfo
 {
 	GENERATED_BODY()
 
 private:
-	UPROPERTY()
-	FVector _worldLocation;
+	UPROPERTY(Transient, Export)
+	UTileSpawnPoint* _spawnPoint;
 
 public:
 	THEK25_API FLamentConfigurationSpawnInfo();

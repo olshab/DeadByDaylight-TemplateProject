@@ -5,7 +5,7 @@
 
 class UObject;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FAIGoal
 {
 	GENERATED_BODY()

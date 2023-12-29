@@ -78,7 +78,7 @@ public:
 
 protected:
 	UFUNCTION()
-	void OnRep_TickableConditionsData();
+	void OnRep_TickableConditionsData(const FModifierTickableConditionReplicatedData& oldTickableConditionsData);
 
 	UFUNCTION()
 	void OnRep_ModifierData();

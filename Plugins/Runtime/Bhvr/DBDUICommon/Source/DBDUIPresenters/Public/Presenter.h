@@ -59,10 +59,10 @@ protected:
 	void OnContextUnfocus(EContext context);
 
 	UFUNCTION()
-	void OnContextSectionChanged(EContext context);
+	void OnContextFocus(EContext context);
 
 	UFUNCTION()
-	void OnContextFocus(EContext context);
+	void OnContextChanged(EContext context);
 
 	UFUNCTION()
 	bool IsPlayerStateReady() const;

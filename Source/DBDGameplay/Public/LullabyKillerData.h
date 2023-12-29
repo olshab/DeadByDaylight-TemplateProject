@@ -4,7 +4,7 @@
 #include "GameplayTagContainer.h"
 #include "LullabyKillerData.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FLullabyKillerData
 {
 	GENERATED_BODY()

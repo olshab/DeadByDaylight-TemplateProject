@@ -6,7 +6,6 @@
 #include "StoreFeaturedSubPresenter.generated.h"
 
 class IStoreFeaturedViewInterface;
-class UStoreSpecialOfferItemViewData;
 
 UCLASS()
 class DBDUIPRESENTERS_API UStoreFeaturedSubPresenter : public UStoreSubPresenter
@@ -16,10 +15,6 @@ class DBDUIPRESENTERS_API UStoreFeaturedSubPresenter : public UStoreSubPresenter
 protected:
 	UPROPERTY(Transient)
 	TScriptInterface<IStoreFeaturedViewInterface> _storeFeaturedWidget;
-
-private:
-	UPROPERTY(Transient)
-	TArray<UStoreSpecialOfferItemViewData*> _cachedSpecialOfferItems;
 
 public:
 	UFUNCTION()

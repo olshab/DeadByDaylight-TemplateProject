@@ -4,7 +4,7 @@
 #include "ERewardItemType.h"
 #include "RewardItem.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FRewardItem
 {
 	GENERATED_BODY()

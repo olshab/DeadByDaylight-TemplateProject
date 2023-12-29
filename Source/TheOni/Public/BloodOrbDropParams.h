@@ -3,7 +3,7 @@
 #include "CoreMinimal.h"
 #include "BloodOrbDropParams.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FBloodOrbDropParams
 {
 	GENERATED_BODY()

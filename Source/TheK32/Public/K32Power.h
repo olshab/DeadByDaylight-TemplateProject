@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "Collectable.h"
 #include "Templates/SubclassOf.h"
+#include "GameplayTagContainer.h"
 #include "DBDTunableRowHandle.h"
 #include "K32Power.generated.h"
 
@@ -90,6 +91,9 @@ private:
 
 	UPROPERTY(EditDefaultsOnly)
 	FDBDTunableRowHandle _maxTrackedTimeSinceTeleportToSurvivor;
+
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTagContainer _survivorTagsPreventingPower;
 
 public:
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

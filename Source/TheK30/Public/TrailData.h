@@ -7,7 +7,7 @@
 class ATrailNode;
 class AActor;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FTrailData
 {
 	GENERATED_BODY()

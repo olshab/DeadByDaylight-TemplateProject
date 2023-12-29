@@ -7,7 +7,7 @@
 class UStaticMesh;
 class UAkAudioEvent;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FMapMeshToAkAudioEvent
 {
 	GENERATED_BODY()

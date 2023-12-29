@@ -30,6 +30,12 @@ public:
 	float StrafeFowardRange;
 
 	UPROPERTY(EditDefaultsOnly)
+	float DodgeDirectionSweepTestStartMultiplier;
+
+	UPROPERTY(EditDefaultsOnly)
+	float DodgeDirectionSweepTestEndMultiplier;
+
+	UPROPERTY(EditDefaultsOnly)
 	float IgnoreUnderNavLinkStartRange;
 
 	UPROPERTY(EditDefaultsOnly)

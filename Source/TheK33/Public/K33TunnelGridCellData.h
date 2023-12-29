@@ -7,7 +7,7 @@
 
 class AK33ControlStation;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FK33TunnelGridCellData
 {
 	GENERATED_BODY()

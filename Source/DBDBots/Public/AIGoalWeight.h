@@ -4,7 +4,7 @@
 #include "AIGoal.h"
 #include "AIGoalWeight.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FAIGoalWeight
 {
 	GENERATED_BODY()

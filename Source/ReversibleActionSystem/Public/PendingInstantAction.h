@@ -6,7 +6,7 @@
 
 class UBaseReversibleInstantActionHandler;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FPendingInstantAction
 {
 	GENERATED_BODY()

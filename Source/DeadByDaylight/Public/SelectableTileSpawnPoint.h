@@ -4,7 +4,7 @@
 #include "Engine/EngineTypes.h"
 #include "SelectableTileSpawnPoint.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FSelectableTileSpawnPoint
 {
 	GENERATED_BODY()

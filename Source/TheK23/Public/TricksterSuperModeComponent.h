@@ -4,7 +4,10 @@
 #include "DBDTunableRowHandle.h"
 #include "Components/ActorComponent.h"
 #include "TunableStat.h"
+#include "Templates/SubclassOf.h"
 #include "TricksterSuperModeComponent.generated.h"
+
+class UStatusEffect;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class UTricksterSuperModeComponent : public UActorComponent
@@ -25,7 +28,7 @@ private:
 	FDBDTunableRowHandle _chargesToAddOnKnifeHit;
 
 	UPROPERTY(EditDefaultsOnly)
-	FDBDTunableRowHandle _superModeMaxCharge;
+	FTunableStat _superModeMaxCharge;
 
 	UPROPERTY(EditDefaultsOnly)
 	FDBDTunableRowHandle _superModeReadyDepletionPerSecond;
@@ -39,6 +42,9 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	FDBDTunableRowHandle _shouldDisableFlurryDuringCooldown;
 
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UStatusEffect> _comboExtendSuperModeStatusEffectClass;
+
 private:
 	UFUNCTION()
 	void OnRepIsSuperModeReady();
@@ -48,6 +54,9 @@ private:
 
 	UFUNCTION()
 	void OnRepIsInCooldown();
+
+	UFUNCTION()
+	void InitSuperModeMaxCharge();
 
 public:
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

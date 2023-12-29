@@ -25,6 +25,16 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	float _hasteStatusEffectPercent;
 
+	UPROPERTY(Transient, Export)
+	UStatusEffect* _hasteEffect;
+
+public:
+	UFUNCTION(BlueprintPure)
+	float GetUndetectableAndHasteStatusEffectDurationAtLevel() const;
+
+	UFUNCTION(BlueprintPure)
+	float GetHasteStatusEffectPercent() const;
+
 public:
 	UFurtiveChase();
 };

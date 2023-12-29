@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GameplayTagContainer.h"
 #include "DBDTunableRowHandle.h"
 #include "Components/ActorComponent.h"
 #include "TunableStat.h"
@@ -52,6 +53,9 @@ private:
 
 	UPROPERTY(Transient)
 	TMap<ACamperPlayer*, FFastTimer> _assimilationCooldownTimers;
+
+	UPROPERTY(EditDefaultsOnly)
+	TArray<FGameplayTag> _survivorTagsToPreventPositionStorage;
 
 private:
 	UFUNCTION()

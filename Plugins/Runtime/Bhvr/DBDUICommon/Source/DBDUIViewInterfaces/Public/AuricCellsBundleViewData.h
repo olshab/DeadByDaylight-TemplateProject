@@ -19,7 +19,7 @@ public:
 	TSoftObjectPtr<UTexture2D> IconTexture;
 
 	UPROPERTY(BlueprintReadWrite, Transient)
-	FText CurrencyName;
+	FText BundleName;
 
 	UPROPERTY(BlueprintReadWrite, Transient)
 	int32 CurrencyAmount;
@@ -29,6 +29,9 @@ public:
 
 	UPROPERTY(BlueprintReadWrite, Transient)
 	float BonusPercentage;
+
+	UPROPERTY(BlueprintReadWrite, Transient)
+	FString LimitedTimeText;
 
 public:
 	DBDUIVIEWINTERFACES_API FAuricCellsBundleViewData();

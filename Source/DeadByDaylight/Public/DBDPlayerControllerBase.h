@@ -26,6 +26,9 @@ public:
 	UFUNCTION(Server, Reliable, WithValidation)
 	void Server_UpdateReplicatedPips(int32 pipsToAdd);
 
+	UFUNCTION(Server, Reliable, WithValidation)
+	void Server_SetPlayerCard(const FString& badgeId, const FString& bannerId);
+
 	UFUNCTION(Server, Reliable)
 	void Server_SetConsecutiveMatchStreak(int32 consecutiveMatch);
 

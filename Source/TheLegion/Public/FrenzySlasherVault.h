@@ -1,28 +1,13 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "SlasherVaultDefinition.h"
-#include "DBDTunableRowHandle.h"
+#include "KillerVaultDefinition.h"
 #include "FrenzySlasherVault.generated.h"
 
-class UCurveFloat;
-class ASlasherPlayer;
-
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
-class THELEGION_API UFrenzySlasherVault : public USlasherVaultDefinition
+class THELEGION_API UFrenzySlasherVault : public UKillerVaultDefinition
 {
 	GENERATED_BODY()
-
-private:
-	UPROPERTY(EditDefaultsOnly)
-	UCurveFloat* _vaultFallSpeedCurve;
-
-	UPROPERTY(EditDefaultsOnly)
-	FDBDTunableRowHandle _frenzyWindowVaultDuration;
-
-private:
-	UFUNCTION()
-	void OnSlasherSet(ASlasherPlayer* slasher);
 
 public:
 	UFrenzySlasherVault();

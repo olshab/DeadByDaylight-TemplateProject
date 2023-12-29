@@ -4,7 +4,7 @@
 #include "UObject/NoExportTypes.h"
 #include "SnowmanSpawnLocationData.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FSnowmanSpawnLocationData
 {
 	GENERATED_BODY()

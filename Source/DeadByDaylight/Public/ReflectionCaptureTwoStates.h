@@ -4,7 +4,7 @@
 #include "Engine/EngineTypes.h"
 #include "ReflectionCaptureTwoStates.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FReflectionCaptureTwoStates
 {
 	GENERATED_BODY()

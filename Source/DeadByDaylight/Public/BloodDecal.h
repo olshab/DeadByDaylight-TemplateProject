@@ -3,7 +3,7 @@
 #include "CoreMinimal.h"
 #include "BloodDecal.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FBloodDecal
 {
 	GENERATED_BODY()

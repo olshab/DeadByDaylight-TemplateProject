@@ -14,6 +14,12 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	FLinearColor _survivorAuraColor;
 
+	UPROPERTY(EditDefaultsOnly)
+	FLinearColor _killerHiddenAuraColor;
+
+	UPROPERTY(EditDefaultsOnly)
+	FLinearColor _killerExposedAuraColor;
+
 public:
 	UDemogorgonPortalOutlineUpdateStrategy();
 };

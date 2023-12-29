@@ -5,7 +5,6 @@
 #include "CustomTransformation.h"
 #include "StoreItemViewData.h"
 #include "CustomizationRewardViewData.h"
-#include "ECustomizationCategory.h"
 #include "SpecialEventInfoViewData.h"
 #include "EPlayerRole.h"
 #include "StoreCustomizationItemViewData.generated.h"
@@ -18,9 +17,6 @@ class DBDUIVIEWINTERFACES_API UStoreCustomizationItemViewData : public UStoreIte
 public:
 	UPROPERTY(BlueprintReadWrite, Transient)
 	FCustomizationRewardViewData CustomizationReward;
-
-	UPROPERTY(BlueprintReadOnly, Transient)
-	ECustomizationCategory Category;
 
 	UPROPERTY(BlueprintReadOnly, Transient)
 	FName MirrorsId;
@@ -54,6 +50,9 @@ public:
 
 	UPROPERTY(BlueprintReadOnly, Transient)
 	bool IsVisceral;
+
+	UPROPERTY(BlueprintReadOnly, Transient)
+	bool IsLocked;
 
 	UPROPERTY(BlueprintReadOnly, Transient)
 	EPlayerRole AssociatedRole;

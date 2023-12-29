@@ -23,7 +23,7 @@ protected:
 	bool _isHidden;
 
 protected:
-	UFUNCTION(BlueprintImplementableEvent)
+	UFUNCTION(BlueprintNativeEvent)
 	void OnUnhidden();
 
 private:
@@ -31,7 +31,7 @@ private:
 	void OnRep_IsHidden();
 
 protected:
-	UFUNCTION(BlueprintImplementableEvent)
+	UFUNCTION(BlueprintNativeEvent)
 	void OnHidden();
 
 private:

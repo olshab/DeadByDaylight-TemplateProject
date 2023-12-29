@@ -6,7 +6,7 @@
 
 class ADBDPlayer;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FGuidingInfo
 {
 	GENERATED_BODY()

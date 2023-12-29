@@ -4,7 +4,7 @@
 #include "UObject/NoExportTypes.h"
 #include "YawAndPitchRotator_NetQuantize16.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FYawAndPitchRotator_NetQuantize16
 {
 	GENERATED_BODY()

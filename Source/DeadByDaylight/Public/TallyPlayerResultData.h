@@ -4,6 +4,7 @@
 #include "InventorySlotData.h"
 #include "EGameState.h"
 #include "PrestigeData.h"
+#include "PlayerCardItemData.h"
 #include "TallyPlayerResultData.generated.h"
 
 USTRUCT(BlueprintType)
@@ -71,6 +72,12 @@ public:
 
 	UPROPERTY(BlueprintReadOnly, Transient)
 	bool IsABot;
+
+	UPROPERTY(BlueprintReadOnly, Transient)
+	FPlayerCardItemData EquippedBanner;
+
+	UPROPERTY(BlueprintReadOnly, Transient)
+	FPlayerCardItemData EquippedBadge;
 
 public:
 	DEADBYDAYLIGHT_API FTallyPlayerResultData();

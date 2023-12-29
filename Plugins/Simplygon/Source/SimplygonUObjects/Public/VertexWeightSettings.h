@@ -18,10 +18,10 @@ public:
 	uint8 UseVertexWeightsInTexcoordGenerator : 1;
 
 	UPROPERTY()
-	FString WeightsFromColorName;
+	int32 WeightsFromColorLevel;
 
 	UPROPERTY()
-	int32 WeightsFromColorLevel;
+	FString WeightsFromColorName;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	EWeightsFromColorComponent WeightsFromColorComponent;

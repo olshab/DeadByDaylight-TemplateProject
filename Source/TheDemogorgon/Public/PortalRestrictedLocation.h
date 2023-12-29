@@ -4,7 +4,7 @@
 #include "UObject/NoExportTypes.h"
 #include "PortalRestrictedLocation.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FPortalRestrictedLocation
 {
 	GENERATED_BODY()

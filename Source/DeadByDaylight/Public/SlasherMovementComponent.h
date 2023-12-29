@@ -23,16 +23,6 @@ public:
 	UFUNCTION(BlueprintPure)
 	float GetBaseMaxSpeed() const;
 
-private:
-	UFUNCTION(Exec)
-	void DBD_SimulateHack_LocalKillerMaxSpeedMultiplier(const float maxSpeedMultiplier);
-
-	UFUNCTION(Exec)
-	void DBD_KillerMaxSpeedMultiplier(const float maxSpeedMultiplier);
-
-	UFUNCTION(Client, Reliable)
-	void Client_Debug_SetKillerMaxSpeedMultiplier(const float maxSpeedMultiplier);
-
 public:
 	USlasherMovementComponent();
 };

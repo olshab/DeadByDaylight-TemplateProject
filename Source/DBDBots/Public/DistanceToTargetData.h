@@ -1,12 +1,20 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "DistanceToTargetData.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FDistanceToTargetData
 {
 	GENERATED_BODY()
+
+private:
+	UPROPERTY()
+	FDateTime _lastUpdateTime;
+
+	UPROPERTY()
+	FDateTime _lastTargetTime;
 
 public:
 	DBDBOTS_API FDistanceToTargetData();

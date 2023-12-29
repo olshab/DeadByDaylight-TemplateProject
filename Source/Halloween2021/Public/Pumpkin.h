@@ -85,6 +85,9 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	float _minDistanceToFollowPlayer;
 
+	UPROPERTY(EditDefaultsOnly)
+	float _maxDistanceToFollowPlayer;
+
 protected:
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnInteractionCompleted(ADBDPlayer* interactingPlayer);

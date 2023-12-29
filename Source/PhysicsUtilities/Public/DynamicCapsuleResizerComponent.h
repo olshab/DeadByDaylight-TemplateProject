@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GameplayTagContainer.h"
 #include "Components/ActorComponent.h"
 #include "Engine/EngineTypes.h"
 #include "UObject/NoExportTypes.h"
@@ -18,6 +19,9 @@ class PHYSICSUTILITIES_API UDynamicCapsuleResizerComponent : public UActorCompon
 private:
 	UPROPERTY(Transient, Export)
 	UCapsuleComponent* _capsule;
+
+	UPROPERTY(EditAnywhere)
+	FGameplayTagContainer _preventingShrinkTag;
 
 	UPROPERTY(EditAnywhere)
 	float _shrinkPercent;

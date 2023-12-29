@@ -4,10 +4,16 @@
 #include "EventEntryRewardsSubPresenter.h"
 #include "EventEntryStoreSubPresenter.generated.h"
 
+class UStoreCustomizationItemViewData;
+
 UCLASS()
 class UEventEntryStoreSubPresenter : public UEventEntryRewardsSubPresenter
 {
 	GENERATED_BODY()
+
+private:
+	UPROPERTY(Transient)
+	TArray<UStoreCustomizationItemViewData*> _storeItems;
 
 public:
 	UEventEntryStoreSubPresenter();

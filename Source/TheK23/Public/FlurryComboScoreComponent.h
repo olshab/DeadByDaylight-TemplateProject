@@ -4,7 +4,11 @@
 #include "GameplayTagContainer.h"
 #include "DBDTunableRowHandle.h"
 #include "Components/ActorComponent.h"
+#include "TunableStat.h"
+#include "Templates/SubclassOf.h"
 #include "FlurryComboScoreComponent.generated.h"
+
+class UStatusEffect;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class UFlurryComboScoreComponent : public UActorComponent
@@ -16,25 +20,13 @@ private:
 	float _comboScore;
 
 	UPROPERTY(EditDefaultsOnly)
-	FDBDTunableRowHandle _timeForCombo;
+	FDBDTunableRowHandle _timeAddedByComboRank;
 
 	UPROPERTY(EditDefaultsOnly)
-	FDBDTunableRowHandle _baseKnifeComboScore;
+	FTunableStat _timeForCombo;
 
 	UPROPERTY(EditDefaultsOnly)
-	FDBDTunableRowHandle _maximumKnifeMultiplier;
-
-	UPROPERTY(EditDefaultsOnly)
-	FDBDTunableRowHandle _fillLacerationComboScore;
-
-	UPROPERTY(EditDefaultsOnly)
-	FDBDTunableRowHandle _longRangeThreshold;
-
-	UPROPERTY(EditDefaultsOnly)
-	FDBDTunableRowHandle _closeRangeScoreMultiplier;
-
-	UPROPERTY(EditDefaultsOnly)
-	FDBDTunableRowHandle _longRangeScoreMultiplier;
+	FDBDTunableRowHandle _consecutiveHitsRequiredScore;
 
 	UPROPERTY(EditDefaultsOnly)
 	TArray<float> _thresholds;
@@ -44,6 +36,9 @@ private:
 
 	UPROPERTY(EditDefaultsOnly)
 	TArray<FGameplayTag> _comboScoreEvents;
+
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UStatusEffect> _comboExtendSuperModeStatusEffectClass;
 
 private:
 	UFUNCTION()

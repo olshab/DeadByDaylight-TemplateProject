@@ -89,6 +89,12 @@ private:
 	int32 AntiAliasingMode;
 
 	UPROPERTY()
+	bool EnableFSR;
+
+	UPROPERTY()
+	float SharpnessValue;
+
+	UPROPERTY()
 	int32 MainVolume;
 
 	UPROPERTY()
@@ -231,6 +237,9 @@ private:
 
 	UPROPERTY()
 	bool HiddenMatchmakingDelay;
+
+	UPROPERTY()
+	int32 PlayerCardAnimationMode;
 
 public:
 	UFUNCTION(BlueprintPure)

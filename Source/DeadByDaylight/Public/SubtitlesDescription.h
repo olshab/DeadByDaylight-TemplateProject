@@ -19,6 +19,9 @@ public:
 	UPROPERTY(EditAnywhere)
 	TSoftObjectPtr<UAkAudioEvent> AudioEvent;
 
+	UPROPERTY(EditAnywhere)
+	TArray<float> durationOverride;
+
 public:
 	DEADBYDAYLIGHT_API FSubtitlesDescription();
 };

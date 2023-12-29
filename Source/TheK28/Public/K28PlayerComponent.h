@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GameplayTagContainer.h"
 #include "DBDTunableRowHandle.h"
 #include "Components/ActorComponent.h"
 #include "K28PlayerComponent.generated.h"
@@ -23,6 +24,9 @@ private:
 
 	UPROPERTY(EditDefaultsOnly)
 	FDBDTunableRowHandle _nightEffectMaximumDistance;
+
+	UPROPERTY(EditDefaultsOnly)
+	TArray<FGameplayTag> _stateTagsToDisableNightMode;
 
 private:
 	UFUNCTION()

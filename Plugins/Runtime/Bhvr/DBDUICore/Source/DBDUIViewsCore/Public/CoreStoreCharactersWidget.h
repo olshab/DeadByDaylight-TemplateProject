@@ -1,37 +1,24 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "StoreCharactersMenuTabSelectedDelegate.h"
 #include "StoreCharactersViewInterface.h"
-#include "CoreBaseUserWidget.h"
+#include "CoreStoreBaseSubTabsWidget.h"
 #include "CoreStoreCharactersWidget.generated.h"
 
-class UCoreTabContainerWidget;
 class UDBDTextBlock;
-class UCoreSelectableButtonWidget;
+class UCoreStoreCharacterPerksToastWidget;
 
 UCLASS(EditInlineNew)
-class DBDUIVIEWSCORE_API UCoreStoreCharactersWidget : public UCoreBaseUserWidget, public IStoreCharactersViewInterface
+class DBDUIVIEWSCORE_API UCoreStoreCharactersWidget : public UCoreStoreBaseSubTabsWidget, public IStoreCharactersViewInterface
 {
 	GENERATED_BODY()
 
-public:
-	UPROPERTY(BlueprintReadWrite, Export)
-	UCoreTabContainerWidget* MenuTabs;
-
 protected:
-	UPROPERTY()
-	FStoreCharactersMenuTabSelectedDelegate _menuTabSelectedDelegate;
-
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
 	UDBDTextBlock* SelectedCharacterName;
 
-protected:
-	UFUNCTION()
-	void OnMenuTabSelectedAgain(UCoreSelectableButtonWidget* selectedButton);
-
-	UFUNCTION()
-	void OnMenuTabSelected(UCoreSelectableButtonWidget* selectedButton);
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UCoreStoreCharacterPerksToastWidget* PerksToast;
 
 public:
 	UCoreStoreCharactersWidget();

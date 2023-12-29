@@ -5,7 +5,7 @@
 
 class ADBDPlayer;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FLevelReadyToPlayRequirements
 {
 	GENERATED_BODY()

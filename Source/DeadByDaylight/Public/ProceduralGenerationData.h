@@ -99,6 +99,12 @@ public:
 	UPROPERTY(EditDefaultsOnly)
 	float TotemVisualHeight;
 
+	UPROPERTY(EditDefaultsOnly)
+	float ClosestSurvivorDistanceWeight;
+
+	UPROPERTY(EditDefaultsOnly)
+	float KillerDistanceWeight;
+
 private:
 	UPROPERTY()
 	TArray<FSpecialBehaviourPopulation> SpecialBehaviourPopulation_DEPRECATED;

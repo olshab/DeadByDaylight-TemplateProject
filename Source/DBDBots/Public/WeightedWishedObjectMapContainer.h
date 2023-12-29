@@ -3,7 +3,7 @@
 #include "CoreMinimal.h"
 #include "WeightedWishedObjectMapContainer.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FWeightedWishedObjectMapContainer
 {
 	GENERATED_BODY()

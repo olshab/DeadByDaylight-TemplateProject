@@ -8,7 +8,6 @@
 #include "SpecialEventSplashScreenData.h"
 #include "SpecialEventOfferingSequenceData.h"
 #include "ECurrencyType.h"
-#include "UObject/NoExportTypes.h"
 #include "ESpecialEventGameMode.h"
 #include "SpecialEventEntryPopupData.h"
 #include "SpecialEventBloodwebData.h"
@@ -46,9 +45,6 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	TArray<FSpecialEventObjectiveData> Objectives;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	FColor ObjectOutlineColour;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	FString LobbyName;

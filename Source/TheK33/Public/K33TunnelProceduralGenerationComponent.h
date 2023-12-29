@@ -16,7 +16,7 @@ class UK33TunnelProceduralGenerationComponent : public UKillerSpecificGameStateC
 
 private:
 	UPROPERTY(ReplicatedUsing=OnRep_BlockSpawnData)
-	TArray<FK33TunnelBlockSpawnData> _blocksSpawnData;
+	FK33TunnelBlockSpawnData _blocksSpawnData;
 
 	UPROPERTY(EditDefaultsOnly)
 	TMap<EK33TunnelBlockType, TSoftClassPtr<AK33TunnelBlock>> _tunnelBlockAssetsReferences;

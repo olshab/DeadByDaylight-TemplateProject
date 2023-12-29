@@ -3,9 +3,11 @@
 #include "CoreMinimal.h"
 #include "CustomTransformation.h"
 #include "UObject/SoftObjectPtr.h"
+#include "Templates/SubclassOf.h"
 #include "ItemUIData.generated.h"
 
 class UTexture2D;
+class UUserWidget;
 
 USTRUCT(BlueprintType)
 struct FItemUIData
@@ -24,6 +26,15 @@ private:
 
 	UPROPERTY(EditAnywhere)
 	TArray<TSoftObjectPtr<UTexture2D>> IconAssetList;
+
+	UPROPERTY(EditAnywhere)
+	FString SecondaryIcon;
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<UUserWidget> animationWidgetRef;
+
+	UPROPERTY(EditAnywhere)
+	FString AnimationLinkageId;
 
 	UPROPERTY(EditAnywhere)
 	FCustomTransformation CustomTransformation;

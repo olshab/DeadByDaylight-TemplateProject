@@ -6,7 +6,7 @@
 class AActor;
 class UPrimitiveComponent;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FHitValidatorInstigatorParams
 {
 	GENERATED_BODY()

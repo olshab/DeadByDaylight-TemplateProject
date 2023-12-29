@@ -12,6 +12,12 @@ class DBDCOMPETENCE_API UImposeStatusEffectOnEventAddon : public UOnEventBaseAdd
 
 private:
 	UPROPERTY(EditDefaultsOnly)
+	bool _requireEventInstigatorToMatchAddonOwnerToImposeStatusEffects;
+
+	UPROPERTY(EditDefaultsOnly)
+	bool _requireEventTargetToMatchAddonOwnerToImposeStatusEffects;
+
+	UPROPERTY(EditDefaultsOnly)
 	TArray<FStatusEffectInfo> _statusEffects;
 
 public:

@@ -15,6 +15,11 @@ private:
 	UFUNCTION()
 	void OnSurvivorGrabbed(ACamperPlayer* survivor);
 
+protected:
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCosmetic)
+	void OnSurvivorDisguisedOrUndisguised(bool isDisguised);
+
+private:
 	UFUNCTION()
 	void OnOwnerLocallyObserved(bool locallyObserved);
 

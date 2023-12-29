@@ -5,7 +5,7 @@
 
 class UTagContainerQueryInstance;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FQueryInstanceCollection
 {
 	GENERATED_BODY()

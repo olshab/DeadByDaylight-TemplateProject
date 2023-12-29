@@ -16,6 +16,9 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UStatusEffect> _spasmodicBreathIndicatorStatusEffect;
 
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UStatusEffect> _speedEffectClass;
+
 	UPROPERTY(Transient, Export)
 	UStatusEffect* _speedEffect;
 

@@ -28,7 +28,7 @@ private:
 	TSoftClassPtr<UIterativeWeightAdjustmentStrategy> IterativeWeightAdjustmentStrategyClass;
 
 	UPROPERTY(EditAnywhere)
-	int32 _tileSpawnPointPriority;
+	int32 _dependencySpawnOrder;
 
 public:
 	DEADBYDAYLIGHT_API FKillerItemProperty();

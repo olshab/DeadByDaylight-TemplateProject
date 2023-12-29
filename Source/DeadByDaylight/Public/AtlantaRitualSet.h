@@ -5,7 +5,7 @@
 #include "RewardItem.h"
 #include "AtlantaRitualSet.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FAtlantaRitualSet
 {
 	GENERATED_BODY()

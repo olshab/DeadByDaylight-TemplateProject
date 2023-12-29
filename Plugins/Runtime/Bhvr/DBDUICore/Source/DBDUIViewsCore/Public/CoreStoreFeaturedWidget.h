@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "CoreBaseUserWidget.h"
 #include "StoreFeaturedViewInterface.h"
+#include "OnFeaturedCharacterClickedDelegate.h"
 #include "CoreStoreFeaturedWidget.generated.h"
 
 class UStoreCustomizationItemViewData;
@@ -23,6 +24,10 @@ protected:
 
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
 	UCoreStoreFeaturedCharacterContainerWidget* CharacterContainer;
+
+private:
+	UPROPERTY()
+	FOnFeaturedCharacterClickedDelegate _featuredCharacterSelectedDelegate;
 
 public:
 	UCoreStoreFeaturedWidget();

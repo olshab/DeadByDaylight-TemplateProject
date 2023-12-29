@@ -15,6 +15,9 @@ public:
 	UPROPERTY(Transient)
 	TMap<UAISkill*, UBehaviorTree*> AISkillDynamicSubtreeMap;
 
+	UPROPERTY(Transient)
+	UBehaviorTree* ConnectingSubtree;
+
 public:
 	DBDBOTS_API FAISkillDynamicSubtreeStruct();
 };

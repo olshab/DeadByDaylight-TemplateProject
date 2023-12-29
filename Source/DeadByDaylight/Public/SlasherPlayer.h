@@ -52,6 +52,9 @@ public:
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStalkModeChangedEvent, bool, isInStalkMode);
 
 public:
+	UPROPERTY(EditDefaultsOnly)
+	bool _setFirstPersonModeEnabledOnKillerIntroCompleted;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FVector PutDownTraceLocation;
 
@@ -197,6 +200,9 @@ private:
 
 	UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
 	ACamperPlayer* _survivorBeingKilled;
+
+	UPROPERTY(EditAnywhere, Transient)
+	TSubclassOf<UFirstPersonViewComponent> _firstPersonViewComponentClass;
 
 	UPROPERTY(EditAnywhere, Transient, Export)
 	UFirstPersonViewComponent* _firstPersonViewComponent;

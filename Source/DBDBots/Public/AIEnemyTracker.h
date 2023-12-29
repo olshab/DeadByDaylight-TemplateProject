@@ -4,7 +4,7 @@
 #include "UObject/NoExportTypes.h"
 #include "AIEnemyTracker.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, EditInlineNew)
 class DBDBOTS_API UAIEnemyTracker : public UObject
 {
 	GENERATED_BODY()

@@ -6,7 +6,7 @@
 
 class UActorComponent;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FComponentToAddInfo
 {
 	GENERATED_BODY()

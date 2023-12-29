@@ -7,7 +7,7 @@
 
 class AK33TunnelBlockCosmetic;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FK33CosmeticTunnelBlockSpawnInfo
 {
 	GENERATED_BODY()

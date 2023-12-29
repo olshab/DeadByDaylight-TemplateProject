@@ -2,43 +2,34 @@
 
 #include "CoreMinimal.h"
 #include "ESnowmanDestructionType.h"
+#include "SnowmanBase.h"
 #include "GameplayTagContainer.h"
-#include "ESnowmanState.h"
 #include "DBDTunableRowHandle.h"
-#include "RespawnableInteractable.h"
+#include "ESnowmanState.h"
 #include "Engine/EngineTypes.h"
-#include "SnowmanSpawnData.h"
 #include "GameEventData.h"
 #include "UObject/NoExportTypes.h"
 #include "Snowman.generated.h"
 
 class UInteractor;
-class ACamperPlayer;
-class UChargeableComponent;
 class UDBDOutlineComponent;
 class UDBDSkeletalMeshComponentBudgeted;
 class ADBDPlayer;
 class ASlasherPlayer;
 class UCapsuleComponent;
 class UPrimitiveComponent;
-class UBaseActorAttackableComponent;
 class ASnowman;
+class ACamperPlayer;
 class AActor;
 
 UCLASS()
-class SNOWMANWINTEREVENT_API ASnowman : public ARespawnableInteractable
+class SNOWMANWINTEREVENT_API ASnowman : public ASnowmanBase
 {
 	GENERATED_BODY()
 
 private:
 	UPROPERTY(EditAnywhere)
-	FDBDTunableRowHandle _timeToRespawn;
-
-	UPROPERTY(EditAnywhere)
 	FDBDTunableRowHandle _maxRespawnsAfterKillerAttackWhileOccupied;
-
-	UPROPERTY(EditAnywhere)
-	FDBDTunableRowHandle _timeToBeDestroyed;
 
 	UPROPERTY(EditAnywhere)
 	FDBDTunableRowHandle _highFiveCooldown;
@@ -67,20 +58,17 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, NoClear, Export, meta=(AllowPrivateAccess=true))
 	UCapsuleComponent* _snowmanHandCapsule;
 
-	UPROPERTY(VisibleAnywhere, NoClear, Export)
-	UChargeableComponent* _hideInSnowmanInteractionChargeable;
-
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, NoClear, Export, meta=(AllowPrivateAccess=true))
 	UInteractor* _snowmanInteractor;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, NoClear, Export, meta=(AllowPrivateAccess=true))
 	UPrimitiveComponent* _snowmanInteractionZone;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, NoClear, Export, meta=(AllowPrivateAccess=true))
-	UBaseActorAttackableComponent* _attackableComponent;
+	UPROPERTY(EditDefaultsOnly)
+	float _thirdPersonPerspectiveTransitionTime;
 
-	UPROPERTY(Transient)
-	bool _isAcquiredFromPool;
+	UPROPERTY(EditDefaultsOnly)
+	float _playerMeshRotationOffset;
 
 	UPROPERTY(ReplicatedUsing=OnRep_IsMoving, Transient)
 	bool _isMoving;
@@ -88,7 +76,13 @@ private:
 	UPROPERTY(ReplicatedUsing=OnRep_HighFiveFollower, Transient)
 	ASnowman* _highFiveFollower;
 
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTagContainer _hideAdditonalActorEvents;
+
 private:
+	UFUNCTION()
+	void OnTransitionBackToKillerFinished(const ASlasherPlayer* killer);
+
 	UFUNCTION()
 	void OnRep_SnowmanState();
 
@@ -113,15 +107,6 @@ private:
 	void Multicast_StartSnowmanDestruction(ESnowmanDestructionType snowmanDestructionType, bool unlockRequirementsSatisfiedForSurvivor, bool unlockRequirementsSatisfiedForKiller, ADBDPlayer* playerInSnowman);
 
 	UFUNCTION(NetMulticast, Reliable)
-	void Multicast_SpawnSnowman(FSnowmanSpawnData spawnData);
-
-	UFUNCTION(NetMulticast, Reliable)
-	void Multicast_SetSnowmanMaterialVariant(const int32 materialVariantIndex);
-
-	UFUNCTION(NetMulticast, Reliable)
-	void Multicast_SetSnowmanHiddenInGame(bool isHidden);
-
-	UFUNCTION(NetMulticast, Reliable)
 	void Multicast_OnSnowmanStartBeingUsedBySurvivor(ACamperPlayer* survivorUsingSnowman);
 
 	UFUNCTION(NetMulticast, Reliable)
@@ -138,9 +123,6 @@ public:
 	void Multicast_DrawDebugCollisionCheck(FVector boxExtent, float debugLifetime) const;
 
 protected:
-	UFUNCTION(BlueprintImplementableEvent, BlueprintCosmetic)
-	void Cosmetic_SetSnowmanMaterialVariant(const int32 materialVariantIndex);
-
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCosmetic)
 	void Cosmetic_OnSnowmanStartBeingUsedBySurvivor(ACamperPlayer* survivorUsingSnowman);
 
@@ -163,6 +145,12 @@ protected:
 	void Cosmetic_OnSnowmanDestroyedBySurvivorRunExit(ACamperPlayer* survivorUsingSnowman);
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCosmetic)
+	void Cosmetic_OnSnowmanDestroyedByNonDamagingAttackWhileEmpty();
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCosmetic)
+	void Cosmetic_OnSnowmanDestroyedByNonDamagingAttackWhileControlled(ADBDPlayer* playerUsingThisSnowman);
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCosmetic)
 	void Cosmetic_OnSnowmanDestroyedByKillerCancelExit();
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCosmetic)
@@ -175,10 +163,16 @@ protected:
 	void Cosmetic_OnSnowmanDestroyedByAttackWhileControlled(ACamperPlayer* survivorUsingSnowman, ASlasherPlayer* killerAttackingSnowman);
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCosmetic)
+	void Cosmetic_OnKillerFinishTransitionOutOfSnowman(const ASlasherPlayer* killer);
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCosmetic)
 	void Cosmetic_OnCosmeticUnlockRequirementsSatisfiedForSurvivor(ACamperPlayer* survivorUsingSnowman);
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCosmetic)
 	void Cosmetic_OnCosmeticUnlockRequirementsSatisfiedForKiller(ASlasherPlayer* killerAttackingSnowman);
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCosmetic)
+	void Cosmetic_OnAdditionalActorHidden(AActor* actorToHide);
 
 private:
 	UFUNCTION()

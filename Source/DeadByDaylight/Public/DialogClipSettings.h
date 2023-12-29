@@ -7,7 +7,7 @@
 class UAkAudioEvent;
 class UDialogHandlerCondition;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FDialogClipSettings
 {
 	GENERATED_BODY()
@@ -30,6 +30,9 @@ public:
 
 	UPROPERTY(EditDefaultsOnly)
 	bool IsOnlyPlayingOnce;
+
+	UPROPERTY(EditDefaultsOnly)
+	bool HasSubtitles;
 
 public:
 	DEADBYDAYLIGHT_API FDialogClipSettings();

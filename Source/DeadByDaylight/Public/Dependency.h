@@ -43,7 +43,7 @@ protected:
 
 private:
 	UPROPERTY(EditAnywhere)
-	int32 _priority;
+	int32 _spawnOrder;
 
 	UPROPERTY(EditAnywhere)
 	TSoftClassPtr<UIterativeWeightAdjustmentStrategy> _iterativeWeightAdjustmentStrategyClass;

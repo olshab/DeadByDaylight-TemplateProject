@@ -4,7 +4,7 @@
 #include "EAttackSubstate.h"
 #include "AttackSubstateRequestResult.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FAttackSubstateRequestResult
 {
 	GENERATED_BODY()

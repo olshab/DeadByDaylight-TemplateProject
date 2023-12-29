@@ -4,7 +4,7 @@
 #include "UObject/NoExportTypes.h"
 #include "K26PathData.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FK26PathData
 {
 	GENERATED_BODY()

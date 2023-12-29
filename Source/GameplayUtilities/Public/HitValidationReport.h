@@ -8,7 +8,7 @@
 
 class ACharacter;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FHitValidationReport
 {
 	GENERATED_BODY()

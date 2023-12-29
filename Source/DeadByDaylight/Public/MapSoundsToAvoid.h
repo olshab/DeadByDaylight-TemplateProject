@@ -5,7 +5,7 @@
 
 class UPrimitiveComponent;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FMapSoundsToAvoid
 {
 	GENERATED_BODY()

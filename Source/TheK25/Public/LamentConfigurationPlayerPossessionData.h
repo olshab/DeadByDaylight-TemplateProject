@@ -3,7 +3,7 @@
 #include "CoreMinimal.h"
 #include "LamentConfigurationPlayerPossessionData.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FLamentConfigurationPlayerPossessionData
 {
 	GENERATED_BODY()

@@ -230,7 +230,58 @@ public:
 	FString DeviceProfile;
 
 	UPROPERTY()
-	int32 MaxMemoryUsedKilobytes;
+	float AverageMemoryAvailablePhysicalMB;
+
+	UPROPERTY()
+	float MinMemoryAvailablePhysicalMB;
+
+	UPROPERTY()
+	float MaxMemoryAvailablePhysicalMB;
+
+	UPROPERTY()
+	float AverageMemoryAvailableVirtualMB;
+
+	UPROPERTY()
+	float MinMemoryAvailableVirtualMB;
+
+	UPROPERTY()
+	float MaxMemoryAvailableVirtualMB;
+
+	UPROPERTY()
+	float AverageMemoryTotalPhysicalMB;
+
+	UPROPERTY()
+	float MinMemoryTotalPhysicalMB;
+
+	UPROPERTY()
+	float MaxMemoryTotalPhysicalMB;
+
+	UPROPERTY()
+	float AverageMemoryTotalVirtualMB;
+
+	UPROPERTY()
+	float MinMemoryTotalVirtualMB;
+
+	UPROPERTY()
+	float MaxMemoryTotalVirtualMB;
+
+	UPROPERTY()
+	float AverageMemoryUsedPhysicalMB;
+
+	UPROPERTY()
+	float MinMemoryUsedPhysicalMB;
+
+	UPROPERTY()
+	float MaxMemoryUsedPhysicalMB;
+
+	UPROPERTY()
+	float AverageMemoryUsedVirtualMB;
+
+	UPROPERTY()
+	float MinMemoryUsedVirtualMB;
+
+	UPROPERTY()
+	float MaxMemoryUsedVirtualMB;
 
 	UPROPERTY()
 	float AveragePing;
@@ -275,6 +326,12 @@ public:
 	bool isVsyncEnable;
 
 	UPROPERTY()
+	bool isFSREnabled;
+
+	UPROPERTY()
+	float SharpnessValue;
+
+	UPROPERTY()
 	int32 ShadowQuality;
 
 	UPROPERTY()
@@ -315,6 +372,15 @@ public:
 
 	UPROPERTY()
 	FString RHIName;
+
+	UPROPERTY()
+	bool IsSample;
+
+	UPROPERTY()
+	FString GameFlowStep;
+
+	UPROPERTY()
+	FString KrakenMatchId;
 
 public:
 	DBDANALYTICS_API FPerformanceAnalytics();

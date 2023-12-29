@@ -2,6 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "ActorPairQueryHeightRange.h"
+#include "GameplayTagContainer.h"
 #include "Components/ActorComponent.h"
 #include "TunableStat.h"
 #include "RaycastProperties.h"
@@ -30,6 +31,9 @@ private:
 
 	UPROPERTY(EditDefaultsOnly)
 	float _sphereTraceRadius;
+
+	UPROPERTY(EditAnywhere)
+	FGameplayTagContainer _stateTagsPreventingKillerDetection;
 
 public:
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

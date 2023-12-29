@@ -4,7 +4,7 @@
 #include "DBDTimer.h"
 #include "DBDBidirectionalTimer.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FDBDBidirectionalTimer: public FDBDTimer
 {
 	GENERATED_BODY()

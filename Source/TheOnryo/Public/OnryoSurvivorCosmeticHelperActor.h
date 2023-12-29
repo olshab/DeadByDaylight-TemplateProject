@@ -20,6 +20,9 @@ private:
 	UCondemnedComponent* _condemnedComponent;
 
 protected:
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCosmetic)
+	void OnSurvivorDisguisedOrUndisguised(bool isDisguised);
+
 	UFUNCTION(BlueprintPure)
 	UGameplayTagContainerComponent* GetObjectState() const;
 

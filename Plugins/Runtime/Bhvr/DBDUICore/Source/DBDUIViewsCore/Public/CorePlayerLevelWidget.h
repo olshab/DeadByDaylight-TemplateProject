@@ -11,11 +11,11 @@ class DBDUIVIEWSCORE_API UCorePlayerLevelWidget : public UCoreButtonWidget
 	GENERATED_BODY()
 
 public:
-	UFUNCTION(BlueprintImplementableEvent)
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
 	void SetData(const FPlayerLevelViewData& viewData);
 
-	UFUNCTION(BlueprintImplementableEvent)
-	void Animate();
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+	void AnimateLevelUp();
 
 public:
 	UCorePlayerLevelWidget();

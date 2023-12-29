@@ -6,7 +6,7 @@
 
 class AActor;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FAIDetectedStimulus
 {
 	GENERATED_BODY()

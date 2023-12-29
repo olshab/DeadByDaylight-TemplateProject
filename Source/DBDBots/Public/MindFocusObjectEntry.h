@@ -5,7 +5,7 @@
 
 class UObject;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FMindFocusObjectEntry
 {
 	GENERATED_BODY()

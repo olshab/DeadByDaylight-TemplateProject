@@ -5,7 +5,7 @@
 #include "ECamperDamageState.h"
 #include "ChaseUpdateInfo.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FChaseUpdateInfo
 {
 	GENERATED_BODY()

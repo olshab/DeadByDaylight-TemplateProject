@@ -5,6 +5,7 @@
 #include "OnIsTrapSetChanged.h"
 #include "Engine/EngineTypes.h"
 #include "Templates/SubclassOf.h"
+#include "TunableStat.h"
 #include "BearTrap.generated.h"
 
 class UAnimationMontageSlave;
@@ -98,6 +99,9 @@ private:
 
 	UPROPERTY(Export)
 	UAnimationMontageSlave* _animationMontageSlave;
+
+	UPROPERTY(EditDefaultsOnly)
+	FTunableStat _baseBearTrapCarryCapacity;
 
 	UPROPERTY(Transient, Export)
 	UStatusEffect* _honingStoneStatusEffect;

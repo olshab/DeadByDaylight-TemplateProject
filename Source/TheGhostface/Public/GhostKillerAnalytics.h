@@ -4,7 +4,7 @@
 #include "UniquelyIdentifiedAnalytic.h"
 #include "GhostKillerAnalytics.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FGhostKillerAnalytics: public FUniquelyIdentifiedAnalytic
 {
 	GENERATED_BODY()

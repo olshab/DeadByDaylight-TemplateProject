@@ -4,7 +4,7 @@
 #include "GameplayTagContainer.h"
 #include "GameEventBloodOrbDropParams.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FGameEventBloodOrbDropParams
 {
 	GENERATED_BODY()

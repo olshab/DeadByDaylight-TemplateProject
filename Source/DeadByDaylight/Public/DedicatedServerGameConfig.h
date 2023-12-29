@@ -12,15 +12,6 @@ public:
 	UPROPERTY()
 	int32 LatencyRetryCooldownSeconds;
 
-	UPROPERTY()
-	bool NewContentShutdown;
-
-	UPROPERTY()
-	int32 NewContentShutdownMaxMinutes;
-
-	UPROPERTY()
-	int32 NewContentShutdownMinMinutes;
-
 public:
 	DEADBYDAYLIGHT_API FDedicatedServerGameConfig();
 };

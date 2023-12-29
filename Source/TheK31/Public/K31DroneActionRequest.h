@@ -7,7 +7,7 @@
 class UK31DroneBaseAction;
 class AK31Drone;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FK31DroneActionRequest
 {
 	GENERATED_BODY()

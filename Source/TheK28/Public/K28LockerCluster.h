@@ -6,7 +6,7 @@
 
 class UK28LockerComponent;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FK28LockerCluster
 {
 	GENERATED_BODY()

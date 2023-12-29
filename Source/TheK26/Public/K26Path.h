@@ -5,7 +5,7 @@
 
 class AK26PathPart;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FK26Path
 {
 	GENERATED_BODY()

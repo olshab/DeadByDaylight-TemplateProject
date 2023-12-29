@@ -3,7 +3,7 @@
 #include "CoreMinimal.h"
 #include "RaycastProperties.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FRaycastProperties
 {
 	GENERATED_BODY()

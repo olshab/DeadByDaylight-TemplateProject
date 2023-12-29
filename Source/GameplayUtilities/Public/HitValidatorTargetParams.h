@@ -6,7 +6,7 @@
 class ACharacter;
 class UCapsuleComponent;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FHitValidatorTargetParams
 {
 	GENERATED_BODY()

@@ -6,7 +6,7 @@
 class UCurveFloat;
 class UDBDDecalComponent;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FFootstep
 {
 	GENERATED_BODY()

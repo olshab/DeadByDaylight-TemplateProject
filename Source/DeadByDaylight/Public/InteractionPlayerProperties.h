@@ -14,9 +14,6 @@ struct FInteractionPlayerProperties
 
 public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	FVector_NetQuantize AverageVelocityAtStart;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	FVector_NetQuantize PlayerPositionAtStart;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)

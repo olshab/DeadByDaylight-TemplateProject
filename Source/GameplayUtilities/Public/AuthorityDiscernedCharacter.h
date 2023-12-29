@@ -5,7 +5,7 @@
 
 class ACharacter;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FAuthorityDiscernedCharacter
 {
 	GENERATED_BODY()

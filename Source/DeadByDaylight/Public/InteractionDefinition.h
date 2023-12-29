@@ -11,7 +11,6 @@
 #include "Components/SceneComponent.h"
 #include "ESnapBackPositionType.h"
 #include "EInputInteractionType.h"
-//#include "InteractionAnimNotify.h"
 #include "EInteractionOwnership.h"
 #include "SecondaryInteractionProperties.h"
 #include "AnimationMontageDescriptor.h"
@@ -218,6 +217,9 @@ public:
 	bool HideItem;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool ContinueCachingLastSafeItemDropLocation;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool AutoBindToParentInteractor;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -282,9 +284,6 @@ public:
 
 	UPROPERTY(BlueprintAssignable)
 	FInteractionInterruptedDelegate OnInteractionInterruptedEndDelegate;
-
-	//UPROPERTY(BlueprintAssignable)
-	//FInteractionAnimNotify OnInteractionAnimNotify;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool DebugUnavailability;

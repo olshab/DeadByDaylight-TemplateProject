@@ -7,7 +7,6 @@
 #include "CorePlayerRankWidget.generated.h"
 
 class UDBDImage;
-class UDBDTextBlock;
 
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCorePlayerRankWidget : public UCoreButtonWidget
@@ -27,19 +26,20 @@ protected:
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
 	UDBDImage* RankNumberImage;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UDBDTextBlock* LevelTB;
-
 public:
 	UFUNCTION(BlueprintCallable)
 	void SetRankImageAndText(const int32 rankIndex, const bool isKiller);
 
-	UFUNCTION(BlueprintImplementableEvent)
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
 	void SetData(const FRankViewData& data);
 
 protected:
 	UFUNCTION(BlueprintPure)
 	FCoreRankWidgetConfiguration GetConfiguration() const;
+
+public:
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+	void AnimateRankUp();
 
 public:
 	UCorePlayerRankWidget();

@@ -5,7 +5,7 @@
 #include "EAIGameState.h"
 #include "GameStatePressureZoneLevelMapContainer.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FGameStatePressureZoneLevelMapContainer
 {
 	GENERATED_BODY()

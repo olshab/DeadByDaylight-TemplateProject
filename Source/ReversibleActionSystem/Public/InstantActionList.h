@@ -5,7 +5,7 @@
 
 class UBaseReversibleInstantActionHandler;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FInstantActionList
 {
 	GENERATED_BODY()

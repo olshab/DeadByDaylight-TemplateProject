@@ -107,6 +107,9 @@ private:
 	UPROPERTY(Transient, Export)
 	USpawnElementTrackerComponent* _spawnElementTrackerComponent;
 
+	UPROPERTY(EditDefaultsOnly)
+	float _maxDistanceToFollowPlayer;
+
 private:
 	UFUNCTION()
 	void OnRep_IsInteractionAvailable();

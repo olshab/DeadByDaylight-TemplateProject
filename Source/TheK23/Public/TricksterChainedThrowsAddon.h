@@ -9,18 +9,15 @@ class UTricksterChainedThrowsAddon : public UItemAddon
 {
 	GENERATED_BODY()
 
-private:
+protected:
+	UPROPERTY(Replicated, Transient)
+	int32 _consecutiveHits;
+
 	UPROPERTY(EditDefaultsOnly)
 	bool _resetOnEnteringFlurryInteraction;
 
-	UPROPERTY(EditDefaultsOnly)
-	float _lacerationPenaltyRangeThreshold;
-
-	UPROPERTY(EditDefaultsOnly)
-	float _closeRangeLacerationPenalty;
-
-	UPROPERTY(EditDefaultsOnly)
-	float _maximumMultiplier;
+public:
+	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
 public:
 	UTricksterChainedThrowsAddon();

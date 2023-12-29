@@ -3,7 +3,7 @@
 #include "CoreMinimal.h"
 #include "ArmIKSensorDatum.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FArmIKSensorDatum
 {
 	GENERATED_BODY()

@@ -6,7 +6,7 @@
 
 class ACamperPlayer;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FK32SurvivorStatus
 {
 	GENERATED_BODY()

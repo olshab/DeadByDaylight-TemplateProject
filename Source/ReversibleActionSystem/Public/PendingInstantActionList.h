@@ -4,7 +4,7 @@
 #include "PendingInstantAction.h"
 #include "PendingInstantActionList.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FPendingInstantActionList
 {
 	GENERATED_BODY()

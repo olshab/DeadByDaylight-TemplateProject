@@ -6,7 +6,7 @@
 
 class UCurveFloat;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FK28SecondaryCameraMovementData
 {
 	GENERATED_BODY()

@@ -5,7 +5,7 @@
 
 class UDBDAttack;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FAttackDelegatePair
 {
 	GENERATED_BODY()

@@ -3,7 +3,7 @@
 #include "CoreMinimal.h"
 #include "SkillCheckDefinition.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FSkillCheckDefinition
 {
 	GENERATED_BODY()

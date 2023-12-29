@@ -3,7 +3,7 @@
 #include "CoreMinimal.h"
 #include "SpecialBehaviourObjectsInfo.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FSpecialBehaviourObjectsInfo
 {
 	GENERATED_BODY()

@@ -2,7 +2,10 @@
 
 #include "CoreMinimal.h"
 #include "ItemAddon.h"
+#include "Templates/SubclassOf.h"
 #include "MatchboxAddon.generated.h"
+
+class USpeedOverrideEffect;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class THENURSE_API UMatchboxAddon : public UItemAddon
@@ -12,6 +15,9 @@ class THENURSE_API UMatchboxAddon : public UItemAddon
 private:
 	UPROPERTY(EditDefaultsOnly)
 	float _speedModifier;
+
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<USpeedOverrideEffect> _speedOverrideEffectClass;
 
 public:
 	UMatchboxAddon();

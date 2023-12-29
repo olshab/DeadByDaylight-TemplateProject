@@ -5,7 +5,7 @@
 
 class ABlockFeedbackBase;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FBlockFeedbackStyleOverride
 {
 	GENERATED_BODY()

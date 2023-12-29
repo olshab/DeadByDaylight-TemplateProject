@@ -7,7 +7,7 @@
 
 class ADBDPlayer;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FOrbProperties
 {
 	GENERATED_BODY()

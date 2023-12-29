@@ -28,6 +28,9 @@ private:
 	TArray<FGameplayTag> _stopAudioGameplayEvents;
 
 	UPROPERTY(EditDefaultsOnly)
+	FGameplayTagQuery _allowingDialogueStartStateTagQuery;
+
+	UPROPERTY(EditDefaultsOnly)
 	UAkAudioEvent* _stopAudioClip;
 
 public:

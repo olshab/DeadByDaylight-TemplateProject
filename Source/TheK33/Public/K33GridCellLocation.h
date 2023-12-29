@@ -3,7 +3,7 @@
 #include "CoreMinimal.h"
 #include "K33GridCellLocation.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FK33GridCellLocation
 {
 	GENERATED_BODY()

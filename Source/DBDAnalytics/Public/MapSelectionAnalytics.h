@@ -21,6 +21,12 @@ public:
 	int32 MapSeed;
 
 	UPROPERTY()
+	float SelectedMapOdds;
+
+	UPROPERTY()
+	float TotalMapWeight;
+
+	UPROPERTY()
 	TArray<FMapSelectionWeight> MapWeights;
 
 public:

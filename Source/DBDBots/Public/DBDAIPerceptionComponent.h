@@ -25,6 +25,9 @@ public:
 	TArray<EKillerAbilities> RangedKillerAbilities;
 
 	UPROPERTY(EditDefaultsOnly)
+	TArray<EKillerAbilities> FastVaultKillerAbilities;
+
+	UPROPERTY(EditDefaultsOnly)
 	bool UseSimulatedCameraLocationForStimulusReceiverLocation;
 
 	UPROPERTY(EditDefaultsOnly)

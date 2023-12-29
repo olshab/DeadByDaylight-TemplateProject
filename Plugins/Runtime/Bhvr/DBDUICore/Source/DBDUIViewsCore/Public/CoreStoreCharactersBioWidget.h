@@ -5,10 +5,20 @@
 #include "StoreCharactersBioViewInterface.h"
 #include "CoreStoreCharactersBioWidget.generated.h"
 
+class UDBDRichTextBlock;
+class UScrollBox;
+
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCoreStoreCharactersBioWidget : public UCoreBaseUserWidget, public IStoreCharactersBioViewInterface
 {
 	GENERATED_BODY()
+
+protected:
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UDBDRichTextBlock* TextContent;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UScrollBox* Scroll;
 
 public:
 	UCoreStoreCharactersBioWidget();

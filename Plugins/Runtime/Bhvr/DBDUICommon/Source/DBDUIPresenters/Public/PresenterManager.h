@@ -5,6 +5,7 @@
 #include "ELoadingTransitionType.h"
 #include "PresenterManager.generated.h"
 
+class APlayerState;
 class UPresenterGroup;
 
 UCLASS()
@@ -22,6 +23,9 @@ private:
 private:
 	UFUNCTION()
 	void OnViewportCreated();
+
+	UFUNCTION()
+	void OnPlayerStateChanged(const APlayerState* playerState);
 
 	UFUNCTION()
 	void OnLoadingTransition(const ELoadingTransitionType transitionType);

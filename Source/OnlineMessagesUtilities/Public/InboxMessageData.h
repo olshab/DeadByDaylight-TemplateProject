@@ -4,7 +4,7 @@
 #include "ClaimableInboxMessageData.h"
 #include "InboxMessageData.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FInboxMessageData
 {
 	GENERATED_BODY()

@@ -14,6 +14,7 @@ class ADBDMenuSilhouette;
 class ACharm;
 class APlayerStart;
 class ADisplayStand;
+class ADBDMenuPlayer;
 
 UCLASS()
 class DEADBYDAYLIGHT_API AOfflineLobbyLevel : public ALobbyLevel
@@ -79,6 +80,9 @@ private:
 public:
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnStateChanged(EOfflineLobbyState lobbyState);
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnCharacterSpawned(ADBDMenuPlayer* player);
 
 protected:
 	UFUNCTION()

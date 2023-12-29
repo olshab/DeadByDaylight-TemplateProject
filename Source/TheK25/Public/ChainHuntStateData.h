@@ -4,7 +4,7 @@
 #include "EChainHuntState.h"
 #include "ChainHuntStateData.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FChainHuntStateData
 {
 	GENERATED_BODY()

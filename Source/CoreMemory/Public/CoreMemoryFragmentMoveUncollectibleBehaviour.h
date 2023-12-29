@@ -2,7 +2,6 @@
 
 #include "CoreMinimal.h"
 #include "CoreMemoryBehaviourBase.h"
-#include "DBDTunableRowHandle.h"
 #include "CoreMemoryFragmentMoveUncollectibleBehaviour.generated.h"
 
 UCLASS(EditInlineNew)
@@ -11,9 +10,6 @@ class UCoreMemoryFragmentMoveUncollectibleBehaviour : public UCoreMemoryBehaviou
 	GENERATED_BODY()
 
 private:
-	UPROPERTY(EditDefaultsOnly)
-	FDBDTunableRowHandle _fragmentSpeed;
-
 	UPROPERTY(EditDefaultsOnly)
 	int32 _maxLineOfSightTries;
 

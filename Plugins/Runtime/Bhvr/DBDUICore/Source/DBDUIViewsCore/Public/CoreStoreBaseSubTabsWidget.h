@@ -3,11 +3,12 @@
 #include "CoreMinimal.h"
 #include "StoreBaseSubTabsViewInterface.h"
 #include "CoreBaseUserWidget.h"
+#include "StoreSubTabSelectedDelegate.h"
 #include "CoreStoreBaseSubTabsWidget.generated.h"
 
+class UCoreSelectableButtonWidget;
 class UCoreTabContainerWidget;
 class UWidgetSwitcher;
-class UCoreSelectableButtonWidget;
 class UWidget;
 
 UCLASS(Abstract, EditInlineNew)
@@ -16,6 +17,9 @@ class UCoreStoreBaseSubTabsWidget : public UCoreBaseUserWidget, public IStoreBas
 	GENERATED_BODY()
 
 protected:
+	UPROPERTY(BlueprintReadWrite)
+	FStoreSubTabSelectedDelegate _menuTabSelectedDelegate;
+
 	UPROPERTY(EditDefaultsOnly, meta=(BindWidget))
 	UCoreTabContainerWidget* SubTabsContainer;
 

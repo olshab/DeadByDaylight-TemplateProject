@@ -3,7 +3,7 @@
 #include "CoreMinimal.h"
 #include "ActionPredictionKey.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FActionPredictionKey
 {
 	GENERATED_BODY()

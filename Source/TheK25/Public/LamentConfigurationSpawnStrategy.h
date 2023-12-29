@@ -2,11 +2,14 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "Templates/SubclassOf.h"
 #include "ETileSpawnPointType.h"
 #include "LamentConfigurationSpawnInfo.h"
 #include "LamentConfigurationSpawnStrategy.generated.h"
 
+class UTileSpawnPoint;
 class AHatch;
+class AActor;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class ULamentConfigurationSpawnStrategy : public UActorComponent
@@ -60,8 +63,17 @@ protected:
 	float _navmeshCheckRadius;
 
 private:
-	UPROPERTY(Replicated, Transient)
+	UPROPERTY(Replicated)
 	TArray<FLamentConfigurationSpawnInfo> _cached_spawnsInfo;
+
+	UPROPERTY(Transient, Export)
+	UTileSpawnPoint* _lastUsedSpawnPoint;
+
+	UPROPERTY(EditDefaultsOnly)
+	TArray<TSubclassOf<AActor>> _actorsInMapToAvoid;
+
+	UPROPERTY(EditDefaultsOnly)
+	float _minDistanceFromActorsToAvoid;
 
 	UPROPERTY(Transient)
 	TArray<AHatch*> _hatches;

@@ -14,7 +14,10 @@ class UEventObjectiveItemPresenter : public UHudPresenter
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	TSubclassOf<UUserWidget> CoreHudEventObjectiveItemWidgetClass;
+	TSubclassOf<UUserWidget> DefaultCoreHudEventObjectiveItemWidgetClass;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	TMap<FName, TSubclassOf<UUserWidget>> CoreHudEventObjectiveItemWidgetClassMapping;
 
 public:
 	UEventObjectiveItemPresenter();

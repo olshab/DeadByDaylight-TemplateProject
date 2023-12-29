@@ -5,7 +5,7 @@
 #include "EAntiCampSelfUnhookMeterState.h"
 #include "AntiCampSelfUnhookMeterComponent.generated.h"
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UAntiCampSelfUnhookMeterComponent : public UActorComponent
 {
 	GENERATED_BODY()
@@ -16,6 +16,10 @@ private:
 
 	UFUNCTION(NetMulticast, Reliable)
 	void Multicast_SetCosmetics(const EAntiCampSelfUnhookMeterState aimingCrosshairState, const float progress);
+
+public:
+	UFUNCTION(BlueprintPure)
+	float GetProgress() const;
 
 public:
 	UAntiCampSelfUnhookMeterComponent();

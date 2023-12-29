@@ -22,6 +22,12 @@ public:
 	UPROPERTY()
 	TArray<int32> EquipedPerkLevels;
 
+	UPROPERTY()
+	FString EquippedBannerId;
+
+	UPROPERTY()
+	FString EquippedBadgeId;
+
 private:
 	UPROPERTY()
 	EGameState _playerGameState;

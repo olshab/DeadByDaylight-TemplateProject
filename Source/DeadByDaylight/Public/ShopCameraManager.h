@@ -7,6 +7,8 @@
 #include "NamedButton.h"
 #include "ShopCameraManager.generated.h"
 
+class ACameraActor;
+
 UCLASS()
 class DEADBYDAYLIGHT_API AShopCameraManager : public AActor
 {
@@ -24,6 +26,9 @@ private:
 
 	UPROPERTY(EditAnywhere)
 	TArray<FCharacterCameraTag> StoryCharactersCamera;
+
+	UPROPERTY(EditAnywhere)
+	ACameraActor* HookCamera;
 
 public:
 	AShopCameraManager();

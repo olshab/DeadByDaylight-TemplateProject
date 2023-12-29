@@ -8,7 +8,7 @@
 
 class ATrailNode;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FTrailSettings
 {
 	GENERATED_BODY()

@@ -38,13 +38,16 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	bool _enableTurnInPlace;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	bool _shouldResetLookAtOnAnyMontagePlay;
+
 	UPROPERTY(BlueprintReadOnly)
 	bool _shouldTurnLeft;
 
 	UPROPERTY(BlueprintReadOnly)
 	bool _shouldTurnRight;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float _turnInPlaceThresholdAngle;
 
 	UPROPERTY(BlueprintReadOnly)

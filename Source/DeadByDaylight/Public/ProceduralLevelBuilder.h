@@ -3,23 +3,24 @@
 #include "CoreMinimal.h"
 #include "ETileSpawnPointType.h"
 #include "GameFramework/Actor.h"
-#include "GeneratedLevelData.h"
+#include "EGameplayElementType.h"
 #include "UObject/NoExportTypes.h"
 #include "Templates/SubclassOf.h"
+#include "GeneratedLevelData.h"
 #include "GenerationParams.h"
 #include "ProceduralLevelBuilder.generated.h"
 
 class UAkAudioBank;
 class UDBDDesignTunables;
-class UEdgeObjectHandlingStrategy;
-class UTileBank;
-class UObjectLibrary;
-class ATile;
-class UPaperTileMap;
+class UMapData;
 class UTileMatrix;
 class ADBDClientSyncer;
 class UProceduralGenerationData;
-class UMapData;
+class ATile;
+class UPaperTileMap;
+class UEdgeObjectHandlingStrategy;
+class UTileBank;
+class UObjectLibrary;
 class UActorSpawner;
 class AProceduralLevelData;
 class UBlackboardComponent;
@@ -35,6 +36,24 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	FString PathToTilesDirectory;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	FString PathToEventSpawnablesDirectory;
+
+	UPROPERTY(EditDefaultsOnly)
+	TArray<FString> EventSpawnablesParentDirectories;
+
+	UPROPERTY(EditDefaultsOnly)
+	float EventSpawnablePositionWeightCoefficient;
+
+	UPROPERTY(EditDefaultsOnly)
+	float EventSpawnablePositionWeightPowerBase;
+
+	UPROPERTY(EditDefaultsOnly)
+	TMap<EGameplayElementType, float> StaticActorSpawnerDecorationBudgets;
+
+	UPROPERTY(EditDefaultsOnly)
+	TMap<ETileSpawnPointType, float> StaticSpawnPointDecorationBudgets;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	float KillerMinProximityFromCamper;
@@ -116,6 +135,9 @@ private:
 	UObjectLibrary* _availableTilesLibrary;
 
 	UPROPERTY()
+	UObjectLibrary* _availableEventSpawnablesLibrary;
+
+	UPROPERTY()
 	UObjectLibrary* _availableDerivedTileLibrary;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess=true))
@@ -147,6 +169,9 @@ private:
 
 	UPROPERTY(Transient)
 	TArray<ATile*> _tilesThatHaveBeenSpawned;
+
+	UPROPERTY(Transient)
+	TArray<AActor*> _eventSpawnablesThatHaveBeenStreamed;
 
 	UPROPERTY(Transient)
 	AProceduralLevelData* _debugProceduralDatas;

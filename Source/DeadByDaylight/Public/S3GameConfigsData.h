@@ -148,6 +148,9 @@ public:
 	UPROPERTY()
 	bool EnableAntiCamping;
 
+	UPROPERTY()
+	bool EnableConsumableQueryFromKraken;
+
 public:
 	DEADBYDAYLIGHT_API FS3GameConfigsData();
 };

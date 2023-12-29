@@ -22,6 +22,9 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	float _hasteAmount;
 
+	UPROPERTY(Transient, Export)
+	UStatusEffect* _hasteEffect;
+
 public:
 	UK33P02();
 };

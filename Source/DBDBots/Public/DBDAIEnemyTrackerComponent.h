@@ -2,10 +2,12 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "AITunableParameter.h"
 #include "AITrackedEnemyData.h"
 #include "DBDAIEnemyTrackerComponent.generated.h"
 
 class UAIEnemyTracker;
+class UAIEnemyTargetPrediction;
 class ACharacter;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
@@ -17,12 +19,25 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Export)
 	UAIEnemyTracker* EnemyTracker;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Export)
+	UAIEnemyTargetPrediction* EnemyTargetPrediction;
+
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
-	float UpdateInterval;
+	float DataUpdateInterval;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
+	float TargetPredictionUpdateInterval;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
+	FAITunableParameter PotentialTargetedLocationRange;
 
 private:
 	UPROPERTY(Transient)
 	TMap<TWeakObjectPtr<ACharacter>, FAITrackedEnemyData> _trackedEnemiesData;
+
+private:
+	UFUNCTION()
+	void OnLevelReadyToPlay();
 
 public:
 	UDBDAIEnemyTrackerComponent();

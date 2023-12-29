@@ -11,13 +11,13 @@ class UDreamSnareTrapPlacementValidationStrategy : public UDefaultObjectPlacemen
 
 private:
 	UPROPERTY(EditDefaultsOnly)
-	float NumberOfGroundTest;
+	float _numberOfGroundTest;
 
 	UPROPERTY(EditDefaultsOnly)
-	float TrapRadius;
+	float _trapRadius;
 
 	UPROPERTY(EditDefaultsOnly)
-	float MaxElevationDifferentialOnTrapEdge;
+	float _maxElevationDifferentialOnTrapEdge;
 
 public:
 	UDreamSnareTrapPlacementValidationStrategy();

@@ -4,7 +4,7 @@
 #include "GameplayTagContainer.h"
 #include "TerrorRadiusVisualIndicatorHeartStateRange.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FTerrorRadiusVisualIndicatorHeartStateRange
 {
 	GENERATED_BODY()

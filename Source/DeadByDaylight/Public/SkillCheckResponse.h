@@ -6,7 +6,7 @@
 
 class UChargeableInteractionDefinition;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FSkillCheckResponse
 {
 	GENERATED_BODY()

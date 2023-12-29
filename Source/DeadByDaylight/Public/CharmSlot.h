@@ -7,7 +7,7 @@
 
 class ACharmAttacher;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FCharmSlot
 {
 	GENERATED_BODY()

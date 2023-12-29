@@ -5,7 +5,7 @@
 
 class UK31DroneState;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FK31DroneTimestampedState
 {
 	GENERATED_BODY()

@@ -19,8 +19,20 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FVector UpVector;
 
-	UPROPERTY()
-	float VerticalAngle;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 NumberOfColumns;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 NumberOfRows;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	uint8 FlipRowColumnOrder : 1;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 OverrideFlipbookTextureWidth;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	uint8 PivotAroundOrigin : 1;
 
 public:
 	SIMPLYGONUOBJECTS_API FFlipbookSettings();

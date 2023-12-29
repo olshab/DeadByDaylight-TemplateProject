@@ -2,10 +2,12 @@
 
 #include "CoreMinimal.h"
 #include "HideInSnowmanInteraction.h"
-#include "ECamperDamageState.h"
-#include "DBDTunableRowHandle.h"
 #include "GameplayTagContainer.h"
+#include "DBDTunableRowHandle.h"
+#include "ECamperDamageState.h"
 #include "SurvivorHideInSnowmanInteraction.generated.h"
+
+class ADBDPlayer;
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class USurvivorHideInSnowmanInteraction : public UHideInSnowmanInteraction
@@ -15,12 +17,6 @@ class USurvivorHideInSnowmanInteraction : public UHideInSnowmanInteraction
 private:
 	UPROPERTY(Replicated, Transient)
 	bool _shouldRunOutOfSnowman;
-
-	UPROPERTY(Replicated, Transient)
-	bool _isSnowmanShieldDamaged;
-
-	UPROPERTY(EditAnywhere)
-	TArray<FGameplayTag> _nonDamagingSnowmanDestroyingEvents;
 
 	UPROPERTY(EditAnywhere)
 	FDBDTunableRowHandle _minimumTimeToRunAndExit;
@@ -33,6 +29,22 @@ private:
 
 	UPROPERTY(EditAnywhere)
 	FDBDTunableRowHandle _timeToZoomExit;
+
+	UPROPERTY(EditAnywhere)
+	TArray<FGameplayTag> _nonDamagingKillerSnowmanDestroyingEvents;
+
+	UPROPERTY(EditAnywhere)
+	TArray<FGameplayTag> _gameEventsToCauseScream;
+
+	UPROPERTY(EditDefaultsOnly)
+	TArray<FString> _overridingKillerInteractionIds;
+
+	UPROPERTY(Replicated)
+	bool _shouldScreamOnExit;
+
+protected:
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCosmetic)
+	void Cosmetic_OnSurvivorScreamFromExit(ADBDPlayer* playerExiting);
 
 private:
 	UFUNCTION()

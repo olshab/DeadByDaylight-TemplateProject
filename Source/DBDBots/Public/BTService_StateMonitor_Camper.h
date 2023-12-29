@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "AITunableParameter.h"
 #include "BTService_StateMonitor.h"
 #include "BehaviorTree/BehaviorTreeTypes.h"
 #include "BTService_StateMonitor_Camper.generated.h"
@@ -45,9 +46,6 @@ public:
 	FBlackboardKeySelector BBIsHoldingEmptyItem;
 
 	UPROPERTY(EditInstanceOnly)
-	float EmptyItemChargeThreshold;
-
-	UPROPERTY(EditInstanceOnly)
 	FBlackboardKeySelector BBSpecialItemID;
 
 	UPROPERTY(EditInstanceOnly)
@@ -78,9 +76,6 @@ public:
 	FBlackboardKeySelector BBIsInDeathTimer;
 
 	UPROPERTY(EditInstanceOnly)
-	float DeathTimerEndGamePrecent;
-
-	UPROPERTY(EditInstanceOnly)
 	FBlackboardKeySelector BBHasCrowAttached;
 
 	UPROPERTY(EditInstanceOnly)
@@ -96,10 +91,52 @@ public:
 	FBlackboardKeySelector BBIgnoreGoalPressure;
 
 	UPROPERTY(EditInstanceOnly)
+	float EmptyItemChargeThreshold;
+
+	UPROPERTY(EditInstanceOnly)
+	float DeathTimerEndGamePercent;
+
+	UPROPERTY(EditInstanceOnly)
 	float ChaseUnseenMinimumKillerRange;
 
 	UPROPERTY(EditInstanceOnly)
 	float ChaseSeenMinimumKillerRange;
+
+	UPROPERTY(EditInstanceOnly)
+	float ChasedMinimumScore;
+
+	UPROPERTY(EditInstanceOnly)
+	FAITunableParameter ChasedScoreKillerAtMinimumDistance;
+
+	UPROPERTY(EditInstanceOnly)
+	FAITunableParameter ChasedScoreKillerDistanceMaxRange;
+
+	UPROPERTY(EditInstanceOnly)
+	FAITunableParameter ChasedScoreKillerWhenUnknownLocation;
+
+	UPROPERTY(EditInstanceOnly)
+	FAITunableParameter ChasedScorePredictedTarget;
+
+	UPROPERTY(EditInstanceOnly)
+	FAITunableParameter ChasedScoreKillerLastKnownDirection;
+
+	UPROPERTY(EditInstanceOnly)
+	FAITunableParameter ChasedScoreKillerMaxDirectionAngle;
+
+	UPROPERTY(EditInstanceOnly)
+	FAITunableParameter ChasedScoreSurvivorWhenVisible;
+
+	UPROPERTY(EditInstanceOnly)
+	FAITunableParameter ChasedScoreSurvivorVisibilityTime;
+
+	UPROPERTY(EditInstanceOnly)
+	FAITunableParameter ChasedScoreKillerUndetectable;
+
+	UPROPERTY(EditInstanceOnly)
+	FAITunableParameter ChasedScoreKillerRangedAndDash;
+
+	UPROPERTY(EditInstanceOnly)
+	FAITunableParameter ChasedScoreKillerChaseTarget;
 
 public:
 	UBTService_StateMonitor_Camper();

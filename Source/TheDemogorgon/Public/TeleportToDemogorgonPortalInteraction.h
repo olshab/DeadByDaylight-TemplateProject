@@ -19,7 +19,10 @@ class UTeleportToDemogorgonPortalInteraction : public UChargeableInteractionDefi
 
 protected:
 	UPROPERTY(EditDefaultsOnly)
-	float TeleportToPortalSoundRange;
+	float _teleportToPortalSoundRange;
+
+	UPROPERTY(EditDefaultsOnly)
+	float _inputReleaseChargePercentAllowance;
 
 private:
 	UPROPERTY(EditAnywhere)

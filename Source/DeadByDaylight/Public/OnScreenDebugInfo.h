@@ -4,7 +4,7 @@
 #include "UObject/NoExportTypes.h"
 #include "OnScreenDebugInfo.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FOnScreenDebugInfo
 {
 	GENERATED_BODY()

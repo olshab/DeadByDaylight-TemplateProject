@@ -7,7 +7,7 @@
 class ACharacter;
 class ADBDPlayer;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FDBDAttackTargetTracker
 {
 	GENERATED_BODY()

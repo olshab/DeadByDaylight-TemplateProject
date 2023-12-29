@@ -6,7 +6,7 @@
 
 class UObject;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FBlockableReplicatedDatum
 {
 	GENERATED_BODY()

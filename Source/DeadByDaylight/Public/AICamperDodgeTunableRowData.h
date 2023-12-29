@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "DBDTableRowBase.h"
 #include "EAIDodgeType.h"
+#include "EAIDodgeTechnique.h"
 #include "AICamperDodgeTunableRowData.generated.h"
 
 USTRUCT()
@@ -19,6 +20,9 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	EAIDodgeType BestDodgeType;
+
+	UPROPERTY(EditAnywhere)
+	TArray<EAIDodgeTechnique> DodgeTechniques;
 
 	UPROPERTY(EditAnywhere)
 	bool RequireInSight;

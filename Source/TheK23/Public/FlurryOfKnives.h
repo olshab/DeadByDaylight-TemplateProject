@@ -40,6 +40,9 @@ private:
 	UCurveFloat* _throwRateModifierByKnivesThrown;
 
 	UPROPERTY(EditDefaultsOnly)
+	FDBDTunableRowHandle _superModeDeactivationBuffer;
+
+	UPROPERTY(EditDefaultsOnly)
 	FDBDTunableRowHandle _superModeThrowRateModifier;
 
 	UPROPERTY(EditDefaultsOnly)

@@ -5,7 +5,7 @@
 
 class ACharacter;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FDiscernibleCharacter
 {
 	GENERATED_BODY()

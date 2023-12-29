@@ -5,7 +5,7 @@
 #include "EK31DroneActionResponse.h"
 #include "K31DroneActionResponse.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FK31DroneActionResponse
 {
 	GENERATED_BODY()

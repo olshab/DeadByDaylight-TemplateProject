@@ -5,7 +5,7 @@
 #include "ETimerState.h"
 #include "ReplicationTimerData.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FReplicationTimerData
 {
 	GENERATED_BODY()

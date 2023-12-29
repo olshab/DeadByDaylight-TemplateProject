@@ -5,7 +5,7 @@
 #include "EAIDangerState.h"
 #include "DangerStateGameStateMapContainer.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FDangerStateGameStateMapContainer
 {
 	GENERATED_BODY()

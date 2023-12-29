@@ -2,6 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "SurvivorCosmeticHelperActor.h"
+#include "GameplayTagContainer.h"
 #include "EK28NightCycleState.h"
 #include "K28SurvivorCosmeticHelperActor.generated.h"
 
@@ -11,6 +12,10 @@ UCLASS()
 class AK28SurvivorCosmeticHelperActor : public ASurvivorCosmeticHelperActor
 {
 	GENERATED_BODY()
+
+private:
+	UPROPERTY(EditDefaultsOnly)
+	TArray<FGameplayTag> _stateTagsToDisableNightMode;
 
 private:
 	UFUNCTION()

@@ -6,7 +6,7 @@
 #include "DialogClipSettings.h"
 #include "DialogEventSettings.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FDialogEventSettings
 {
 	GENERATED_BODY()

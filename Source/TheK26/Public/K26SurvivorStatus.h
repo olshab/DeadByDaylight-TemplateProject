@@ -9,7 +9,7 @@ class ACamperPlayer;
 class AActor;
 class UK26KillerInstinctStatusEffect;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FK26SurvivorStatus
 {
 	GENERATED_BODY()

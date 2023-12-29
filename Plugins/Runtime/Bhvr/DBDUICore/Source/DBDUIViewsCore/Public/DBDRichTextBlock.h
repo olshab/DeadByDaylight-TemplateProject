@@ -60,6 +60,9 @@ protected:
 	void PreviewLargeText();
 
 	UFUNCTION()
+	void PreviewHTMLText();
+
+	UFUNCTION()
 	void OnSwitchDockStateChanged(bool isDocked);
 
 	UFUNCTION()

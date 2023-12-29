@@ -3,7 +3,7 @@
 #include "CoreMinimal.h"
 #include "PostAttackData.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FPostAttackData
 {
 	GENERATED_BODY()

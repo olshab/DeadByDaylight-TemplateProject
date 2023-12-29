@@ -6,13 +6,15 @@
 #include "Templates/SubclassOf.h"
 #include "StoreMenuPresenter.generated.h"
 
+class UStoreSpecialPacksSubPresenter;
 class UStoreCollectionsSubPresenter;
 class UShopManager;
-class UUserWidget;
 class UStoreCharactersSubPresenter;
-class UStoreSubPresenter;
+class UStoreSpecialsSubPresenter;
+class UUserWidget;
 class UStoreFeaturedSubPresenter;
-class UStoreBundlesSubPresenter;
+class UStoreSubPresenter;
+class USubPresenter;
 
 UCLASS(EditInlineNew)
 class DBDUIPRESENTERS_API UStoreMenuPresenter : public UPresenter
@@ -34,10 +36,13 @@ private:
 	UStoreFeaturedSubPresenter* _storeFeaturedSubPresenter;
 
 	UPROPERTY(Transient)
+	UStoreSpecialsSubPresenter* _storeSpecialsSubPresenter;
+
+	UPROPERTY(Transient)
 	UStoreCollectionsSubPresenter* _storeCollectionsSubPresenter;
 
 	UPROPERTY(Transient)
-	UStoreBundlesSubPresenter* _storeBundlesSubPresenter;
+	UStoreSpecialPacksSubPresenter* _storeSpecialPacksSubPresenter;
 
 	UPROPERTY(Transient)
 	UStoreCharactersSubPresenter* _storeCharactersSubPresenter;
@@ -51,6 +56,18 @@ private:
 private:
 	UFUNCTION()
 	void OpenRedeemCodePopup();
+
+	UFUNCTION()
+	void OpenAuricCellsOverlay();
+
+	UFUNCTION()
+	void OnStopSubPresenterAsyncOperation(USubPresenter* subPresenter);
+
+	UFUNCTION()
+	void OnStartSubPresenterAsyncOperation(USubPresenter* subPresenter);
+
+	UFUNCTION()
+	void OnMoveToCharactersPageRequested(int32 characterIndex);
 
 	UFUNCTION()
 	void OnMenuTabSelected(EStoreMenuState menuState, bool alreadySelected);

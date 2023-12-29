@@ -4,7 +4,7 @@
 #include "UObject/NoExportTypes.h"
 #include "BlinkParams.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FBlinkParams
 {
 	GENERATED_BODY()

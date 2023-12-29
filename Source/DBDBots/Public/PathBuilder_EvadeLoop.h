@@ -75,10 +75,25 @@ public:
 	FAITunableParameter MinSafetyRatingAgainstRangedHostileStimulus;
 
 	UPROPERTY(EditDefaultsOnly)
+	FAITunableParameter ExtraMinSafetyRatingAgainstFastVaultHostileStimulus;
+
+	UPROPERTY(EditDefaultsOnly)
 	float SidekickToLoopInvalidateDistance;
 
 	UPROPERTY(EditDefaultsOnly)
 	float TrapToLoopInvalidateDistance;
+
+	UPROPERTY(EditInstanceOnly)
+	float EvadeInteractableHeightAmplifierActivationHeight;
+
+	UPROPERTY(EditInstanceOnly)
+	float EvadeInteractableHeightAmplifier;
+
+	UPROPERTY(EditInstanceOnly)
+	float QuerierReachFallEndBeforeChaserBufferTime;
+
+	UPROPERTY(EditInstanceOnly)
+	float ChaserReachFallStartTimeBeforeQuerierFall;
 
 private:
 	UPROPERTY(Transient)

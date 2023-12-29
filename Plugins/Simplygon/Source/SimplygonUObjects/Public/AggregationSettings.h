@@ -12,15 +12,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	uint8 MergeGeometries : 1;
 
-	UPROPERTY()
-	int32 ProcessSelectionSetID;
-
-	UPROPERTY()
-	FString ProcessSelectionSetName;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	uint8 KeepUnprocessedSceneMeshes : 1;
-
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	uint8 EnableGeometryCulling : 1;
 
@@ -32,6 +23,15 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int32 SubdivisionTileSize;
+
+	UPROPERTY()
+	int32 ProcessSelectionSetID;
+
+	UPROPERTY()
+	FString ProcessSelectionSetName;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	uint8 KeepUnprocessedSceneMeshes : 1;
 
 public:
 	SIMPLYGONUOBJECTS_API FAggregationSettings();

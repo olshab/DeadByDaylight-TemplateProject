@@ -10,7 +10,7 @@ class UChargeableComponent;
 class ACamperPlayer;
 class UK29SurvivorCarriableComponent;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FK29SurvivorStatus
 {
 	GENERATED_BODY()

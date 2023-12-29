@@ -1,14 +1,16 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "EStoreCharactersMenuState.h"
 #include "StoreSubPresenter.h"
 #include "Templates/SubclassOf.h"
 #include "ECustomizationCategory.h"
+#include "StoreCategoryViewData.h"
+#include "StoreCharactersFiltersData.h"
 #include "StoreCharactersSubPresenter.generated.h"
 
 class UUserWidget;
 class UStoreCharacterItemViewData;
+class UStoreCustomizationItemViewData;
 
 UCLASS(BlueprintType)
 class DBDUIPRESENTERS_API UStoreCharactersSubPresenter : public UStoreSubPresenter
@@ -32,21 +34,45 @@ private:
 	UPROPERTY(Transient)
 	UStoreCharacterItemViewData* _selectedCharacter;
 
-private:
-	UFUNCTION()
-	void OnMenuTabSelected(EStoreCharactersMenuState menuState, bool alreadySelected);
+	UPROPERTY(Transient)
+	TArray<UStoreCustomizationItemViewData*> _availableCustomizations;
 
+	UPROPERTY(Transient)
+	TArray<UStoreCustomizationItemViewData*> _filteredCustomizations;
+
+	UPROPERTY(Transient)
+	TArray<FStoreCategoryViewData> _availableCategories;
+
+	UPROPERTY(Transient)
+	FStoreCharactersFiltersData _charactersFilterData;
+
+	UPROPERTY(Transient)
+	FStoreCharactersFiltersData _customizationsFilterData;
+
+private:
 	UFUNCTION()
 	void OnDisplayStandPawnLoaded(int32 characterIndex);
 
 	UFUNCTION()
-	void OnCustomizationSelected(int32 customizationIndex);
+	void OnCustomizationsFiltersChanged(FStoreCharactersFiltersData customizationsFilterData);
 
 	UFUNCTION()
-	void OnCustomizationCategorySelected(ECustomizationCategory category);
+	void OnCustomizationSelected(FName customizationId, bool isSelected);
+
+	UFUNCTION()
+	void OnCustomizationsClearFiltersClicked();
+
+	UFUNCTION()
+	void OnCharactersFiltersChanged(FStoreCharactersFiltersData charactersFilterData);
 
 	UFUNCTION()
 	void OnCharacterSelected(int32 characterIndex);
+
+	UFUNCTION()
+	void OnCharactersClearFiltersClicked();
+
+	UFUNCTION()
+	void OnCategorySelected(ECustomizationCategory category);
 
 public:
 	UStoreCharactersSubPresenter();

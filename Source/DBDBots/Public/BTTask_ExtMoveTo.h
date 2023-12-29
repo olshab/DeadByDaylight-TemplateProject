@@ -86,6 +86,9 @@ public:
 	float PathReachedPointRadius;
 
 	UPROPERTY(EditInstanceOnly)
+	float NearPathFilterRadius;
+
+	UPROPERTY(EditInstanceOnly)
 	FName UseContextualAcceptableRadius;
 
 	UPROPERTY(EditInstanceOnly)

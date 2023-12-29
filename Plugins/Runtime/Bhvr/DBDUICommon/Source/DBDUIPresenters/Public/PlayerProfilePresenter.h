@@ -34,6 +34,9 @@ private:
 	void RefreshWallet();
 
 	UFUNCTION()
+	void RefreshPlayerCard();
+
+	UFUNCTION()
 	void OnWalletUpdated(const TArray<FShopWalletUpdate>& walletUpdates);
 
 	UFUNCTION()
@@ -41,9 +44,6 @@ private:
 
 	UFUNCTION()
 	void OnUpdatePlayerProfileCurrencyFilter(const uint8 currencyFilter);
-
-	UFUNCTION()
-	void OnShowImageViewer(bool voiceOverIsPlaying);
 
 	UFUNCTION()
 	void OnResetPlayerProfileFilter();
@@ -55,7 +55,7 @@ private:
 	void OnPlayerProfileCurrencyClicked(ECurrencyType currencyType);
 
 	UFUNCTION()
-	void OnHideImageViewer();
+	void OnPlayerProfileClicked();
 
 	UFUNCTION()
 	void OnCurrentSpecialEventChanged(const FCombinedSpecialEventData& previousSpecialEvent, ESpecialEventStatus previousSpecialEventStatus, const FCombinedSpecialEventData& currentSpecialEvent, ESpecialEventStatus currentSpecialEventStatus);

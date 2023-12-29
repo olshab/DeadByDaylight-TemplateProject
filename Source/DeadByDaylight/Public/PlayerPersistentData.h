@@ -32,6 +32,13 @@ public:
 	UPROPERTY()
 	EProviderFlag PlayerProvider;
 
+private:
+	UPROPERTY(Transient)
+	FString _equippedBanner;
+
+	UPROPERTY(Transient)
+	FString _equippedBadge;
+
 public:
 	DEADBYDAYLIGHT_API FPlayerPersistentData();
 };

@@ -35,7 +35,7 @@ private:
 	UPROPERTY(Transient)
 	FPlayerStatusEffectSpawnerHelper _effectSpawner;
 
-	UPROPERTY(EditDefaultsOnly, Replicated, Export)
+	UPROPERTY(EditDefaultsOnly, Export)
 	UOnryoTeleportTargeterComponent* _televisionTargeter;
 
 	UPROPERTY(Replicated, Transient, Export)

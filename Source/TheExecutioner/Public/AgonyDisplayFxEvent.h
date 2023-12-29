@@ -5,7 +5,7 @@
 #include "EProtagonist.h"
 #include "AgonyDisplayFxEvent.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FAgonyDisplayFxEvent
 {
 	GENERATED_BODY()

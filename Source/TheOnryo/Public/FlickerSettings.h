@@ -5,7 +5,7 @@
 #include "DBDTunableRowHandle.h"
 #include "FlickerSettings.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FFlickerSettings
 {
 	GENERATED_BODY()

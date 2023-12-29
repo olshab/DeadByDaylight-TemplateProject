@@ -6,7 +6,7 @@
 
 class ADBDPlayer;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FPlayerBlockData
 {
 	GENERATED_BODY()
