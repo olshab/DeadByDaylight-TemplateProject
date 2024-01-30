@@ -1,16 +1,18 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "UObject/ScriptInterface.h"
 #include "ProfileMenuCustomizationViewInterface.h"
 #include "CoreTabContentWidget.h"
-#include "EItemSorting.h"
 #include "ECustomizationCategory.h"
 #include "ProfileMenuCustomizationWidget.generated.h"
 
 class UCustomizationItemGridContainer;
 class UCoreImagePreviewAreaWidget;
+class ISearchBarViewInterface;
 class UCoreSortButtonWidget;
 class UCoreInputSwitcherWidget;
+class UCoreSearchBarWidget;
 
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UProfileMenuCustomizationWidget : public UCoreTabContentWidget, public IProfileMenuCustomizationViewInterface
@@ -20,6 +22,9 @@ class DBDUIVIEWSCORE_API UProfileMenuCustomizationWidget : public UCoreTabConten
 protected:
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
 	UCoreSortButtonWidget* SortButton;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 _sortingOptions;
 
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
 	UCustomizationItemGridContainer* CustomizationGrid;
@@ -39,12 +44,16 @@ protected:
 	UPROPERTY(BlueprintReadOnly)
 	ECustomizationCategory _customizationCategory;
 
+private:
+	UPROPERTY()
+	TScriptInterface<ISearchBarViewInterface> _searchBar;
+
+	UPROPERTY(Export)
+	UCoreSearchBarWidget* SearchBar;
+
 protected:
 	UFUNCTION()
 	void OnEquipButtonClicked();
-
-	UFUNCTION()
-	void OnCustomizationSortingChanged(const EItemSorting itemSorting);
 
 	UFUNCTION()
 	void OnCustomizationGridItemClicked(const int32 selectedIndex);

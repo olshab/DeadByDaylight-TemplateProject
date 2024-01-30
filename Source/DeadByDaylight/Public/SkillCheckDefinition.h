@@ -40,6 +40,9 @@ public:
 	bool IsJittering;
 
 	UPROPERTY(Transient)
+	bool IsOffCenter;
+
+	UPROPERTY(Transient)
 	bool IsSuccessZoneMirrorred;
 
 	UPROPERTY(Transient)

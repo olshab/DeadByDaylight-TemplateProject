@@ -11,6 +11,7 @@
 #include "SavedStatsData.h"
 #include "PlayerSavedProfileCumulativeData.h"
 #include "CharacterCustomizationPresetsList.h"
+#include "LoadoutPresetsDataForGameType.h"
 #include "CharacterSavedProfileData.h"
 #include "SpecialEventSavedData.h"
 #include "ReleaseSavedData.h"
@@ -96,6 +97,9 @@ public:
 
 	UPROPERTY()
 	TArray<FCharacterLoadoutPresetsList> CharacterLoadoutPresets;
+
+	UPROPERTY()
+	TMap<FString, FLoadoutPresetsDataForGameType> CharacterLoadoutPresetsPerGameType;
 
 private:
 	UPROPERTY()

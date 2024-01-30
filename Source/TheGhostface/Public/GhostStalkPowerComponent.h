@@ -4,11 +4,13 @@
 #include "DBDTunableRowHandle.h"
 #include "Components/ActorComponent.h"
 #include "TunableStat.h"
-#include "ELeanState.h"
 #include "UObject/SoftObjectPtr.h"
+#include "Templates/SubclassOf.h"
+#include "ELeanState.h"
 #include "GhostStalkPowerComponent.generated.h"
 
 class UStalkerComponent;
+class UStatusEffect;
 class UGhostStalkedComponent;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
@@ -28,6 +30,9 @@ private:
 
 	UPROPERTY(EditAnywhere)
 	bool _debugMode;
+
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UStatusEffect> _ghostStalkSpeedStatusEffectClass;
 
 	UPROPERTY(EditDefaultsOnly)
 	FDBDTunableRowHandle _maxStalkPointsPerSurvivor;

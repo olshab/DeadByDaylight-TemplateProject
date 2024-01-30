@@ -2,14 +2,13 @@
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "NoiseIndicatorEmitterInterface.h"
+#include "AnimationMontageDescriptor.h"
 #include "Interactable.h"
 #include "AIInteractableTargetInterface.h"
 #include "AIPointOfInterestTargetInterface.h"
 #include "CharmAttachable.h"
 #include "DBDTunableRowHandle.h"
 #include "GameplayTagContainer.h"
-#include "AnimationMontageDescriptor.h"
 #include "MeatHook.generated.h"
 
 class UMontagePlayer;
@@ -29,13 +28,12 @@ class UChargeableInteractionDefinition;
 class UMapActorComponent;
 class ACharacter;
 class UAkComponent;
-class USphereComponent;
 class UBoxComponent;
 class UPrimitiveComponent;
 class UHookableComponent;
 
 UCLASS()
-class DEADBYDAYLIGHT_API AMeatHook : public AInteractable, public IAIInteractableTargetInterface, public IAIPointOfInterestTargetInterface, public ICharmAttachable, public INoiseIndicatorEmitterInterface
+class DEADBYDAYLIGHT_API AMeatHook : public AInteractable, public IAIInteractableTargetInterface, public IAIPointOfInterestTargetInterface, public ICharmAttachable
 {
 	GENERATED_BODY()
 
@@ -134,9 +132,6 @@ private:
 
 	UPROPERTY(BlueprintReadWrite, Transient, meta=(AllowPrivateAccess=true))
 	AEntity* _entity;
-
-	UPROPERTY(Transient)
-	bool _preventDrainProgression;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
 	UAIPerceptionStimuliSourceComponent* _perceptionStimuliComponent;
@@ -291,9 +286,6 @@ public:
 	UFUNCTION(BlueprintPure, BlueprintNativeEvent)
 	UInteractor* GetMainInteractor() const;
 
-	UFUNCTION(BlueprintPure, BlueprintImplementableEvent)
-	USphereComponent* GetKickSlasherDetectionZone() const;
-
 	UFUNCTION(BlueprintPure)
 	bool GetIsSacrificed() const;
 
@@ -337,6 +329,18 @@ public:
 
 	UFUNCTION(BlueprintPure, BlueprintNativeEvent)
 	USceneComponent* GetCamperHookedSnapTransform() const;
+
+	UFUNCTION(BlueprintPure)
+	float GetAntiCampMaxXYCurveDistanceTime() const;
+
+	UFUNCTION(BlueprintPure)
+	float GetAntiCampMaxUpperZCurveDistanceTime() const;
+
+	UFUNCTION(BlueprintPure)
+	float GetAntiCampMaxLowerZCurveDistanceTime() const;
+
+	UFUNCTION(BlueprintPure)
+	float GetAntiCampGracePeriod() const;
 
 	UFUNCTION(BlueprintImplementableEvent)
 	UChargeableInteractionDefinition* GetAntiCampEscapeHookInteraction() const;

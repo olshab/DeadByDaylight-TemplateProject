@@ -7,11 +7,13 @@
 #include "TagStateBool.h"
 #include "SurvivorStatusInterface.h"
 #include "TormentAttackDamageCooldownInterface.h"
-#include "GameEventData.h"
+#include "Templates/SubclassOf.h"
 #include "AgonyDisplayFxEvent.h"
+#include "GameEventData.h"
 #include "AgonyComponent.generated.h"
 
 class ADBDPlayer;
+class UStatusEffect;
 
 UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class UAgonyComponent : public UActorComponent, public ISurvivorStatusInterface, public ITormentAttackDamageCooldownInterface
@@ -30,6 +32,9 @@ private:
 
 	UPROPERTY(Replicated)
 	bool _inAttackTrailDamageCooldown;
+
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UStatusEffect> _inTormentTrailKillerInstinctStatusEffectClass;
 
 	UPROPERTY(EditDefaultsOnly)
 	FDBDTunableRowHandle _attackTrailDamageCooldownTime;

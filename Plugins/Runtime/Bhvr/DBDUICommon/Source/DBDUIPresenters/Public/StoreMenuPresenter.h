@@ -45,7 +45,10 @@ private:
 	UStoreSpecialPacksSubPresenter* _storeSpecialPacksSubPresenter;
 
 	UPROPERTY(Transient)
-	UStoreCharactersSubPresenter* _storeCharactersSubPresenter;
+	UStoreCharactersSubPresenter* _storeKillersSubPresenter;
+
+	UPROPERTY(Transient)
+	UStoreCharactersSubPresenter* _storeSurvivorsSubPresenter;
 
 	UPROPERTY(Transient)
 	UStoreSubPresenter* _activeSubPresenter;
@@ -67,10 +70,7 @@ private:
 	void OnStartSubPresenterAsyncOperation(USubPresenter* subPresenter);
 
 	UFUNCTION()
-	void OnMoveToCharactersPageRequested(int32 characterIndex);
-
-	UFUNCTION()
-	void OnMenuTabSelected(EStoreMenuState menuState, bool alreadySelected);
+	void OnMenuTabSelected(EStoreMenuState menuState);
 
 	UFUNCTION()
 	void OnBackAction();

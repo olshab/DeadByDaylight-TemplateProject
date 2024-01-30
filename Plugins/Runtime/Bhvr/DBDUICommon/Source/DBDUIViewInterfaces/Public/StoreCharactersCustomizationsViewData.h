@@ -20,7 +20,7 @@ public:
 	TArray<FName> SelectedCustomizationIds;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
-	int32 MaxSelectedCustomizations;
+	int32 SelectedSlotIndex;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
 	TArray<FStoreCategoryViewData> Categories;

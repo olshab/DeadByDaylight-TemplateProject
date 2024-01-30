@@ -23,7 +23,7 @@ class UInteractionDefinition;
 class ACamperPlayer;
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
-class UK29RushChargeableInteraction : public UChargeableInteractionDefinition
+class THEK29_API UK29RushChargeableInteraction : public UChargeableInteractionDefinition
 {
 	GENERATED_BODY()
 

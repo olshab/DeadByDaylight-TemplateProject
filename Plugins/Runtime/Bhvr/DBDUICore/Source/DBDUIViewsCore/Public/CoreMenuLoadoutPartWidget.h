@@ -12,7 +12,6 @@ class UMenuLoadoutPartViewData;
 class UScaleBox;
 class UDBDImage;
 class UCoreOnHoverBorderWidget;
-class UGridPanel;
 class UTextBlock;
 class UTexture2D;
 
@@ -54,7 +53,7 @@ protected:
 	UDBDImage* ShadowOffset;
 
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UGridPanel* Selected;
+	UDBDImage* Selected;
 
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
 	UScaleBox* LayoutScale;

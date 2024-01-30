@@ -3,12 +3,13 @@
 #include "BuiltLevelData.h"
 #include "EEndGameReason.h"
 #include "UObject/SoftObjectPtr.h"
-#include "SpecialEventGameplaySpawnerComponent.h"
 #include "EGameState.h"
+#include "SpecialEventGameplaySpawnerComponent.h"
 #include "OnScreenDebugComponent.h"
 #include "SelectedOffering.h"
 #include "InGameAssetPreloaderComponent.h"
 #include "ServerTimeProviderComponent.h"
+#include "MutatorGameplaySpawnerComponent.h"
 #include "CollectableCollection.h"
 #include "OnSlasherSetDelegate.h"
 #include "EndGameStateComponent.h"
@@ -17,6 +18,7 @@
 #include "RenderingFeaturesSequencer.h"
 #include "ScourgeHookManagerComponent.h"
 #include "ActorPairQueryEvaluatorComponent.h"
+#include "HudStateComponent.h"
 #include "CharacterCollection.h"
 
 class AEscapeDoor;
@@ -26,9 +28,9 @@ class APawn;
 class ATotem;
 class ACamperPlayer;
 class AInteractable;
-class ADBDPlayerState;
 class AMeatHook;
 class ADBDPlayerState_Menu;
+class ADBDPlayerState;
 class ASlasherPlayer;
 class ADBDPlayer;
 class UAkAudioBank;
@@ -71,11 +73,6 @@ void ADBDGameState::SetGameLevelEnded(EEndGameReason endGameReason)
 }
 
 void ADBDGameState::SetDisplayMapName(bool display)
-{
-
-}
-
-void ADBDGameState::SetBuiltLevelData(const FBuiltLevelData& builtLevelData)
 {
 
 }
@@ -525,6 +522,11 @@ void ADBDGameState::BroadcastOnSetBuildLevelData()
 
 }
 
+void ADBDGameState::Authority_UnsetLevelReadyToPlay()
+{
+
+}
+
 void ADBDGameState::Authority_SignalEscapeDoorActivated(bool newEscapeDoorActivated)
 {
 
@@ -576,6 +578,11 @@ void ADBDGameState::Authority_SetGameLevelCreated()
 }
 
 void ADBDGameState::Authority_SetEscapeDoorOpened(bool opened)
+{
+
+}
+
+void ADBDGameState::Authority_SetBuiltLevelData(const FBuiltLevelData& builtLevelData)
 {
 
 }
@@ -656,6 +663,7 @@ ADBDGameState::ADBDGameState()
 	this->IntroState = EIntroState::WaitingToStart;
 	this->_specialEventGameplaySpawnerComponent = CreateDefaultSubobject<USpecialEventGameplaySpawnerComponent>(TEXT("SpecialEventSpawnerComponent"));
 	this->_specialBehaviourGameplaySpawnerComponent = CreateDefaultSubobject<USpecialBehaviourGameplaySpawnerComponent>(TEXT("SpecialBehaviourEventSpawnerComponent"));
+	this->_mutatorGameplaySpawnerComponent = CreateDefaultSubobject<UMutatorGameplaySpawnerComponent>(TEXT("MutatorSpawnerComponent"));
 	this->SecondsLeftInLobby = -1;
 	this->Slasher = NULL;
 	this->_renderingSequencer = CreateDefaultSubobject<URenderingFeaturesSequencer>(TEXT("RenderingSequencer"));
@@ -700,6 +708,7 @@ ADBDGameState::ADBDGameState()
 	this->_endGameState = CreateDefaultSubobject<UEndGameStateComponent>(TEXT("EndGameState"));
 	this->_scourgeHookManager = CreateDefaultSubobject<UScourgeHookManagerComponent>(TEXT("ScourgeHookManager"));
 	this->_actorPairQueryEvaluatorComponent = CreateDefaultSubobject<UActorPairQueryEvaluatorComponent>(TEXT("distanceTracker"));
+	this->_hudStateComponent = CreateDefaultSubobject<UHudStateComponent>(TEXT("HudState"));
 	this->_characterCollection = CreateDefaultSubobject<UCharacterCollection>(TEXT("CharacterCollection"));
 	this->_collectableCollection = CreateDefaultSubobject<UCollectableCollection>(TEXT("CollectableCollection"));
 	this->_serverTimeProvider = CreateDefaultSubobject<UServerTimeProviderComponent>(TEXT("ServerTimerProvider"));

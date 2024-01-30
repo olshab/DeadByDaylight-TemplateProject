@@ -65,20 +65,18 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	FTunableStat _tokenChargeRate;
 
+	UPROPERTY(Replicated, Transient)
+	uint8 _consecutiveTokenCount;
+
 private:
 	UFUNCTION(Server, Reliable, WithValidation)
 	void Server_SetWallGrabState(const EWallGrabState newState);
 
-public:
-	UFUNCTION(BlueprintCallable)
-	void ResetDashTokens();
-
-private:
 	UFUNCTION()
 	void OnRep_StateTimer();
 
 	UFUNCTION()
-	void OnRep_DashTokens();
+	void OnRep_DashTokens() const;
 
 	UFUNCTION()
 	void OnLevelReadyToPlay();
@@ -104,9 +102,6 @@ public:
 
 	UFUNCTION(BlueprintPure)
 	float GetLookAngleDegrees() const;
-
-	UFUNCTION(BlueprintPure)
-	uint8 GetDashTokensRemaining() const;
 
 	UFUNCTION(BlueprintPure)
 	UBlightPowerState* GetCurrentPowerState() const;

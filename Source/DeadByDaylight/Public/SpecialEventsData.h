@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "LTEData.h"
 #include "SpecialEventMiscRewards.h"
 #include "SpecialEventMilestoneRewards.h"
 #include "EventPeriod.h"
@@ -16,6 +17,12 @@ struct FSpecialEventsData
 public:
 	UPROPERTY()
 	FString EventId;
+
+	UPROPERTY()
+	FLTEData LteData;
+
+	UPROPERTY(SkipSerialization)
+	bool LteData_IsSet;
 
 	UPROPERTY()
 	TArray<FSpecialEventMiscRewards> MiscRewards;

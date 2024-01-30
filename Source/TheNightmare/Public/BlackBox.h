@@ -3,7 +3,10 @@
 #include "CoreMinimal.h"
 #include "ItemAddon.h"
 #include "DBDTunableRowHandle.h"
+#include "Templates/SubclassOf.h"
 #include "BlackBox.generated.h"
+
+class UStatusEffect;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class UBlackBox : public UItemAddon
@@ -13,6 +16,10 @@ class UBlackBox : public UItemAddon
 protected:
 	UPROPERTY(EditDefaultsOnly)
 	FDBDTunableRowHandle _blockDuration;
+
+private:
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UStatusEffect> _dreamworldSingleGateBlockerStatusEffectClass;
 
 public:
 	UBlackBox();

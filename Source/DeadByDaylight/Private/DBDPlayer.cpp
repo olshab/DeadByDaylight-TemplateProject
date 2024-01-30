@@ -64,7 +64,6 @@ class APawn;
 class AActor;
 class ADBDPlayerController;
 class UPrimitiveComponent;
-class UGameplayModifierContainer;
 class UItemModifier;
 class UItemAddon;
 class AInteractable;
@@ -461,6 +460,11 @@ bool ADBDPlayer::IsHeadHidden() const
 	return false;
 }
 
+bool ADBDPlayer::IsForPreview() const
+{
+	return false;
+}
+
 bool ADBDPlayer::IsExhausted() const
 {
 	return false;
@@ -839,11 +843,6 @@ void ADBDPlayer::Authority_SetDreamworldComponent(UCharacterDreamworldComponent*
 void ADBDPlayer::Authority_RequestStun(EStunType stunType, ADBDPlayer* stunner)
 {
 
-}
-
-UStatusEffect* ADBDPlayer::Authority_ImposeStatusEffect_DEPRECATED(FName statusEffectID, ADBDPlayer* originatingPlayer, float customParam, UGameplayModifierContainer* originatingEffect, bool shouldDisplay, float lifetime)
-{
-	return NULL;
 }
 
 void ADBDPlayer::Authority_HandleScoreEvent(FGameplayTag scoreTypeTag, FScoreEventData scoreEventData)

@@ -27,6 +27,12 @@ private:
 	UFUNCTION()
 	void OnLocallyObservedChanged();
 
+	UFUNCTION()
+	void Local_OnIdleChanged(bool isIdle, float idleStartTime);
+
+	UFUNCTION()
+	void Local_OnCrouchChanged(bool isCrouched);
+
 public:
 	UK31DroneLaserController();
 };

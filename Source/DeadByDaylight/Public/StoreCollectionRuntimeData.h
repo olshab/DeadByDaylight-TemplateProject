@@ -2,7 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "EStoreCollectionFlags.h"
+#include "StoreCollectionMediaData.h"
 #include "StoreCollectionRuntimeData.generated.h"
 
 USTRUCT()
@@ -18,40 +18,52 @@ public:
 	FString InclusionVersion;
 
 	UPROPERTY(Transient)
-	TMap<FString, FString> CollectionTitleByCulture;
+	FDateTime UpdatedDate;
 
 	UPROPERTY(Transient)
-	TMap<FString, FString> CollectionSubtitleByCulture;
+	TMap<FString, FString> CollectionTitle;
 
 	UPROPERTY(Transient)
-	FDateTime ActiveFrom;
+	TMap<FString, FString> CollectionSubtitle;
 
 	UPROPERTY(Transient)
-	FDateTime ActiveTo;
+	FDateTime LimitedAvailabilityStartDate;
+
+	UPROPERTY(Transient, SkipSerialization)
+	bool LimitedAvailabilityStartDate_IsSet;
+
+	UPROPERTY(Transient)
+	bool VisibleBeforeStartDate;
+
+	UPROPERTY(Transient, SkipSerialization)
+	bool VisibleBeforeStartDate_IsSet;
+
+	UPROPERTY(Transient)
+	FDateTime LimitedAvailabilityEndDate;
+
+	UPROPERTY(Transient, SkipSerialization)
+	bool LimitedAvailabilityEndDate_IsSet;
+
+	UPROPERTY(Transient)
+	bool VisibleAfterEndDate;
+
+	UPROPERTY(Transient, SkipSerialization)
+	bool VisibleAfterEndDate_IsSet;
 
 	UPROPERTY(Transient)
 	int32 SortOrder;
 
 	UPROPERTY(Transient)
-	FString HeroImage;
+	FStoreCollectionMediaData HeroImage;
 
 	UPROPERTY(Transient)
-	FString HeroVideo;
+	FStoreCollectionMediaData HeroVideo;
 
 	UPROPERTY(Transient)
-	TArray<FString> AdditionalImages;
+	TArray<FStoreCollectionMediaData> AdditionalImages;
 
 	UPROPERTY(Transient)
-	TArray<FString> ItemIds;
-
-	UPROPERTY(Transient)
-	EStoreCollectionFlags Flags;
-
-	UPROPERTY(Transient)
-	FDateTime SpecialStartDate;
-
-	UPROPERTY(Transient)
-	FDateTime SpecialEndDate;
+	TArray<FString> Items;
 
 public:
 	DEADBYDAYLIGHT_API FStoreCollectionRuntimeData();

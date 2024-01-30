@@ -5,7 +5,7 @@
 #include "DBDTunableRowHandle.h"
 #include "ShapePounceAttackOpenSubstate.generated.h"
 
-UCLASS()
+UCLASS(BlueprintType)
 class THESHAPE_API UShapePounceAttackOpenSubstate : public UPounceAttackOpenSubstate
 {
 	GENERATED_BODY()
@@ -13,6 +13,10 @@ class THESHAPE_API UShapePounceAttackOpenSubstate : public UPounceAttackOpenSubs
 private:
 	UPROPERTY(EditDefaultsOnly)
 	TArray<FDBDTunableRowHandle> _tierDurations;
+
+public:
+	UFUNCTION(BlueprintPure)
+	float GetShapePounceAttackOpenDuration() const;
 
 public:
 	UShapePounceAttackOpenSubstate();

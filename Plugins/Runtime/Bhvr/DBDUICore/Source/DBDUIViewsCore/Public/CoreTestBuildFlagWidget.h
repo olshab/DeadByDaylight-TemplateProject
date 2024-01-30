@@ -2,10 +2,12 @@
 
 #include "CoreMinimal.h"
 #include "TestBuildFlagViewInterface.h"
+#include "ETestBuildFlagPosition.h"
 #include "CoreBaseHudWidget.h"
 #include "CoreTestBuildFlagWidget.generated.h"
 
 class UGridPanel;
+class UCanvasPanel;
 class UTextBlock;
 
 UCLASS(EditInlineNew)
@@ -15,13 +17,20 @@ class DBDUIVIEWSCORE_API UCoreTestBuildFlagWidget : public UCoreBaseHudWidget, p
 
 protected:
 	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
-	UGridPanel* HudTestFlagContainer;
+	UCanvasPanel* ContainerCanvasPanel;
 
 	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
-	UTextBlock* HudTopLineTextfield;
+	UGridPanel* TestFlagContainer;
 
 	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
-	UTextBlock* HudBottomLineTextfield;
+	UTextBlock* TopLineTextfield;
+
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UTextBlock* BottomLineTextfield;
+
+protected:
+	UFUNCTION(BlueprintImplementableEvent)
+	void UpdateTestFlagPosition(ETestBuildFlagPosition testBuildFlagPosition);
 
 public:
 	UCoreTestBuildFlagWidget();

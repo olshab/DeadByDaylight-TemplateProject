@@ -82,9 +82,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool ShowKillerPowerDebugInfo;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	bool HasDamagedGeneratorSinceHook;
-
 	UPROPERTY(BlueprintAssignable)
 	FOnStalkModeChangedEvent OnStalkModeChangedEvent;
 
@@ -225,6 +222,9 @@ private:
 	UPROPERTY(Transient, Export)
 	USlasherStunnableComponent* _slasherStunnableComponent;
 
+	UPROPERTY(Transient)
+	bool _forceThirdPersonAnimations;
+
 public:
 	UFUNCTION(BlueprintPure)
 	bool WasRecentlyCloaked() const;
@@ -261,7 +261,7 @@ protected:
 
 public:
 	UFUNCTION(BlueprintCallable)
-	void SetChainsawSprinting(bool chainsawSprinting);
+	void SetForceThirdPersonAnimations(bool forceThirdPerson);
 
 	UFUNCTION(BlueprintCallable)
 	void SetCarriedCamper(ACamperPlayer* camper);
@@ -386,9 +386,6 @@ public:
 	bool IsCloaking() const;
 
 	UFUNCTION(BlueprintPure)
-	bool IsChainsawSprinting() const;
-
-	UFUNCTION(BlueprintPure)
 	bool IsCarrying() const;
 
 	UFUNCTION(BlueprintPure)
@@ -438,6 +435,9 @@ public:
 
 	UFUNCTION(BlueprintNativeEvent)
 	EKillerCarryAnimWeight GetKillerCarryAnimWeight() const;
+
+	UFUNCTION(BlueprintPure)
+	bool GetIsForceThirdPersonAnimations() const;
 
 	UFUNCTION(BlueprintPure)
 	bool GetIsAttacking() const;
@@ -527,18 +527,6 @@ public:
 
 	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly)
 	void Authority_AllowKilling(int32 numKills);
-
-	UFUNCTION(BlueprintCallable)
-	void AttackInputReleased();
-
-	UFUNCTION(BlueprintCallable)
-	void AttackInputPressed();
-
-	UFUNCTION(BlueprintCallable)
-	void ActionKillerReleased();
-
-	UFUNCTION(BlueprintCallable)
-	void ActionKillerPressed();
 
 public:
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

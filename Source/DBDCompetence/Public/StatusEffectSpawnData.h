@@ -15,9 +15,6 @@ struct FStatusEffectSpawnData
 
 public:
 	UPROPERTY(EditDefaultsOnly)
-	FString DEPRECATED_EffectId;
-
-	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UStatusEffect> EffectClass;
 
 	UPROPERTY(EditDefaultsOnly)

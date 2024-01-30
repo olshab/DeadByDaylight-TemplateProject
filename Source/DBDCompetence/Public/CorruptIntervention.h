@@ -30,6 +30,9 @@ private:
 	UFUNCTION()
 	void OnRep_BlockedGenerators();
 
+	UFUNCTION(NetMulticast, Reliable)
+	void Multicast_DispatchBlockedEvent();
+
 	UFUNCTION()
 	void LevelReadyToBlockedGenerators();
 

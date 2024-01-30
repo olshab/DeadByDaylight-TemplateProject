@@ -12,6 +12,7 @@ class UCoreKeyListenerInputPromptWidget;
 class UCoreTabContainerWidget;
 class UCoreInputSwitcherWidget;
 class UCoreSelectableButtonWidget;
+class UCoreFooterInputSwitcherWidget;
 
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCoreProfileMenuWidget : public UCoreBaseUserWidget, public IProfileMenuViewInterface
@@ -24,6 +25,9 @@ public:
 
 	UPROPERTY(BlueprintReadWrite, Export)
 	UCoreInputSwitcherWidget* BackInputSwitcher;
+
+	UPROPERTY(BlueprintReadWrite, Export)
+	UCoreFooterInputSwitcherWidget* SettingsInputSwitcher;
 
 	UPROPERTY(BlueprintReadOnly, Export)
 	UCoreKeyListenerInputPromptWidget* ScrollPrompt;

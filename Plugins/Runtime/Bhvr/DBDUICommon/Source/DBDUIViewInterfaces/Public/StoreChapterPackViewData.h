@@ -2,13 +2,12 @@
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "PriceTagViewData.h"
 #include "UObject/SoftObjectPtr.h"
 #include "StoreChapterPackViewData.generated.h"
 
 class UTexture2D;
-class UStoreCustomizationItemViewData;
 class UStoreCharacterItemViewData;
+class UStoreCustomizationItemViewData;
 
 UCLASS(BlueprintType)
 class DBDUIVIEWINTERFACES_API UStoreChapterPackViewData : public UObject
@@ -23,10 +22,10 @@ public:
 	FText DisplayTitle;
 
 	UPROPERTY(BlueprintReadOnly, Transient)
-	TSoftObjectPtr<UTexture2D> PackImage;
+	FString HeritagePackId;
 
-	UPROPERTY(BlueprintReadWrite, Transient)
-	FPriceTagViewData PriceTagData;
+	UPROPERTY(BlueprintReadOnly, Transient)
+	TSoftObjectPtr<UTexture2D> PackImage;
 
 	UPROPERTY(BlueprintReadWrite, Transient)
 	TArray<UStoreCharacterItemViewData*> CharactersData;
@@ -42,6 +41,9 @@ public:
 
 	UPROPERTY(BlueprintReadOnly, Transient)
 	bool IsOwned;
+
+	UPROPERTY(BlueprintReadOnly, Transient)
+	bool IsIndividuallyAvailable;
 
 public:
 	UStoreChapterPackViewData();

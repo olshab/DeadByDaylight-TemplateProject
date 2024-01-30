@@ -3,10 +3,12 @@
 #include "CoreMinimal.h"
 #include "GameplayTagContainer.h"
 #include "HexPerk.h"
+#include "Templates/SubclassOf.h"
 #include "GameEventData.h"
 #include "HexUndying.generated.h"
 
 class ACamperPlayer;
+class UStatusEffect;
 class UGameplayModifierContainer;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
@@ -15,6 +17,9 @@ class UHexUndying : public UHexPerk
 	GENERATED_BODY()
 
 private:
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UStatusEffect> _revealSurvivorEffectClass;
+
 	UPROPERTY(EditDefaultsOnly)
 	float _revealAuraDistanceFromTotem;
 

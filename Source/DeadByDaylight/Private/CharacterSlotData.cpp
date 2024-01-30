@@ -25,6 +25,7 @@ FCharacterSlotData::FCharacterSlotData()
 	this->IsDlcLockedKiller = false;
 	this->EventInfo = FSpecialEventUIInfo{};
 	this->IsEnabled = false;
+	this->DisabledItemOption = EDisabledItemOption::Available;
 	this->HasNonSelectedPerks = false;
 	this->FreeTicketAffectedData = FAtlantaFreeTicketAffectedUIData{};
 	this->PlayerRole = EPlayerRole::VE_None;

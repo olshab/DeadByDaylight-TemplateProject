@@ -15,15 +15,6 @@ public:
 	float MinGeneratorRepairPercentToSetTrap;
 
 	UPROPERTY(EditAnywhere)
-	float CheckKillerDistanceInterval;
-
-	UPROPERTY(EditAnywhere)
-	float MinKillerApproachingSpeed;
-
-	UPROPERTY(EditAnywhere)
-	int32 MinKillerApproachingFastStreak;
-
-	UPROPERTY(EditAnywhere)
 	EAITerrorLevel TerrorLevelToSetTrap;
 
 	UPROPERTY(EditAnywhere)

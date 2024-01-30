@@ -5,7 +5,7 @@
 #include "LocalizationSearchSubsystem.generated.h"
 
 UCLASS()
-class ULocalizationSearchSubsystem : public UGameInstanceSubsystem
+class DEADBYDAYLIGHT_API ULocalizationSearchSubsystem : public UGameInstanceSubsystem
 {
 	GENERATED_BODY()
 

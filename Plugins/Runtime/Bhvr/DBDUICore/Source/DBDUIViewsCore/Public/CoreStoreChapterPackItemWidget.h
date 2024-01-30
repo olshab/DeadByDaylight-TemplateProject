@@ -1,18 +1,22 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "SpecialPackBuyActionDelegate.h"
-#include "Templates/SubclassOf.h"
+#include "ChapterPackCustomizationClickedDelegate.h"
+#include "ChapterPackRedirectButtonActionDelegate.h"
 #include "CoreSelectableButtonWidget.h"
+#include "ChapterPackBuyButtonActionDelegate.h"
+#include "ChapterPackCharacterClickedDelegate.h"
+#include "Templates/SubclassOf.h"
 #include "CoreStoreChapterPackItemWidget.generated.h"
 
+class UStoreChapterPackViewData;
+class UCoreKeyListenerButtonWidget;
 class UCoreStoreCustomizationItemWidget;
 class UDBDTextBlock;
 class UCorePreConstructableList;
 class UHorizontalBox;
 class UCorePremiumCurrencyButtonWidget;
 class UCoreStoreCharacterItemWidget;
-class UStoreChapterPackViewData;
 class UCoreButtonWidget;
 
 UCLASS(EditInlineNew)
@@ -22,7 +26,16 @@ class DBDUIVIEWSCORE_API UCoreStoreChapterPackItemWidget : public UCoreSelectabl
 
 public:
 	UPROPERTY()
-	FSpecialPackBuyActionDelegate BuyPremiumActionDelegate;
+	FChapterPackBuyButtonActionDelegate BuyPremiumActionDelegate;
+
+	UPROPERTY()
+	FChapterPackRedirectButtonActionDelegate RedirectActionDelegate;
+
+	UPROPERTY()
+	FChapterPackCharacterClickedDelegate CharacterClickedDelegate;
+
+	UPROPERTY()
+	FChapterPackCustomizationClickedDelegate CustomizationClickedDelegate;
 
 protected:
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
@@ -36,6 +49,9 @@ protected:
 
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
 	UCorePremiumCurrencyButtonWidget* PremiumBuyButton;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UCoreKeyListenerButtonWidget* RedirectButton;
 
 	UPROPERTY(BlueprintReadWrite, Transient)
 	bool _isExpanded;
@@ -72,7 +88,16 @@ public:
 
 protected:
 	UFUNCTION()
+	void OnRedirectButtonClicked(UCoreButtonWidget* button);
+
+	UFUNCTION()
 	void OnPremiumBuyButtonClicked(UCoreButtonWidget* button);
+
+	UFUNCTION()
+	void OnCustomizationClicked(UCoreButtonWidget* button);
+
+	UFUNCTION()
+	void OnCharacterClicked(UCoreButtonWidget* button);
 
 public:
 	UCoreStoreChapterPackItemWidget();

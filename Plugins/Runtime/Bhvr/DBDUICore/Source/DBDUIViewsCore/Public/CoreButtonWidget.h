@@ -120,7 +120,7 @@ public:
 	void SetClickable(bool isClickable);
 
 	UFUNCTION(BlueprintCallable)
-	void SetChargeable(bool isChargeable);
+	void SetChargeable(bool isChargeable, UCurveFloat* holdingAnimCurve, float duration);
 
 	UFUNCTION(BlueprintCallable)
 	void SetBackground(TSoftObjectPtr<UMaterialInstance> backgroundMaterial);
@@ -172,9 +172,18 @@ protected:
 	void OnClicked();
 
 	UFUNCTION(BlueprintImplementableEvent)
+	void OnChargingTick(float progress);
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnChargingComplete();
+
+	UFUNCTION(BlueprintImplementableEvent)
 	void OnAlignmentChanged(ETextJustify::Type newAlignment);
 
 public:
+	UFUNCTION(BlueprintPure)
+	bool IsPressed() const;
+
 	UFUNCTION(BlueprintPure)
 	bool IsEnabled() const;
 

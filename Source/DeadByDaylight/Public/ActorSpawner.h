@@ -83,10 +83,10 @@ private:
 	UPROPERTY(Transient)
 	TWeakObjectPtr<AActor> _spawnedActorOnAuthority;
 
-	UPROPERTY(Export)
+	UPROPERTY(Transient, Export)
 	UBoxComponent* _minBoundBox;
 
-	UPROPERTY(Export)
+	UPROPERTY(Transient, Export)
 	UBoxComponent* _maxBoundBox;
 
 public:

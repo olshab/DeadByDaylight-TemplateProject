@@ -4,6 +4,7 @@
 #include "BehaviorTree/BehaviorTreeTypes.h"
 #include "BehaviorTree/BTService.h"
 #include "AITunableParameter.h"
+#include "GameplayTagContainer.h"
 #include "AIGoalWeightContainer.h"
 #include "BTService_GoalCoordinator.generated.h"
 
@@ -20,6 +21,9 @@ public:
 
 	UPROPERTY(EditInstanceOnly)
 	FBlackboardKeySelector BBLockedIntoGoal;
+
+	UPROPERTY(EditInstanceOnly)
+	FGameplayTag AISkillFindContext;
 
 private:
 	UPROPERTY(Transient)

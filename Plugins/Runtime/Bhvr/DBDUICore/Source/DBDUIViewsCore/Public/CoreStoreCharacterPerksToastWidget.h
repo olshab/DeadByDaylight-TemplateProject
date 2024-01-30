@@ -1,29 +1,26 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "CoreBaseUserWidget.h"
 #include "EPlayerRole.h"
 #include "Input/Events.h"
-#include "CoreKeyListenerButtonWidget.h"
 #include "CoreStoreCharacterPerksToastWidget.generated.h"
 
-class UWidget;
 class UCoreMenuPowerWidget;
 class UMenuPowerViewData;
+class UWidget;
 class UCoreMenuPerkWidget;
 class UCoreButtonWidget;
 class UCharacterPerkViewData;
 
 UCLASS(EditInlineNew)
-class DBDUIVIEWSCORE_API UCoreStoreCharacterPerksToastWidget : public UCoreKeyListenerButtonWidget
+class DBDUIVIEWSCORE_API UCoreStoreCharacterPerksToastWidget : public UCoreBaseUserWidget
 {
 	GENERATED_BODY()
 
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(BindWidget))
 	UWidget* SafeArea;
-
-	UPROPERTY(BlueprintReadWrite)
-	bool isOpen;
 
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
 	UCoreMenuPowerWidget* CoreKillerPower;
@@ -37,13 +34,15 @@ protected:
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
 	UCoreMenuPerkWidget* CorePerk_3;
 
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UCoreButtonWidget* OpenButton;
+
+	UPROPERTY(BlueprintReadOnly)
+	bool _isOpen;
+
 private:
 	UFUNCTION(BlueprintCallable)
 	void ShowTooltip(UCoreButtonWidget* hoveredSlotWidget);
-
-public:
-	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-	void Show();
 
 protected:
 	UFUNCTION(BlueprintCallable)
@@ -61,22 +60,18 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void SetCharacterData(TArray<UCharacterPerkViewData*> characterUniquePerksViewData, EPlayerRole role);
 
-	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-	void OpenToast();
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	void OpenToast(bool isOpen);
 
 private:
 	UFUNCTION()
 	void OnPlayerClick(const FPointerEvent& pointerEvent);
 
+	UFUNCTION()
+	void OnOpenButtonClick(UCoreButtonWidget* button);
+
 	UFUNCTION(BlueprintCallable)
 	void HideTooltip(UCoreButtonWidget* unhoveredSlotWidget);
-
-public:
-	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-	void Hide();
-
-	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-	void CloseToast();
 
 public:
 	UCoreStoreCharacterPerksToastWidget();

@@ -3,6 +3,7 @@
 #include "PlayerFloatTuple.h"
 #include "Net/UnrealNetwork.h"
 #include "Perception/AIPerceptionStimuliSourceComponent.h"
+#include "DischargeUntilThresholdIsReachedComponent.h"
 
 class UObject;
 class ADBDPlayer;
@@ -13,6 +14,11 @@ class AActor;
 class UInteractionDefinition;
 
 void AGenerator::TriggerSkillCheckFailureLoudNoise(ADBDPlayer* instigatingPlayer)
+{
+
+}
+
+void AGenerator::StopDischarge()
 {
 
 }
@@ -212,11 +218,6 @@ TArray<ADBDPlayer*> AGenerator::Authority_GetRepairingCampers() const
 	return TArray<ADBDPlayer*>();
 }
 
-void AGenerator::Authority_Damage(ADBDPlayer* damagedBy, const float immediateRegressionPercent, bool ignoreBlocked)
-{
-
-}
-
 void AGenerator::Authority_CancelRepairInteractions()
 {
 
@@ -261,6 +262,7 @@ AGenerator::AGenerator()
 	this->FireLevelScoreEventOnFix = false;
 	this->_activatedTopLightsTransformMap = TMap<FName, FTransform>();
 	this->_perceptionStimuliComponent = CreateDefaultSubobject<UAIPerceptionStimuliSourceComponent>(TEXT("AIPerceptionStimuliSourceComponent"));
+	this->_regressChargeUntilThresholdIsReached = CreateDefaultSubobject<UDischargeUntilThresholdIsReachedComponent>(TEXT("RegressChargeUntilThresholdIsReached"));
 	this->_isBlocked = false;
 	this->_isBlockedFromCharging = false;
 	this->_blockingSources = TSet<UObject*>();

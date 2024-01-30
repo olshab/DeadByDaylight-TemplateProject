@@ -138,6 +138,33 @@ public:
 	UPROPERTY(EditInstanceOnly)
 	FAITunableParameter ChasedScoreKillerChaseTarget;
 
+	UPROPERTY(EditInstanceOnly)
+	FAITunableParameter PressureScoreDistanceWhenUnknownLocation;
+
+	UPROPERTY(EditInstanceOnly)
+	FAITunableParameter PressureScorePredictedTargetMultiplier;
+
+	UPROPERTY(EditInstanceOnly)
+	FAITunableParameter PressureScoreKillerMaxDirectionAngle;
+
+	UPROPERTY(EditInstanceOnly)
+	FAITunableParameter PressureScoreKillerDirectionMaxMultiplier;
+
+	UPROPERTY(EditInstanceOnly)
+	FAITunableParameter PressureScoreSurvivorVisibilityTime;
+
+	UPROPERTY(EditInstanceOnly)
+	FAITunableParameter PressureScoreMaxMultiplierWhenSurvivorVisible;
+
+	UPROPERTY(EditInstanceOnly)
+	FAITunableParameter PressureScoreKillerRangedAndDashDistancePenalty;
+
+	UPROPERTY(EditInstanceOnly)
+	FAITunableParameter PressureScoreChaseTargetMultiplier;
+
+	UPROPERTY(EditInstanceOnly)
+	FAITunableParameter PressureScoreMaxScore;
+
 public:
 	UBTService_StateMonitor_Camper();
 };

@@ -28,16 +28,18 @@ class ASlasherPlayer;
 class ADBDPlayer;
 class UDBDDangerPredictionComponent;
 class UOnScreenDebugComponent;
-class UInGameAssetPreloaderComponent;
 class ADBDPlayerState_Menu;
+class UInGameAssetPreloaderComponent;
 class UServerTimeProviderComponent;
+class AClipManager;
+class UMutatorGameplaySpawnerComponent;
 class USpecialEventGameplaySpawnerComponent;
 class USpecialBehaviourGameplaySpawnerComponent;
 class AMeatHook;
 class URenderingFeaturesSequencer;
-class AClipManager;
 class AFadeManager;
 class ASearchable;
+class UHudStateComponent;
 class AGenerator;
 class ACamperPlayer;
 class ATotem;
@@ -89,6 +91,9 @@ public:
 
 	UPROPERTY(BlueprintReadWrite, Transient, Export)
 	USpecialBehaviourGameplaySpawnerComponent* _specialBehaviourGameplaySpawnerComponent;
+
+	UPROPERTY(BlueprintReadWrite, Transient, Export)
+	UMutatorGameplaySpawnerComponent* _mutatorGameplaySpawnerComponent;
 
 	UPROPERTY(BlueprintAssignable)
 	FAllPlayerLoadedEvent AuthorityOnAllPlayerLoaded;
@@ -257,6 +262,9 @@ private:
 	UPROPERTY(Export)
 	UActorPairQueryEvaluatorComponent* _actorPairQueryEvaluatorComponent;
 
+	UPROPERTY(Transient, Export)
+	UHudStateComponent* _hudStateComponent;
+
 	UPROPERTY(Export)
 	UCharacterCollection* _characterCollection;
 
@@ -323,9 +331,6 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void SetDisplayMapName(bool display);
-
-	UFUNCTION()
-	void SetBuiltLevelData(const FBuiltLevelData& builtLevelData);
 
 	UFUNCTION()
 	void Server_UpdateGameRole();
@@ -599,6 +604,9 @@ public:
 	void BroadcastOnSetBuildLevelData();
 
 	UFUNCTION(BlueprintCallable)
+	void Authority_UnsetLevelReadyToPlay();
+
+	UFUNCTION(BlueprintCallable)
 	void Authority_SignalEscapeDoorActivated(bool newEscapeDoorActivated);
 
 	UFUNCTION()
@@ -630,6 +638,9 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void Authority_SetEscapeDoorOpened(bool opened);
+
+	UFUNCTION()
+	void Authority_SetBuiltLevelData(const FBuiltLevelData& builtLevelData);
 
 	UFUNCTION()
 	void Authority_SetAllPlayerLoaded();

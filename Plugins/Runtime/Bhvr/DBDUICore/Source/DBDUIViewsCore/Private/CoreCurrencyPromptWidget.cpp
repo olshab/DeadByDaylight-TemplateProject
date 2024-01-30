@@ -1,7 +1,8 @@
 #include "CoreCurrencyPromptWidget.h"
 #include "PriceTagViewData.h"
+#include "ECurrencyType.h"
 
-void UCoreCurrencyPromptWidget::SetCurrencyData(const FPriceTagViewData& currencyData) const
+void UCoreCurrencyPromptWidget::SetCurrencyData(const FPriceTagViewData& currencyData)
 {
 
 }
@@ -9,6 +10,11 @@ void UCoreCurrencyPromptWidget::SetCurrencyData(const FPriceTagViewData& currenc
 void UCoreCurrencyPromptWidget::SetBackgroundVisible(const bool showBackground) const
 {
 
+}
+
+ECurrencyType UCoreCurrencyPromptWidget::GetCurrencyType() const
+{
+	return ECurrencyType::None;
 }
 
 UCoreCurrencyPromptWidget::UCoreCurrencyPromptWidget()

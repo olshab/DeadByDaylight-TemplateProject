@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "CoreKeyListenerInputPromptWidget.h"
 #include "PriceTagViewData.h"
+#include "ECurrencyType.h"
 #include "CoreCurrencyPromptWidget.generated.h"
 
 class UCorePriceTagWidget;
@@ -17,11 +18,14 @@ protected:
 	UCorePriceTagWidget* PriceTag;
 
 public:
-	UFUNCTION(BlueprintPure)
-	void SetCurrencyData(const FPriceTagViewData& currencyData) const;
+	UFUNCTION(BlueprintCallable)
+	void SetCurrencyData(const FPriceTagViewData& currencyData);
 
 	UFUNCTION(BlueprintPure=false, BlueprintCallable)
 	void SetBackgroundVisible(const bool showBackground) const;
+
+	UFUNCTION(BlueprintPure)
+	ECurrencyType GetCurrencyType() const;
 
 public:
 	UCoreCurrencyPromptWidget();

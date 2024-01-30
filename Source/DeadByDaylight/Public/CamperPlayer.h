@@ -15,6 +15,7 @@
 #include "OnGuidedStateChanged.h"
 #include "EGender.h"
 #include "Engine/EngineTypes.h"
+#include "Templates/SubclassOf.h"
 #include "EAuthoritativeMovementFlag.h"
 #include "UObject/NoExportTypes.h"
 #include "EGuidedState.h"
@@ -27,6 +28,7 @@ class UStalkedComponent;
 class UInteractionDefinition;
 class UCameraAttachmentComponent;
 class UScreamComponent;
+class UStatusEffect;
 class UCurveFloat;
 class USurviveTimerScoreEventComponent;
 class UCamperStillnessTrackerComponent;
@@ -205,7 +207,7 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Export, meta=(AllowPrivateAccess=true))
 	UCharmSpawnerComponent* _charmSpawnerComponent;
 
-	UPROPERTY(BlueprintReadOnly, Transient, Export, meta=(AllowPrivateAccess=true))
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Transient, Export, meta=(AllowPrivateAccess=true))
 	UHookableComponent* _hookableComponent;
 
 	UPROPERTY(Transient, Export)
@@ -236,9 +238,6 @@ private:
 	UAkComponent* _attenuationAkComponent;
 
 	UPROPERTY(Transient)
-	bool _isSkillCheckFailed;
-
-	UPROPERTY(Transient)
 	bool _isBeingSacrificed;
 
 	UPROPERTY(Transient)
@@ -255,6 +254,9 @@ private:
 
 	UPROPERTY(ReplicatedUsing=OnRep_SprintEffect, Transient, Export)
 	USurvivorHitSprintEffect* _sprintEffect;
+
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UStatusEffect> _sprintOnHitEffectClass;
 
 public:
 	UFUNCTION(BlueprintCallable)
@@ -280,9 +282,6 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCosmetic)
 	void SetPlayerExposedVFX();
-
-	UFUNCTION(BlueprintCallable)
-	void SetIsSkillCheckFailed(bool isSkillCheckFailed);
 
 	UFUNCTION(BlueprintCallable)
 	void SetBeingCarried(bool isBeingCarried, ADBDPlayer* carrier);
@@ -532,9 +531,6 @@ public:
 
 	UFUNCTION(BlueprintPure)
 	bool GetIsWiggleProgressionAllowed() const;
-
-	UFUNCTION(BlueprintCallable)
-	bool GetIsSkillCheckFailed();
 
 	UFUNCTION(BlueprintPure)
 	bool GetIsBeingDissolved() const;

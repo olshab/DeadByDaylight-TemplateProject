@@ -2,5 +2,5 @@
 
 UHoneyLocustThornsAddon::UHoneyLocustThornsAddon()
 {
-
+	this->_mangledStatusEffectClass = NULL;
 }

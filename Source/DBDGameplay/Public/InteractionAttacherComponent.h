@@ -25,7 +25,7 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UInteractionDefinition> _interactionDefinition;
 
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Replicated)
 	EInteractionOwnerType _restriction;
 
 	UPROPERTY(EditDefaultsOnly)
@@ -37,8 +37,11 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	FName _chargeableComponentName;
 
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Replicated)
 	FDBDTunableRowHandle _secondsToCharge;
+
+	UPROPERTY(Replicated, Transient)
+	bool _clientWaitForOwnerInitialization;
 
 private:
 	UFUNCTION()

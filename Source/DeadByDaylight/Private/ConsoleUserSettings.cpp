@@ -10,6 +10,7 @@ FConsoleUserSettings::FConsoleUserSettings()
 	this->LargeText = false;
 	this->BloodwebInteractionBehaviour = false;
 	this->TerrorRadiusVisualFeedback = false;
+	this->FieldOfView = 0;
 	this->Gamma = 0;
 	this->HUDPlayerNamesVisibility = false;
 	this->HUDScoreEventsVisibility = false;

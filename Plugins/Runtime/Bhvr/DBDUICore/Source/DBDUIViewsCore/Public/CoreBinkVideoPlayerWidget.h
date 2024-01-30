@@ -6,11 +6,12 @@
 #include "UObject/NoExportTypes.h"
 #include "CoreBinkVideoPlayerWidget.generated.h"
 
-class UDBDImage;
 class UBinkMediaPlayer;
+class UDBDImage;
 class UScaleBox;
 class UUITweenInstance;
 class UCanvasPanel;
+class UCoreInputSwitcherWidget;
 class USizeBox;
 class UImage;
 
@@ -35,6 +36,9 @@ public:
 	UPROPERTY(BlueprintReadOnly, Export)
 	UImage* VideoBinkImage;
 
+	UPROPERTY(BlueprintReadOnly, Export)
+	UCoreInputSwitcherWidget* SkipInputSwitcher;
+
 private:
 	UPROPERTY(Transient)
 	UBinkMediaPlayer* _binkMediaPlayer;
@@ -46,6 +50,11 @@ public:
 	UFUNCTION()
 	void OnSubtitlesChanged(const TArray<FString>& subtitlesText);
 
+private:
+	UFUNCTION()
+	void OnSkipInputSwitcherTriggered();
+
+public:
 	UFUNCTION()
 	void OnMediaOpened(const FString& openedUrl);
 

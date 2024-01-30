@@ -8,16 +8,12 @@ UStoreCharacterItemViewData::UStoreCharacterItemViewData()
 	this->PlayerRole = EPlayerRole::VE_None;
 	this->Difficulty = ECharacterDifficulty::VE_None;
 	this->KillerPowerId = NAME_None;
+	this->IsEquipped = false;
 	this->IsUnlocked = false;
 	this->UnlockInfo = 0;
 	this->ItemsOwned = 0;
 	this->TotalItems = 0;
 	this->HasNonSelectedPerks = false;
-	this->DlcId = TEXT("");
-	this->DlcTitle = TEXT("");
-	this->PackId = TEXT("");
-	this->PackTitle = TEXT("");
-	this->IsDlcPurchasable = false;
 	this->IsDlcLockedKiller = false;
 	this->IsLegacyRewardPrestigeEnabled = false;
 }

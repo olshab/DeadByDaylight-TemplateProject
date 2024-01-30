@@ -52,6 +52,9 @@ public:
 
 private:
 	UFUNCTION()
+	void OnLevelReadyToPlay();
+
+	UFUNCTION()
 	void OnFirstPersonViewChanged(bool isFirstPerson);
 
 public:

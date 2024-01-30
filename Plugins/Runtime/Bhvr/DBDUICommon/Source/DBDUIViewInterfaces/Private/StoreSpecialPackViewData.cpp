@@ -4,7 +4,6 @@ UStoreSpecialPackViewData::UStoreSpecialPackViewData()
 {
 	this->Id = TEXT("");
 	this->DisplayTitle = TEXT("");
-	this->PackImage = NULL;
 	this->CharactersData = TArray<UStoreCharacterItemViewData*>();
 	this->CustomizationsData = TArray<UStoreCustomizationItemViewData*>();
 	this->SortOrder = 0;

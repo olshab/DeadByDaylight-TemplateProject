@@ -21,6 +21,11 @@ void UCameraHandlerComponent::PlayVFXOnCurrentCamera(UParticleSystemComponent* c
 
 }
 
+void UCameraHandlerComponent::OnLevelReadyToPlay()
+{
+
+}
+
 void UCameraHandlerComponent::OnFirstPersonViewChanged(bool isFirstPerson)
 {
 

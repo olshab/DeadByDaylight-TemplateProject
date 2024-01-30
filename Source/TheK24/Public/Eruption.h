@@ -37,7 +37,7 @@ private:
 
 private:
 	UFUNCTION(NetMulticast, Reliable)
-	void Multicast_TriggerPerk(const TArray<AGenerator*>& explodingGenerators);
+	void Multicast_TriggerPerk(const TArray<AGenerator*>& highlightedGenerators, const TArray<AGenerator*>& explodingGenerators);
 
 	UFUNCTION(NetMulticast, Reliable)
 	void Multicast_HighlightGenerator(AGenerator* generator);

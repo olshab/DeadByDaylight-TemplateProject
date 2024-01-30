@@ -21,6 +21,9 @@ public:
 	UPROPERTY()
 	FString PackagedPath;
 
+	UPROPERTY()
+	FString DownloadStrategy;
+
 public:
 	DEADBYDAYLIGHT_API FS3RemoteContentManifestEntry();
 };

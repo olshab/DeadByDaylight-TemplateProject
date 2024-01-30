@@ -27,7 +27,10 @@ public:
 	TMap<ECurrencyType, uint32> DiscountedCost;
 
 	UPROPERTY(Transient)
-	TMap<ECurrencyType, float> Discount;
+	float Discount;
+
+	UPROPERTY(Transient)
+	bool IsOwned;
 
 	UPROPERTY(Transient)
 	FString Image;

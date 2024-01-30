@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "CoreMemoryBehaviourBase.h"
 #include "CoreMemoryFragmentSpawnData.h"
+#include "ETileSpawnPointType.h"
 #include "CoreMemorySpawnFragmentsOnRandPlayerSpawnBehaviour.generated.h"
 
 UCLASS(EditInlineNew)
@@ -13,6 +14,9 @@ class UCoreMemorySpawnFragmentsOnRandPlayerSpawnBehaviour : public UCoreMemoryBe
 private:
 	UPROPERTY(EditDefaultsOnly)
 	FCoreMemoryFragmentSpawnData _fragmentSpawnData;
+
+	UPROPERTY(EditDefaultsOnly)
+	ETileSpawnPointType _tileSpawnPointType;
 
 public:
 	UCoreMemorySpawnFragmentsOnRandPlayerSpawnBehaviour();

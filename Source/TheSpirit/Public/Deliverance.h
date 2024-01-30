@@ -19,6 +19,9 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UStatusEffect> _selfUnhookAlwaysSucceedEffectClass;
 
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UStatusEffect> _brokenEffectClass;
+
 	UPROPERTY(Transient, Export)
 	UStatusEffect* _selfUnhookAlwaysSucceedEffect;
 

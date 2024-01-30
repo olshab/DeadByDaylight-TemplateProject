@@ -5,7 +5,7 @@
 #include "AuricCellsBundleViewData.h"
 #include "StoreSpecialsViewInterface.generated.h"
 
-class UStoreSpecialsItemViewData;
+class UStoreCustomizationItemViewData;
 
 UINTERFACE(Blueprintable)
 class DBDUIVIEWINTERFACES_API UStoreSpecialsViewInterface : public UInterface
@@ -19,9 +19,12 @@ class DBDUIVIEWINTERFACES_API IStoreSpecialsViewInterface : public IInterface
 
 public:
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-	void SetSpecialsData(const TArray<UStoreSpecialsItemViewData*>& specialsData);
+	void SetSpecialsData(const TArray<UStoreCustomizationItemViewData*>& specialsData);
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void SetAuricCellsSpecialOfferData(const FAuricCellsBundleViewData& auricCellsSpecialOfferData);
+
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+	void HideAuricCellsSpecialOffer();
 
 };

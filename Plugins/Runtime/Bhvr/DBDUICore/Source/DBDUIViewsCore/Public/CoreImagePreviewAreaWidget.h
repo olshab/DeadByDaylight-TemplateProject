@@ -2,12 +2,14 @@
 
 #include "CoreMinimal.h"
 #include "CoreBaseUserWidget.h"
-#include "ECustomizationCategory.h"
 #include "CustomizationItemPreviewAreaViewData.h"
+#include "ECustomizationCategory.h"
 #include "CoreImagePreviewAreaWidget.generated.h"
 
 class UDBDImage;
 class UDBDRichTextBlock;
+class UCorePlayerCardWidget;
+class UStoreCustomizationItemViewData;
 class UCustomizationItemGridContainer;
 
 UCLASS(EditInlineNew)
@@ -18,6 +20,9 @@ class UCoreImagePreviewAreaWidget : public UCoreBaseUserWidget
 protected:
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
 	UDBDImage* PreviewArea;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UCorePlayerCardWidget* AnimatedCardContainer;
 
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
 	UDBDImage* PreviewAreaBG;
@@ -37,6 +42,9 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void SetData(const FCustomizationItemPreviewAreaViewData& viewData);
+
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+	void SetAnimatedPreviewData(const UStoreCustomizationItemViewData* previewItemData);
 
 protected:
 	UFUNCTION()

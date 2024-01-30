@@ -65,6 +65,10 @@ private:
 	UPROPERTY(Transient, Export)
 	UStalkedComponent* _stalkedComponent;
 
+protected:
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnLocallyObservedChanged(ADBDPlayer* player);
+
 private:
 	UFUNCTION()
 	void OnKillerSpottedChanged(ADBDPlayer* spotter, bool spotted);

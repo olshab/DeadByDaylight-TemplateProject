@@ -3,6 +3,8 @@
 FSpecialEventsData::FSpecialEventsData()
 {
 	this->EventId = TEXT("");
+	this->LteData = FLTEData{};
+	this->LteData_IsSet = false;
 	this->MiscRewards = TArray<FSpecialEventMiscRewards>();
 	this->MiscRewards_IsSet = false;
 	this->OwnerRewards = TArray<FRewardResponseItem>();

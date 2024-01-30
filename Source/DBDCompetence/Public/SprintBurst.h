@@ -2,9 +2,11 @@
 
 #include "CoreMinimal.h"
 #include "Perk.h"
+#include "Templates/SubclassOf.h"
 #include "GameplayTagContainer.h"
 #include "SprintBurst.generated.h"
 
+class UStatusEffect;
 class UActivatableExhaustedEffect;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
@@ -20,6 +22,9 @@ protected:
 	float _sprintDuration;
 
 private:
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UStatusEffect> _exhaustedEffectClass;
+
 	UPROPERTY(Transient, Export)
 	UActivatableExhaustedEffect* _exhaustedEffect;
 

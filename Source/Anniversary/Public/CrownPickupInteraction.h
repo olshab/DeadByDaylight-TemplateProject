@@ -17,10 +17,6 @@ protected:
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag _pickupScoreEvent;
 
-private:
-	UPROPERTY(Transient)
-	bool _isInteractionChargeComplete;
-
 public:
 	UCrownPickupInteraction();
 };

@@ -23,12 +23,7 @@ void UStoreMenuPresenter::OnStartSubPresenterAsyncOperation(USubPresenter* subPr
 
 }
 
-void UStoreMenuPresenter::OnMoveToCharactersPageRequested(int32 characterIndex)
-{
-
-}
-
-void UStoreMenuPresenter::OnMenuTabSelected(EStoreMenuState menuState, bool alreadySelected)
+void UStoreMenuPresenter::OnMenuTabSelected(EStoreMenuState menuState)
 {
 
 }
@@ -52,7 +47,8 @@ UStoreMenuPresenter::UStoreMenuPresenter()
 	this->_storeSpecialsSubPresenter = NULL;
 	this->_storeCollectionsSubPresenter = NULL;
 	this->_storeSpecialPacksSubPresenter = NULL;
-	this->_storeCharactersSubPresenter = NULL;
+	this->_storeKillersSubPresenter = NULL;
+	this->_storeSurvivorsSubPresenter = NULL;
 	this->_activeSubPresenter = NULL;
 	this->_shopManager = NULL;
 }

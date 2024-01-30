@@ -17,6 +17,9 @@ public:
 	FString ButtonId;
 
 	UPROPERTY()
+	int32 VideoProgress;
+
+	UPROPERTY()
 	bool WasVideoWatchUntilEnd;
 
 public:

@@ -1,14 +1,15 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "StoreCharactersFilterViewInterface.h"
 #include "CoreBaseUserWidget.h"
+#include "StoreCharactersFilterViewInterface.h"
+#include "ESortingOption.h"
 #include "OnClearFiltersClickedDelegate.h"
 #include "OnStoreFiltersChangedDelegate.h"
-#include "EItemFilterOption.h"
 #include "CoreStoreCharactersFilterWidget.generated.h"
 
 class UCoreButtonWidget;
+class UCoreSortButtonWidget;
 class UPanelWidget;
 class UCoreFilterButtonWidget;
 
@@ -22,10 +23,19 @@ protected:
 	UCoreButtonWidget* ClearFiltersButton;
 
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UCoreSortButtonWidget* SortButton;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
 	UPanelWidget* CheckBoxesContainer;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 _sortingOptions;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	ESortingOption _defaultSortingOption;
+
 	UPROPERTY(BlueprintReadWrite, Transient, Export)
-	TArray<UCoreFilterButtonWidget*> FiltersCheckBoxArray;
+	TArray<UCoreFilterButtonWidget*> _filtersCheckBoxArray;
 
 private:
 	UPROPERTY()
@@ -39,7 +49,7 @@ protected:
 	void ToggleWidgetVisibility();
 
 	UFUNCTION(BlueprintCallable)
-	void OnFilterOptionCheckBoxToggled(bool isToggled, EItemFilterOption itemFilterOption);
+	void OnFilterOptionCheckBoxToggled();
 
 	UFUNCTION(BlueprintCallable)
 	void OnClearFiltersClicked(UCoreButtonWidget* buttonTarget);

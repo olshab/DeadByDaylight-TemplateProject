@@ -1,20 +1,32 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "StoreRedirectionData.h"
 #include "StoreSubPresenter.h"
-#include "UObject/ScriptInterface.h"
+#include "StoreFeaturedCharacterViewData.h"
 #include "StoreFeaturedSubPresenter.generated.h"
 
-class IStoreFeaturedViewInterface;
+class UStoreCustomizationItemViewData;
+class UStoreFeaturedChapterPackViewData;
 
 UCLASS()
 class DBDUIPRESENTERS_API UStoreFeaturedSubPresenter : public UStoreSubPresenter
 {
 	GENERATED_BODY()
 
-protected:
+private:
 	UPROPERTY(Transient)
-	TScriptInterface<IStoreFeaturedViewInterface> _storeFeaturedWidget;
+	TArray<UStoreCustomizationItemViewData*> _itemsViewData;
+
+	UPROPERTY(Transient)
+	TArray<FStoreFeaturedCharacterViewData> _charactersViewData;
+
+	UPROPERTY(Transient)
+	TArray<UStoreFeaturedChapterPackViewData*> _chapterPacksViewData;
+
+private:
+	UFUNCTION()
+	void RequestMoveToCharactersPage(const FStoreRedirectionData& storeRedirectionData);
 
 public:
 	UFUNCTION()

@@ -15,7 +15,7 @@
 #include "HitValidationGameConfig.h"
 #include "AnimBudgeterGameConfig.h"
 #include "JwtGameConfig.h"
-#include "S3LoadingConfig.h"
+#include "HangTimesPerStep.h"
 #include "S3DisconnectionBotReplacementConfig.h"
 #include "S3MirrorsDefaultRetryPolicyConfig.h"
 #include "S3SecurityConfig.h"
@@ -113,7 +113,7 @@ public:
 	FS3MatchConfig Match;
 
 	UPROPERTY()
-	FS3LoadingConfig Loading;
+	TArray<FHangTimesPerStep> HangTimes;
 
 	UPROPERTY()
 	TMap<FString, bool> MatchmakingCrossplayPlatforms;
@@ -150,6 +150,15 @@ public:
 
 	UPROPERTY()
 	bool EnableConsumableQueryFromKraken;
+
+	UPROPERTY()
+	bool EnableLimitRegressionEvents;
+
+	UPROPERTY()
+	bool EnableConsoleSuspendSave;
+
+	UPROPERTY()
+	bool EnableLobbyLeaveSave;
 
 public:
 	DEADBYDAYLIGHT_API FS3GameConfigsData();

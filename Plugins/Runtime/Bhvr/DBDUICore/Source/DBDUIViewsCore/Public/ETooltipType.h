@@ -17,4 +17,5 @@ enum class ETooltipType : uint8
 	Loadout,
 	PlayerLevel,
 	Rank,
+	LockedFeature,
 };

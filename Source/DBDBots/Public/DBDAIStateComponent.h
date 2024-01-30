@@ -2,6 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "EAIObjectiveState.h"
+#include "AITunableParameter.h"
 #include "AIDisplayDebugInterface.h"
 #include "Components/ActorComponent.h"
 #include "EAIPressureZoneLevel.h"
@@ -83,6 +84,9 @@ public:
 
 	UPROPERTY(EditInstanceOnly)
 	uint8 NotMovingContinuousTimes;
+
+	UPROPERTY(EditDefaultsOnly)
+	FAITunableParameter SpecialAttackReactionTimeMultiplier;
 
 private:
 	UFUNCTION()

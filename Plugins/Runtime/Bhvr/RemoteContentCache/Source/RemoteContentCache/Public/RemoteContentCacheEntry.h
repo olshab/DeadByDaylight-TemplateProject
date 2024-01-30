@@ -2,6 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
+#include "ERemoteContentDownloadStrategy.h"
 #include "RemoteContentCacheEntry.generated.h"
 
 USTRUCT()
@@ -21,6 +22,9 @@ public:
 
 	UPROPERTY()
 	FSoftObjectPath PackagedObjectPath;
+
+	UPROPERTY()
+	ERemoteContentDownloadStrategy DownloadStrategy;
 
 private:
 	UPROPERTY()

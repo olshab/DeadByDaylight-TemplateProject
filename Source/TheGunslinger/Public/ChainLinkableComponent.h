@@ -7,10 +7,11 @@
 #include "TagStateBool.h"
 #include "ChainLinkableComponent.generated.h"
 
-class UChainPlayerMovementStatusEffect;
+class UStatusEffect;
 class URiflePlayerLinker;
 class UBaseCameraTargetingStrategy;
 class UPlayerReelInputAccelerationConstraintStrategy;
+class UChainPlayerMovementStatusEffect;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class THEGUNSLINGER_API UChainLinkableComponent : public UActorComponent, public IChainLinkable
@@ -21,18 +22,18 @@ protected:
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<UBaseCameraTargetingStrategy> _cameraTargetingStrategyClass;
 
-	UPROPERTY(EditAnywhere)
-	FName _movementStatusEffectName;
-
-	UPROPERTY(EditAnywhere)
-	FName _linkedStatusEffectName;
-
 	UPROPERTY(Transient, meta=(BindWidget))
 	UPlayerReelInputAccelerationConstraintStrategy* _inputAccelerationStrategy;
 
 private:
 	UPROPERTY(Transient, Export)
 	URiflePlayerLinker* _chainLink;
+
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UStatusEffect> _movementStatusEffectClass;
+
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UStatusEffect> _linkedStatusEffectClass;
 
 	UPROPERTY(Replicated)
 	FTagStateBool _isLinkedLingering;

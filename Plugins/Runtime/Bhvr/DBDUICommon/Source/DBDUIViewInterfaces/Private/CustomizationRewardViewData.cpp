@@ -17,6 +17,5 @@ FCustomizationRewardViewData::FCustomizationRewardViewData()
 	this->IsEnabled = false;
 	this->GrantsMilestonePointOnUnlock = false;
 	this->PriceTagData = TArray<FPriceTagViewData>();
-	this->LimitedTimeText = TEXT("");
-	this->DiscountTimeText = TEXT("");
+	this->InclusionVersion = TEXT("");
 }

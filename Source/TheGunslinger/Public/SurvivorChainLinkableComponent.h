@@ -6,12 +6,16 @@
 #include "Engine/NetSerialization.h"
 #include "ChainLinkableComponent.h"
 #include "Templates/SubclassOf.h"
+#include "GameEventData.h"
+#include "ESightStatus.h"
 #include "SurvivorChainLinkableComponent.generated.h"
 
 class USurvivorReelVelocityAdditiveStrategy;
+class ADBDPlayer;
+class ASlasherPlayer;
 class UStatusEffect;
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class THEGUNSLINGER_API USurvivorChainLinkableComponent : public UChainLinkableComponent
 {
 	GENERATED_BODY()
@@ -32,21 +36,35 @@ private:
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<USurvivorReelVelocityAdditiveStrategy> _velocityAdditiveStrategyClass;
 
-	UPROPERTY(EditAnywhere)
-	FName _immobilizationEffectName;
-
 	UPROPERTY(Replicated)
 	FVector_NetQuantize10 _linkedMoveInput;
 
 	UPROPERTY(Export)
 	UStatusEffect* _immobilizationEffect;
 
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UStatusEffect> _immobilizationStatusEffectClass;
+
 	UPROPERTY(ReplicatedUsing=OnRep_VelocityAdditiveStrategy, Transient, Export)
 	USurvivorReelVelocityAdditiveStrategy* _velocityAdditiveStrategy;
+
+protected:
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnSurvivorBreakFreeFromHarpoon(FGameplayTag gameEventType, const FGameEventData& gameEventData);
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnSightStatusChanged(ESightStatus status);
 
 private:
 	UFUNCTION()
 	void OnRep_VelocityAdditiveStrategy();
+
+protected:
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnLocallyObservedChanged(ADBDPlayer* player);
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnKillerSet(ASlasherPlayer* killer);
 
 public:
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

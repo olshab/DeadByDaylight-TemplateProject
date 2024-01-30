@@ -1,8 +1,9 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "StoreSpecialPacksListViewInterface.h"
 #include "CoreBaseUserWidget.h"
+#include "StoreRedirectionData.h"
+#include "StoreSpecialPacksListViewInterface.h"
 #include "Templates/SubclassOf.h"
 #include "CoreStoreSpecialPacksListWidget.generated.h"
 
@@ -31,7 +32,16 @@ private:
 
 private:
 	UFUNCTION()
+	void OnItemCustomizationClicked(const FStoreRedirectionData& redirectionData);
+
+	UFUNCTION()
+	void OnItemCharacterClicked(const FStoreRedirectionData& redirectionData);
+
+	UFUNCTION()
 	void OnItemBuyActionClicked(const FString& packId);
+
+	UFUNCTION()
+	void OnItemArchivePassClicked(const FName& archiveId, const FString& packId);
 
 public:
 	UCoreStoreSpecialPacksListWidget();

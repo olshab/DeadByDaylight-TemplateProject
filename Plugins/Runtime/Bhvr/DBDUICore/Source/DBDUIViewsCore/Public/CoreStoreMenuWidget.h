@@ -51,9 +51,6 @@ protected:
 	void OnRedeemCodeButtonClicked(UCoreButtonWidget* selectedButton);
 
 	UFUNCTION()
-	void OnMenuTabSelectedAgain(UCoreSelectableButtonWidget* selectedButton);
-
-	UFUNCTION()
 	void OnMenuTabSelected(UCoreSelectableButtonWidget* selectedButton);
 
 	UFUNCTION()

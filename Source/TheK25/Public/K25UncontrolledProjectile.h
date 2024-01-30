@@ -1,9 +1,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GameEventData.h"
+#include "ECamperDamageState.h"
 #include "OnAcquiredChanged.h"
 #include "K25Projectile.h"
 #include "PoolableActor.h"
+#include "GameplayTagContainer.h"
 #include "DBDTunableRowHandle.h"
 #include "K25UncontrolledProjectile.generated.h"
 
@@ -30,6 +33,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	FDBDTunableRowHandle _projectileMaximumTravelDistance;
 
+	UPROPERTY(EditDefaultsOnly)
+	FDBDTunableRowHandle _maximumInactiveProjectileTime;
+
 private:
 	UPROPERTY(Transient)
 	bool _isAcquiredFromPool;
@@ -44,6 +50,13 @@ private:
 protected:
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCosmetic)
 	void Cosmetic_TriggerUncontrolledProjectileSpawnSFX();
+
+private:
+	UFUNCTION()
+	void Authority_OnDownedSurvivorPickedUp(const FGameplayTag gameplayTag, const FGameEventData& gameEventData);
+
+	UFUNCTION()
+	void Authority_OnDamageStateChanged(ECamperDamageState oldDamageState, ECamperDamageState currentDamageState);
 
 public:
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

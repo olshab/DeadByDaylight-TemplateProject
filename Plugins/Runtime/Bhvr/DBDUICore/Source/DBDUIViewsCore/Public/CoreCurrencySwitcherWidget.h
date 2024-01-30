@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "CoreInputSwitcherWidget.h"
 #include "PriceTagViewData.h"
+#include "ECurrencyType.h"
 #include "CoreCurrencySwitcherWidget.generated.h"
 
 UCLASS(EditInlineNew)
@@ -16,6 +17,9 @@ public:
 
 	UFUNCTION(BlueprintPure=false, BlueprintCallable)
 	void SetBackgroundVisible(const bool showBackground) const;
+
+	UFUNCTION(BlueprintPure)
+	ECurrencyType GetCurrencyType() const;
 
 public:
 	UCoreCurrencySwitcherWidget();

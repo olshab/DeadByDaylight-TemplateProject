@@ -1,6 +1,22 @@
 #include "CoreStoreSpecialPacksListWidget.h"
+#include "StoreRedirectionData.h"
+
+void UCoreStoreSpecialPacksListWidget::OnItemCustomizationClicked(const FStoreRedirectionData& redirectionData)
+{
+
+}
+
+void UCoreStoreSpecialPacksListWidget::OnItemCharacterClicked(const FStoreRedirectionData& redirectionData)
+{
+
+}
 
 void UCoreStoreSpecialPacksListWidget::OnItemBuyActionClicked(const FString& packId)
+{
+
+}
+
+void UCoreStoreSpecialPacksListWidget::OnItemArchivePassClicked(const FName& archiveId, const FString& packId)
 {
 
 }

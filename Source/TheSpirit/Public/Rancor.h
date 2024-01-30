@@ -2,6 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "Perk.h"
+#include "Templates/SubclassOf.h"
 #include "Rancor.generated.h"
 
 class UStatusEffect;
@@ -20,6 +21,12 @@ private:
 
 	UPROPERTY(Transient, Export)
 	UStatusEffect* _exposedStatusEffect;
+
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UStatusEffect> _timedRevealKillerEffectClass;
+
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UStatusEffect> _rancorEffectClass;
 
 protected:
 	UFUNCTION(BlueprintImplementableEvent)

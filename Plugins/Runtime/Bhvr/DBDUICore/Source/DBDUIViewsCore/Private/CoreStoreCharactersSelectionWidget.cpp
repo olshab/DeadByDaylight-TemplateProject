@@ -16,6 +16,7 @@ UCoreStoreCharactersSelectionWidget::UCoreStoreCharactersSelectionWidget()
 	this->Scroll = NULL;
 	this->Container = NULL;
 	this->FiltersWidget = NULL;
+	this->_allCharacterItems = TArray<UCoreStoreCharacterItemWidget*>();
 	this->_preConstructedItemsCount = 40;
 	this->_selectedItem = NULL;
 	this->_characterList = NULL;

@@ -24,6 +24,12 @@ public:
 	UPROPERTY(SkipSerialization)
 	bool AvailableEndDate_IsSet;
 
+	UPROPERTY()
+	bool IsShownInGameStore;
+
+	UPROPERTY(SkipSerialization)
+	bool IsShownInGameStore_IsSet;
+
 public:
 	DEADBYDAYLIGHT_API FS3DLCAdditionalInfoEntry();
 };

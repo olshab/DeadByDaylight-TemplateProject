@@ -27,7 +27,7 @@ private:
 	float _perkCooldown;
 
 public:
-	UFUNCTION(NetMulticast, Unreliable)
+	UFUNCTION(NetMulticast, Reliable)
 	void Multicast_OnPerkTriggered(ADBDPlayer* triggerer);
 
 public:

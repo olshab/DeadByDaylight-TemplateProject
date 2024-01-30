@@ -2,11 +2,10 @@
 
 #include "CoreMinimal.h"
 #include "ChargeableInteractionDefinition.h"
-#include "DBDTunableRowHandle.h"
+#include "GameplayTagContainer.h"
 #include "GeneratorDamageInteraction.generated.h"
 
-class ADBDPlayer;
-class AGenerator;
+class UAkAudioEvent;
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
 class DBDINTERACTION_API UGeneratorDamageInteraction : public UChargeableInteractionDefinition
@@ -15,11 +14,7 @@ class DBDINTERACTION_API UGeneratorDamageInteraction : public UChargeableInterac
 
 private:
 	UPROPERTY(EditDefaultsOnly)
-	FDBDTunableRowHandle _baseImmediateDamagePercent;
-
-public:
-	UFUNCTION(BlueprintPure=false, BlueprintCallable, BlueprintAuthorityOnly)
-	void Authority_DamageGenerator(ADBDPlayer* damageBy, AGenerator* generator) const;
+	TMap<FGameplayTag, UAkAudioEvent*> _canceledSfxBasedOnKiller;
 
 public:
 	UGeneratorDamageInteraction();

@@ -6,7 +6,7 @@
 
 class UCurveFloat;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FPlayerPerspectiveChangeCameraMovementData
 {
 	GENERATED_BODY()

@@ -3,7 +3,7 @@
 #include "CoreMinimal.h"
 #include "StoreFeaturedCharacterViewData.h"
 #include "CoreSelectableButtonWidget.h"
-#include "OnTransitionButtonClickedDelegate.h"
+#include "OnMoveToCharactersBioPageButtonClickedDelegate.h"
 #include "CoreStoreFeaturedCharacterWidget.generated.h"
 
 class UCoreButtonWidget;
@@ -15,11 +15,11 @@ class UCoreStoreFeaturedCharacterWidget : public UCoreSelectableButtonWidget
 
 public:
 	UPROPERTY()
-	FOnTransitionButtonClickedDelegate OnTransitionButtonClickedDelegate;
+	FOnMoveToCharactersBioPageButtonClickedDelegate OnMoveToCharactersBioPageButtonClickedDelegate;
 
 protected:
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UCoreButtonWidget* TransitionButton;
+	UCoreButtonWidget* MoveToCharactersBioPageButton;
 
 public:
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)

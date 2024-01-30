@@ -382,6 +382,18 @@ public:
 	UPROPERTY()
 	FString KrakenMatchId;
 
+	UPROPERTY()
+	TArray<FString> Characters;
+
+	UPROPERTY()
+	TArray<FString> Perks;
+
+	UPROPERTY()
+	TArray<FString> CustomizationItems;
+
+	UPROPERTY()
+	FString GameType;
+
 public:
 	DBDANALYTICS_API FPerformanceAnalytics();
 };

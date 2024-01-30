@@ -1,12 +1,10 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "EEasingType.h"
 #include "ETooltipVerticalAlignment.h"
 #include "AlertsViewInterface.h"
 #include "ETooltipHorizontalAlignment.h"
 #include "CoreBaseUserWidget.h"
-#include "UObject/NoExportTypes.h"
 #include "Templates/SubclassOf.h"
 #include "AlertsViewData.h"
 #include "RewardWrapperViewData.h"
@@ -14,10 +12,10 @@
 
 class UHorizontalBox;
 class UCoreRewardWrapperWidget;
-class UDBDRichTextBlock;
 class UCoreButtonWidget;
 class UDBDImage;
-class UUITweenInstance;
+class UAkAudioEvent;
+class UDBDTextBlock;
 
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCoreAlertsWidget : public UCoreBaseUserWidget, public IAlertsViewInterface
@@ -29,16 +27,16 @@ public:
 	TSubclassOf<UCoreRewardWrapperWidget> RewardWidgetClass;
 
 	UPROPERTY(BlueprintReadOnly, Export)
-	UHorizontalBox* AlertRewardContainer;
+	UHorizontalBox* Container;
 
 	UPROPERTY(BlueprintReadOnly, Export)
-	UDBDRichTextBlock* RewardsDescriptionText;
+	UDBDImage* BackgroundImage;
 
 	UPROPERTY(BlueprintReadOnly, Export)
-	UDBDImage* EventIMG;
+	UDBDTextBlock* RewardClaimedText;
 
 	UPROPERTY(BlueprintReadOnly, Export)
-	UDBDRichTextBlock* RewardName;
+	UDBDTextBlock* NumberRewardsText;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	ETooltipHorizontalAlignment HorizontalAlignment;
@@ -46,103 +44,90 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	ETooltipVerticalAlignment VerticalAlignment;
 
-private:
-	UPROPERTY(EditAnywhere)
-	float _fadeInRewardDuration;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UAkAudioEvent* SoundEffectCurrency;
 
-	UPROPERTY(EditAnywhere)
-	float _fadeRewardDelay;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UAkAudioEvent* SoundEffectCommon;
 
-	UPROPERTY(EditAnywhere)
-	EEasingType _fadeInRewardEasing;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UAkAudioEvent* SoundEffectUncommon;
 
-	UPROPERTY(EditAnywhere)
-	float _sequenceDelay;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UAkAudioEvent* SoundEffectRare;
 
-	UPROPERTY(EditAnywhere)
-	float _sequenceFadeOutDuration;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UAkAudioEvent* SoundEffectVeryRare;
 
-	UPROPERTY(EditAnywhere)
-	float _finalSequenceDelay;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UAkAudioEvent* SoundEffectUltraRare;
 
-	UPROPERTY(EditAnywhere)
-	float _finalSequenceFadeOutDuration;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UAkAudioEvent* SoundEffectLegendary;
 
-	UPROPERTY(EditAnywhere)
-	FVector2D _rewardInitialScale;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UAkAudioEvent* SoundEffectCharacter;
 
-	UPROPERTY(EditAnywhere)
-	FVector2D _rewardFinalScale;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UAkAudioEvent* SoundEffectSpecialEvent;
 
-	UPROPERTY(EditAnywhere)
-	float _rewardScalingDuration;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UAkAudioEvent* SoundEffectProgression;
 
-	UPROPERTY(EditAnywhere)
-	float _rewardScalingDelay;
-
-	UPROPERTY(EditAnywhere)
-	float _rewardScalingIdleDuration;
-
-	UPROPERTY(EditAnywhere)
-	EEasingType _rewardScalingEasing;
-
-	UPROPERTY(EditAnywhere)
-	float _sequenceShiftDuration;
-
-	UPROPERTY(EditAnywhere)
-	float _sequenceShiftDelay;
-
-	UPROPERTY(EditAnywhere)
-	EEasingType _sequenceShiftEasing;
-
-	UPROPERTY(EditAnywhere)
-	FVector2D _rewardContainerShiftFinalPosition;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UAkAudioEvent* SoundEffectDisappear;
 
 private:
 	UFUNCTION()
 	void ShowRewardTooltip(UCoreButtonWidget* rewardWidget);
 
-	UFUNCTION()
-	void ShowRewardNameVisibility(UUITweenInstance* tween);
-
 public:
 	UFUNCTION(BlueprintCallable)
 	void ShowAlertRewards(const FAlertsViewData& alertsViewData);
 
-	UFUNCTION(BlueprintCallable)
-	void SetRewardsDescription(const FString& rewardsDescription);
-
 private:
 	UFUNCTION()
-	void RewardAlertSequenceCompleted(UUITweenInstance* tween);
+	void RewardAlertSequenceCompleted();
 
 public:
-	UFUNCTION(BlueprintImplementableEvent)
-	void PlayDisplayRewardSound(FRewardWrapperViewData rewardData);
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+	void PlaySoundEffect(UAkAudioEvent* soundFx);
 
 	UFUNCTION(BlueprintImplementableEvent)
+	void PlayNextRewardsSequenceAnimation(const TArray<FRewardWrapperViewData>& AlertRewards);
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void PlayInterSequenceAnimation();
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void PlayEndSequenceAnimation();
+
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+	void PlayDisplayRewardSound(const FRewardWrapperViewData& rewardData);
+
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
 	void PlayDisappearRewardSound();
 
 private:
 	UFUNCTION()
-	void OnRewardItemsFadeOutCompleted(UUITweenInstance* tween);
-
-	UFUNCTION()
 	void HideRewardTooltip(UCoreButtonWidget* rewardWidget);
 
 public:
+	UFUNCTION(BlueprintPure)
+	UAkAudioEvent* GetDisplayRewardSound(const FRewardWrapperViewData& rewardData) const;
+
 	UFUNCTION(BlueprintCallable)
 	void EndRewardDisplayRequested();
 
+	UFUNCTION(BlueprintCallable)
+	void EndInterSequenceAnimation();
+
+	UFUNCTION(BlueprintCallable)
+	void EndEndSequenceAnimation();
+
 private:
 	UFUNCTION()
-	void EndOfRewardDisplay(UUITweenInstance* tween);
-
-	UFUNCTION()
-	void DisplayNextRewardSequence(UUITweenInstance* tween);
-
-	UFUNCTION()
-	void DisplayNextReward(UUITweenInstance* tween);
+	void DisplayNextRewardSequence();
 
 public:
 	UCoreAlertsWidget();

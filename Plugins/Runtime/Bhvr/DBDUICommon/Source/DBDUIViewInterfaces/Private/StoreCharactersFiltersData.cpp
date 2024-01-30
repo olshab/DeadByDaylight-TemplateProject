@@ -4,5 +4,5 @@ FStoreCharactersFiltersData::FStoreCharactersFiltersData()
 {
 	this->IsFavorite = false;
 	this->IsOwned = false;
-	this->RarityFiltersMap = TMap<EItemRarity, bool>();
+	this->_rarityFiltersMap = TMap<EItemRarity, bool>();
 }

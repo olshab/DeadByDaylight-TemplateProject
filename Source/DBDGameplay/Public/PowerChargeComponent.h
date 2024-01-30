@@ -16,6 +16,9 @@ public:
 	FPowerChargeChangedDelegate OnPowerChargeChanged;
 
 private:
+	UPROPERTY(Replicated, Transient)
+	float _chargeRate;
+
 	UPROPERTY(ReplicatedUsing=OnRep_CurrentCharge, Transient)
 	FSpeedBasedNetSyncedValue _currentCharge;
 

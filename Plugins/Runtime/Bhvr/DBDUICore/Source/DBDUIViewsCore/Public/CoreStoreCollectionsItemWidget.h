@@ -10,11 +10,21 @@ class UCoreStoreCustomizationItemWidget;
 class UDBDTextBlock;
 class UHorizontalBox;
 class UCorePreConstructableList;
+class UCoreStoreCollectionsItemWidget;
+class UDBDButton;
+class UCoreButtonWidget;
 
 UCLASS(EditInlineNew)
 class UCoreStoreCollectionsItemWidget : public UCoreBaseUserWidget
 {
 	GENERATED_BODY()
+
+public:
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnItemClicked, const FString&, collectionId, FName, clickedItemCustomizationId);
+
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnCollectionUnfocused, UCoreStoreCollectionsItemWidget*, widget, const FString&, collectionId);
+
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnCollectionFocused, UCoreStoreCollectionsItemWidget*, widget, const FString&, collectionId);
 
 protected:
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
@@ -25,6 +35,9 @@ protected:
 
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
 	UHorizontalBox* StoreCustomizationListBox;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UDBDButton* BannerButton;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, NoClear)
 	TSubclassOf<UCoreStoreCustomizationItemWidget> _storeCustomizationItemWidgetClass;
@@ -39,17 +52,33 @@ private:
 	UPROPERTY(Transient)
 	UCorePreConstructableList* _itemList;
 
-protected:
-	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-	void ToggleExpanded();
+	UPROPERTY(Transient)
+	UStoreCollectionViewData* _collectionViewData;
+
+	UPROPERTY(Transient)
+	bool _isExpanded;
 
 public:
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void SetupView(UStoreCollectionViewData* collectionViewData);
 
-protected:
-	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+	UFUNCTION(BlueprintCallable)
 	void SetExpanded(bool expanded);
+
+private:
+	UFUNCTION()
+	void OnItemClickedInternal(UCoreButtonWidget* buttonTarget);
+
+protected:
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnExpandedChanged();
+
+	UFUNCTION()
+	void OnBannerButtonClicked();
+
+public:
+	UFUNCTION(BlueprintPure)
+	bool IsExpanded() const;
 
 public:
 	UCoreStoreCollectionsItemWidget();

@@ -8,6 +8,7 @@
 
 class UChargeableComponent;
 class AConjoinedTwin;
+class UStatusEffect;
 class UPowerChargeComponent;
 class UK22PowerChargePresentationItemProgressComponent;
 
@@ -24,6 +25,9 @@ protected:
 	UChargeableComponent* _possessConjoinedTwinChargeable;
 
 private:
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UStatusEffect> _killerDormantStealthStatusEffectClass;
+
 	UPROPERTY(ReplicatedUsing=OnRep_ConjoinedTwin, Transient)
 	AConjoinedTwin* _conjoinedTwin;
 

@@ -7,13 +7,14 @@
 
 class ASlasherPlayer;
 class UK23PowerProgressPresentationComponent;
-class ULacerationComponent;
 class UFlurryComboScoreComponent;
-class UKnivesLauncher;
+class UStatusEffect;
 class UTricksterSuperModeComponent;
 class UReloadKnives;
 class UKnivesProvider;
 class UPowerChargeComponent;
+class UKnivesLauncher;
+class ULacerationComponent;
 
 UCLASS()
 class AThrowingKnives : public ACollectable
@@ -32,6 +33,9 @@ private:
 
 	UPROPERTY(Export)
 	UPowerChargeComponent* _superModeChargeComponent;
+
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UStatusEffect> _tricksterOutOfAmmoStatusEffectClass;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
 	UKnivesProvider* _knivesProvider;

@@ -4,6 +4,7 @@
 #include "Components/SlateWrapperTypes.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "EItemRarity.h"
+#include "UObject/NoExportTypes.h"
 #include "CoreCommonUIUtils.generated.h"
 
 class UWidget;
@@ -26,6 +27,9 @@ public:
 
 	UFUNCTION(BlueprintPure)
 	static FText GetTextBasedOnRarity(const EItemRarity rarity);
+
+	UFUNCTION(BlueprintCallable)
+	static float GetNextUpdateRate(const FDateTime& endTime);
 
 	UFUNCTION(BlueprintPure)
 	static float GetDPIScale();

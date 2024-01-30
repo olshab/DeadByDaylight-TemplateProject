@@ -425,6 +425,14 @@
 			]
 		},
 		{
+			"Name": "TheS40",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"DeadByDaylight"
+			]
+		},
+		{
 			"Name": "TheShape",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
@@ -662,11 +670,6 @@
 			"LoadingPhase": "Default"
 		},
 		{
-			"Name": "Sentry",
-			"Type": "Runtime",
-			"LoadingPhase": "Default"
-		},
-		{
 			"Name": "SharedAuthenticationUtilities",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
@@ -887,6 +890,16 @@
 		{
 			"Name": "SentryIo",
 			"Enabled": true
+		},
+		{
+			"Name": "Sentry",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/99f5c02de5fa49ab97976a3a852e5408",
+			"WhitelistPlatforms": [
+				"Win64",
+				"Linux",
+				"LinuxAArch64"
+			]
 		},
 		{
 			"Name": "BhvrCheatMenu",

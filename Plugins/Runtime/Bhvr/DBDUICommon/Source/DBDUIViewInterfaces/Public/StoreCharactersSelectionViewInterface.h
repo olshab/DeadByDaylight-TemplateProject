@@ -6,6 +6,7 @@
 #include "StoreCharactersSelectionViewData.h"
 #include "StoreCharactersSelectionViewInterface.generated.h"
 
+class UStoreCharacterItemViewData;
 class IStoreCharactersFilterViewInterface;
 
 UINTERFACE(Blueprintable)
@@ -19,6 +20,12 @@ class DBDUIVIEWINTERFACES_API IStoreCharactersSelectionViewInterface : public II
 	GENERATED_BODY()
 
 public:
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	void UpdateSelectedCharacter(const int32 selectedCharacterIndex);
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	void UpdateCharacters(const TArray<UStoreCharacterItemViewData*>& characters);
+
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void SetData(const FStoreCharactersSelectionViewData& data);
 

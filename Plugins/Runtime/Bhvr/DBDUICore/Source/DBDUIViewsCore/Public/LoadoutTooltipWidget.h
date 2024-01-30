@@ -37,6 +37,9 @@ protected:
 	UDBDImage* RarityBG;
 
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UDBDImage* EventHeader;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
 	UDBDImage* Line_1;
 
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))

@@ -371,7 +371,7 @@ UInteractionDefinition::UInteractionDefinition()
 	this->CanInteractWhileChainLinked = false;
 	this->CanInteractWhileShocked = false;
 	this->CanInteractWhileUnhookingSelf = false;
-	this->CanInteractWhileCarrying = true;
+	this->CanInteractWhileCarrying = false;
 	this->AllowNavigation = false;
 	this->AllowNavigationInput = true;
 	this->AllowRotation = false;

@@ -3,10 +3,10 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "PriceTagViewData.h"
-#include "UObject/SoftObjectPtr.h"
+#include "SoftRemoteContentCacheObjectPtr.h"
+#include "StoreArchivePassViewData.h"
 #include "StoreSpecialPackViewData.generated.h"
 
-class UTexture2D;
 class UStoreCustomizationItemViewData;
 class UStoreCharacterItemViewData;
 
@@ -23,7 +23,7 @@ public:
 	FString DisplayTitle;
 
 	UPROPERTY(BlueprintReadOnly, Transient)
-	TSoftObjectPtr<UTexture2D> PackImage;
+	FSoftRemoteContentCacheObjectPtr PackImage;
 
 	UPROPERTY(BlueprintReadWrite, Transient)
 	FPriceTagViewData PriceTagData;
@@ -33,6 +33,9 @@ public:
 
 	UPROPERTY(BlueprintReadWrite, Transient)
 	TArray<UStoreCustomizationItemViewData*> CustomizationsData;
+
+	UPROPERTY(BlueprintReadWrite, Transient)
+	FStoreArchivePassViewData ArchivePassViewData;
 
 	UPROPERTY(BlueprintReadOnly, Transient)
 	FDateTime ActivationStartDate;

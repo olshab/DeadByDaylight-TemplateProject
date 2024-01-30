@@ -22,6 +22,9 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UStatusEffect> _timedObliviousEffectClass;
 
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UStatusEffect> _timedRevealStatusEffect;
+
 	UPROPERTY(Transient, Export)
 	UStatusEffect* _obliviousStatusEffect;
 

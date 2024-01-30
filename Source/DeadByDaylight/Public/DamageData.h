@@ -12,6 +12,9 @@ struct FDamageData
 
 private:
 	UPROPERTY(Transient)
+	bool _damagedWithoutStartingGradualRegression;
+
+	UPROPERTY(Transient)
 	bool _isRegressing;
 
 	UPROPERTY(Transient)

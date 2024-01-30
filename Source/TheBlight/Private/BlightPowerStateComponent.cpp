@@ -15,17 +15,12 @@ bool UBlightPowerStateComponent::Server_SetWallGrabState_Validate(const EWallGra
 	return true;
 }
 
-void UBlightPowerStateComponent::ResetDashTokens()
-{
-
-}
-
 void UBlightPowerStateComponent::OnRep_StateTimer()
 {
 
 }
 
-void UBlightPowerStateComponent::OnRep_DashTokens()
+void UBlightPowerStateComponent::OnRep_DashTokens() const
 {
 
 }
@@ -75,11 +70,6 @@ float UBlightPowerStateComponent::GetLookAngleDegrees() const
 	return 0.0f;
 }
 
-uint8 UBlightPowerStateComponent::GetDashTokensRemaining() const
-{
-	return 0;
-}
-
 UBlightPowerState* UBlightPowerStateComponent::GetCurrentPowerState() const
 {
 	return NULL;
@@ -96,6 +86,7 @@ void UBlightPowerStateComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProp
 
 	DOREPLIFETIME(UBlightPowerStateComponent, _stateTimer);
 	DOREPLIFETIME(UBlightPowerStateComponent, _dashTokens);
+	DOREPLIFETIME(UBlightPowerStateComponent, _consecutiveTokenCount);
 }
 
 UBlightPowerStateComponent::UBlightPowerStateComponent()
@@ -106,4 +97,5 @@ UBlightPowerStateComponent::UBlightPowerStateComponent()
 	this->_blightPowerStates = TArray<UBlightPowerState*>();
 	this->_currentBlightPowerState = NULL;
 	this->_dashTokens = 0;
+	this->_consecutiveTokenCount = 0;
 }

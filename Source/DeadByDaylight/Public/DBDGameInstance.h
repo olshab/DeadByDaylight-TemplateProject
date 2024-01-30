@@ -65,14 +65,14 @@ class UAtlantaTooltipManager;
 class URankManager;
 class UInteractionProficiency;
 class UToastManager;
-class UInventoryHandler;
-class ULocalEventManager;
-class USoftBanManager;
 class UPenaltyTracker;
 class UPopupSequencer;
 class ULightingHelper;
 class UConsentManager;
 class UMapActorDB;
+class ULocalEventManager;
+class UInventoryHandler;
+class USoftBanManager;
 class UDBDTimeUtilities;
 class ULightingInterpolator;
 class ADBDPlayerState;
@@ -309,9 +309,6 @@ private:
 
 	UPROPERTY(Transient)
 	UOfferingEffectCollection* _resultOfferingAndPerkEffects;
-
-	UPROPERTY(Transient)
-	UInventoryHandler* _inventoryHandler;
 
 	UPROPERTY(Transient)
 	UCinematicManager* _cinematicManager;

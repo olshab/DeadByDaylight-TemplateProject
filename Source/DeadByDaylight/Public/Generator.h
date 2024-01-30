@@ -10,15 +10,16 @@
 #include "GeneratorRepairedEvent.h"
 #include "UObject/NoExportTypes.h"
 #include "GeneratorRepairedBySurvivorEvent.h"
-#include "DamageData.h"
 #include "DBDTunableRowHandle.h"
+#include "DamageData.h"
 #include "OnAkPostEventCallback.h"
 #include "Generator.generated.h"
 
 class ACamperPlayer;
 class UChargeableComponent;
-class UCurveLinearColor;
+class UDischargeUntilThresholdIsReachedComponent;
 class UInteractionDefinition;
+class UCurveLinearColor;
 class UCoopRepairTracker;
 class UAIPerceptionStimuliSourceComponent;
 class ADBDPlayer;
@@ -70,6 +71,15 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Export, meta=(AllowPrivateAccess=true))
 	UAIPerceptionStimuliSourceComponent* _perceptionStimuliComponent;
 
+	UPROPERTY(EditDefaultsOnly, Export)
+	UDischargeUntilThresholdIsReachedComponent* _regressChargeUntilThresholdIsReached;
+
+	UPROPERTY(EditDefaultsOnly)
+	FDBDTunableRowHandle _gradualRegressionPercentPerDamage;
+
+	UPROPERTY(EditDefaultsOnly)
+	FDBDTunableRowHandle _regressionSpeedWhileDamaged;
+
 	UPROPERTY(EditAnywhere)
 	FGameplayTag _repairSemanticTag;
 
@@ -106,11 +116,11 @@ private:
 	UPROPERTY(Transient, Export)
 	TArray<UInteractionDefinition*> _damagingInteractions;
 
-	UPROPERTY(EditDefaultsOnly)
-	FDBDTunableRowHandle _intenseImmediateDamageThreshold;
-
 	UPROPERTY(Transient)
 	TArray<ADBDPlayer*> _authority_cachedInteractingPlayersOnCompletion;
+
+	UPROPERTY(EditDefaultsOnly)
+	FDBDTunableRowHandle _defaultImmediateRegressionPercentage;
 
 protected:
 	UFUNCTION(BlueprintImplementableEvent)
@@ -123,6 +133,11 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 	void TriggerSkillCheck(ADBDPlayer* instigatingPlayer);
 
+private:
+	UFUNCTION()
+	void StopDischarge();
+
+public:
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
 	void SpawnBloodEffectToSocket(const FName name);
 
@@ -312,9 +327,6 @@ public:
 
 	UFUNCTION(BlueprintPure)
 	TArray<ADBDPlayer*> Authority_GetRepairingCampers() const;
-
-	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly)
-	void Authority_Damage(ADBDPlayer* damagedBy, const float immediateRegressionPercent, bool ignoreBlocked);
 
 	UFUNCTION(BlueprintCallable)
 	void Authority_CancelRepairInteractions();

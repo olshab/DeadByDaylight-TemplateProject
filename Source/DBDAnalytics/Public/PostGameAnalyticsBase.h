@@ -23,6 +23,15 @@ public:
 	int32 BloodwebPoints;
 
 	UPROPERTY()
+	int32 BonusEvent;
+
+	UPROPERTY()
+	int32 MatchIncentive;
+
+	UPROPERTY()
+	int32 LteIncentive;
+
+	UPROPERTY()
 	float GameDuration;
 
 	UPROPERTY()

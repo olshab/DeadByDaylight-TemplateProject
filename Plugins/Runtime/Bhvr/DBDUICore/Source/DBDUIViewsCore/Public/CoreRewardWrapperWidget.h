@@ -55,11 +55,11 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void SetIsClickable(bool isClickable);
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void SetData(const FRewardWrapperViewData& viewData);
 
-	UFUNCTION(BlueprintCallable)
-	UCoreRewardWidget* GetRewardWidget();
+	UFUNCTION(BlueprintPure)
+	UCoreRewardWidget* GetRewardWidget() const;
 
 	UFUNCTION(BlueprintCallable)
 	void ClearData();

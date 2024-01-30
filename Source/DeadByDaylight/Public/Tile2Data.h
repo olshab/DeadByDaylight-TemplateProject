@@ -1,16 +1,16 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "ETileClassType.h"
 #include "EGameplayElementType.h"
 #include "ETileType.h"
 #include "EDensity.h"
 #include "Engine/DataTable.h"
-#include "EBasementType.h"
-#include "UObject/NoExportTypes.h"
+#include "EQuadrantSpawnType.h"
 #include "EPathType.h"
 #include "EscapeStrategyType.h"
-#include "EQuadrantSpawnType.h"
-#include "ETileClassType.h"
+#include "UObject/NoExportTypes.h"
+#include "EBasementType.h"
 #include "Tile2Data.generated.h"
 
 USTRUCT(BlueprintType)
@@ -29,16 +29,25 @@ public:
 	int32 MaximumSpacing;
 
 	UPROPERTY(EditAnywhere)
+	bool DiagonalSpacing;
+
+	UPROPERTY(EditAnywhere)
+	bool TypeSpacing;
+
+	UPROPERTY(EditAnywhere)
 	int32 MaximumCount;
 
 	UPROPERTY(EditAnywhere)
-	FVector2D Dimension;
+	FIntPoint Dimension;
 
 	UPROPERTY(EditAnywhere)
 	TArray<EscapeStrategyType> AvailableEscapeTypes;
 
 	UPROPERTY(EditAnywhere)
 	ETileType Type;
+
+	UPROPERTY(EditAnywhere)
+	ETileClassType TileClassType;
 
 	UPROPERTY(EditAnywhere)
 	EDensity Density;
@@ -72,15 +81,6 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	TArray<EGameplayElementType> AvailableGameplayElementTypes;
-
-	UPROPERTY(EditAnywhere)
-	bool DiagonalSpacing;
-
-	UPROPERTY(EditAnywhere)
-	bool TypeSpacing;
-
-	UPROPERTY(EditAnywhere)
-	ETileClassType TileClassType;
 
 public:
 	DEADBYDAYLIGHT_API FTile2Data();

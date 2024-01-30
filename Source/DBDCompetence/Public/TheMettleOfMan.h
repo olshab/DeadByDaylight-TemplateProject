@@ -27,6 +27,9 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UStatusEffect> _enduranceHighlightEffectClass;
 
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UStatusEffect> _revealToKillerEffectClass;
+
 	UPROPERTY(ReplicatedUsing=OnRep_NumTokenSoFar, Transient)
 	int32 _numTokenSoFar;
 

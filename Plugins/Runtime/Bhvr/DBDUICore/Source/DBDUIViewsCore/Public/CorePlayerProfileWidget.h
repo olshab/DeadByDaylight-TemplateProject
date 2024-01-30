@@ -1,17 +1,16 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "UObject/SoftObjectPtr.h"
+#include "PlayerCardViewData.h"
 #include "PlayerProfileViewInterface.h"
 #include "CoreBaseUserWidget.h"
 #include "PlayerProfileClickedDelegate.h"
-#include "PlayerCardViewData.h"
 #include "CorePlayerProfileWidget.generated.h"
 
-class UCorePlayerNameWidget;
-class UTexture2D;
 class UCoreButtonWidget;
 class UCoreWalletWidget;
+class UCorePlayerNameWidget;
+class UDBDButton;
 
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCorePlayerProfileWidget : public UCoreBaseUserWidget, public IPlayerProfileViewInterface
@@ -27,6 +26,9 @@ protected:
 
 	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
 	UCorePlayerNameWidget* PlayerName;
+
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UDBDButton* PlayerCardHoverZone;
 
 	UPROPERTY()
 	FPlayerProfileClickedDelegate _onPlayerProfileClickedDelegate;
@@ -48,7 +50,10 @@ protected:
 
 public:
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-	void SetBadgeBannerData(const TSoftObjectPtr<UTexture2D>& badge, const FPlayerCardViewData& banner, const bool showBanner);
+	void SetPlayerCardAnimation(const bool isAnimationPlaying);
+
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+	void SetBadgeBannerData(const FPlayerCardViewData& badge, const FPlayerCardViewData& banner, const bool showBanner);
 
 private:
 	UFUNCTION(BlueprintCallable)
@@ -59,6 +64,12 @@ private:
 
 	UFUNCTION()
 	void OnPlayerCardButtonHovered(UCoreButtonWidget* button);
+
+	UFUNCTION()
+	void OnPlayerCardBannerUnhovered();
+
+	UFUNCTION()
+	void OnPlayerCardBannerHovered();
 
 public:
 	UFUNCTION()

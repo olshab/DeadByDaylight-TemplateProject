@@ -13,10 +13,16 @@ struct FOriginalMaterials
 
 public:
 	UPROPERTY(Transient)
+	TArray<int32> OriginalMaterialIndex;
+
+	UPROPERTY(Transient)
 	TArray<UMaterialInterface*> OriginalMaterial;
 
 	UPROPERTY(Transient, Export)
 	UMeshComponent* MeshWithChangedMaterials;
+
+	UPROPERTY(Transient)
+	float OcclusionRefreshInterval;
 
 public:
 	DEADBYDAYLIGHT_API FOriginalMaterials();

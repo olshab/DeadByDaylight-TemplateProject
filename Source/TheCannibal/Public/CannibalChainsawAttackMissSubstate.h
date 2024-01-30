@@ -1,11 +1,11 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "HillbillyChainsawAttackMissSubstate.h"
+#include "BaseChainsawAttackMissSubstate.h"
 #include "CannibalChainsawAttackMissSubstate.generated.h"
 
 UCLASS()
-class THECANNIBAL_API UCannibalChainsawAttackMissSubstate : public UHillbillyChainsawAttackMissSubstate
+class THECANNIBAL_API UCannibalChainsawAttackMissSubstate : public UBaseChainsawAttackMissSubstate
 {
 	GENERATED_BODY()
 

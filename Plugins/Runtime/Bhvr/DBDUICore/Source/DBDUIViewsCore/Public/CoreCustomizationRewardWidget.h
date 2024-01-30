@@ -53,17 +53,8 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
 	void SetMilestoneTrackerOwnedVisuals(bool isOwned, bool useAnimation);
 
-	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-	void SetLimitedTimeText(const FString& limitedTimeText);
-
-	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-	void SetDiscountTimeText(const FString& discountTimeText);
-
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void SetCustomizationRewardData(const FCustomizationRewardViewData& customizationRewardViewData);
-
-	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-	void HideTimeTexts();
 
 	UFUNCTION(BlueprintCallable)
 	void DisplayEventPointIcon(bool show);

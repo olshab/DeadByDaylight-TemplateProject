@@ -23,9 +23,6 @@ private:
 	UPROPERTY(Transient)
 	UAnimMontage* _montage;
 
-	UPROPERTY(Transient)
-	bool _loadAttempted;
-
 public:
 	DEADBYDAYLIGHT_API FAnimationMapping();
 };

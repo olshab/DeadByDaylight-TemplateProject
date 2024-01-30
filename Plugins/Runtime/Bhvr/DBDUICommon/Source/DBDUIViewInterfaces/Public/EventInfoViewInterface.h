@@ -19,6 +19,9 @@ class DBDUIVIEWINTERFACES_API IEventInfoViewInterface : public IInterface
 
 public:
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	void SetArchivesButtonVisibility(bool isVisible);
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void Init(UEventTabViewData* viewData, const FEventEntryPopupSkinUIData& skinData);
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)

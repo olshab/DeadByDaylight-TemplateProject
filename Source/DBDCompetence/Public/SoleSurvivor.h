@@ -20,6 +20,9 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UStatusEffect> _modifyActionSpeedWhenOpeningGateOrHatchEffect;
 
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UStatusEffect> _obsessionChanceStatusEffectClass;
+
 	UPROPERTY(EditDefaultsOnly, EditFixedSize)
 	float _actionSpeedsRepairing;
 

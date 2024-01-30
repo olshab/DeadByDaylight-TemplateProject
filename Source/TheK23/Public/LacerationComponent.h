@@ -6,6 +6,7 @@
 #include "DBDTunableRowHandle.h"
 #include "LacerationUIData.h"
 #include "UObject/NoExportTypes.h"
+#include "Templates/SubclassOf.h"
 #include "LacerationComponent.generated.h"
 
 class UStatusEffect;
@@ -21,6 +22,9 @@ private:
 
 	UPROPERTY(Transient, Export)
 	UStatusEffect* _onHitSpeedBoost;
+
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UStatusEffect> _lacerationOnHitSpeedBoostStatusEffectClass;
 
 	UPROPERTY(EditDefaultsOnly)
 	FTunableStat _maxLaceration;

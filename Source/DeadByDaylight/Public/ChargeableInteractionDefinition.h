@@ -45,6 +45,19 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool ShowItemIcon;
 
+protected:
+	UPROPERTY(EditDefaultsOnly)
+	bool AddChargeOnInteractionUpdateTick;
+
+	UPROPERTY(EditDefaultsOnly)
+	bool ResetChargeOnInteractionFinished;
+
+	UPROPERTY(EditDefaultsOnly)
+	bool ResetChargeOnInteractionChargeCompleted;
+
+	UPROPERTY(EditDefaultsOnly)
+	bool ToggleCrouchSlashableCapsule;
+
 private:
 	UPROPERTY(Transient, Export)
 	UChargeableComponent* _chargeableComponent;
@@ -100,7 +113,7 @@ protected:
 
 public:
 	UFUNCTION(BlueprintPure)
-	bool IsChargeComplete(const ADBDPlayer* currentlyInteractingPlayer) const;
+	bool IsChargeComplete() const;
 
 	UFUNCTION(BlueprintPure)
 	bool HasSkillCheckHappened(const ADBDPlayer* character) const;

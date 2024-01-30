@@ -3,7 +3,7 @@
 #include "CoreMinimal.h"
 #include "NewsContentDetails.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FNewsContentDetails
 {
 	GENERATED_BODY()

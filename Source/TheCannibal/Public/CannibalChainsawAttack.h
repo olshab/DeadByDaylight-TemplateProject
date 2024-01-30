@@ -1,15 +1,15 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "BaseChainsawAttack.h"
 #include "ButtonPromptSource.h"
-#include "HillbillyChainsawAttack.h"
 #include "TagStateBool.h"
 #include "CannibalChainsawAttack.generated.h"
 
 class ADBDPlayer;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
-class THECANNIBAL_API UCannibalChainsawAttack : public UHillbillyChainsawAttack, public IButtonPromptSource
+class THECANNIBAL_API UCannibalChainsawAttack : public UBaseChainsawAttack, public IButtonPromptSource
 {
 	GENERATED_BODY()
 

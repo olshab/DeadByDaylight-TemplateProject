@@ -86,7 +86,7 @@ private:
 	void OnRep_IsAcquiredFromPool();
 
 	UFUNCTION()
-	void OnEmpInteractionFinished(ADBDPlayer* interactingPlayer);
+	void OnEmpInteractionFinished(ADBDPlayer* interactingPlayer, bool hasInteractionStarted);
 
 	UFUNCTION()
 	void OnEmpInteractionEntered(ADBDPlayer* interactingPlayer);

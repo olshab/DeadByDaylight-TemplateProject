@@ -27,9 +27,6 @@ private:
 	UPROPERTY(Transient)
 	ASearchable* _owningChest;
 
-	UPROPERTY(Transient)
-	bool _onLastInteractionWasComplete;
-
 private:
 	UFUNCTION(BlueprintCallable)
 	void FireChestScoreEvent(const ADBDPlayer* player);

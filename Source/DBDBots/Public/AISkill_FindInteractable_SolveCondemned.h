@@ -18,6 +18,9 @@ public:
 	FAITunableParameter HighCondemnedThreshold;
 
 	UPROPERTY(EditDefaultsOnly)
+	FAITunableParameter MaxLockedCondemnThreshold;
+
+	UPROPERTY(EditDefaultsOnly)
 	FAITunableParameter SolveCondemnedBasicWeight;
 
 	UPROPERTY(EditDefaultsOnly)

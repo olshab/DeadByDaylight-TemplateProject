@@ -4,14 +4,10 @@
 #include "BHVRAnalytics.h"
 #include "DBDAnalytics.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS()
 class UDBDAnalytics : public UBHVRAnalytics
 {
 	GENERATED_BODY()
-
-public:
-	UFUNCTION(BlueprintCallable)
-	static void RecordGameProgress(const FString& InProgressType);
 
 public:
 	UDBDAnalytics();

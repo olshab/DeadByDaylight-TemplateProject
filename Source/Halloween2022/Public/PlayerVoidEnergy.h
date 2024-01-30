@@ -83,7 +83,7 @@ private:
 	void OnLocallyObservedChanged(ADBDPlayer* player);
 
 	UFUNCTION()
-	void OnLocallyControlledChanged();
+	void OnLocallyControlledChanged(bool isLocallyControlled);
 
 	UFUNCTION(NetMulticast, Reliable)
 	void Multicast_ShowVoidEnergyChanges(const int32 previousVoidEnergyCount, const int32 newVoidEnergyCount);

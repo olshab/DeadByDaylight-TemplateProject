@@ -58,6 +58,9 @@ public:
 	void SetEnabled(bool isEnabled);
 
 	UFUNCTION(BlueprintCallable)
+	void SetBetaFeatureOverlayVisible(bool isVisible);
+
+	UFUNCTION(BlueprintCallable)
 	void SetAdditionalIcon(TSoftObjectPtr<UTexture2D> iconTexture);
 
 protected:

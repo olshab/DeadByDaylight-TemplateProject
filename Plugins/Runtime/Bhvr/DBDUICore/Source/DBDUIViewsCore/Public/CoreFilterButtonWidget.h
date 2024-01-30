@@ -2,7 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "CoreButtonWidget.h"
-#include "EItemFilterOption.h"
+#include "EItemRarity.h"
 #include "CoreFilterButtonWidget.generated.h"
 
 class UDBDImage;
@@ -18,16 +18,22 @@ protected:
 	UDBDImage* LabelIMG;
 
 	UPROPERTY(EditInstanceOnly, BlueprintReadOnly)
-	EItemFilterOption _filterOption;
+	bool _isFavoriteOption;
 
-	UPROPERTY(BlueprintReadOnly)
-	bool _isToggled;
+	UPROPERTY(EditInstanceOnly, BlueprintReadOnly)
+	bool _isOwnedOption;
+
+	UPROPERTY(EditInstanceOnly, BlueprintReadOnly)
+	EItemRarity _itemRarityFilterOption;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	UTexture2D* FavoriteTagTexture;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	UTexture2D* OwnedTagTexture;
+
+	UPROPERTY(BlueprintReadOnly)
+	bool _isToggled;
 
 	UPROPERTY(EditInstanceOnly, BlueprintReadOnly)
 	bool _defaultToggleState;

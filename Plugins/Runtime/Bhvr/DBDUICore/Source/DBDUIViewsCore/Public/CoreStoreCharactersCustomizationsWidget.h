@@ -1,20 +1,24 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "StoreCharmSlotSelectedDelegate.h"
 #include "CoreBaseUserWidget.h"
 #include "StoreCharactersCustomizationsViewInterface.h"
 #include "StoreCustomizationSelectedDelegate.h"
 #include "Templates/SubclassOf.h"
 #include "StoreCategorySelectedDelegate.h"
+#include "Layout/Margin.h"
 #include "CoreStoreCharactersCustomizationsWidget.generated.h"
 
-class UUniformGridPanel;
-class UCoreStoreCustomizationItemWidget;
-class UScrollBox;
+class UCoreSelectableButtonWidget;
 class UCoreStoreCategoryWidget;
+class UUniformGridPanel;
+class UScrollBox;
+class UCoreStoreCustomizationItemWidget;
+class UCoreStoreCharmSlotWidget;
+class UHorizontalBox;
 class UCoreStoreCharactersFilterWidget;
 class UCorePreConstructableList;
-class UCoreSelectableButtonWidget;
 
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCoreStoreCharactersCustomizationsWidget : public UCoreBaseUserWidget, public IStoreCharactersCustomizationsViewInterface
@@ -28,11 +32,17 @@ protected:
 	UPROPERTY()
 	FStoreCategorySelectedDelegate _categorySelectedDelegate;
 
+	UPROPERTY()
+	FStoreCharmSlotSelectedDelegate _charmSlotSelectedDelegate;
+
 	UPROPERTY(EditAnywhere, NoClear)
 	TSubclassOf<UCoreStoreCustomizationItemWidget> _customizationItemWidgetClass;
 
 	UPROPERTY(EditAnywhere, NoClear)
 	TSubclassOf<UCoreStoreCategoryWidget> _categoryItemWidgetClass;
+
+	UPROPERTY(EditAnywhere, NoClear)
+	TSubclassOf<UCoreStoreCharmSlotWidget> _charmSlotItemWidgetClass;
 
 	UPROPERTY(EditAnywhere)
 	int32 _numberOfColumns;
@@ -53,22 +63,31 @@ protected:
 	UUniformGridPanel* CategoriesContainer;
 
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UHorizontalBox* CharmSlotsContainer;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
 	UCoreStoreCharactersFilterWidget* FiltersWidget;
 
 	UPROPERTY(Transient, Export)
-	TArray<UCoreStoreCustomizationItemWidget*> _selectedCustomizationItems;
-
-	UPROPERTY(Transient)
-	int32 _maxSelectedItems;
+	TArray<UCoreStoreCustomizationItemWidget*> _allCustomizationItems;
 
 	UPROPERTY(Transient, meta=(BindWidget))
 	UCoreStoreCategoryWidget* _selectedCategoryItem;
+
+	UPROPERTY(Transient, meta=(BindWidget))
+	UCoreStoreCharmSlotWidget* _selectedCharmSlotItem;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, NoClear)
 	int32 _preConstructedCategoriesCount;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, NoClear)
 	int32 _preConstructedCustomizationsCount;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, NoClear)
+	int32 _preConstructedCharmSlotsCount;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, NoClear)
+	FMargin _charmSlotsPadding;
 
 private:
 	UPROPERTY(Transient)
@@ -77,12 +96,18 @@ private:
 	UPROPERTY(Transient)
 	UCorePreConstructableList* _customizationList;
 
+	UPROPERTY(Transient)
+	UCorePreConstructableList* _charmSlotList;
+
 protected:
 	UFUNCTION()
 	void OnCustomizationSelectedAgain(UCoreSelectableButtonWidget* buttonTarget);
 
 	UFUNCTION()
 	void OnCustomizationSelected(UCoreSelectableButtonWidget* buttonTarget, bool isSelected);
+
+	UFUNCTION()
+	void OnCharmSlotSelected(UCoreSelectableButtonWidget* buttonTarget, bool isSelected);
 
 	UFUNCTION()
 	void OnCategorySelected(UCoreSelectableButtonWidget* buttonTarget, bool isSelected);

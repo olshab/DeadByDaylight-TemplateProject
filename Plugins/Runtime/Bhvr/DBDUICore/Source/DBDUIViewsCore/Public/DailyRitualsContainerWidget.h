@@ -32,6 +32,9 @@ protected:
 	UPROPERTY(EditAnywhere, NoClear)
 	TSubclassOf<UDailyRitualTileWidget> DailyRitualTileWidgetClass;
 
+	UPROPERTY(EditAnywhere, NoClear)
+	TSubclassOf<UDailyRitualTileWidget> OnboardingRitualTileWidgetClass;
+
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
 	UCanvasPanel* Container;
 

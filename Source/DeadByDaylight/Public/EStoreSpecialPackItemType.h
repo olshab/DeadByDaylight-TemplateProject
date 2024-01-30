@@ -6,5 +6,8 @@
 UENUM(BlueprintType)
 enum class EStoreSpecialPackItemType : uint8
 {
-	Inventory,
+	Customization,
+	Character,
+	Currency,
+	RiftPass,
 };

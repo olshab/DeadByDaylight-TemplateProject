@@ -1,12 +1,13 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "StoreRedirectionData.h"
 #include "StoreSubPresenter.h"
 #include "UObject/ScriptInterface.h"
 #include "StoreSpecialsSubPresenter.generated.h"
 
-class UStoreSpecialsItemViewData;
 class IStoreSpecialsViewInterface;
+class UStoreCustomizationItemViewData;
 
 UCLASS()
 class DBDUIPRESENTERS_API UStoreSpecialsSubPresenter : public UStoreSubPresenter
@@ -18,9 +19,12 @@ private:
 	TScriptInterface<IStoreSpecialsViewInterface> _storeSpecialsWidget;
 
 	UPROPERTY(Transient)
-	TArray<UStoreSpecialsItemViewData*> _cachedSpecialsItems;
+	TArray<UStoreCustomizationItemViewData*> _cachedSpecialsItems;
 
 private:
+	UFUNCTION()
+	void RequestMoveToCharactersPage(const FStoreRedirectionData& storeRedirectionData);
+
 	UFUNCTION()
 	void OnPremiumTransactionCompleted(bool success);
 

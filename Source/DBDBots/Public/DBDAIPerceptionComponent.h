@@ -36,6 +36,15 @@ public:
 	UPROPERTY(EditDefaultsOnly)
 	float StimulusHalfFOV;
 
+	UPROPERTY(EditDefaultsOnly)
+	float OutOfChaseFullPeripheralVisionRange;
+
+	UPROPERTY(EditDefaultsOnly)
+	float InChaseFullPeripheralVisionRange;
+
+	UPROPERTY(EditDefaultsOnly)
+	float DarknessMaxVisionRange;
+
 private:
 	UPROPERTY(Transient)
 	TMap<UClass*, UObject*> _objOverridingSenses;

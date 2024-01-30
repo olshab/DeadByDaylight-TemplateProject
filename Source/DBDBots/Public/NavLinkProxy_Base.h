@@ -24,6 +24,12 @@ public:
 	UPROPERTY(EditDefaultsOnly)
 	int32 NbMaxLinkUsers;
 
+	UPROPERTY(EditDefaultsOnly)
+	float ReachedRadius;
+
+	UPROPERTY(EditDefaultsOnly)
+	float ReachedHeight;
+
 private:
 	UPROPERTY(Transient)
 	TMap<ADBDPlayer*, FMoveLinkPlayerInfo> _players;

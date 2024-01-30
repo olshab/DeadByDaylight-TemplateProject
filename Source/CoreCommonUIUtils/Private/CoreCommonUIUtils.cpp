@@ -1,6 +1,7 @@
 #include "CoreCommonUIUtils.h"
 #include "Components/SlateWrapperTypes.h"
 #include "EItemRarity.h"
+#include "UObject/NoExportTypes.h"
 
 class UWidget;
 class UObject;
@@ -23,6 +24,11 @@ bool UCoreCommonUIUtils::HasOuter(const UObject* object, UObject* root)
 FText UCoreCommonUIUtils::GetTextBasedOnRarity(const EItemRarity rarity)
 {
 	return FText::GetEmpty();
+}
+
+float UCoreCommonUIUtils::GetNextUpdateRate(const FDateTime& endTime)
+{
+	return 0.0f;
 }
 
 float UCoreCommonUIUtils::GetDPIScale()

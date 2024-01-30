@@ -44,6 +44,11 @@ void UPlayerProfilePresenter::OnUpdatePlayerProfileCurrencyFilter(const uint8 cu
 
 }
 
+void UPlayerProfilePresenter::OnUpdatePlayerCardAnimationMode() const
+{
+
+}
+
 void UPlayerProfilePresenter::OnResetPlayerProfileFilter()
 {
 
@@ -74,7 +79,7 @@ void UPlayerProfilePresenter::HidePlayerProfile()
 
 }
 
-FText UPlayerProfilePresenter::GetPlayerName()
+FText UPlayerProfilePresenter::GetPlayerName() const
 {
 	return FText::GetEmpty();
 }

@@ -2,6 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "StoreChapterPacksListViewInterface.h"
+#include "StoreRedirectionData.h"
 #include "CoreBaseUserWidget.h"
 #include "Templates/SubclassOf.h"
 #include "CoreStoreChapterPacksListWidget.generated.h"
@@ -30,6 +31,15 @@ private:
 	UCorePreConstructableList* _itemList;
 
 private:
+	UFUNCTION()
+	void OnItemRedirectClicked(const FString& chapterPackId, const FString& heritagePackId);
+
+	UFUNCTION()
+	void OnItemCustomizationClicked(const FStoreRedirectionData& redirectionData);
+
+	UFUNCTION()
+	void OnItemCharacterClicked(const FStoreRedirectionData& redirectionData);
+
 	UFUNCTION()
 	void OnItemBuyActionClicked(const FString& packId);
 

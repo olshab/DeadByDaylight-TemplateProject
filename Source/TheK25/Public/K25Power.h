@@ -79,6 +79,9 @@ protected:
 	TSubclassOf<AAnimationFollowerActor> _pillarAnimationActorClass;
 
 private:
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UStatusEffect> _chainsAttachedStatusEffectClass;
+
 	UPROPERTY(VisibleAnywhere, Export)
 	UK25ProjectileLauncher* _k25ProjectileLauncher;
 

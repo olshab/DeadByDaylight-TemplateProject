@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Templates/SubclassOf.h"
 #include "ChargeableInteractionDefinition.h"
 #include "DBDTunableRowHandle.h"
 #include "TunableStat.h"
@@ -23,6 +24,9 @@ private:
 
 	UPROPERTY(Replicated, Export)
 	UStatusEffect* _selfSlowEffect;
+
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UStatusEffect> _selfSlowStatusEffectClass;
 
 	UPROPERTY(EditDefaultsOnly)
 	FDBDTunableRowHandle _flurryOfKnivesEnterDuration;

@@ -5,8 +5,11 @@
 #include "TunableStat.h"
 #include "TagStateBool.h"
 #include "OnHeatChargeUpdateDelegate.h"
+#include "Templates/SubclassOf.h"
 #include "HillbillyChainsawOverheatComponent.generated.h"
 
+class UStatusEffect;
+class UTimerObject;
 class UPowerChargeComponent;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
@@ -19,6 +22,9 @@ protected:
 	FOnHeatChargeUpdateDelegate OnHeatChargeUpdateDelegate;
 
 private:
+	UPROPERTY(Replicated, Transient, Export)
+	UTimerObject* _overheatTimer;
+
 	UPROPERTY(ReplicatedUsing=OnRep_IsChainsawOverheating, Transient)
 	FTagStateBool _isChainsawOverheating;
 
@@ -26,10 +32,22 @@ private:
 	UPowerChargeComponent* _chainsawHeatCharge;
 
 	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UStatusEffect> _overheatStatusEffectClass;
+
+	UPROPERTY(EditDefaultsOnly)
+	FTunableStat _heatDuration;
+
+	UPROPERTY(EditDefaultsOnly)
 	FTunableStat _heatMaxCharge;
 
 	UPROPERTY(EditDefaultsOnly)
 	FTunableStat _heatRevStartAmount;
+
+	UPROPERTY(EditDefaultsOnly)
+	FTunableStat _heatRevInputPressActivationBuffer;
+
+	UPROPERTY(EditDefaultsOnly)
+	FTunableStat _heatSurvivorHitAmount;
 
 	UPROPERTY(EditDefaultsOnly)
 	FTunableStat _heatRevChargeRate;
@@ -41,17 +59,14 @@ private:
 	FTunableStat _heatDischargeRate;
 
 	UPROPERTY(EditDefaultsOnly)
-	FTunableStat _overheatDischargeRate;
+	FTunableStat _heatDecayDelay;
 
 private:
 	UFUNCTION()
-	void OnRep_IsChainsawOverheating();
+	void OnRep_IsChainsawOverheating() const;
 
 	UFUNCTION()
 	void OnLevelReadyToPlay();
-
-	UFUNCTION()
-	void OnHeatChargeUpdate(const float currentCharge, const float previosCharge);
 
 public:
 	UFUNCTION(BlueprintPure)
@@ -59,10 +74,7 @@ public:
 
 private:
 	UFUNCTION()
-	void Authority_OnHeatChargeFull();
-
-	UFUNCTION()
-	void Authority_OnHeatChargeEmpty();
+	void Authority_OnHeatChargeFull() const;
 
 public:
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

@@ -27,7 +27,17 @@ void UCoreStoreCharacterPerksToastWidget::SetCharacterData(TArray<UCharacterPerk
 
 }
 
+void UCoreStoreCharacterPerksToastWidget::OpenToast_Implementation(bool isOpen)
+{
+
+}
+
 void UCoreStoreCharacterPerksToastWidget::OnPlayerClick(const FPointerEvent& pointerEvent)
+{
+
+}
+
+void UCoreStoreCharacterPerksToastWidget::OnOpenButtonClick(UCoreButtonWidget* button)
 {
 
 }
@@ -40,9 +50,10 @@ void UCoreStoreCharacterPerksToastWidget::HideTooltip(UCoreButtonWidget* unhover
 UCoreStoreCharacterPerksToastWidget::UCoreStoreCharacterPerksToastWidget()
 {
 	this->SafeArea = NULL;
-	this->isOpen = false;
 	this->CoreKillerPower = NULL;
 	this->CorePerk_1 = NULL;
 	this->CorePerk_2 = NULL;
 	this->CorePerk_3 = NULL;
+	this->OpenButton = NULL;
+	this->_isOpen = false;
 }

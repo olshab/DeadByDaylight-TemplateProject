@@ -27,4 +27,5 @@ UGhostStalkPowerComponent::UGhostStalkPowerComponent()
 	this->_ghostStalkedComponentClassPtr = NULL;
 	this->_crouchAttackRequiredTimeSeconds = 0.000000;
 	this->_debugMode = false;
+	this->_ghostStalkSpeedStatusEffectClass = NULL;
 }

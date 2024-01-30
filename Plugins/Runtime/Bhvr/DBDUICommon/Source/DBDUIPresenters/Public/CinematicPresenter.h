@@ -32,6 +32,9 @@ public:
 	void OnSubtitlesUpdated(const TArray<FString>& subtitles);
 
 	UFUNCTION()
+	void OnSkipButtonClicked();
+
+	UFUNCTION()
 	void OnPlaybackStarted();
 
 	UFUNCTION()

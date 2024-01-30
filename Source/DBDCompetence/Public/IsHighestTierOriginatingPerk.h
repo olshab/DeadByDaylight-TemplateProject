@@ -23,6 +23,9 @@ private:
 	UFUNCTION()
 	void OnStatusEffectAddedOrRemoved(UStatusEffect* effect, bool valid);
 
+	UFUNCTION()
+	void OnGameplayModifierContainerInitialized();
+
 public:
 	UIsHighestTierOriginatingPerk();
 };

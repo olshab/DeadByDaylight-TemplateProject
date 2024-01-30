@@ -111,6 +111,9 @@ protected:
 	void Cosmetic_OnStatusEffectZoneVFXActiveChanged(bool active);
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCosmetic)
+	void Cosmetic_OnPoweredOnVfxRadiusChanged(float newPoweredOnVfxRadius);
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCosmetic)
 	void Cosmetic_OnCamperCanInsertTapeChanged(const bool canInsertTape);
 
 private:

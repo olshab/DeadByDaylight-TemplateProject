@@ -11,8 +11,6 @@
 #include "ScoreEventData.h"
 #include "DBDGenericTeamAgentInterface.h"
 #include "PerkManagerOwnerInterface.h"
-#include "Components/SkinnedMeshComponent.h"
-#include "OnLocallyObservedChangedForPlayer.h"
 #include "DBDBasePlayer.h"
 #include "OnRunningAndMovingChanged.h"
 #include "Perception/AISightTargetInterface.h"
@@ -42,6 +40,7 @@
 #include "EInteractionAnimation.h"
 #include "EPawnType.h"
 #include "InteractionPlayerProperties.h"
+#include "Components/SkinnedMeshComponent.h"
 #include "DBDPlayer.generated.h"
 
 class USpringArmComponent;
@@ -71,6 +70,7 @@ class UPrimitiveComponent;
 class UCharacterInventoryComponent;
 class UBoxOcclusionQueryComponent;
 class UBoxComponent;
+class UPrimitivesRegistererComponent;
 class USoundCue;
 class ADBDPlayerController;
 class UDBDPlayerData;
@@ -88,7 +88,6 @@ class UPollableEventListener;
 class UDynamicCapsuleResizerComponent;
 class UAuthoritativeMovementComponent;
 class UInteractionDetectorComponent;
-class UPrimitivesRegistererComponent;
 class UClippableProviderComponent;
 class UContextualQuestComponent;
 class AController;
@@ -99,7 +98,6 @@ class UItemModifier;
 class UItemAddon;
 class AInteractable;
 class APlayerState;
-class UGameplayModifierContainer;
 class UInteractor;
 
 UCLASS(Abstract)
@@ -212,9 +210,6 @@ public:
 
 	UPROPERTY(BlueprintAssignable)
 	FOnRunningAndMovingChanged OnRunningAndMovingChanged;
-
-	UPROPERTY(BlueprintAssignable)
-	FOnLocallyObservedChangedForPlayer OnLocallyObservedChangedForPlayer;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Export)
 	UCameraComponent* Camera;
@@ -728,6 +723,9 @@ public:
 	bool IsHeadHidden() const;
 
 	UFUNCTION(BlueprintPure)
+	bool IsForPreview() const;
+
+	UFUNCTION(BlueprintPure)
 	bool IsExhausted() const;
 
 	UFUNCTION(BlueprintPure)
@@ -964,9 +962,6 @@ public:
 
 	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly)
 	void Authority_RequestStun(EStunType stunType, ADBDPlayer* stunner);
-
-	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly)
-	UStatusEffect* Authority_ImposeStatusEffect_DEPRECATED(FName statusEffectID, ADBDPlayer* originatingPlayer, float customParam, UGameplayModifierContainer* originatingEffect, bool shouldDisplay, float lifetime);
 
 	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly)
 	void Authority_HandleScoreEvent(FGameplayTag scoreTypeTag, FScoreEventData scoreEventData);

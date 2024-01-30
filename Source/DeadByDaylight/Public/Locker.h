@@ -111,6 +111,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void SetPlayerOpeningLocker(ADBDPlayer* player);
 
+	UFUNCTION(BlueprintPure=false, BlueprintCallable)
+	void SetPlayerInLockerVisibility(const bool isVisible) const;
+
 private:
 	UFUNCTION()
 	void OnSurvivorHealthChanged(ECamperDamageState before, ECamperDamageState after);

@@ -2,5 +2,5 @@
 
 URustedSpikeAddon::URustedSpikeAddon()
 {
-
+	this->_mangledStatusEffectClass = NULL;
 }

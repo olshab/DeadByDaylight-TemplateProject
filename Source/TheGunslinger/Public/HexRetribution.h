@@ -22,6 +22,9 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UStatusEffect> _revealEffectClass;
 
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UStatusEffect> _obliviousEffectClass;
+
 public:
 	UHexRetribution();
 };

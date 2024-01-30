@@ -5,9 +5,10 @@
 #include "EStoryNodeState.h"
 #include "ENodeStatusChange.h"
 #include "CoreButtonWidget.h"
-#include "EItemRarity.h"
 #include "ETooltipHorizontalAlignment.h"
+#include "EItemRarity.h"
 #include "ArchiveNodeViewData.h"
+#include "UObject/SoftObjectPtr.h"
 #include "ECurrencyType.h"
 #include "CoreArchiveQuestNodeWidget.generated.h"
 
@@ -15,6 +16,7 @@ class UDBDImage;
 class UOverlay;
 class UDBDRichTextBlock;
 class UAkAudioEvent;
+class UTexture2D;
 
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCoreArchiveQuestNodeWidget : public UCoreButtonWidget
@@ -73,6 +75,9 @@ protected:
 
 	UFUNCTION(BlueprintCallable)
 	void ShowRewardNodeTooltip();
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void SetIcon(bool isReward, const TSoftObjectPtr<UTexture2D>& iconTexture);
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void SetCustomizationRewardRarity(EItemRarity rarity);

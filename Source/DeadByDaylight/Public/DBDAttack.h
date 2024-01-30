@@ -20,7 +20,7 @@ class UAttackableComponent;
 class ACharacter;
 class ADBDPlayer;
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UDBDAttack : public UActorComponent
 {
 	GENERATED_BODY()
@@ -105,6 +105,10 @@ private:
 protected:
 	UFUNCTION()
 	void Local_OnMovementChanged(ACharacter* character, TEnumAsByte<EMovementMode> prevMovementMode, uint8 previousCustomMode);
+
+public:
+	UFUNCTION(BlueprintPure)
+	UDBDAttackSubstate* GetAttackSubstate(const EAttackSubstate state) const;
 
 private:
 	UFUNCTION(Client, Reliable)

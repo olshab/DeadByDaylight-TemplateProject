@@ -16,9 +16,6 @@ private:
 	UPROPERTY(Transient)
 	ASupplyCrateInteractable* _owningSupplyCrate;
 
-	UPROPERTY(Transient)
-	bool _interactionWasComplete;
-
 	UPROPERTY(EditDefaultsOnly)
 	UAnimSequence* _successExitTimeAnimSequenceReference;
 

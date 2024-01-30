@@ -6,6 +6,7 @@
 #include "StoreFeaturedViewInterface.generated.h"
 
 class UStoreCustomizationItemViewData;
+class UStoreFeaturedChapterPackViewData;
 
 UINTERFACE(Blueprintable)
 class DBDUIVIEWINTERFACES_API UStoreFeaturedViewInterface : public UInterface
@@ -25,6 +26,6 @@ public:
 	void InitFeaturedCharacters(const TArray<FStoreFeaturedCharacterViewData>& characterViewDataArray);
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-	void FocusFeaturedCharacter(int32 characterIndex);
+	void InitFeaturedChapterPacks(const TArray<UStoreFeaturedChapterPackViewData*>& viewDataArray);
 
 };

@@ -31,6 +31,11 @@ void UCoreKeyListenerInputPromptWidget::SetEnabled(bool isEnabled)
 
 }
 
+void UCoreKeyListenerInputPromptWidget::SetBetaFeatureOverlayVisible(bool isVisible)
+{
+
+}
+
 void UCoreKeyListenerInputPromptWidget::SetAdditionalIcon(TSoftObjectPtr<UTexture2D> iconTexture)
 {
 

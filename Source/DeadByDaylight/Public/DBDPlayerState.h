@@ -267,10 +267,6 @@ private:
 	UFUNCTION(Client, Reliable)
 	void Client_FetchCoreRituals(bool hasClaimableRitual);
 
-protected:
-	UFUNCTION(Client, Reliable)
-	void Client_AtlantaUpdateInventoryItem(const FName& itemid, int32 newCount);
-
 public:
 	UFUNCTION(BlueprintCallable)
 	void ChangeStartingGameRole(EPlayerRole gameRoleNew);

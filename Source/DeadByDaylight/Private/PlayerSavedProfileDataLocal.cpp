@@ -27,6 +27,7 @@ FPlayerSavedProfileDataLocal::FPlayerSavedProfileDataLocal()
 	this->AutoDeclineFriendInvites = false;
 	this->CharacterCustomizationPresets = TArray<FCharacterCustomizationPresetsList>();
 	this->CharacterLoadoutPresets = TArray<FCharacterLoadoutPresetsList>();
+	this->CharacterLoadoutPresetsPerGameType = TMap<FString, FLoadoutPresetsDataForGameType>();
 	this->_cumulativeData = FPlayerSavedProfileCumulativeData{};
 	this->_savedPlayerStats = TArray<FSavedStatsData>();
 	this->_hasBeenGivenKillerTutorialEndReward = false;

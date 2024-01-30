@@ -19,6 +19,12 @@ public:
 	bool Description_IsSet;
 
 	UPROPERTY()
+	TArray<FString> GameModes;
+
+	UPROPERTY(SkipSerialization)
+	bool GameModes_IsSet;
+
+	UPROPERTY()
 	FString LinkedEventId;
 
 	UPROPERTY(SkipSerialization)

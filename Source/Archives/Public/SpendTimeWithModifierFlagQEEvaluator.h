@@ -1,12 +1,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "QuestEventEvaluatorBase.h"
 #include "GameplayTagContainer.h"
+#include "SpendTimeWithGameplayTagQEEvaluator.h"
 #include "SpendTimeWithModifierFlagQEEvaluator.generated.h"
 
 UCLASS()
-class USpendTimeWithModifierFlagQEEvaluator : public UQuestEventEvaluatorBase
+class USpendTimeWithModifierFlagQEEvaluator : public USpendTimeWithGameplayTagQEEvaluator
 {
 	GENERATED_BODY()
 

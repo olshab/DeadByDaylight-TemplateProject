@@ -415,7 +415,6 @@ UDBDGameInstance::UDBDGameInstance()
 	this->_isAdditionalContentInstalled = false;
 	this->_isCloudInventoryInitialized = false;
 	this->_resultOfferingAndPerkEffects = NULL;
-	this->_inventoryHandler = NULL;
 	this->_cinematicManager = NULL;
 	this->_softBanManager = NULL;
 	this->_consentManager = NULL;

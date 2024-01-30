@@ -191,11 +191,6 @@ void ADBDPlayerState::Client_FetchCoreRituals_Implementation(bool hasClaimableRi
 
 }
 
-void ADBDPlayerState::Client_AtlantaUpdateInventoryItem_Implementation(const FName& itemid, int32 newCount)
-{
-
-}
-
 void ADBDPlayerState::ChangeStartingGameRole(EPlayerRole gameRoleNew)
 {
 

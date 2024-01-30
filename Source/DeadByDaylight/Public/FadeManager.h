@@ -7,6 +7,7 @@
 #include "FadeManager.generated.h"
 
 class UDataTable;
+class UActorComponent;
 class UMeshComponent;
 
 UCLASS()
@@ -24,18 +25,24 @@ private:
 	UPROPERTY(Transient)
 	TArray<FOriginalMaterials> _fadedMeshes;
 
+	UPROPERTY(Transient, Export)
+	TSet<UActorComponent*> _excludedActors;
+
 public:
 	UFUNCTION(BlueprintCallable)
-	void RemoveFadeMaterials();
+	void RemoveFadeMaterials(bool adjustAudioOcclusions);
 
 	UFUNCTION(BlueprintCallable)
-	void FadeAt(FVector Location);
+	void FadeAt(FVector Location, bool adjustAudioOcclusions);
 
 	UFUNCTION(Exec)
 	void DBD_TurnCameraAroundPlayerWithFading(bool isTurning);
 
 	UFUNCTION(Exec)
 	void DBD_FadeAtCurrentCameraLocation(bool isEnabled);
+
+	UFUNCTION(BlueprintCallable)
+	bool AreAnyMaterialsFaded();
 
 public:
 	AFadeManager();

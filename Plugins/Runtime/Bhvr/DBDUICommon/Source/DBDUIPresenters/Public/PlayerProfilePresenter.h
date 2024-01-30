@@ -46,6 +46,9 @@ private:
 	void OnUpdatePlayerProfileCurrencyFilter(const uint8 currencyFilter);
 
 	UFUNCTION()
+	void OnUpdatePlayerCardAnimationMode() const;
+
+	UFUNCTION()
 	void OnResetPlayerProfileFilter();
 
 	UFUNCTION()
@@ -64,7 +67,7 @@ private:
 	void HidePlayerProfile();
 
 	UFUNCTION()
-	FText GetPlayerName();
+	FText GetPlayerName() const;
 
 	UFUNCTION()
 	void FocusPlayerProfile(const uint8 filter, const uint8 currencyFilter);

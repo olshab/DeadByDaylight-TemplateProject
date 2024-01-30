@@ -2,9 +2,11 @@
 
 #include "CoreMinimal.h"
 #include "PresenterParentWidget.h"
+#include "Components/SlateWrapperTypes.h"
 #include "GridPresenterParentWidget.generated.h"
 
 class UGridPanel;
+class UImage;
 
 UCLASS(EditInlineNew)
 class UGridPresenterParentWidget : public UPresenterParentWidget
@@ -14,6 +16,13 @@ class UGridPresenterParentWidget : public UPresenterParentWidget
 public:
 	UPROPERTY(BlueprintReadOnly, Export)
 	UGridPanel* Container;
+
+	UPROPERTY(BlueprintReadOnly, Export)
+	UImage* DividerImage;
+
+public:
+	UFUNCTION()
+	void OnChildVisibilityChanged(ESlateVisibility InVisibility);
 
 public:
 	UGridPresenterParentWidget();

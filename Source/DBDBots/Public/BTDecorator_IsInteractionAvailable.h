@@ -30,6 +30,9 @@ public:
 	FBlackboardKeySelector BBInteractor;
 
 	UPROPERTY(EditInstanceOnly)
+	FBlackboardKeySelector BBInputType;
+
+	UPROPERTY(EditInstanceOnly)
 	bool FailIfAnotherOngoingInteraction;
 
 	UPROPERTY(EditInstanceOnly)

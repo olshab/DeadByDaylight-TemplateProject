@@ -5,10 +5,12 @@
 #include "EContext.h"
 #include "Components/SlateWrapperTypes.h"
 #include "EPresenterPhase.h"
+#include "UObject/ScriptInterface.h"
 #include "Presenter.generated.h"
 
 class UPresenterRequirementFunction;
 class UUserWidget;
+class ILockedFeatureElementViewInterface;
 class UPresenterParentInfo;
 
 UCLASS(BlueprintType, Abstract, EditInlineNew)
@@ -22,9 +24,6 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	EPresenterPhase _widgetInstantiationPhase;
-
-	UPROPERTY(EditAnywhere)
-	bool RequestPresentationAtBeginPlay;
 
 	UPROPERTY(EditAnywhere)
 	ESlateVisibility InitialVisibility;
@@ -49,6 +48,9 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	uint8 _currencyFilter;
+
+	UPROPERTY(Transient)
+	TArray<TScriptInterface<ILockedFeatureElementViewInterface>> _lockedFeatureElements;
 
 private:
 	UFUNCTION()

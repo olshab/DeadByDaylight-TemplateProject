@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "StoreRedirectionData.h"
 #include "CoreButtonSelector.h"
 #include "Templates/SubclassOf.h"
 #include "EEasingType.h"
@@ -71,6 +72,9 @@ public:
 private:
 	UFUNCTION()
 	void OnSelectedItemChanged(UCoreSelectableButtonWidget* selectedButton);
+
+	UFUNCTION()
+	void OnMoveToCharactersCustomizationPageRequested(const FStoreRedirectionData& redirectionData);
 
 	UFUNCTION()
 	void OnMoveCompleted();

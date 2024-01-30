@@ -1,24 +1,26 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "SurvivorStatusInterface.h"
 #include "GameplayTagContainer.h"
-#include "DBDTunableRowHandle.h"
 #include "Components/ActorComponent.h"
 #include "TunableStat.h"
+#include "DBDTunableRowHandle.h"
+#include "CondemnedUIDataInterface.h"
 #include "Templates/SubclassOf.h"
 #include "ECondemnOrigin.h"
 #include "CondemnedComponent.generated.h"
 
-class ASlasherPlayer;
 class UStatusEffect;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
-class THEONRYO_API UCondemnedComponent : public UActorComponent, public ISurvivorStatusInterface
+class THEONRYO_API UCondemnedComponent : public UActorComponent, public ICondemnedUIDataInterface
 {
 	GENERATED_BODY()
 
 private:
+	UPROPERTY(EditDefaultsOnly)
+	FTunableStat _condemnedRangeWhenTeleport;
+
 	UPROPERTY(EditDefaultsOnly)
 	FDBDTunableRowHandle _maxCondemnedLevel;
 
@@ -44,10 +46,10 @@ private:
 	FDBDTunableRowHandle _stacksOnPlayerHooked;
 
 	UPROPERTY(EditDefaultsOnly)
-	FDBDTunableRowHandle _condemnedStacksToAddOnBasicAttack;
+	FDBDTunableRowHandle _maxLockInStacksPerHook;
 
 	UPROPERTY(EditDefaultsOnly)
-	FTunableStat _timePerCondemnStack;
+	FTunableStat _condemnedStackPerSecond;
 
 	UPROPERTY(EditDefaultsOnly)
 	TArray<FGameplayTag> _analyticScoreTag;
@@ -56,13 +58,13 @@ private:
 	float _condemnedLevel;
 
 	UPROPERTY(Replicated)
+	float _lockedCondemnedLevel;
+
+	UPROPERTY(Replicated)
 	ECondemnOrigin _previousReasonForCondemn;
 
 	UPROPERTY(ReplicatedUsing=OnRep_HoldingVHS)
 	bool _isHoldingVHS;
-
-	UPROPERTY(Replicated)
-	bool _vhsOnlyAppliesToSingleTV;
 
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UStatusEffect> _condemnKillerInstinctEffectClass;
@@ -87,7 +89,7 @@ private:
 	void OnRep_CondemnedLevel(const float previousValue);
 
 	UFUNCTION()
-	void OnKillerSet(ASlasherPlayer* killer);
+	void OnLevelReadyToPlay();
 
 public:
 	UFUNCTION(BlueprintPure)
@@ -98,6 +100,9 @@ public:
 
 	UFUNCTION(BlueprintPure)
 	bool IsCondemned() const;
+
+	UFUNCTION(BlueprintPure)
+	float GetLockedCondemnedPercent() const;
 
 	UFUNCTION(BlueprintPure)
 	float GetCondemnedPercent() const;

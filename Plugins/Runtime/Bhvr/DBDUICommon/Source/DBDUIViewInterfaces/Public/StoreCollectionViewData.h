@@ -25,10 +25,16 @@ public:
 	FString DisplaySubtitle;
 
 	UPROPERTY(BlueprintReadOnly, Transient)
-	FDateTime ActiveFrom;
+	FDateTime LimitedAvailabilityStartDate;
 
 	UPROPERTY(BlueprintReadOnly, Transient)
-	FDateTime ActiveTo;
+	bool VisibleBeforeStartDate;
+
+	UPROPERTY(BlueprintReadOnly, Transient)
+	FDateTime LimitedAvailabilityEndDate;
+
+	UPROPERTY(BlueprintReadOnly, Transient)
+	bool VisibleAfterEndDate;
 
 	UPROPERTY(BlueprintReadOnly, Transient)
 	int32 SortOrder;
@@ -46,23 +52,14 @@ public:
 	bool IsNew;
 
 	UPROPERTY(BlueprintReadOnly, Transient)
-	bool IsFeatured;
-
-	UPROPERTY(BlueprintReadOnly, Transient)
-	bool IsSpecial;
-
-	UPROPERTY(BlueprintReadOnly, Transient)
-	FDateTime SpecialStartDate;
-
-	UPROPERTY(BlueprintReadOnly, Transient)
-	FDateTime SpecialEndDate;
-
-	UPROPERTY(BlueprintReadOnly, Transient)
 	TArray<UStoreCustomizationItemViewData*> Items;
 
 public:
 	UFUNCTION(BlueprintPure)
-	bool IsSpecialActive() const;
+	bool IsSpecial() const;
+
+	UFUNCTION(BlueprintPure)
+	bool IsCollectionHidden() const;
 
 	UFUNCTION(BlueprintPure)
 	bool IsCollectionActive() const;

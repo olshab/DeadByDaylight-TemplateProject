@@ -9,10 +9,10 @@ struct FAITunableParameter
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditInstanceOnly)
+	UPROPERTY(EditAnywhere)
 	float DefaultValue;
 
-	UPROPERTY(EditInstanceOnly)
+	UPROPERTY(EditAnywhere)
 	FName TunableName;
 
 public:

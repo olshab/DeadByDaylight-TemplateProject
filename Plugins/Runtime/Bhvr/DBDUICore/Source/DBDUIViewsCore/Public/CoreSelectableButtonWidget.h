@@ -40,7 +40,7 @@ public:
 
 protected:
 	UFUNCTION(BlueprintImplementableEvent)
-	void OnSelectedChanged(bool isSelected);
+	void OnSelectedChanged(bool isSelected, bool withAnimation);
 
 public:
 	UFUNCTION(BlueprintPure)

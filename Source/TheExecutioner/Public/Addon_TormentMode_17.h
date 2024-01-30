@@ -2,7 +2,10 @@
 
 #include "CoreMinimal.h"
 #include "SpawnEffectsOnAllSurvivorsBaseAddon.h"
+#include "Templates/SubclassOf.h"
 #include "Addon_TormentMode_17.generated.h"
+
+class UStatusEffect;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
 class UAddon_TormentMode_17 : public USpawnEffectsOnAllSurvivorsBaseAddon
@@ -10,6 +13,9 @@ class UAddon_TormentMode_17 : public USpawnEffectsOnAllSurvivorsBaseAddon
 	GENERATED_BODY()
 
 private:
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UStatusEffect> _agonyObliviousStatusEffectClass;
+
 	UPROPERTY(EditDefaultsOnly)
 	float _obliviousDuration;
 

@@ -15,9 +15,9 @@ public:
 
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnFXUpdate, float, progressPercent);
 
-	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnBlinkChargeStop, bool, stopByBlink);
-
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnIsBlinkingChanged, bool, isBlinking);
+
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnBlinkChargeStop, bool, stopByBlink);
 
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnIsChargingBlinkChanged, bool, isChargingBlink);
 

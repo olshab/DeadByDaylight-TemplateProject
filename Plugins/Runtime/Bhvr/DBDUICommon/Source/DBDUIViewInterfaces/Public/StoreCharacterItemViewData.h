@@ -39,6 +39,9 @@ public:
 	FName KillerPowerId;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
+	bool IsEquipped;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
 	bool IsUnlocked;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
@@ -52,21 +55,6 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
 	bool HasNonSelectedPerks;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
-	FString DlcId;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
-	FString DlcTitle;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
-	FString PackId;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
-	FString PackTitle;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
-	bool IsDlcPurchasable;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
 	bool IsDlcLockedKiller;

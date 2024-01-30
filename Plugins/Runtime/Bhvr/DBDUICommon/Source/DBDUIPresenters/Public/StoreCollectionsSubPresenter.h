@@ -21,6 +21,19 @@ private:
 	UPROPERTY(Transient)
 	TArray<UStoreCollectionViewData*> _allCollectionsViewData;
 
+	UPROPERTY(Transient)
+	UStoreCollectionViewData* _focusedCollection;
+
+private:
+	UFUNCTION()
+	void OnCollectionUnfocused();
+
+	UFUNCTION()
+	void OnCollectionItemSelected(const FString& collectionId, FName selectedCustomizationItemId);
+
+	UFUNCTION()
+	void OnCollectionFocused(const FString& collectionId);
+
 public:
 	UStoreCollectionsSubPresenter();
 };

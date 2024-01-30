@@ -19,6 +19,9 @@ public:
 	UMaterialInstance* LaserScanMeshMaterial;
 
 	UPROPERTY(EditDefaultsOnly)
+	UMaterialInstance* LaserScanMeshMaterialUndetectable;
+
+	UPROPERTY(EditDefaultsOnly)
 	float StaticCapturesLightAngle;
 
 	UPROPERTY(EditDefaultsOnly)
@@ -62,6 +65,10 @@ public:
 
 	UPROPERTY(EditDefaultsOnly)
 	FPerPlatformInt StaticDepthCaptureSizeHeight;
+
+private:
+	UPROPERTY(Transient)
+	UMaterialInstance* _defaultLaserScanMeshMaterial;
 
 public:
 	UFUNCTION(BlueprintCallable)

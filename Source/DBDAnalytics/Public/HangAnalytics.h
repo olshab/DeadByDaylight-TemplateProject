@@ -23,10 +23,13 @@ public:
 	float LastLoadingProgression;
 
 	UPROPERTY()
-	FString RecentFenceLogs;
+	FString AdditionalLogs;
 
 	UPROPERTY()
 	FString MatchId;
+
+	UPROPERTY()
+	FString HangSourcesName;
 
 public:
 	DBDANALYTICS_API FHangAnalytics();

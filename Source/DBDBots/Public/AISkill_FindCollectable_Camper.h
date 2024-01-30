@@ -24,7 +24,10 @@ public:
 	FAITunableParameter CloseItemDistThreshold;
 
 	UPROPERTY(EditInstanceOnly)
-	FAITunableParameter CloseItemWeightBonus;
+	FAITunableParameter CloseItemWeightMultiplier;
+
+	UPROPERTY(EditInstanceOnly)
+	FAITunableParameter ItemGoalWeightMultiplier;
 
 	UPROPERTY(EditInstanceOnly)
 	float EmptyItemChargeThreshold;

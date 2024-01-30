@@ -13,9 +13,6 @@ struct FSimpleSpawnEffectsOnAllSurvivorsAddonParams
 
 public:
 	UPROPERTY(EditDefaultsOnly)
-	FName _statusEffectIdDeprecated;
-
-	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UStatusEffect> _effectClass;
 
 	UPROPERTY(EditDefaultsOnly)

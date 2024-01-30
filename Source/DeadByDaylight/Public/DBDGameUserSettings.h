@@ -65,6 +65,9 @@ private:
 	bool TerrorRadiusVisualFeedback;
 
 	UPROPERTY()
+	int32 FieldOfView;
+
+	UPROPERTY()
 	bool HUDPlayerNamesVisibility;
 
 	UPROPERTY()
@@ -268,6 +271,9 @@ public:
 
 	UFUNCTION(BlueprintPure)
 	bool GetHUDKillerHookCountVisibility() const;
+
+	UFUNCTION(BlueprintPure)
+	int32 GetFieldOfView() const;
 
 	UFUNCTION(BlueprintCallable)
 	static UDBDGameUserSettings* GetDBDGameUserSettings();

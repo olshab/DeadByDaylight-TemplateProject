@@ -27,7 +27,7 @@ class UTwinPossessNegationEffectComponent;
 class UFirecrackerEffectHandlerComponent;
 
 UCLASS()
-class AConjoinedTwin : public ADBDPlayer
+class THETWINS_API AConjoinedTwin : public ADBDPlayer
 {
 	GENERATED_BODY()
 

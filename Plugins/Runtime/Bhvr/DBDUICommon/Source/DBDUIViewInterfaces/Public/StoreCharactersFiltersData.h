@@ -16,8 +16,9 @@ public:
 	UPROPERTY(EditInstanceOnly)
 	bool IsOwned;
 
-	UPROPERTY(EditInstanceOnly)
-	TMap<EItemRarity, bool> RarityFiltersMap;
+private:
+	UPROPERTY(EditInstanceOnly, Transient)
+	TMap<EItemRarity, bool> _rarityFiltersMap;
 
 public:
 	DBDUIVIEWINTERFACES_API FStoreCharactersFiltersData();

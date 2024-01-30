@@ -35,12 +35,6 @@ public:
 	int32 SacrificeBonus;
 
 	UPROPERTY()
-	int32 BonusEvent;
-
-	UPROPERTY()
-	int32 MatchIncentive;
-
-	UPROPERTY()
 	int32 EscapeesCount;
 
 	UPROPERTY()
@@ -84,6 +78,27 @@ public:
 
 	UPROPERTY()
 	bool UsedKeyboard;
+
+	UPROPERTY()
+	float GeneratorRepairTimestamp1;
+
+	UPROPERTY()
+	float GeneratorRepairTimestamp2;
+
+	UPROPERTY()
+	float GeneratorRepairTimestamp3;
+
+	UPROPERTY()
+	float GeneratorRepairTimestamp4;
+
+	UPROPERTY()
+	float GeneratorRepairTimestamp5;
+
+	UPROPERTY()
+	int32 GeneratorsMaxRegressionCount;
+
+	UPROPERTY()
+	int32 GeneratorKicksCount;
 
 	UPROPERTY()
 	bool UsedHapticsVibration;

@@ -3,13 +3,16 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "StoreSpecialsViewInterface.h"
+#include "SpecialItemClickedDelegate.h"
 #include "CoreBaseUserWidget.h"
 #include "CoreStoreSpecialsWidget.generated.h"
 
-class UCoreAuricCellsSpecialOfferWidget;
-class UCorePreConstructableList;
-class UCoreSelectableButtonWidget;
 class UDBDWrapBox;
+class UCorePreConstructableList;
+class UCoreAuricCellsSpecialOfferWidget;
+class UCoreButtonWidget;
+class UCoreStoreSpecialsItemWidget;
+class UDBDTextBlock;
 
 UCLASS(EditInlineNew)
 class UCoreStoreSpecialsWidget : public UCoreBaseUserWidget, public IStoreSpecialsViewInterface
@@ -18,20 +21,39 @@ class UCoreStoreSpecialsWidget : public UCoreBaseUserWidget, public IStoreSpecia
 
 protected:
 	UPROPERTY(EditAnywhere, NoClear)
-	TSubclassOf<UCoreSelectableButtonWidget> _itemWidgetClass;
+	TSubclassOf<UCoreStoreSpecialsItemWidget> _itemWidgetClass;
+
+	UPROPERTY(EditAnywhere, NoClear)
+	int32 _preConstructedItemsCount;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 _layoutMask;
+
+	UPROPERTY(EditAnywhere)
+	float _itemScale;
 
 	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
 	UCoreAuricCellsSpecialOfferWidget* AuricCellSpecialOffer;
 
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UDBDTextBlock* NoAuricCellsTitleTB;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UDBDTextBlock* NoAuricCellsTextTB;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
 	UDBDWrapBox* Container;
 
-	UPROPERTY(EditAnywhere, NoClear)
-	int32 _preConstructedItemsCount;
+	UPROPERTY()
+	FSpecialItemClickedDelegate SpecialItemClickedDelegate;
 
 private:
 	UPROPERTY(Transient)
 	UCorePreConstructableList* _itemList;
+
+private:
+	UFUNCTION()
+	void OnSpecialItemClicked(UCoreButtonWidget* buttonTarget);
 
 public:
 	UCoreStoreSpecialsWidget();

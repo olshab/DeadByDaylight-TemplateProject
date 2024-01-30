@@ -11,10 +11,16 @@ struct FStoreSpecialPackItem
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	FString Id;
+	EStoreSpecialPackItemType Type;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	EStoreSpecialPackItemType Type;
+	FString CustomizationId;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	FString CharacterId;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	FString TomeId;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	int32 Amount;

@@ -44,6 +44,9 @@ protected:
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
 	UCoreStoreCharactersFilterWidget* FiltersWidget;
 
+	UPROPERTY(Transient, Export)
+	TArray<UCoreStoreCharacterItemWidget*> _allCharacterItems;
+
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, NoClear)
 	int32 _preConstructedItemsCount;
 

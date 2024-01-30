@@ -47,6 +47,9 @@ private:
 	void OnLocallyObservedChanged();
 
 	UFUNCTION()
+	bool IsVisibleForCurrentGameMode() const;
+
+	UFUNCTION()
 	bool IsPendingPawnReady() const;
 
 	UFUNCTION()

@@ -1,6 +1,8 @@
 #include "CoreMainMenuWidget.h"
+#include "EMainMenuButtonType.h"
 
 class UCoreButtonWidget;
+class UCoreBaseUserWidget;
 
 void UCoreMainMenuWidget::OnTutorialButtonClicked(UCoreButtonWidget* target)
 {
@@ -62,6 +64,11 @@ void UCoreMainMenuWidget::OnFriendsButtonClicked(UCoreButtonWidget* target)
 
 }
 
+void UCoreMainMenuWidget::OnExitButtonTriggered()
+{
+
+}
+
 void UCoreMainMenuWidget::OnExitButtonClicked(UCoreButtonWidget* target)
 {
 
@@ -87,6 +94,16 @@ void UCoreMainMenuWidget::OnArchivesButtonClicked(UCoreButtonWidget* target)
 
 }
 
+bool UCoreMainMenuWidget::HasActiveLTE()
+{
+	return false;
+}
+
+UCoreBaseUserWidget* UCoreMainMenuWidget::GetButton(EMainMenuButtonType button)
+{
+	return NULL;
+}
+
 UCoreMainMenuWidget::UCoreMainMenuWidget()
 {
 	this->PlayButton = NULL;
@@ -94,6 +111,7 @@ UCoreMainMenuWidget::UCoreMainMenuWidget()
 	this->TutorialButton = NULL;
 	this->ArchivesButton = NULL;
 	this->StoreButton = NULL;
+	this->ChallengesButton = NULL;
 	this->PlayKillerButton = NULL;
 	this->PlaySurvivorButton = NULL;
 	this->PlayCustomGameButton = NULL;
@@ -105,5 +123,11 @@ UCoreMainMenuWidget::UCoreMainMenuWidget()
 	this->SettingsButton = NULL;
 	this->NewsButton = NULL;
 	this->CreditsButton = NULL;
+	this->MarketingInvitationButton = NULL;
 	this->ExitButton = NULL;
+	this->ChangeAccountInputSwitcher = NULL;
+	this->_eventNames = TArray<FName>();
+	this->_isChallengesButtonAvailable = false;
+	this->PlayKillerButtons = TMap<FName, UCoreMainMenuButtonWidget*>();
+	this->PlaySurvivorButtons = TMap<FName, UCoreMainMenuButtonWidget*>();
 }

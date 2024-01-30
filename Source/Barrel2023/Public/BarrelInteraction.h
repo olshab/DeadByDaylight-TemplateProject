@@ -10,9 +10,6 @@ class BARREL2023_API UBarrelInteraction : public UChargeableInteractionDefinitio
 	GENERATED_BODY()
 
 private:
-	UPROPERTY(Transient)
-	bool _isInteractionChargeComplete;
-
 	UPROPERTY(EditDefaultsOnly)
 	float _facingTolerance;
 

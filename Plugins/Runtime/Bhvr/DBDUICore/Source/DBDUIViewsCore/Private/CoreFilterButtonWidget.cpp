@@ -13,9 +13,11 @@ bool UCoreFilterButtonWidget::IsToggled() const
 UCoreFilterButtonWidget::UCoreFilterButtonWidget()
 {
 	this->LabelIMG = NULL;
-	this->_filterOption = EItemFilterOption::None;
-	this->_isToggled = false;
+	this->_isFavoriteOption = false;
+	this->_isOwnedOption = false;
+	this->_itemRarityFilterOption = EItemRarity::Common;
 	this->FavoriteTagTexture = NULL;
 	this->OwnedTagTexture = NULL;
+	this->_isToggled = false;
 	this->_defaultToggleState = false;
 }

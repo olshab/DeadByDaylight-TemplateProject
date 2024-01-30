@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "DisabledItemData.h"
 #include "CharacterFallbackData.h"
 #include "ItemCharacterKillswitchData.generated.h"
 
@@ -14,7 +15,7 @@ public:
 	FCharacterFallbackData CharacterFallback;
 
 	UPROPERTY()
-	TArray<FString> DisabledItems;
+	TMap<FString, FDisabledItemData> DisabledItems;
 
 	UPROPERTY(SkipSerialization)
 	bool DisabledItems_IsSet;

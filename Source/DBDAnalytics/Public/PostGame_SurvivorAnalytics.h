@@ -36,12 +36,6 @@ public:
 	int32 BoldnessBonus;
 
 	UPROPERTY()
-	int32 BonusEvent;
-
-	UPROPERTY()
-	int32 MatchIncentive;
-
-	UPROPERTY()
 	FString Outcome;
 
 	UPROPERTY()
@@ -49,6 +43,9 @@ public:
 
 	UPROPERTY()
 	int32 HookedCount;
+
+	UPROPERTY()
+	int32 RepairCanceledBeforeRegressionStoppedCount;
 
 	UPROPERTY()
 	bool UsedController;

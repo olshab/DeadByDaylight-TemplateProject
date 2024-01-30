@@ -2,6 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "CoreSelectableButtonWidget.h"
+#include "OnMoveToCharactersCustomizationPageButtonClickedDelegate.h"
 #include "CoreStoreFeaturedCustomizationItemWidget.generated.h"
 
 class UStoreCustomizationItemViewData;
@@ -12,6 +13,10 @@ class UCoreStoreFeaturedCustomizationItemWidget : public UCoreSelectableButtonWi
 {
 	GENERATED_BODY()
 
+public:
+	UPROPERTY()
+	FOnMoveToCharactersCustomizationPageButtonClickedDelegate OnMoveToCharactersCustomizationPageButtonClickedDelegate;
+
 private:
 	UFUNCTION()
 	void UpdateSize(UUITweenInstance* tween);
@@ -21,7 +26,7 @@ private:
 
 public:
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-	void SetCustomizationData(UStoreCustomizationItemViewData* specialOffersData);
+	void SetCustomizationData(UStoreCustomizationItemViewData* customizationItemViewData);
 
 public:
 	UCoreStoreFeaturedCustomizationItemWidget();

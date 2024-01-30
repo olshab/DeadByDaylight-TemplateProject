@@ -13,21 +13,21 @@ class UPounceAttackOpenSubstateCosmetic : public UObject
 
 public:
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCosmetic)
-	void OnLungeAttackStartCosmetic(ADBDPlayer* slasherPlayer);
+	void OnLungeAttackStartCosmetic(ADBDPlayer* killer);
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCosmetic)
-	void OnLungeAttackEndCosmetic(ADBDPlayer* slasherPlayer);
+	void OnLungeAttackEndCosmetic(ADBDPlayer* killer);
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCosmetic)
-	void OnLocallyObservedChangedCosmetic(ADBDPlayer* slasherPlayer);
+	void OnLocallyObservedChangedCosmetic(ADBDPlayer* killer);
 
 private:
 	UFUNCTION()
-	void OnLocallyObservedChanged(ADBDPlayer* slasherPlayer);
+	void OnLocallyObservedChanged(ADBDPlayer* killer);
 
 public:
 	UFUNCTION(BlueprintPure)
-	bool IsLungeAttackAugmented(ADBDPlayer* slasherPlayer) const;
+	bool IsLungeAttackAugmented(ADBDPlayer* killer) const;
 
 public:
 	UPounceAttackOpenSubstateCosmetic();

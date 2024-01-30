@@ -4,7 +4,6 @@
 #include "Perk.h"
 #include "Templates/SubclassOf.h"
 #include "UObject/NoExportTypes.h"
-#include "FastTimer.h"
 #include "K26P01.generated.h"
 
 class AActor;
@@ -21,7 +20,13 @@ protected:
 	float _generatorBlockDuration;
 
 	UPROPERTY(EditDefaultsOnly)
+	float _hookedRange;
+
+	UPROPERTY(EditDefaultsOnly)
 	float _auraRevealDuration;
+
+	UPROPERTY(EditDefaultsOnly)
+	float _finalGeneratorBlockDuration;
 
 	UPROPERTY(EditDefaultsOnly)
 	FLinearColor _generatorAuraColorForKiller;
@@ -39,9 +44,6 @@ private:
 	UPROPERTY(Transient)
 	TArray<AActor*> _hookedSurvivors;
 
-	UPROPERTY(Transient)
-	TArray<FFastTimer> _generatorBlockingTimers;
-
 	UPROPERTY(Transient, Export)
 	UStatusEffect* _timedRevealToKillerEffect;
 
@@ -50,7 +52,7 @@ private:
 	void OnRep_BlockedGenerators();
 
 	UFUNCTION()
-	void Authority_OnBlockTimerDone(AGenerator* generator);
+	void Authority_OnInRangeChanged(const bool inRange);
 
 public:
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;

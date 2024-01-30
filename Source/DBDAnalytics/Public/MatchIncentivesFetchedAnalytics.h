@@ -11,6 +11,9 @@ struct FMatchIncentivesFetchedAnalytics: public FUniquelyIdentifiedAnalytic
 
 public:
 	UPROPERTY()
+	FString GameMode;
+
+	UPROPERTY()
 	int32 KillerPercentageIncentive;
 
 	UPROPERTY()

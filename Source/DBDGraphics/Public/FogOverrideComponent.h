@@ -4,7 +4,7 @@
 #include "Components/ActorComponent.h"
 #include "FogOverrideComponent.generated.h"
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class UFogOverrideComponent : public UActorComponent
 {
 	GENERATED_BODY()
@@ -12,6 +12,10 @@ class UFogOverrideComponent : public UActorComponent
 protected:
 	UPROPERTY(EditDefaultsOnly)
 	float _interpolationDistance;
+
+private:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+	bool _canBeDisabledByGameType;
 
 public:
 	UFogOverrideComponent();

@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "PrestigeData.h"
 #include "AtlantaFreeTicketAffectedUIData.h"
+#include "EDisabledItemOption.h"
 #include "SpecialEventUIInfo.h"
 #include "ECharacterDifficulty.h"
 #include "EPlayerRole.h"
@@ -83,6 +84,9 @@ public:
 
 	UPROPERTY(BlueprintReadOnly, Transient)
 	bool IsEnabled;
+
+	UPROPERTY(BlueprintReadOnly, Transient)
+	EDisabledItemOption DisabledItemOption;
 
 	UPROPERTY(BlueprintReadOnly, Transient)
 	bool HasNonSelectedPerks;

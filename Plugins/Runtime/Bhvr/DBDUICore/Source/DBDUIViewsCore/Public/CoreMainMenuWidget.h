@@ -1,11 +1,15 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "EMainMenuButtonType.h"
 #include "MainMenuViewInterface.h"
 #include "CoreBaseUserWidget.h"
+#include "OnChangeAccountButtonClicked.h"
 #include "CoreMainMenuWidget.generated.h"
 
 class UCoreMainMenuButtonWidget;
+class UCoreFooterButtonWidget;
+class UCoreInputSwitcherWidget;
 class UCoreButtonWidget;
 
 UCLASS(EditInlineNew)
@@ -30,6 +34,9 @@ protected:
 	UCoreMainMenuButtonWidget* StoreButton;
 
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UCoreMainMenuButtonWidget* ChallengesButton;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
 	UCoreMainMenuButtonWidget* PlayKillerButton;
 
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
@@ -48,24 +55,49 @@ protected:
 	UCoreMainMenuButtonWidget* EventButton;
 
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UCoreButtonWidget* DailyRitualsButton;
+	UCoreFooterButtonWidget* DailyRitualsButton;
 
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UCoreButtonWidget* FriendsButton;
+	UCoreFooterButtonWidget* FriendsButton;
 
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UCoreButtonWidget* SettingsButton;
+	UCoreFooterButtonWidget* SettingsButton;
 
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UCoreButtonWidget* NewsButton;
+	UCoreFooterButtonWidget* NewsButton;
 
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UCoreButtonWidget* CreditsButton;
+	UCoreFooterButtonWidget* CreditsButton;
 
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UCoreButtonWidget* ExitButton;
+	UCoreFooterButtonWidget* MarketingInvitationButton;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UCoreInputSwitcherWidget* ExitButton;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UCoreInputSwitcherWidget* ChangeAccountInputSwitcher;
+
+	UPROPERTY(BlueprintReadOnly)
+	TArray<FName> _eventNames;
+
+	UPROPERTY(BlueprintReadOnly)
+	bool _isChallengesButtonAvailable;
+
+private:
+	UPROPERTY()
+	FOnChangeAccountButtonClicked OnChangeAccountButtonClickedDelegate;
+
+	UPROPERTY(Export)
+	TMap<FName, UCoreMainMenuButtonWidget*> PlayKillerButtons;
+
+	UPROPERTY(Export)
+	TMap<FName, UCoreMainMenuButtonWidget*> PlaySurvivorButtons;
 
 protected:
+	UFUNCTION(BlueprintImplementableEvent)
+	void ShowUiTakeover(bool show);
+
 	UFUNCTION(BlueprintImplementableEvent)
 	void ShowPlaySubMenu(bool open);
 
@@ -110,6 +142,9 @@ private:
 	void OnFriendsButtonClicked(UCoreButtonWidget* target);
 
 	UFUNCTION()
+	void OnExitButtonTriggered();
+
+	UFUNCTION()
 	void OnExitButtonClicked(UCoreButtonWidget* target);
 
 	UFUNCTION()
@@ -123,6 +158,14 @@ private:
 
 	UFUNCTION()
 	void OnArchivesButtonClicked(UCoreButtonWidget* target);
+
+protected:
+	UFUNCTION(BlueprintCallable)
+	bool HasActiveLTE();
+
+private:
+	UFUNCTION(BlueprintCallable)
+	UCoreBaseUserWidget* GetButton(EMainMenuButtonType button);
 
 public:
 	UCoreMainMenuWidget();

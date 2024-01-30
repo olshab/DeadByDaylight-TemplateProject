@@ -7,7 +7,8 @@ FStoreSpecialPackRuntimeData::FStoreSpecialPackRuntimeData()
 	this->Content = TArray<FStoreSpecialPackRuntimeItem>();
 	this->OriginalCost = TMap<ECurrencyType, uint32>();
 	this->DiscountedCost = TMap<ECurrencyType, uint32>();
-	this->Discount = TMap<ECurrencyType, float>();
+	this->Discount = 0.0f;
+	this->IsOwned = false;
 	this->Image = TEXT("");
 	this->DLCId = TEXT("");
 	this->SortOrder = 0;

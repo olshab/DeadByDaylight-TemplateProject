@@ -34,6 +34,9 @@ public:
 	float Duration;
 
 	UPROPERTY(EditAnywhere)
+	float ReactionTime;
+
+	UPROPERTY(EditAnywhere)
 	float Range;
 
 	UPROPERTY(EditAnywhere)

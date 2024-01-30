@@ -35,6 +35,17 @@ protected:
 	UFUNCTION(NetMulticast, Reliable)
 	void Multicast_RevealAndMakeSurvivorScream(ACamperPlayer* survivor);
 
+public:
+	UFUNCTION(BlueprintPure)
+	float GetPerkCooldownTimeAtLevel() const;
+
+	UFUNCTION(BlueprintPure)
+	float GetPerkActivationTime() const;
+
+	UFUNCTION(BlueprintPure)
+	float GetBlindedEffectDurationAtLevel() const;
+
+protected:
 	UFUNCTION(BlueprintImplementableEvent)
 	void BP_RevealAndMakeSurvivorScream(ACamperPlayer* survivorPlayer);
 

@@ -37,6 +37,9 @@ public:
 	bool TerrorRadiusVisualFeedback;
 
 	UPROPERTY(SaveGame)
+	int32 FieldOfView;
+
+	UPROPERTY(SaveGame)
 	int32 Gamma;
 
 	UPROPERTY(SaveGame)

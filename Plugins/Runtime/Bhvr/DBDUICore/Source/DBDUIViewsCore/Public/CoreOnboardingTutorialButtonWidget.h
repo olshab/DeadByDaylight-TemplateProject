@@ -35,9 +35,6 @@ protected:
 	UDBDTextBlock* DescriptionText;
 
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UDBDTextBlock* RewardsText;
-
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
 	UDBDImage* RoleIcon;
 
 	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))

@@ -66,6 +66,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool HasUseInteraction;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool RemoveInteractionsOnInteractorChange;
+
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	ECollectableCategory Category;
 

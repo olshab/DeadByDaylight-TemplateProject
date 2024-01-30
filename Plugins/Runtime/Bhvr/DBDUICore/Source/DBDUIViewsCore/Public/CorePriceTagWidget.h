@@ -24,7 +24,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void SetHighlightInsufficientCurrency(const bool highlight);
 
-	UFUNCTION(BlueprintImplementableEvent)
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
 	void SetData(const FPriceTagViewData& viewData);
 
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)

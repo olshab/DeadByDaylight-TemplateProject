@@ -1,14 +1,15 @@
 #include "DBDTooltipManager.h"
 #include "CorePlayerLevelTooltipViewData.h"
+#include "LockedFeatureTooltipViewData.h"
 #include "RankTooltipViewData.h"
 #include "ArchiveNodeViewData.h"
 #include "ArchiveRewardNodeTooltipViewData.h"
 #include "CustomizationTooltipViewData.h"
 #include "Layout/Geometry.h"
-#include "CurrencyProgressionTooltipViewData.h"
 #include "ETooltipHorizontalAlignment.h"
 #include "ETooltipVerticalAlignment.h"
 #include "LoadoutTooltipData.h"
+#include "CurrencyProgressionTooltipViewData.h"
 #include "CharacterTooltipViewData.h"
 #include "CompendiumButtonData.h"
 
@@ -18,6 +19,11 @@ void UDBDTooltipManager::ShowRankTooltip(const FRankTooltipViewData& tooltipView
 }
 
 void UDBDTooltipManager::ShowPlayerLevelTooltip(const FCorePlayerLevelTooltipViewData& tooltipViewData, const FGeometry& triggerGeometry, const ETooltipHorizontalAlignment tooltipHorizontalAlignment, ETooltipVerticalAlignment tooltipVerticalAlignment)
+{
+
+}
+
+void UDBDTooltipManager::ShowLockedFeatureTooltip(const FLockedFeatureTooltipViewData& tooltipViewData, const FGeometry& triggerGeometry, const ETooltipHorizontalAlignment tooltipHorizontalAlignment, const ETooltipVerticalAlignment tooltipVerticalAlignment)
 {
 
 }

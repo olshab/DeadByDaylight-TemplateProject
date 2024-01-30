@@ -25,9 +25,6 @@ public:
 	UPROPERTY(BlueprintReadOnly, Transient)
 	bool IsSlasher;
 
-	UPROPERTY(BlueprintReadOnly, Transient)
-	bool IsCustomMatch;
-
 public:
 	DEADBYDAYLIGHT_API FTallyScorePipsData();
 };

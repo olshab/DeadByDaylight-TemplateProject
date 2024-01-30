@@ -15,7 +15,13 @@ class DEADBYDAYLIGHT_API UVomitStateComponent : public UActorComponent
 
 private:
 	UPROPERTY()
+	FTagStateBool _isIdle;
+
+	UPROPERTY()
 	FTagStateBool _isCharging;
+
+	UPROPERTY()
+	FTagStateBool _isVomiting;
 
 public:
 	UFUNCTION(BlueprintCallable)

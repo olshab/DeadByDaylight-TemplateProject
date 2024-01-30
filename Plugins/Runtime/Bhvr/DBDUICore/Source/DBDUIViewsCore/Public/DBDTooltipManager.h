@@ -11,6 +11,7 @@
 #include "RankTooltipViewData.h"
 #include "ETooltipHorizontalAlignment.h"
 #include "ETooltipVerticalAlignment.h"
+#include "LockedFeatureTooltipViewData.h"
 #include "LoadoutTooltipData.h"
 #include "CurrencyProgressionTooltipViewData.h"
 #include "CharacterTooltipViewData.h"
@@ -41,6 +42,9 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void ShowPlayerLevelTooltip(const FCorePlayerLevelTooltipViewData& tooltipViewData, const FGeometry& triggerGeometry, const ETooltipHorizontalAlignment tooltipHorizontalAlignment, ETooltipVerticalAlignment tooltipVerticalAlignment);
+
+	UFUNCTION(BlueprintCallable)
+	void ShowLockedFeatureTooltip(const FLockedFeatureTooltipViewData& tooltipViewData, const FGeometry& triggerGeometry, const ETooltipHorizontalAlignment tooltipHorizontalAlignment, const ETooltipVerticalAlignment tooltipVerticalAlignment);
 
 	UFUNCTION(BlueprintCallable)
 	void ShowLoadoutTooltip(const FLoadoutTooltipData& tooltipViewData, const FGeometry& triggerGeometry, const ETooltipHorizontalAlignment tooltipHorizontalAlignment, ETooltipVerticalAlignment tooltipVerticalAlignment);

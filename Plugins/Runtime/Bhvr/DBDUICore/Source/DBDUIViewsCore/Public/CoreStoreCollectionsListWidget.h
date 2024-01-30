@@ -29,6 +29,16 @@ private:
 	UPROPERTY(Transient)
 	UCorePreConstructableList* _itemList;
 
+protected:
+	UFUNCTION(BlueprintCallable)
+	void OnUnfocusCollection(UCoreStoreCollectionsItemWidget* unfocusedWidget, const FString& collectionId);
+
+	UFUNCTION(BlueprintCallable)
+	void OnFocusCollection(UCoreStoreCollectionsItemWidget* focusedWidget, const FString& collectionId);
+
+	UFUNCTION()
+	void OnCollectionItemClicked(const FString& collectionId, FName selectedItemId);
+
 public:
 	UCoreStoreCollectionsListWidget();
 };

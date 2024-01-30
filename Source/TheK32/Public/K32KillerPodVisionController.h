@@ -9,6 +9,7 @@
 #include "K32KillerPodVisionController.generated.h"
 
 class AK32KillerPod;
+class UCameraComponent;
 class ASlasherPlayer;
 class UInteractionDefinition;
 
@@ -38,6 +39,9 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly)
 	float _minTimeBetweenCameraRotationUpdateRPC;
+
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UCameraComponent* _camera;
 
 private:
 	UPROPERTY(ReplicatedUsing=OnRep_HasVisionFromKillerPod)
