@@ -21,7 +21,7 @@ class THEONRYO_API AOnryoTelevision : public AInteractable
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	USceneComponent* _teleportPosition;
 
 	UPROPERTY(BlueprintReadOnly, Transient)

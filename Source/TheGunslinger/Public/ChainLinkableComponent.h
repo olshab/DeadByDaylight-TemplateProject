@@ -22,7 +22,7 @@ protected:
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<UBaseCameraTargetingStrategy> _cameraTargetingStrategyClass;
 
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	UPlayerReelInputAccelerationConstraintStrategy* _inputAccelerationStrategy;
 
 private:

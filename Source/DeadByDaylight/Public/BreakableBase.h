@@ -18,13 +18,13 @@ class DEADBYDAYLIGHT_API ABreakableBase : public AInteractable
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UBoxComponent* _breakableCollision;
 
 	UPROPERTY(BlueprintReadWrite, Transient)
 	EBreakableState _state;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UAkComponent* _akAudioBreakable;
 
 	UPROPERTY(EditAnywhere)

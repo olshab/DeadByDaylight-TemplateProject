@@ -36,7 +36,7 @@ public:
 	FOnIsCollidingChanged OnIsCollidingChanged;
 
 protected:
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UAkComponent* _chainCenterAkComponent;
 
 	UPROPERTY(EditAnywhere)

@@ -18,25 +18,25 @@ class DBDUIVIEWSMOBILE_API UUMGAtlantaMatchConfigScreen : public UMobileBaseUser
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UUMGAtlantaMatchConfigPageScroll* MatchConfigPageScroll;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UHorizontalBox* TabsBox;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UVerticalBox* BotsTabsBox;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UUMGBaseButtonWidget* BackButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UTextBlock* MatchConfigTitle;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UTextBlock* InventoryTitle;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UTextBlock* SelectedTabTitle;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)

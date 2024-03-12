@@ -54,6 +54,12 @@ public:
 	UPROPERTY(BlueprintReadOnly, Transient)
 	TArray<UStoreCustomizationItemViewData*> Items;
 
+	UPROPERTY(BlueprintReadOnly, Transient)
+	int32 AvailableItemsCount;
+
+	UPROPERTY(BlueprintReadOnly, Transient)
+	int32 OwnedItemsCount;
+
 public:
 	UFUNCTION(BlueprintPure)
 	bool IsSpecial() const;

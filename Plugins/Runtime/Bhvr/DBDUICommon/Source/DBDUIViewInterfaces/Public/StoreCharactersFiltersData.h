@@ -11,7 +11,7 @@ struct FStoreCharactersFiltersData
 
 public:
 	UPROPERTY(EditInstanceOnly)
-	bool IsFavorite;
+	bool IsAvailable;
 
 	UPROPERTY(EditInstanceOnly)
 	bool IsOwned;

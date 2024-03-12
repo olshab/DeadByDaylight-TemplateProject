@@ -13,6 +13,7 @@
 #include "CharacterCustomizationPresetsList.h"
 #include "LoadoutPresetsDataForGameType.h"
 #include "CharacterSavedProfileData.h"
+#include "SavedSeenPopupData.h"
 #include "SpecialEventSavedData.h"
 #include "ReleaseSavedData.h"
 #include "PlayerSavedProfileDataLocal.generated.h"
@@ -140,6 +141,9 @@ private:
 
 	UPROPERTY()
 	TSet<FName> _seenFeatures;
+
+	UPROPERTY()
+	TMap<FName, FSavedSeenPopupData> _seenPopupsData;
 
 	UPROPERTY()
 	TMap<FString, FReleaseSavedData> _releases;

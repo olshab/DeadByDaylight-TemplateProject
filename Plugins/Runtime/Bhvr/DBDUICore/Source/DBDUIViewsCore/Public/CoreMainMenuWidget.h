@@ -18,64 +18,64 @@ class DBDUIVIEWSCORE_API UCoreMainMenuWidget : public UCoreBaseUserWidget, publi
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreMainMenuButtonWidget* PlayButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreMainMenuButtonWidget* PlayLimitedTimeEventButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreMainMenuButtonWidget* TutorialButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreMainMenuButtonWidget* ArchivesButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreMainMenuButtonWidget* StoreButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreMainMenuButtonWidget* ChallengesButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreMainMenuButtonWidget* PlayKillerButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreMainMenuButtonWidget* PlaySurvivorButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreMainMenuButtonWidget* PlayCustomGameButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreMainMenuButtonWidget* PlayLimitedTimeEventKillerButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreMainMenuButtonWidget* PlayLimitedTimeEventSurvivorButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreMainMenuButtonWidget* EventButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreFooterButtonWidget* DailyRitualsButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreFooterButtonWidget* FriendsButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreFooterButtonWidget* SettingsButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreFooterButtonWidget* NewsButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreFooterButtonWidget* CreditsButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreFooterButtonWidget* MarketingInvitationButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreInputSwitcherWidget* ExitButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreInputSwitcherWidget* ChangeAccountInputSwitcher;
 
 	UPROPERTY(BlueprintReadOnly)
@@ -137,6 +137,9 @@ private:
 
 	UFUNCTION()
 	void OnNewsButtonClicked(UCoreButtonWidget* target);
+
+	UFUNCTION()
+	void OnMarketingInvitationButtonClicked(UCoreButtonWidget* target);
 
 	UFUNCTION()
 	void OnFriendsButtonClicked(UCoreButtonWidget* target);

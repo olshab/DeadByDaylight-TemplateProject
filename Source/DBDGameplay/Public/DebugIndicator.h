@@ -14,10 +14,10 @@ class DBDGAMEPLAY_API ADebugIndicator : public AActor
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UStaticMeshComponent* _staticMeshComponent;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UDBDOutlineComponent* _outlineComponent;
 
 public:

@@ -12,7 +12,7 @@ class SIMPLESTATEMACHINE_API USimpleStateMachineBaseState : public UObject
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	USimpleStateMachine* _stateMachine;
 
 public:

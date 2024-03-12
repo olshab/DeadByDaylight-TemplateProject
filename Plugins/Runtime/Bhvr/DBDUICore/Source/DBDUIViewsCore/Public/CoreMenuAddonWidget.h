@@ -14,7 +14,7 @@ class DBDUIVIEWSCORE_API UCoreMenuAddonWidget : public UCoreMenuLoadoutPartWidge
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDImage* DisabledState;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)

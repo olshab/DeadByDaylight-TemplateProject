@@ -19,22 +19,22 @@ class AWormholeFatherDeadBody : public AInteractable
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, NoClear, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, NoClear, meta=(BindWidgetOptional))
 	UStaticMeshComponent* _wrmFatherDeadBodyStaticMesh;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidgetOptional))
 	USceneComponent* _wrmFatherKeyCardAttachment;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 	TSubclassOf<AWormholeFatherKeyCard> _wrmFatherEasterEggKeyCardStaticClass;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UBoxPlayerOverlapComponent* _wrmFatherKeyCardInteractableZone;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UInteractor* _wrmKeyCardFirstCollectionInteractor;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCollectFatherKeyCardInteraction* _fatherKeyCardCollectionInteraction;
 
 private:

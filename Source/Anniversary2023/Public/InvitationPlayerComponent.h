@@ -28,7 +28,7 @@ protected:
 	UPROPERTY(ReplicatedUsing=OnRep_InvitationChargesInt, Transient)
 	int32 _invitationChargesInt;
 
-	UPROPERTY(ReplicatedUsing=OnRep_CooldownTimer, Transient, meta=(BindWidget))
+	UPROPERTY(ReplicatedUsing=OnRep_CooldownTimer, Transient, meta=(BindWidgetOptional))
 	UTimerObject* _cooldownTimer;
 
 	UPROPERTY(EditDefaultsOnly)

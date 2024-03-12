@@ -7,6 +7,11 @@ class UCoreMenuPerkWidget;
 class UCharacterPerkViewData;
 class UMenuPowerViewData;
 
+void UCoreStoreCharacterPerksToastWidget::ToggleToastVisibility()
+{
+
+}
+
 void UCoreStoreCharacterPerksToastWidget::ShowTooltip(UCoreButtonWidget* hoveredSlotWidget)
 {
 
@@ -37,11 +42,6 @@ void UCoreStoreCharacterPerksToastWidget::OnPlayerClick(const FPointerEvent& poi
 
 }
 
-void UCoreStoreCharacterPerksToastWidget::OnOpenButtonClick(UCoreButtonWidget* button)
-{
-
-}
-
 void UCoreStoreCharacterPerksToastWidget::HideTooltip(UCoreButtonWidget* unhoveredSlotWidget)
 {
 
@@ -49,11 +49,11 @@ void UCoreStoreCharacterPerksToastWidget::HideTooltip(UCoreButtonWidget* unhover
 
 UCoreStoreCharacterPerksToastWidget::UCoreStoreCharacterPerksToastWidget()
 {
-	this->SafeArea = NULL;
+	this->Title = NULL;
 	this->CoreKillerPower = NULL;
 	this->CorePerk_1 = NULL;
 	this->CorePerk_2 = NULL;
 	this->CorePerk_3 = NULL;
-	this->OpenButton = NULL;
+	this->_ignoreClickWidgets = TArray<UWidget*>();
 	this->_isOpen = false;
 }

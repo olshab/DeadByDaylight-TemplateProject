@@ -4,15 +4,14 @@
 #include "ESkillCheckCustomType.h"
 #include "OnHookStateChanged.h"
 #include "CharmAttachable.h"
-#include "EHealthType.h"
-#include "OnHookEscapeFailedCosmetic.h"
-#include "OnImmobilizeStateChanged.h"
-#include "NoiseIndicatorEmitterInterface.h"
 #include "EImmobilizedState.h"
-#include "OnHPSlotChanged.h"
 #include "DBDPlayer.h"
+#include "OnHPSlotChanged.h"
 #include "OnPickedUpEvent.h"
 #include "OnGuidedStateChanged.h"
+#include "OnImmobilizeStateChanged.h"
+#include "OnHookEscapeFailedCosmetic.h"
+#include "EHealthType.h"
 #include "EGender.h"
 #include "Engine/EngineTypes.h"
 #include "Templates/SubclassOf.h"
@@ -21,12 +20,12 @@
 #include "EGuidedState.h"
 #include "CamperPlayer.generated.h"
 
-class UHookableComponent;
-class APlayerController;
-class AActor;
 class UStalkedComponent;
 class UInteractionDefinition;
 class UCameraAttachmentComponent;
+class AActor;
+class APlayerController;
+class UHookableComponent;
 class UScreamComponent;
 class UStatusEffect;
 class UCurveFloat;
@@ -59,7 +58,7 @@ class AReverseBearTrap;
 class UDBDClipRegionComponent;
 
 UCLASS()
-class DEADBYDAYLIGHT_API ACamperPlayer : public ADBDPlayer, public ICharmAttachable, public INoiseIndicatorEmitterInterface
+class DEADBYDAYLIGHT_API ACamperPlayer : public ADBDPlayer, public ICharmAttachable
 {
 	GENERATED_BODY()
 
@@ -134,7 +133,7 @@ protected:
 	UPROPERTY(Transient)
 	APlayerController* _storedPlayerController;
 
-	UPROPERTY(VisibleInstanceOnly, Transient, meta=(BindWidget))
+	UPROPERTY(VisibleInstanceOnly, Transient, meta=(BindWidgetOptional))
 	UCamperStillnessTrackerComponent* _stillnessTracker;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
@@ -146,19 +145,19 @@ protected:
 	UPROPERTY(Transient)
 	AActor* _overlappingEscape;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidgetOptional))
 	USpherePlayerOverlapComponent* ProximityZone;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UCapsuleComponent* SlashableZone;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UCapsuleComponent* HookSlashableZone;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UCamperSlashableComponent* _camperSlashable;
 
-	UPROPERTY(VisibleAnywhere, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, meta=(BindWidgetOptional))
 	UMoriableComponent* _moriableComponent;
 
 	UPROPERTY(EditDefaultsOnly)
@@ -323,7 +322,6 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void OnPickUpEnter(ADBDPlayer* picker, float transitionTime);
 
-protected:
 	UFUNCTION(BlueprintCallable)
 	void OnPickUpDenied();
 

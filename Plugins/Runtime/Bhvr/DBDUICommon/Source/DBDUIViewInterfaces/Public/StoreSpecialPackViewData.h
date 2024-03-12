@@ -5,6 +5,8 @@
 #include "PriceTagViewData.h"
 #include "SoftRemoteContentCacheObjectPtr.h"
 #include "StoreArchivePassViewData.h"
+#include "StoreArchiveFragmentViewData.h"
+#include "TimerFlagViewData.h"
 #include "StoreSpecialPackViewData.generated.h"
 
 class UStoreCustomizationItemViewData;
@@ -35,7 +37,13 @@ public:
 	TArray<UStoreCustomizationItemViewData*> CustomizationsData;
 
 	UPROPERTY(BlueprintReadWrite, Transient)
-	FStoreArchivePassViewData ArchivePassViewData;
+	FStoreArchivePassViewData ArchivePassData;
+
+	UPROPERTY(BlueprintReadWrite, Transient)
+	FStoreArchiveFragmentViewData ArchiveFragmentData;
+
+	UPROPERTY(BlueprintReadWrite, Transient)
+	FTimerFlagViewData TimerViewData;
 
 	UPROPERTY(BlueprintReadOnly, Transient)
 	FDateTime ActivationStartDate;
@@ -51,6 +59,13 @@ public:
 
 	UPROPERTY(BlueprintReadOnly, Transient)
 	bool IsOwned;
+
+public:
+	UFUNCTION(BlueprintPure)
+	bool ContainsArchivePassFragments() const;
+
+	UFUNCTION(BlueprintPure)
+	bool ContainsArchivePass() const;
 
 public:
 	UStoreSpecialPackViewData();

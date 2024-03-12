@@ -2,6 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "UObject/Interface.h"
+#include "StoreMysteryBoxViewData.h"
 #include "StoreFeaturedCharacterViewData.h"
 #include "StoreFeaturedViewInterface.generated.h"
 
@@ -19,6 +20,12 @@ class DBDUIVIEWINTERFACES_API IStoreFeaturedViewInterface : public IInterface
 	GENERATED_BODY()
 
 public:
+	UFUNCTION(BlueprintNativeEvent)
+	void PresentMysteryBoxClaimResult(bool succeeded, const FStoreMysteryBoxViewData& mysteryBoxViewData);
+
+	UFUNCTION(BlueprintNativeEvent)
+	void InitMysteryBox(const FStoreMysteryBoxViewData& mysteryBoxViewData);
+
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void InitFeaturedCustomizationItems(const TArray<UStoreCustomizationItemViewData*>& viewDataArray);
 
@@ -26,6 +33,6 @@ public:
 	void InitFeaturedCharacters(const TArray<FStoreFeaturedCharacterViewData>& characterViewDataArray);
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-	void InitFeaturedChapterPacks(const TArray<UStoreFeaturedChapterPackViewData*>& viewDataArray);
+	void InitFeaturedChapterPack(UStoreFeaturedChapterPackViewData* viewData);
 
 };

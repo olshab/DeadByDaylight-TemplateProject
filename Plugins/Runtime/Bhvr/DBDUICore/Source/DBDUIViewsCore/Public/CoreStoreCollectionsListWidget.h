@@ -6,9 +6,14 @@
 #include "Templates/SubclassOf.h"
 #include "CoreStoreCollectionsListWidget.generated.h"
 
-class UVerticalBox;
 class UCoreStoreCollectionsItemWidget;
+class UPanelWidget;
+class UUniformGridPanel;
+class UDBDTextBlock;
+class UDBDScrollBox;
+class UCoreSearchBarWidget;
 class UCorePreConstructableList;
+class UStoreCollectionViewData;
 
 UCLASS(EditInlineNew)
 class UCoreStoreCollectionsListWidget : public UCoreBaseUserWidget, public IStoreCollectionsListViewInterface
@@ -16,28 +21,58 @@ class UCoreStoreCollectionsListWidget : public UCoreBaseUserWidget, public IStor
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UVerticalBox* CollectionItemListBox;
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UDBDTextBlock* TitleTB;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UDBDTextBlock* CollectionsNotFoundTB;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UCoreSearchBarWidget* SearchBar;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UDBDScrollBox* ScrollBox;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UUniformGridPanel* FeaturedUniformGrid;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UUniformGridPanel* AllUniformGrid;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UPanelWidget* FeaturedContainer;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, NoClear)
 	TSubclassOf<UCoreStoreCollectionsItemWidget> _collectionItemClass;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, NoClear)
-	int32 _preConstructedItemsCount;
+	int32 _featuredItemsColumnCount;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, NoClear)
+	int32 _allItemsColumnCount;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, NoClear)
+	int32 _preConstructedFeaturedItemsCount;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, NoClear)
+	int32 _preConstructedAllItemsCount;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	float _featuredListHiddenThreshold;
 
 private:
 	UPROPERTY(Transient)
-	UCorePreConstructableList* _itemList;
+	UCorePreConstructableList* _featuredItemsList;
 
-protected:
-	UFUNCTION(BlueprintCallable)
-	void OnUnfocusCollection(UCoreStoreCollectionsItemWidget* unfocusedWidget, const FString& collectionId);
+	UPROPERTY(Transient)
+	UCorePreConstructableList* _allItemsList;
 
-	UFUNCTION(BlueprintCallable)
-	void OnFocusCollection(UCoreStoreCollectionsItemWidget* focusedWidget, const FString& collectionId);
+private:
+	UFUNCTION()
+	void UpdateTitleFromScroll(float currentOffset);
 
 	UFUNCTION()
-	void OnCollectionItemClicked(const FString& collectionId, FName selectedItemId);
+	void OnCollectionItemClicked(const UStoreCollectionViewData* collectionViewData);
 
 public:
 	UCoreStoreCollectionsListWidget();

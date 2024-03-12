@@ -4,7 +4,9 @@ FStoreArchivePassViewData::FStoreArchivePassViewData()
 {
 	this->PassId = TEXT("");
 	this->ArchiveId = NAME_None;
-	this->DisplayName = FText::GetEmpty();
-	this->Description = FText::GetEmpty();
+	this->ItemName = FText::GetEmpty();
+	this->ArchiveTitle = FText::GetEmpty();
+	this->TooltipData = FArchivePassTooltipViewData{};
 	this->IsOwned = false;
+	this->TimerFlagViewData = FTimerFlagViewData{};
 }

@@ -12,7 +12,7 @@ class UGenericPopupScreen : public UBasePopupScreen
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	UUMGGenericPopup* _popup;
 
 private:

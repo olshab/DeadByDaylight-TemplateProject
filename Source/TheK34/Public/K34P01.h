@@ -26,6 +26,16 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	float _blindedEffectTime;
 
+public:
+	UFUNCTION(BlueprintPure)
+	int32 GetStunnedOrBlindedTimesRequiredByLevel() const;
+
+	UFUNCTION(BlueprintPure)
+	int32 GetStunnedOrBlindedCount() const;
+
+	UFUNCTION(BlueprintPure)
+	float GetBlindedEffectTime() const;
+
 private:
 	UFUNCTION(Client, Unreliable)
 	void Client_UpdateHudIcon(float percent);

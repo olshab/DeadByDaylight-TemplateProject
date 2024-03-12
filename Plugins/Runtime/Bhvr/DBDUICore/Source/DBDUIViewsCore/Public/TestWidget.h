@@ -12,7 +12,7 @@ class UTestWidget : public UCoreBaseUserWidget
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UPanelWidget* Workbench;
 
 private:

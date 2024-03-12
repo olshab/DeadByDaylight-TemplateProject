@@ -28,19 +28,19 @@ class AK32Power : public ACollectable
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UInteractor* _interactor;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UBoxPlayerOverlapComponent* _interactionVolume;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UK32PowerChargePresentationItemProgressComponent* _powerChargePresentationItemProgressComponent;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UK32PowerChargePresentationPowerFadeComponent* _powerChargePresentationPowerFadeComponent;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UK32AntiCampZoneIdentifierComponent* _antiCampZoneIdentifierComponent;
 
 	UPROPERTY(EditDefaultsOnly)

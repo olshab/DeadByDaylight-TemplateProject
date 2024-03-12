@@ -1,12 +1,10 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameEventData.h"
 #include "ECamperDamageState.h"
 #include "OnAcquiredChanged.h"
 #include "K25Projectile.h"
 #include "PoolableActor.h"
-#include "GameplayTagContainer.h"
 #include "DBDTunableRowHandle.h"
 #include "K25UncontrolledProjectile.generated.h"
 
@@ -52,9 +50,6 @@ protected:
 	void Cosmetic_TriggerUncontrolledProjectileSpawnSFX();
 
 private:
-	UFUNCTION()
-	void Authority_OnDownedSurvivorPickedUp(const FGameplayTag gameplayTag, const FGameEventData& gameEventData);
-
 	UFUNCTION()
 	void Authority_OnDamageStateChanged(ECamperDamageState oldDamageState, ECamperDamageState currentDamageState);
 

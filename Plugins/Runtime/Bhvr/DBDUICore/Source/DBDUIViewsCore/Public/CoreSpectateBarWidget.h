@@ -16,13 +16,13 @@ class DBDUIVIEWSCORE_API UCoreSpectateBarWidget : public UCoreBaseHudWidget, pub
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreInputSwitcherWidget* LeaveInputSwitcher;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreInputSwitcherWidget* LeftArrowInputSwitcher;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreInputSwitcherWidget* RightArrowInputSwitcher;
 
 private:

@@ -2,7 +2,6 @@
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "StoreSpecialPackActivation.h"
 #include "DBDTableRowBase.h"
 #include "ECurrencyType.h"
 #include "StoreSpecialPackItem.h"
@@ -45,7 +44,13 @@ public:
 	TArray<FStoreSpecialPackItem> Content;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	FStoreSpecialPackActivation Activation;
+	uint8 AvailabilityDates;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	FDateTime StartDate;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	FDateTime EndDate;
 
 public:
 	DEADBYDAYLIGHT_API FStoreSpecialPackEditorData();

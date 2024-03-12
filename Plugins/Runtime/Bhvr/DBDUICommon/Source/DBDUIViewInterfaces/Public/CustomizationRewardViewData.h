@@ -43,6 +43,9 @@ public:
 	bool IsEventItem;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
+	FName EventId;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
 	FCustomizationTooltipViewData TooltipData;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)

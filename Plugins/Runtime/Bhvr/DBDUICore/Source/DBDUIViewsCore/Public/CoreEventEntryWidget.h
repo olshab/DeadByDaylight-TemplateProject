@@ -34,22 +34,22 @@ protected:
 	UPROPERTY(BlueprintReadOnly)
 	FEventEntryPopupSkinUIData _skinData;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDImage* TitleBanner;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDImage* TitleImage;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDTextBlock* EventDateText;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreTabContainerWidget* TabsContainer;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UMilestoneTrackerWidget* MilestoneTracker;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreKeyListenerInputPromptWidget* ScrollPrompt;
 
 	UPROPERTY(BlueprintAssignable)
@@ -58,10 +58,10 @@ protected:
 	UPROPERTY()
 	FEventEntryBackActionDelegate _backActionDelegate;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreInputSwitcherWidget* RegressionButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	URichTextBlock* TitleText;
 
 public:

@@ -40,7 +40,7 @@ protected:
 	UPROPERTY(EditDefaultsOnly)
 	float _minTimeBetweenCameraRotationUpdateRPC;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UCameraComponent* _camera;
 
 private:

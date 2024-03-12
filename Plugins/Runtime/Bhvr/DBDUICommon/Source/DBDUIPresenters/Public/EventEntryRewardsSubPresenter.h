@@ -24,7 +24,7 @@ protected:
 	UPROPERTY(Transient)
 	TArray<UStoreCustomizationItemViewData*> _previewAreaRewardsData;
 
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	UEventEntryPresenter* _parentPresenter;
 
 protected:

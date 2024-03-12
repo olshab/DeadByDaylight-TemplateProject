@@ -15,13 +15,13 @@ class UUMGFriendPartyListElementWidget : public UUMGFriendElementWidget
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(meta=(BindWidget))
+	UPROPERTY(meta=(BindWidgetOptional))
 	UWidgetSwitcher* ButtonOrStatusSwitcher;
 
-	UPROPERTY(meta=(BindWidget))
+	UPROPERTY(meta=(BindWidgetOptional))
 	UButton* CancelInviteButton;
 
-	UPROPERTY(meta=(BindWidget))
+	UPROPERTY(meta=(BindWidgetOptional))
 	UImage* PartyStatusImage;
 
 	UPROPERTY(EditDefaultsOnly)

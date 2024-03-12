@@ -6,4 +6,6 @@ FStoreRedirectionData::FStoreRedirectionData()
 	this->Category = ECustomizationCategory::None;
 	this->ItemId = NAME_None;
 	this->PlayerRole = EPlayerRole::VE_None;
+	this->PackId = TEXT("");
+	this->PackType = EStorePackType::None;
 }

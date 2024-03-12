@@ -78,6 +78,11 @@
 			]
 		},
 		{
+			"Name": "DBDPluginContentManagerModule",
+			"Type": "Runtime",
+			"LoadingPhase": "PreDefault"
+		},
+		{
 			"Name": "DBDAnimation",
 			"Type": "Runtime",
 			"LoadingPhase": "Default",
@@ -228,11 +233,6 @@
 			"LoadingPhase": "Default"
 		},
 		{
-			"Name": "TheCannibal",
-			"Type": "Runtime",
-			"LoadingPhase": "Default"
-		},
-		{
 			"Name": "TheClown",
 			"Type": "Runtime",
 			"LoadingPhase": "Default",
@@ -375,6 +375,11 @@
 			"LoadingPhase": "Default"
 		},
 		{
+			"Name": "TheK35",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
 			"Name": "TheLegion",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
@@ -485,12 +490,17 @@
 			"LoadingPhase": "Default"
 		},
 		{
-			"Name": "Activation",
+			"Name": "Spring2024",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
 		},
 		{
-			"Name": "CampaignEvents",
+			"Name": "Mutators",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "Activation",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
 		},
@@ -526,11 +536,6 @@
 		},
 		{
 			"Name": "DBDVideoPlayer",
-			"Type": "Runtime",
-			"LoadingPhase": "Default"
-		},
-		{
-			"Name": "DynamicContent",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
 		},
@@ -635,17 +640,7 @@
 			"LoadingPhase": "Default"
 		},
 		{
-			"Name": "ProvingGround",
-			"Type": "Runtime",
-			"LoadingPhase": "Default"
-		},
-		{
 			"Name": "PurchasableItems",
-			"Type": "Runtime",
-			"LoadingPhase": "Default"
-		},
-		{
-			"Name": "RetentionRewardsUtilities",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
 		},
@@ -670,11 +665,6 @@
 			"LoadingPhase": "Default"
 		},
 		{
-			"Name": "SharedAuthenticationUtilities",
-			"Type": "Runtime",
-			"LoadingPhase": "Default"
-		},
-		{
 			"Name": "SimpleStateMachine",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
@@ -691,11 +681,6 @@
 		},
 		{
 			"Name": "StatSystem",
-			"Type": "Runtime",
-			"LoadingPhase": "Default"
-		},
-		{
-			"Name": "SubscriptionSubsystem",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
 		},
@@ -894,8 +879,12 @@
 		{
 			"Name": "Sentry",
 			"Enabled": true,
-			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/99f5c02de5fa49ab97976a3a852e5408",
 			"WhitelistPlatforms": [
+				"Win64",
+				"Linux",
+				"LinuxAArch64"
+			],
+			"SupportedTargetPlatforms": [
 				"Win64",
 				"Linux",
 				"LinuxAArch64"

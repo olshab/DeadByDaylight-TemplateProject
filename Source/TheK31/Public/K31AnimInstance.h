@@ -29,7 +29,7 @@ protected:
 	UPROPERTY(BlueprintReadOnly)
 	bool _isActivatingADrone;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCustomizationAnimationSelector* _animationSelector;
 
 protected:

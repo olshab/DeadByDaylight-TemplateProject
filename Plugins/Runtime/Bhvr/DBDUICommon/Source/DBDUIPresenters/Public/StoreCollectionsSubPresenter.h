@@ -4,6 +4,9 @@
 #include "StoreSubPresenter.h"
 #include "StoreCollectionsSubPresenter.generated.h"
 
+class UStoreCollectionsListSubPresenter;
+class USubPresenter;
+class UStoreCollectionsCustomizationsSubPresenter;
 class UStoreCollectionViewData;
 
 UCLASS()
@@ -13,26 +16,32 @@ class DBDUIPRESENTERS_API UStoreCollectionsSubPresenter : public UStoreSubPresen
 
 private:
 	UPROPERTY(Transient)
-	TArray<UStoreCollectionViewData*> _specialCollectionsViewData;
+	UStoreCollectionsListSubPresenter* _collectionsListSubPresenter;
 
 	UPROPERTY(Transient)
-	TArray<UStoreCollectionViewData*> _featuredCollectionsViewData;
+	UStoreCollectionsCustomizationsSubPresenter* _collectionsCustomizationsSubPresenter;
 
 	UPROPERTY(Transient)
-	TArray<UStoreCollectionViewData*> _allCollectionsViewData;
+	UStoreSubPresenter* _activeSubPresenter;
 
 	UPROPERTY(Transient)
-	UStoreCollectionViewData* _focusedCollection;
+	UStoreSubPresenter* _previousActiveSubPresenter;
 
 private:
 	UFUNCTION()
-	void OnCollectionUnfocused();
+	void OnStopSubPresenterAsyncOperation(USubPresenter* subPresenter);
 
 	UFUNCTION()
-	void OnCollectionItemSelected(const FString& collectionId, FName selectedCustomizationItemId);
+	void OnStartSubPresenterAsyncOperation(USubPresenter* subPresenter);
 
 	UFUNCTION()
-	void OnCollectionFocused(const FString& collectionId);
+	void OnCollectionClicked(const UStoreCollectionViewData* collection);
+
+	UFUNCTION()
+	void OnBackActionLabelChangeRequested(const FText& text);
+
+	UFUNCTION()
+	void HandleSubPresenterError();
 
 public:
 	UStoreCollectionsSubPresenter();

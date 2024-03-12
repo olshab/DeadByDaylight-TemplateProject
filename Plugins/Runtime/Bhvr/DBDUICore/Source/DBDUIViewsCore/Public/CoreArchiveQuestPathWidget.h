@@ -15,10 +15,10 @@ class DBDUIVIEWSCORE_API UCoreArchiveQuestPathWidget : public UCoreButtonWidget
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UOverlay* PathOverlay;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDImage* PathImage;
 
 	UPROPERTY(BlueprintReadOnly)

@@ -41,10 +41,10 @@ public:
 	UAkAudioEvent* OnPageChangeSound;
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCanvasPanel* ContainerPanel;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UHorizontalBox* ButtonsPanel;
 
 	UPROPERTY(EditAnywhere, NoClear)

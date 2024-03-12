@@ -75,11 +75,6 @@ bool UInteractionDefinition::IsInteractionPossible(const ADBDPlayer* player, EIn
 	return false;
 }
 
-bool UInteractionDefinition::IsInteractionDone_Implementation(const ADBDPlayer* player, EInputInteractionType interactionType) const
-{
-	return false;
-}
-
 bool UInteractionDefinition::IsInteractableInPlayerView(const ADBDPlayer* player) const
 {
 	return false;

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "StoreItemUnlockInfoViewData.h"
 #include "EStoreCharactersActionButtonState.h"
 #include "PriceTagViewData.h"
 #include "StoreCharactersActionButtonsViewData.generated.h"
@@ -24,13 +25,22 @@ public:
 	EStoreCharactersActionButtonState SelectAllState;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
-	EStoreCharactersActionButtonState SeePackState;
+	EStoreCharactersActionButtonState AlternativeUnlockState;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
+	EStoreCharactersActionButtonState PlayMoriState;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
+	EStoreCharactersActionButtonState ZoomCharmState;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
+	bool IsCharmZoomed;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
 	TArray<FPriceTagViewData> PriceTagData;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
-	FText PackName;
+	FStoreItemUnlockInfoViewData UnlockInfo;
 
 public:
 	DBDUIVIEWINTERFACES_API FStoreCharactersActionButtonsViewData();

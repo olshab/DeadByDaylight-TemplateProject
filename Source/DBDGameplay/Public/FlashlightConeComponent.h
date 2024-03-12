@@ -23,7 +23,7 @@ public:
 	FRotator AIAimBeamRotationOffset;
 
 protected:
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	USceneComponent* _flashlightBottom;
 
 private:

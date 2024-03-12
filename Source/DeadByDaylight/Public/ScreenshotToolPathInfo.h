@@ -13,6 +13,9 @@ private:
 	bool IncludeDLCFolder;
 
 	UPROPERTY(EditAnywhere)
+	bool IncludeCharacterFolder;
+
+	UPROPERTY(EditAnywhere)
 	FString Path;
 
 public:

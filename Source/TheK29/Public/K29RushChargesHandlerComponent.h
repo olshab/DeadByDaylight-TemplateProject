@@ -37,6 +37,9 @@ private:
 	UFUNCTION()
 	void OnKillerSet(ASlasherPlayer* killer);
 
+	UFUNCTION(BlueprintPure)
+	float GetRechargeDuration() const;
+
 public:
 	UFUNCTION(BlueprintPure)
 	float GetPercentageRemainingUntilNextCharge() const;

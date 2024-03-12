@@ -4,7 +4,6 @@
 #include "Components/ActorComponent.h"
 #include "K31TrapProximitySensor.generated.h"
 
-class UGameplayTagContainerComponent;
 class ADBDPlayer;
 
 UCLASS(meta=(BlueprintSpawnableComponent))
@@ -13,9 +12,6 @@ class THEK31_API UK31TrapProximitySensor : public UActorComponent
 	GENERATED_BODY()
 
 private:
-	UPROPERTY(Transient, Export)
-	TSet<UGameplayTagContainerComponent*> _registeredObjectStates;
-
 	UPROPERTY(Transient)
 	TSet<ADBDPlayer*> _trappedPlayersInZone;
 

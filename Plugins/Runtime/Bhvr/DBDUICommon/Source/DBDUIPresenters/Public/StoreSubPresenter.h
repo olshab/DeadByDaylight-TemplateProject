@@ -17,6 +17,9 @@ private:
 
 protected:
 	UFUNCTION()
+	void SetItemSeen(const FString& itemId);
+
+	UFUNCTION()
 	void OnSubTabSelected(int32 subTabId);
 
 public:

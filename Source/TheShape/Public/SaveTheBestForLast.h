@@ -21,6 +21,10 @@ private:
 	float _cooldownPerToken;
 
 public:
+	UFUNCTION(BlueprintPure)
+	float GetCooldownPerToken() const;
+
+public:
 	USaveTheBestForLast();
 };
 

@@ -22,5 +22,6 @@ enum class EDBDCameraViewType : uint8
 	ShopStory,
 	ShopCharacter,
 	ShopHook,
+	ShopCharm,
 	Paradise,
 };

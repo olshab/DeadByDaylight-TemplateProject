@@ -129,7 +129,7 @@ public:
 	float UnsafeActionRange;
 
 protected:
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	UInteractor* _goalInteractor;
 
 public:

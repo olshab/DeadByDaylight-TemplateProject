@@ -32,19 +32,19 @@ protected:
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTagContainer _semanticGameplayTags;
 
-	UPROPERTY(VisibleAnywhere, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, meta=(BindWidgetOptional))
 	UBaseGroundDetectorComponent* _leftFootGroundDetector;
 
-	UPROPERTY(VisibleAnywhere, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, meta=(BindWidgetOptional))
 	UBaseGroundDetectorComponent* _rightFootGroundDetector;
 
-	UPROPERTY(VisibleAnywhere, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, meta=(BindWidgetOptional))
 	UBaseGroundDetectorComponent* _leftFrontFootGroundDetector;
 
-	UPROPERTY(VisibleAnywhere, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, meta=(BindWidgetOptional))
 	UBaseGroundDetectorComponent* _rightFrontFootGroundDetector;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UMontagePlayer* _montagePlayer;
 
 private:

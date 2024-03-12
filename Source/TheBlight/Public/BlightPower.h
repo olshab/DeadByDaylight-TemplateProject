@@ -2,8 +2,8 @@
 
 #include "CoreMinimal.h"
 #include "Collectable.h"
-#include "DBDTunableRowHandle.h"
 #include "TunableStat.h"
+#include "DBDTunableRowHandle.h"
 #include "Templates/SubclassOf.h"
 #include "EWallGrabState.h"
 #include "BlightPower.generated.h"
@@ -12,7 +12,6 @@ class UPowerChargeComponent;
 class UChargeableComponent;
 class UBlightPowerStateComponent;
 class UPowerToggleComponent;
-class UTimerObject;
 class UStatusEffect;
 
 UCLASS()
@@ -33,9 +32,6 @@ private:
 	UPROPERTY(Transient, Export)
 	UBlightPowerStateComponent* _blightPowerStateComponent;
 
-	UPROPERTY(ReplicatedUsing=OnRep_OverridenTimer, Export)
-	TWeakObjectPtr<UTimerObject> _unlimitedDashesCooldownTimer;
-
 	UPROPERTY(EditDefaultsOnly)
 	FDBDTunableRowHandle _blightPowerActivateMaxCharge;
 
@@ -53,13 +49,7 @@ private:
 
 private:
 	UFUNCTION()
-	void OnRep_OverridenTimer() const;
-
-	UFUNCTION()
 	void OnPowerStateChanged(const EWallGrabState previousState, const EWallGrabState newState);
-
-public:
-	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
 public:
 	ABlightPower();

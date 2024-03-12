@@ -12,7 +12,7 @@ class AStandInMeshActor : public AActor
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(VisibleAnywhere, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, meta=(BindWidgetOptional))
 	UStaticMeshComponent* StaticMeshComponent;
 
 public:

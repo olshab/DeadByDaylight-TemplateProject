@@ -22,13 +22,13 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int32 _layoutMask;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCustomizationItemGridContainer* RewardGrid;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreImagePreviewAreaWidget* PreviewArea;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCustomizationItemOriginWidget* InstructionWidget;
 
 public:

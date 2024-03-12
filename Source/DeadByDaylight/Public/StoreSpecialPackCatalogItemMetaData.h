@@ -1,8 +1,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "StoreSpecialPackCatalogPrice.h"
-#include "StoreSpecialPackCatalogActivationData.h"
 #include "StoreSpecialPackCatalogItemMetaData.generated.h"
 
 USTRUCT()
@@ -18,9 +18,6 @@ public:
 	uint32 SortOrder;
 
 	UPROPERTY(Transient)
-	FStoreSpecialPackCatalogActivationData Activation;
-
-	UPROPERTY(Transient)
 	FString ImagePath;
 
 	UPROPERTY(Transient)
@@ -28,6 +25,24 @@ public:
 
 	UPROPERTY(Transient)
 	float Discount;
+
+	UPROPERTY(Transient)
+	FDateTime StartDate;
+
+	UPROPERTY(Transient, SkipSerialization)
+	bool StartDate_IsSet;
+
+	UPROPERTY(Transient)
+	FDateTime EndDate;
+
+	UPROPERTY(Transient, SkipSerialization)
+	bool EndDate_IsSet;
+
+	UPROPERTY(Transient)
+	FString DLCId;
+
+	UPROPERTY(Transient, SkipSerialization)
+	bool DLCId_IsSet;
 
 public:
 	DEADBYDAYLIGHT_API FStoreSpecialPackCatalogItemMetaData();

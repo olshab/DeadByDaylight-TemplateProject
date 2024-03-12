@@ -9,4 +9,5 @@ enum class EButtonDisableState : uint8
 	Default,
 	Loading,
 	Locked,
+	Disabled,
 };

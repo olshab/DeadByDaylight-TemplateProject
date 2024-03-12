@@ -6,18 +6,22 @@
 #include "StoreCharactersCustomizationsViewInterface.h"
 #include "StoreCustomizationSelectedDelegate.h"
 #include "Templates/SubclassOf.h"
+#include "StorePresetSelectedDelegate.h"
 #include "StoreCategorySelectedDelegate.h"
 #include "Layout/Margin.h"
 #include "CoreStoreCharactersCustomizationsWidget.generated.h"
 
 class UCoreSelectableButtonWidget;
-class UCoreStoreCategoryWidget;
 class UUniformGridPanel;
-class UScrollBox;
 class UCoreStoreCustomizationItemWidget;
+class UDBDScrollBox;
+class UCoreStoreCategoryWidget;
+class UCoreStorePresetWidget;
 class UCoreStoreCharmSlotWidget;
 class UHorizontalBox;
+class UCoreStoreEmptyItemWidget;
 class UCoreStoreCharactersFilterWidget;
+class UCoreSearchBarWidget;
 class UCorePreConstructableList;
 
 UCLASS(EditInlineNew)
@@ -35,6 +39,9 @@ protected:
 	UPROPERTY()
 	FStoreCharmSlotSelectedDelegate _charmSlotSelectedDelegate;
 
+	UPROPERTY()
+	FStorePresetSelectedDelegate _presetSelectedDelegate;
+
 	UPROPERTY(EditAnywhere, NoClear)
 	TSubclassOf<UCoreStoreCustomizationItemWidget> _customizationItemWidgetClass;
 
@@ -43,6 +50,9 @@ protected:
 
 	UPROPERTY(EditAnywhere, NoClear)
 	TSubclassOf<UCoreStoreCharmSlotWidget> _charmSlotItemWidgetClass;
+
+	UPROPERTY(EditAnywhere, NoClear)
+	TSubclassOf<UCoreStorePresetWidget> _presetItemWidgetClass;
 
 	UPROPERTY(EditAnywhere)
 	int32 _numberOfColumns;
@@ -53,29 +63,44 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int32 _layoutMask;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UScrollBox* CustomizationsScroll;
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UDBDScrollBox* CustomizationsScroll;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UUniformGridPanel* CustomizationsContainer;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UUniformGridPanel* CategoriesContainer;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UHorizontalBox* CharmSlotsContainer;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UHorizontalBox* PresetsContainer;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UCoreStoreEmptyItemWidget* EmptyItem;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreStoreCharactersFilterWidget* FiltersWidget;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UCoreSearchBarWidget* SearchBar;
 
 	UPROPERTY(Transient, Export)
 	TArray<UCoreStoreCustomizationItemWidget*> _allCustomizationItems;
 
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
+	UCoreStoreCustomizationItemWidget* _selectedCustomizationItem;
+
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	UCoreStoreCategoryWidget* _selectedCategoryItem;
 
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	UCoreStoreCharmSlotWidget* _selectedCharmSlotItem;
+
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
+	UCoreStorePresetWidget* _selectedPresetItem;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, NoClear)
 	int32 _preConstructedCategoriesCount;
@@ -87,7 +112,13 @@ protected:
 	int32 _preConstructedCharmSlotsCount;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, NoClear)
+	int32 _preConstructedPresetsCount;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, NoClear)
 	FMargin _charmSlotsPadding;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, NoClear)
+	FMargin _presetsPadding;
 
 private:
 	UPROPERTY(Transient)
@@ -99,7 +130,19 @@ private:
 	UPROPERTY(Transient)
 	UCorePreConstructableList* _charmSlotList;
 
+	UPROPERTY(Transient)
+	UCorePreConstructableList* _presetList;
+
 protected:
+	UFUNCTION()
+	void OnPresetSelected(UCoreSelectableButtonWidget* buttonTarget, bool isSelected);
+
+	UFUNCTION()
+	void OnEmptyItemSelectedAgain(UCoreSelectableButtonWidget* buttonTarget);
+
+	UFUNCTION()
+	void OnEmptyItemSelected(UCoreSelectableButtonWidget* buttonTarget, bool isSelected);
+
 	UFUNCTION()
 	void OnCustomizationSelectedAgain(UCoreSelectableButtonWidget* buttonTarget);
 

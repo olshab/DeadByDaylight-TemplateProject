@@ -29,13 +29,13 @@ protected:
 	UPROPERTY(EditAnywhere, NoClear)
 	TSubclassOf<UCoreCustomizationRewardWidget> CustomizationRewardWidget;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UPanelWidget* RewardContainer;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	USizeBox* SizeBox;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UScaleBox* ScaleBox;
 
 private:

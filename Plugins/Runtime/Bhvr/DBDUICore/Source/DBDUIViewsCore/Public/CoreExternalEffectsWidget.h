@@ -48,7 +48,7 @@ protected:
 	UPROPERTY(EditDefaultsOnly, NoClear)
 	TSubclassOf<UCoreAddonWidget> AddonWidgetClass;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UGridPanel* Container;
 
 private:

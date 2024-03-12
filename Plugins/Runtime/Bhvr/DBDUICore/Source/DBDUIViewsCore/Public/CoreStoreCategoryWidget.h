@@ -14,7 +14,7 @@ class DBDUIVIEWSCORE_API UCoreStoreCategoryWidget : public UCoreSelectableButton
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreOnHoverBorderWidget* OnHoverBorder;
 
 	UPROPERTY(Transient)

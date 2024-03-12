@@ -1,11 +1,10 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
+#include "DialogHandlerConditionContainer.h"
 #include "DialogClipSettings.generated.h"
 
 class UAkAudioEvent;
-class UDialogHandlerCondition;
 
 USTRUCT()
 struct FDialogClipSettings
@@ -17,10 +16,7 @@ public:
 	UAkAudioEvent* Clip;
 
 	UPROPERTY(EditDefaultsOnly)
-	TSubclassOf<UDialogHandlerCondition> ConditionClass;
-
-	UPROPERTY(Transient)
-	UDialogHandlerCondition* Condition;
+	FDialogHandlerConditionContainer ConditionContainer;
 
 	UPROPERTY(EditDefaultsOnly)
 	int32 Priority;

@@ -21,16 +21,16 @@ class AK25Projectile : public AKillerProjectile
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UStaticMeshComponent* _staticMesh;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UPrimitiveComponent* _characterCollider;
 
-	UPROPERTY(VisibleAnywhere, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, meta=(BindWidgetOptional))
 	UPrimitiveComponent* _environmentCollider;
 
-	UPROPERTY(VisibleAnywhere, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, meta=(BindWidgetOptional))
 	UKillerProjectileDodgeComponent* _projectileDodgeComponent;
 
 	UPROPERTY(Transient)

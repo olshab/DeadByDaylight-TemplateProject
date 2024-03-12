@@ -24,16 +24,16 @@ class THEK32_API AK32ItemBox : public AInteractable, public IContainsItemInterfa
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UChargeableComponent* _chargeable;
 
 	UPROPERTY(ReplicatedUsing=OnRep_SpawnedItem, Transient)
 	ACollectable* _spawnedItem;
 
-	UPROPERTY(VisibleAnywhere, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, meta=(BindWidgetOptional))
 	USceneComponent* _containingItemSpawnPoint;
 
-	UPROPERTY(VisibleAnywhere, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, meta=(BindWidgetOptional))
 	USceneComponent* _itemDropPoint;
 
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing=OnRep_State)

@@ -19,13 +19,13 @@ protected:
 	UPROPERTY(EditAnywhere, NoClear)
 	TSubclassOf<UReportFeedbackInfoWidget> InfoWidgetClass;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UDBDTextBlock* BanTimestampSubtitleTB;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UDBDTextBlock* ReasonSubtitleTB;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDScrollBox* ReportFeedbackInfoScrollBox;
 
 public:

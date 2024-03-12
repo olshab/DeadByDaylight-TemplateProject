@@ -2,7 +2,6 @@
 
 #include "CoreMinimal.h"
 #include "PrestigeData.h"
-#include "AtlantaFreeTicketAffectedUIData.h"
 #include "EDisabledItemOption.h"
 #include "SpecialEventUIInfo.h"
 #include "ECharacterDifficulty.h"
@@ -74,6 +73,9 @@ public:
 	int32 TotalItems;
 
 	UPROPERTY(BlueprintReadOnly, Transient)
+	int32 NewItemsCount;
+
+	UPROPERTY(BlueprintReadOnly, Transient)
 	bool ShowNew;
 
 	UPROPERTY(BlueprintReadOnly, Transient)
@@ -90,9 +92,6 @@ public:
 
 	UPROPERTY(BlueprintReadOnly, Transient)
 	bool HasNonSelectedPerks;
-
-	UPROPERTY(BlueprintReadOnly, Transient)
-	FAtlantaFreeTicketAffectedUIData FreeTicketAffectedData;
 
 	UPROPERTY(BlueprintReadOnly, Transient)
 	EPlayerRole PlayerRole;

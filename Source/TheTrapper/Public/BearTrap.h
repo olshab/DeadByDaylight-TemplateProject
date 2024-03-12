@@ -36,31 +36,31 @@ class ABearTrap : public ABaseTrap
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UBoxPlayerOverlapComponent* _interactionVolume;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCapsulePlayerOverlapComponent* _trapPlayerDetectionZone;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UBoxComponent* _killerSafetyZoneComponent;
 
-	UPROPERTY(EditAnywhere, meta=(BindWidget))
+	UPROPERTY(EditAnywhere, meta=(BindWidgetOptional))
 	UDBDOutlineComponent* _outlineComponent;
 
-	UPROPERTY(EditAnywhere, meta=(BindWidget))
+	UPROPERTY(EditAnywhere, meta=(BindWidgetOptional))
 	UBearTrapOutlineUpdateStrategy* _outlineUpdateStrategy;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UMapActorComponent* _mapActorComponent;
 
-	UPROPERTY(VisibleAnywhere, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, meta=(BindWidgetOptional))
 	USphereComponent* _mapActorCollision;
 
-	UPROPERTY(VisibleAnywhere, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, meta=(BindWidgetOptional))
 	USphereComponent* _trapBlocker;
 
-	UPROPERTY(EditAnywhere, meta=(BindWidget))
+	UPROPERTY(EditAnywhere, meta=(BindWidgetOptional))
 	UMontagePlayer* _montagePlayer;
 
 	UPROPERTY(BlueprintAssignable)

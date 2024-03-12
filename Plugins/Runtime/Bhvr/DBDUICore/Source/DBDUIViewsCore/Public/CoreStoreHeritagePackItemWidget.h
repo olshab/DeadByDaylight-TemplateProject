@@ -5,6 +5,7 @@
 #include "StoreHeritagePackViewData.h"
 #include "CoreStoreHeritagePackItemWidget.generated.h"
 
+class UCoreOnHoverBorderWidget;
 class UDBDTextBlock;
 class UCorePremiumCurrencyButtonWidget;
 class UCoreButtonWidget;
@@ -15,18 +16,24 @@ class DBDUIVIEWSCORE_API UCoreStoreHeritagePackItemWidget : public UCoreSelectab
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDTextBlock* TitleTB;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDTextBlock* ContentDescriptionTB;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCorePremiumCurrencyButtonWidget* PremiumBuyButton;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UCoreOnHoverBorderWidget* OnHoverBorder;
 
 public:
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void SetData(const FStoreHeritagePackViewData& data);
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	void OnItemUnhovered(UCoreButtonWidget* button);
 
 protected:
 	UFUNCTION()

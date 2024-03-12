@@ -18,16 +18,16 @@ class DBDUIVIEWSCORE_API UCorePlayerProfileWidget : public UCoreBaseUserWidget, 
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UCoreButtonWidget* PlayerCardButton;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UCoreWalletWidget* Wallet;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UCorePlayerNameWidget* PlayerName;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UDBDButton* PlayerCardHoverZone;
 
 	UPROPERTY()

@@ -15,7 +15,7 @@ class THEK33_API AK33Husk : public APoseableHusk
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(EditDefaultsOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, meta=(BindWidgetOptional))
 	UMontagePlayer* _montagePlayer;
 
 private:

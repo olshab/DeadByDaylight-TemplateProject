@@ -1,9 +1,9 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "StoreRecommendationCustomizationRuntimeData.h"
 #include "StoreFeaturedCharacterRecommendationData.h"
 #include "StoreFeaturedChapterPackRecommendationData.h"
-#include "StoreSpecialsRecommendationData.h"
 #include "StoreRecommendationRuntimeData.generated.h"
 
 USTRUCT()
@@ -13,13 +13,16 @@ struct FStoreRecommendationRuntimeData
 
 public:
 	UPROPERTY(Transient)
+	TArray<FStoreRecommendationCustomizationRuntimeData> FeaturedCustomizationRecommendations;
+
+	UPROPERTY(Transient)
 	TArray<FStoreFeaturedCharacterRecommendationData> FeaturedCharacterRecommendations;
 
 	UPROPERTY(Transient)
 	TArray<FStoreFeaturedChapterPackRecommendationData> FeaturedChapterPackRecommendations;
 
 	UPROPERTY(Transient)
-	TArray<FStoreSpecialsRecommendationData> SpecialsRecommendations;
+	TArray<FStoreRecommendationCustomizationRuntimeData> SpecialsRecommendations;
 
 public:
 	DEADBYDAYLIGHT_API FStoreRecommendationRuntimeData();

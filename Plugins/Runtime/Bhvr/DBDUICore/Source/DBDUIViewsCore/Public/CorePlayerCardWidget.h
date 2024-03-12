@@ -14,10 +14,10 @@ class DBDUIVIEWSCORE_API UCorePlayerCardWidget : public UCoreBaseUserWidget, pub
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UDBDImage* Icon;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UOverlay* AnimationContainer;
 
 public:

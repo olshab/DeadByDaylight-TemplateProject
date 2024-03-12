@@ -2,25 +2,28 @@
 
 #include "CoreMinimal.h"
 #include "FriendSearchPopupViewInterface.h"
-#include "CoreGenericTextInputPopupWidget.h"
+#include "CoreGenericPopupWidget.h"
+#include "UObject/ScriptInterface.h"
 #include "Templates/SubclassOf.h"
 #include "FriendSearchPopupWidget.generated.h"
 
-class UDBDScrollBox;
 class UCoreInputSwitcherWidget;
+class UCoreSearchBarWidget;
+class UDBDScrollBox;
+class ISearchBarViewInterface;
 class UCoreButtonWidget;
 class UFriendItemWidget;
 
 UCLASS(EditInlineNew)
-class DBDUIVIEWSCORE_API UFriendSearchPopupWidget : public UCoreGenericTextInputPopupWidget, public IFriendSearchPopupViewInterface
+class DBDUIVIEWSCORE_API UFriendSearchPopupWidget : public UCoreGenericPopupWidget, public IFriendSearchPopupViewInterface
 {
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreInputSwitcherWidget* FriendSearchWidget;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDScrollBox* FriendSearchScrollBox;
 
 	UPROPERTY(EditAnywhere, NoClear)
@@ -28,6 +31,12 @@ protected:
 
 	UPROPERTY(Export)
 	TMap<FString, UFriendItemWidget*> _friendsMap;
+
+	UPROPERTY()
+	TScriptInterface<ISearchBarViewInterface> _searchBar;
+
+	UPROPERTY(meta=(BindWidgetOptional))
+	UCoreSearchBarWidget* SearchBar;
 
 protected:
 	UFUNCTION()

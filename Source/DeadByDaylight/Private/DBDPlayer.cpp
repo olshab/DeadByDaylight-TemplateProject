@@ -95,7 +95,7 @@ void ADBDPlayer::TriggerAnimNotify(EAnimNotifyType animNotifyType)
 
 }
 
-void ADBDPlayer::SnapCharacter(bool snapPosition, FVector position, float stopSnapDistance, bool snapRotation, FRotator rotation, float time, bool useZCoord, bool sweepOnFinalSnap, bool snapRoll)
+void ADBDPlayer::SnapCharacter(bool snapPosition, const FVector& position, float stopSnapDistance, bool snapRotation, const FRotator& rotation, float time, bool useZCoord, bool sweepOnFinalSnap, bool snapRoll)
 {
 
 }
@@ -741,6 +741,11 @@ USceneComponent* ADBDPlayer::GetAttachPoint_Implementation(FName attachPointName
 }
 
 APlayerState* ADBDPlayer::GetAssociatedPlayerState_Implementation() const
+{
+	return NULL;
+}
+
+ADBDPlayer* ADBDPlayer::GetAssociatedPlayer_Implementation() const
 {
 	return NULL;
 }

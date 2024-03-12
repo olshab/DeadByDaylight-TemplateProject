@@ -107,6 +107,9 @@ public:
 	UPROPERTY(BlueprintReadOnly, Transient)
 	ELoadoutPartState LoadoutPartState;
 
+	UPROPERTY(BlueprintReadOnly, Transient)
+	TArray<FText> SearchTags;
+
 public:
 	DEADBYDAYLIGHT_API FInventorySlotData();
 };

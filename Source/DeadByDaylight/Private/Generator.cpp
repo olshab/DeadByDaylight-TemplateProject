@@ -2,6 +2,7 @@
 #include "OnAkPostEventCallback.h"
 #include "PlayerFloatTuple.h"
 #include "Net/UnrealNetwork.h"
+#include "GeneratorDamageComponent.h"
 #include "Perception/AIPerceptionStimuliSourceComponent.h"
 #include "DischargeUntilThresholdIsReachedComponent.h"
 
@@ -73,17 +74,12 @@ void AGenerator::OnRep_IsBlocked()
 
 }
 
-void AGenerator::OnRep_DamageData()
+void AGenerator::OnRegressionStateChanged(const bool regressing, ADBDPlayer* lastDamageChangeSource)
 {
 
 }
 
 void AGenerator::OnChargeChanged(UChargeableComponent* chargeableComponent, float percent)
-{
-
-}
-
-void AGenerator::OnChargeApplied(float individualChargeAmount, float totalChargeAmount, AActor* chargeInstigator, bool wasCoop, float deltaTime)
 {
 
 }
@@ -98,22 +94,7 @@ void AGenerator::Multicast_OnRepaired_Implementation(const bool showGeneratorClo
 
 }
 
-void AGenerator::Multicast_DamageCosmetic_Implementation(bool intense, const TArray<ADBDPlayer*>& repairers)
-{
-
-}
-
 bool AGenerator::IsRepaired() const
-{
-	return false;
-}
-
-bool AGenerator::IsRegressing() const
-{
-	return false;
-}
-
-bool AGenerator::IsIntenseDamage() const
 {
 	return false;
 }
@@ -156,6 +137,11 @@ bool AGenerator::GetIsBlockedFromCharging()
 bool AGenerator::GetIsAutoCompleted() const
 {
 	return false;
+}
+
+UGeneratorDamageComponent* AGenerator::GetGeneratorDamageComponent() const
+{
+	return NULL;
 }
 
 UChargeableComponent* AGenerator::GetGeneratorChargeComponent_Implementation() const
@@ -208,17 +194,7 @@ void AGenerator::Authority_OnChargeApplied(float individualChargeAmount, float t
 
 }
 
-bool AGenerator::Authority_HasRepairedDamage(const ADBDPlayer* player) const
-{
-	return false;
-}
-
-TArray<ADBDPlayer*> AGenerator::Authority_GetRepairingCampers() const
-{
-	return TArray<ADBDPlayer*>();
-}
-
-void AGenerator::Authority_CancelRepairInteractions()
+void AGenerator::Authority_CancelRepairInteractions(const TArray<ADBDPlayer*>& repairers) const
 {
 
 }
@@ -247,7 +223,6 @@ void AGenerator::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifeti
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
-	DOREPLIFETIME(AGenerator, _damageData);
 	DOREPLIFETIME(AGenerator, _isBlocked);
 	DOREPLIFETIME(AGenerator, _isOvercharged);
 }
@@ -259,6 +234,7 @@ AGenerator::AGenerator()
 	this->IsPlaySkillcheckAesthetic = true;
 	this->KillerOutlineFadeCurve = NULL;
 	this->NativePercentComplete = 0.000000;
+	this->_generatorDamageComponent = CreateDefaultSubobject<UGeneratorDamageComponent>(TEXT("GeneratorDamageComponent"));
 	this->FireLevelScoreEventOnFix = false;
 	this->_activatedTopLightsTransformMap = TMap<FName, FTransform>();
 	this->_perceptionStimuliComponent = CreateDefaultSubobject<UAIPerceptionStimuliSourceComponent>(TEXT("AIPerceptionStimuliSourceComponent"));

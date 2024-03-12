@@ -100,10 +100,10 @@ protected:
 	UPROPERTY(BlueprintReadWrite)
 	bool _beingConsumedByEntity;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UInteractor* _itemInteractor;
 
-	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDSkeletalMeshComponentBudgeted* _mesh;
 
 	UPROPERTY(EditDefaultsOnly)

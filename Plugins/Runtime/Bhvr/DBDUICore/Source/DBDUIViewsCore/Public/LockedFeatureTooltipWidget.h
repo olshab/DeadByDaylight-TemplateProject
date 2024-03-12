@@ -18,13 +18,13 @@ protected:
 	UPROPERTY(EditDefaultsOnly)
 	TMap<ELockedElementType, FMargin> _tooltipMargins;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDTextBlock* TitleTB;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDTextBlock* ContentTB;
 
-	UPROPERTY(meta=(BindWidget))
+	UPROPERTY(meta=(BindWidgetOptional))
 	UDBDTextBlock* ProgressTB;
 
 public:

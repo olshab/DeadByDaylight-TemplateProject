@@ -13,6 +13,9 @@ private:
 	TMap<FString, bool> CharactersFirstBloodweb;
 
 	UPROPERTY(SaveGame)
+	bool BloodwebCenterButtonUnlocked;
+
+	UPROPERTY(SaveGame)
 	TMap<FString, bool> ArchiveStoryHasBeenSeenStatus;
 
 	UPROPERTY(SaveGame)

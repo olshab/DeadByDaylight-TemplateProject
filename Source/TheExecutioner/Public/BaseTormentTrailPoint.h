@@ -15,7 +15,7 @@ class ABaseTormentTrailPoint : public AActor
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidgetOptional))
 	USphereComponent* _collisionComponent;
 
 	UPROPERTY(EditDefaultsOnly)
@@ -24,7 +24,7 @@ protected:
 	UPROPERTY(EditDefaultsOnly)
 	FTunableStat _tormentTrailAliveTime;
 
-	UPROPERTY(BlueprintReadWrite, Transient, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, Transient, meta=(BindWidgetOptional))
 	USplineMeshComponent* _splineMeshComponent;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)

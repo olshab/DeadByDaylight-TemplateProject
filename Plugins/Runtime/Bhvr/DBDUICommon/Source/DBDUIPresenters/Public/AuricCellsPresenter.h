@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "Presenter.h"
 #include "Templates/SubclassOf.h"
+#include "PremiumPurchaseCompleteData.h"
 #include "AuricCellsFirstPurchaseViewData.h"
 #include "AuricCellsPresenter.generated.h"
 
@@ -23,7 +24,7 @@ private:
 
 private:
 	UFUNCTION()
-	void OnPremiumTransactionCompleted(bool success);
+	void OnPremiumTransactionCompleted(bool success, FName itemId, const FPremiumPurchaseCompleteData& purchaseCompleteData);
 
 	UFUNCTION()
 	void OnBuyAction(FName bundleId);

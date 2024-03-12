@@ -35,10 +35,10 @@ protected:
 	UPROPERTY(EditAnywhere, NoClear)
 	TSubclassOf<UDailyRitualTileWidget> OnboardingRitualTileWidgetClass;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCanvasPanel* Container;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDTextBlock* NoRitualWarningText;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)

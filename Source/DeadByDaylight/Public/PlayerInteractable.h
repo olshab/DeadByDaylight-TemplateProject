@@ -15,13 +15,13 @@ class DEADBYDAYLIGHT_API APlayerInteractable : public AInteractable
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UPrimitiveComponent* _mainInteractionZone;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UInteractor* _selfInteractionsInteractor;
 
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	USceneComponent* _rootComponent;
 
 protected:

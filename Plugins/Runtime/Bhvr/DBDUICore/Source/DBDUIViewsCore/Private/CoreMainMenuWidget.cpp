@@ -59,6 +59,11 @@ void UCoreMainMenuWidget::OnNewsButtonClicked(UCoreButtonWidget* target)
 
 }
 
+void UCoreMainMenuWidget::OnMarketingInvitationButtonClicked(UCoreButtonWidget* target)
+{
+
+}
+
 void UCoreMainMenuWidget::OnFriendsButtonClicked(UCoreButtonWidget* target)
 {
 

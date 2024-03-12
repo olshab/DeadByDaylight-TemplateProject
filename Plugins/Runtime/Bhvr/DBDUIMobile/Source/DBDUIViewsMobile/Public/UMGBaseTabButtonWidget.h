@@ -15,16 +15,16 @@ class DBDUIVIEWSMOBILE_API UUMGBaseTabButtonWidget : public UUMGBaseButtonWidget
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(meta=(BindWidget))
+	UPROPERTY(meta=(BindWidgetOptional))
 	URichTextBlock* TabText;
 
-	UPROPERTY(meta=(BindWidget))
+	UPROPERTY(meta=(BindWidgetOptional))
 	UTextBlock* NotificationCountText;
 
-	UPROPERTY(meta=(BindWidget))
+	UPROPERTY(meta=(BindWidgetOptional))
 	UCanvasPanel* NotificationPanel;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UImage* TabButtonSelected;
 
 	UPROPERTY(EditInstanceOnly)

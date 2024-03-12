@@ -14,10 +14,10 @@ class DBDUIVIEWSCORE_API UCoreBasePopupWidget : public UCoreBaseUserWidget, publ
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDRichTextBlock* TitleText;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDRichTextBlock* MessageText;
 
 public:

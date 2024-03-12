@@ -17,6 +17,16 @@ void UCoreTimerFlagWidget::SetData_Implementation(const FTimerFlagViewData& data
 
 }
 
+void UCoreTimerFlagWidget::OnTimerTick(int32 remainingTime)
+{
+
+}
+
+void UCoreTimerFlagWidget::NativeDestruct()
+{
+
+}
+
 bool UCoreTimerFlagWidget::IsDataSet() const
 {
 	return false;

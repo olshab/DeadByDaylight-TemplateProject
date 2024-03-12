@@ -21,7 +21,7 @@ protected:
 	UPROPERTY(EditAnywhere, NoClear)
 	TSoftClassPtr<UUMGGameplayAlertWidget> AtlantaStatusEffectAlertComponentClass;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCanvasPanel* CanvasPanelAlerts;
 
 	UPROPERTY(BlueprintReadWrite, Transient)

@@ -8,7 +8,6 @@
 #include "GameEventData.h"
 #include "QuestEventsHandler.generated.h"
 
-class UArchiveStoriesContainer;
 class UQuestEventEvaluatorBase;
 class ADBDPlayerState;
 
@@ -20,9 +19,6 @@ class ARCHIVES_API UQuestEventsHandler : public UActorComponent
 private:
 	UPROPERTY(Transient)
 	TArray<UQuestEventEvaluatorBase*> _evaluatorList;
-
-	UPROPERTY(Transient)
-	UArchiveStoriesContainer* _archiveStoriesContainer;
 
 private:
 	UFUNCTION()

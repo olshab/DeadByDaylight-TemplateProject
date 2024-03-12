@@ -17,13 +17,13 @@ class ATrailControllerBase : public AActor
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	UTormentTrailPointCollectionComponent* _tormentTrailPointCollection;
 
 	UPROPERTY(EditDefaultsOnly)
 	FDBDTunableRowHandle _distanceBetweenTormentTrailPoint;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	USplineComponent* _splineComponent;
 
 private:

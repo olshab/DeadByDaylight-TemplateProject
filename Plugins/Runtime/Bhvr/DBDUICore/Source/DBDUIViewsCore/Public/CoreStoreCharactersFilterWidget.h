@@ -19,13 +19,13 @@ class DBDUIVIEWSCORE_API UCoreStoreCharactersFilterWidget : public UCoreBaseUser
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreButtonWidget* ClearFiltersButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreSortButtonWidget* SortButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UPanelWidget* CheckBoxesContainer;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)

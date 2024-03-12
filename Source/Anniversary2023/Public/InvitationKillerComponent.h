@@ -24,13 +24,13 @@ protected:
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UKillerNegateStunInteraction> _negateStunClass;
 
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	UBloodlustExposeInteraction* _bloodlustExposeInteraction;
 
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	URemoteDestroyInteraction* _remoteDestroyInteraction;
 
-	UPROPERTY(ReplicatedUsing=OnRep_NegateStunInteraction, Transient, meta=(BindWidget))
+	UPROPERTY(ReplicatedUsing=OnRep_NegateStunInteraction, Transient, meta=(BindWidgetOptional))
 	UKillerNegateStunInteraction* _negateStunInteraction;
 
 protected:

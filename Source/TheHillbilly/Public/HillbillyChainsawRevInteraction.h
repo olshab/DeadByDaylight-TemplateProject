@@ -7,7 +7,7 @@
 class UChargeableComponent;
 
 UCLASS(EditInlineNew, meta=(BlueprintSpawnableComponent))
-class UHillbillyChainsawRevInteraction : public UChainsawRevInteraction
+class THEHILLBILLY_API UHillbillyChainsawRevInteraction : public UChainsawRevInteraction
 {
 	GENERATED_BODY()
 

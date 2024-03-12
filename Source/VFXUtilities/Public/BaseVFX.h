@@ -9,7 +9,7 @@ class VFXUTILITIES_API ABaseVFX : public AActor
 {
 	GENERATED_BODY()
 
-private:
+protected:
 	UPROPERTY(EditAnywhere)
 	bool _shouldLoadOnServer;
 

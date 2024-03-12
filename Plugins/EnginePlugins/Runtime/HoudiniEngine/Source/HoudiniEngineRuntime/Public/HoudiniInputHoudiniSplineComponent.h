@@ -24,7 +24,7 @@ public:
 	bool Reversed;
 
 protected:
-	UPROPERTY(meta=(BindWidget))
+	UPROPERTY(meta=(BindWidgetOptional))
 	UHoudiniSplineComponent* CachedComponent;
 
 public:

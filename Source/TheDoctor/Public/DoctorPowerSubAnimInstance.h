@@ -23,7 +23,7 @@ protected:
 	UPROPERTY(BlueprintReadOnly, Transient)
 	bool _isShockTherapyInCooldown;
 
-	UPROPERTY(BlueprintReadOnly, Transient, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, Transient, meta=(BindWidgetOptional))
 	TWeakObjectPtr<UDoctorPowerAnimStateComponent> _powerStateComponent;
 
 protected:

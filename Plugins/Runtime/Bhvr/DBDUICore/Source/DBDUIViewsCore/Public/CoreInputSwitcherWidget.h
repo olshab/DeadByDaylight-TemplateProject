@@ -48,10 +48,10 @@ public:
 	UAkAudioEvent* InputTriggeredSfx;
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreKeyListenerInputPromptWidget* InputPrompt;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreButtonWidget* Button;
 
 	UPROPERTY(EditInstanceOnly)
@@ -88,6 +88,9 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void SetEnabled(bool isEnabled);
+
+	UFUNCTION(BlueprintCallable)
+	void SetChargeable(bool isChargeable, UCurveFloat* holdingAnimCurve, float duration);
 
 	UFUNCTION(BlueprintCallable)
 	void SetBackground(TSoftObjectPtr<UMaterialInstance> backgroundMaterial);

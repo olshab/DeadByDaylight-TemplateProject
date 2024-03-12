@@ -25,13 +25,13 @@ public:
 	FOnFlashEvent OnFlashEvent;
 
 protected:
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	USceneComponent* _tip;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UStaticMeshComponent* _centerGlowMesh;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	USplineMeshComponent* _beamMesh;
 
 	UPROPERTY(EditAnywhere)

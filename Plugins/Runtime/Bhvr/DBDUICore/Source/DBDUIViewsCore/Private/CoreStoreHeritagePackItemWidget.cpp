@@ -8,6 +8,11 @@ void UCoreStoreHeritagePackItemWidget::SetData_Implementation(const FStoreHerita
 
 }
 
+void UCoreStoreHeritagePackItemWidget::OnItemUnhovered_Implementation(UCoreButtonWidget* button)
+{
+
+}
+
 void UCoreStoreHeritagePackItemWidget::OnBuyButtonClicked(UCoreButtonWidget* button)
 {
 
@@ -18,4 +23,5 @@ UCoreStoreHeritagePackItemWidget::UCoreStoreHeritagePackItemWidget()
 	this->TitleTB = NULL;
 	this->ContentDescriptionTB = NULL;
 	this->PremiumBuyButton = NULL;
+	this->OnHoverBorder = NULL;
 }

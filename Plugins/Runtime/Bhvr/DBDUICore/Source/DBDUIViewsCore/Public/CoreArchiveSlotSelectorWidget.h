@@ -14,19 +14,19 @@ class DBDUIVIEWSCORE_API UCoreArchiveSlotSelectorWidget : public UCoreBaseUserWi
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UArchiveNodeTooltipWidget* NodeTooltip;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UCoreKeyListenerInputPromptWidget* SurvivorSlotPromptWidget;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UCoreKeyListenerInputPromptWidget* BothSlotPromptWidget;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UCoreKeyListenerInputPromptWidget* KillerSlotPromptWidget;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UCoreInputSwitcherWidget* CancelPromptWidget;
 
 private:

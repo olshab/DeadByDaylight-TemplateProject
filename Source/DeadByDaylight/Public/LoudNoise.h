@@ -15,16 +15,16 @@ class DEADBYDAYLIGHT_API ALoudNoise : public AActor
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDecalComponent* _toInfinityDecal;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UParticleSystemComponent* _distortionParticleSystem;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UAkComponent* _ak_audio_loudNoise;
 
-	UPROPERTY(BlueprintReadOnly, Transient, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, Transient, meta=(BindWidgetOptional))
 	USceneComponent* _rootScene;
 
 	UPROPERTY(BlueprintReadOnly)

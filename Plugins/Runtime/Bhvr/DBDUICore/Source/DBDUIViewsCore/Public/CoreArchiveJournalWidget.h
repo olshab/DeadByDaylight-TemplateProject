@@ -25,19 +25,19 @@ class DBDUIVIEWSCORE_API UCoreArchiveJournalWidget : public UCoreTabContentWidge
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UCoreArchiveVignetteButtonContainerWidget* VignetteButtonContainer;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UCoreArchiveVignetteEntryContainerWidget* VignetteEntryContainer;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UCoreArchiveVignetteCinematicContainerWidget* VignetteCinematicsContainer;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreInputSwitcherWidget* LeftArrowInputSwitcher;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreInputSwitcherWidget* RightArrowInputSwitcher;
 
 	UPROPERTY(BlueprintReadOnly)

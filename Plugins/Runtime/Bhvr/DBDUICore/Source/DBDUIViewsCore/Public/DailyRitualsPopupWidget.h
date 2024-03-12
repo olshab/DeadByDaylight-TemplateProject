@@ -29,16 +29,16 @@ protected:
 	UPROPERTY()
 	FClaimedAllRitualsDelegate _onClaimedAllRitualsDelegate;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDImage* BaseBG;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UOverlay* DailyRitualsDetails;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDailyRitualsContainerWidget* DailyRitualsContainer;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDRichTextBlock* FooterText;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)

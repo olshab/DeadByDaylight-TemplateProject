@@ -6,7 +6,10 @@ FStoreCharactersActionButtonsViewData::FStoreCharactersActionButtonsViewData()
 	this->EquipState = EStoreCharactersActionButtonState::Hidden;
 	this->EquipAllState = EStoreCharactersActionButtonState::Hidden;
 	this->SelectAllState = EStoreCharactersActionButtonState::Hidden;
-	this->SeePackState = EStoreCharactersActionButtonState::Hidden;
+	this->AlternativeUnlockState = EStoreCharactersActionButtonState::Hidden;
+	this->PlayMoriState = EStoreCharactersActionButtonState::Hidden;
+	this->ZoomCharmState = EStoreCharactersActionButtonState::Hidden;
+	this->IsCharmZoomed = false;
 	this->PriceTagData = TArray<FPriceTagViewData>();
-	this->PackName = FText::GetEmpty();
+	this->UnlockInfo = FStoreItemUnlockInfoViewData{};
 }

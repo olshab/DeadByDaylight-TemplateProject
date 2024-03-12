@@ -2,6 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "UObject/Interface.h"
+#include "StoreArchivePassViewData.h"
 #include "AuricCellsBundleViewData.h"
 #include "StoreSpecialsViewInterface.generated.h"
 
@@ -19,7 +20,7 @@ class DBDUIVIEWINTERFACES_API IStoreSpecialsViewInterface : public IInterface
 
 public:
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-	void SetSpecialsData(const TArray<UStoreCustomizationItemViewData*>& specialsData);
+	void SetSpecialsData(const TArray<UStoreCustomizationItemViewData*>& specialsData, const FStoreArchivePassViewData& archivePassViewData);
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void SetAuricCellsSpecialOfferData(const FAuricCellsBundleViewData& auricCellsSpecialOfferData);

@@ -5,14 +5,14 @@
 
 class ADBDPlayer;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FDamageData
 {
 	GENERATED_BODY()
 
 private:
 	UPROPERTY(Transient)
-	bool _damagedWithoutStartingGradualRegression;
+	bool _damagedWithoutChangingRegressionState;
 
 	UPROPERTY(Transient)
 	bool _isRegressing;

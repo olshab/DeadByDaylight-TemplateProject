@@ -4,11 +4,11 @@
 #include "StoreSubPresenter.h"
 #include "Templates/SubclassOf.h"
 #include "EquippedPlayerCustomization.h"
-#include "ECustomizationCategory.h"
 #include "ESortingOption.h"
-#include "StoreCharactersFiltersData.h"
-#include "CharacterCustomization.h"
+#include "ECustomizationCategory.h"
 #include "StoreCategoryViewData.h"
+#include "StoreCharactersFiltersData.h"
+#include "AnimationPreviewRequest.h"
 #include "ESortingOrder.h"
 #include "ECurrencyType.h"
 #include "StoreCharactersSubPresenter.generated.h"
@@ -50,9 +50,6 @@ private:
 	TMap<FName, UStoreCustomizationItemViewData*> _customizationsMap;
 
 	UPROPERTY(Transient)
-	FCharacterCustomization _defaultCustomization;
-
-	UPROPERTY(Transient)
 	FEquippedPlayerCustomization _equippedCustomization;
 
 	UPROPERTY(Transient)
@@ -84,7 +81,10 @@ private:
 	void PlayMoriAnimation();
 
 	UFUNCTION()
-	void OnMoriComplete(UAnimationPreviewSubsystem* animationPreviewSubsystem);
+	void OnZoomCharmClicked();
+
+	UFUNCTION()
+	void OnPresetSelected(const int32 presetId);
 
 	UFUNCTION()
 	void OnCustomizationUnlockCompleted(bool success);
@@ -105,7 +105,7 @@ private:
 	void OnCustomizationSelectAllClicked();
 
 	UFUNCTION()
-	void OnCustomizationSeePackClicked();
+	void OnCustomizationSearchBarTextChanged(const FString& enteredText);
 
 	UFUNCTION()
 	void OnCustomizationsClearFiltersClicked();
@@ -115,6 +115,9 @@ private:
 
 	UFUNCTION()
 	void OnCustomizationEquipAllClicked();
+
+	UFUNCTION()
+	void OnCustomizationAlternativeUnlockClicked();
 
 	UFUNCTION()
 	void OnCharmSlotSelected(const int32 slotIndex);
@@ -129,13 +132,13 @@ private:
 	void OnCharactersSortingChanged(const ESortingOption sortingOption, const ESortingOrder sortingOrder);
 
 	UFUNCTION()
+	void OnCharactersSearchBarTextChanged(const FString& enteredText);
+
+	UFUNCTION()
 	void OnCharactersFiltersChanged(const FStoreCharactersFiltersData& charactersFilterData);
 
 	UFUNCTION()
 	void OnCharacterSelected(const int32 characterIndex);
-
-	UFUNCTION()
-	void OnCharacterSeePackClicked();
 
 	UFUNCTION()
 	void OnCharactersClearFiltersClicked();
@@ -144,7 +147,13 @@ private:
 	void OnCharacterEquipClicked();
 
 	UFUNCTION()
+	void OnCharacterAlternativeUnlockClicked();
+
+	UFUNCTION()
 	void OnCategorySelected(const ECustomizationCategory category);
+
+	UFUNCTION()
+	void OnAnimationPreviewComplete(UAnimationPreviewSubsystem* animationPreviewSubsystem, const FAnimationPreviewRequest& request, bool completedSuccessfully);
 
 public:
 	UStoreCharactersSubPresenter();

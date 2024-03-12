@@ -1,26 +1,8 @@
 #include "AnimationPreviewSubsystem.h"
 
-void UAnimationPreviewSubsystem::OnPawnClassesLoaded()
-{
+class UAnimationPreview;
 
-}
-
-void UAnimationPreviewSubsystem::OnInteractionFinished()
-{
-
-}
-
-void UAnimationPreviewSubsystem::OnFadeOutForClosureComplete()
-{
-
-}
-
-void UAnimationPreviewSubsystem::OnFadeOutComplete()
-{
-
-}
-
-void UAnimationPreviewSubsystem::OnFadeInComplete()
+void UAnimationPreviewSubsystem::OnAnimationPreviewEnd(UAnimationPreview* preview, bool completedSuccessfully)
 {
 
 }
@@ -32,7 +14,5 @@ bool UAnimationPreviewSubsystem::IsPreviewingAnimation() const
 
 UAnimationPreviewSubsystem::UAnimationPreviewSubsystem()
 {
-	this->_killer = NULL;
-	this->_survivor = NULL;
-	this->_moriKillInteraction = NULL;
+	this->_activePreview = NULL;
 }

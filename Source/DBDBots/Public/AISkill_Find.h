@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "AISkill.h"
 #include "GameplayTagContainer.h"
+#include "UObject/NoExportTypes.h"
 #include "Templates/SubclassOf.h"
 #include "AITunableParameter.h"
 #include "AISkill_Find.generated.h"
@@ -48,6 +49,9 @@ public:
 
 	UPROPERTY(EditDefaultsOnly)
 	bool UsesActorLocation;
+
+	UPROPERTY(EditDefaultsOnly)
+	FVector ActorLocationOffset;
 
 	UPROPERTY(EditInstanceOnly)
 	FAITunableParameter GoalBasicWeight;

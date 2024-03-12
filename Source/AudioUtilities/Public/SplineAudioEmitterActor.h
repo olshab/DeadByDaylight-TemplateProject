@@ -14,14 +14,21 @@ class AUDIOUTILITIES_API ASplineAudioEmitterActor : public AActor
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(EditDefaultsOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, meta=(BindWidgetOptional))
 	USceneComponent* _root;
 
-	UPROPERTY(EditDefaultsOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, meta=(BindWidgetOptional))
 	USplineComponent* _theSpline;
 
-	UPROPERTY(EditDefaultsOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, meta=(BindWidgetOptional))
 	UAkComponent* _emitter;
+
+public:
+	UFUNCTION(BlueprintCallable)
+	USplineComponent* GetSplineComponent();
+
+	UFUNCTION(BlueprintCallable)
+	UAkComponent* GetEmitterComponent();
 
 public:
 	ASplineAudioEmitterActor();

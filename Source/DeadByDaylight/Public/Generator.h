@@ -5,33 +5,32 @@
 #include "AIPointOfInterestTargetInterface.h"
 #include "PlayerFloatTuple.h"
 #include "GameplayTagContainer.h"
-#include "NoiseIndicatorEmitterInterface.h"
+#include "GeneratorRepairedBySurvivorEvent.h"
 #include "Interactable.h"
 #include "GeneratorRepairedEvent.h"
 #include "UObject/NoExportTypes.h"
-#include "GeneratorRepairedBySurvivorEvent.h"
 #include "DBDTunableRowHandle.h"
-#include "DamageData.h"
 #include "OnAkPostEventCallback.h"
 #include "Generator.generated.h"
 
+class UGeneratorDamageComponent;
+class ADBDPlayer;
+class UAkComponent;
+class UObject;
 class ACamperPlayer;
 class UChargeableComponent;
 class UDischargeUntilThresholdIsReachedComponent;
 class UInteractionDefinition;
 class UCurveLinearColor;
-class UCoopRepairTracker;
 class UAIPerceptionStimuliSourceComponent;
-class ADBDPlayer;
-class UAkComponent;
-class UObject;
+class UCoopRepairTracker;
 class UAkAudioEvent;
-class AActor;
 class UInteractor;
 class USkeletalMeshComponent;
+class AActor;
 
 UCLASS()
-class DEADBYDAYLIGHT_API AGenerator : public AInteractable, public IAIPointOfInterestTargetInterface, public INoiseIndicatorEmitterInterface
+class DEADBYDAYLIGHT_API AGenerator : public AInteractable, public IAIPointOfInterestTargetInterface
 {
 	GENERATED_BODY()
 
@@ -61,6 +60,9 @@ public:
 	FOnIsDamagedChangedEvent OnIsDamagedChanged;
 
 protected:
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidgetOptional))
+	UGeneratorDamageComponent* _generatorDamageComponent;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool FireLevelScoreEventOnFix;
 
@@ -75,16 +77,10 @@ private:
 	UDischargeUntilThresholdIsReachedComponent* _regressChargeUntilThresholdIsReached;
 
 	UPROPERTY(EditDefaultsOnly)
-	FDBDTunableRowHandle _gradualRegressionPercentPerDamage;
-
-	UPROPERTY(EditDefaultsOnly)
 	FDBDTunableRowHandle _regressionSpeedWhileDamaged;
 
 	UPROPERTY(EditAnywhere)
 	FGameplayTag _repairSemanticTag;
-
-	UPROPERTY(ReplicatedUsing=OnRep_DamageData, Transient)
-	FDamageData _damageData;
 
 	UPROPERTY(ReplicatedUsing=OnRep_IsBlocked, Transient)
 	bool _isBlocked;
@@ -189,7 +185,7 @@ private:
 	void OnRep_IsBlocked();
 
 	UFUNCTION()
-	void OnRep_DamageData();
+	void OnRegressionStateChanged(const bool regressing, ADBDPlayer* lastDamageChangeSource);
 
 public:
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
@@ -199,15 +195,9 @@ protected:
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnEscapeDoorActivated();
 
-	UFUNCTION(BlueprintImplementableEvent, BlueprintCosmetic)
-	void OnDamageCosmetic(bool intense);
-
 private:
 	UFUNCTION()
 	void OnChargeChanged(UChargeableComponent* chargeableComponent, float percent);
-
-	UFUNCTION()
-	void OnChargeApplied(float individualChargeAmount, float totalChargeAmount, AActor* chargeInstigator, bool wasCoop, float deltaTime);
 
 public:
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
@@ -229,21 +219,10 @@ private:
 	UFUNCTION(NetMulticast, Reliable)
 	void Multicast_OnRepaired(const bool showGeneratorCloneLoudNoise, const bool isAutoCompleted, const int32 updatedRemainingGeneratorCount);
 
-	UFUNCTION(NetMulticast, Reliable)
-	void Multicast_DamageCosmetic(bool intense, const TArray<ADBDPlayer*>& repairers);
-
 public:
 	UFUNCTION(BlueprintPure)
 	bool IsRepaired() const;
 
-	UFUNCTION(BlueprintPure)
-	bool IsRegressing() const;
-
-protected:
-	UFUNCTION(BlueprintPure)
-	bool IsIntenseDamage() const;
-
-public:
 	UFUNCTION(BlueprintPure)
 	bool IsBlocked() const;
 
@@ -276,6 +255,9 @@ public:
 	UFUNCTION(BlueprintPure)
 	bool GetIsAutoCompleted() const;
 
+	UFUNCTION(BlueprintPure)
+	UGeneratorDamageComponent* GetGeneratorDamageComponent() const;
+
 	UFUNCTION(BlueprintPure, BlueprintNativeEvent)
 	UChargeableComponent* GetGeneratorChargeComponent() const;
 
@@ -292,9 +274,6 @@ private:
 	void DisableInaccessibleInteractors();
 
 protected:
-	UFUNCTION(BlueprintImplementableEvent, BlueprintCosmetic)
-	void Cosmetic_MakeSurvivorScream(const ADBDPlayer* screamingSurvivor);
-
 	UFUNCTION(BlueprintPure)
 	bool CanSurvivorReactToBlockingEntity(const ACamperPlayer* survivor) const;
 
@@ -322,14 +301,8 @@ private:
 	void Authority_OnChargeApplied(float individualChargeAmount, float totalChargeAmount, AActor* chargeInstigator, bool wasCoop, float deltaTime);
 
 public:
-	UFUNCTION(BlueprintPure, BlueprintAuthorityOnly)
-	bool Authority_HasRepairedDamage(const ADBDPlayer* player) const;
-
-	UFUNCTION(BlueprintPure)
-	TArray<ADBDPlayer*> Authority_GetRepairingCampers() const;
-
-	UFUNCTION(BlueprintCallable)
-	void Authority_CancelRepairInteractions();
+	UFUNCTION(BlueprintPure=false, BlueprintCallable)
+	void Authority_CancelRepairInteractions(const TArray<ADBDPlayer*>& repairers) const;
 
 	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly)
 	void Authority_AddTimedBlockingSource(const UObject* source, const float blockingTime);

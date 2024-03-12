@@ -26,10 +26,10 @@ class THEK33_API AK33ControlStation : public AInteractable
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDSkeletalMeshComponentBudgeted* _skeletalMeshComponent_TunnelEntranceSection;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDSkeletalMeshComponentBudgeted* _skeletalMeshComponent_turretSpawnerSection;
 
 private:

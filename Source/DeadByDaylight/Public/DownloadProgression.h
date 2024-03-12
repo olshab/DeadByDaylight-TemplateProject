@@ -3,7 +3,7 @@
 #include "CoreMinimal.h"
 #include "DownloadProgression.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FDownloadProgression
 {
 	GENERATED_BODY()

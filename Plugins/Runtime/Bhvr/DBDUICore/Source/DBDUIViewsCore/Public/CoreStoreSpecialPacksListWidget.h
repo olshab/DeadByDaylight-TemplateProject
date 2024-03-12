@@ -1,15 +1,15 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "CoreBaseUserWidget.h"
-#include "StoreRedirectionData.h"
 #include "StoreSpecialPacksListViewInterface.h"
+#include "CoreBaseUserWidget.h"
 #include "Templates/SubclassOf.h"
 #include "CoreStoreSpecialPacksListWidget.generated.h"
 
-class UVerticalBox;
+class UCoreStoreSpecialPackItemWidget;
+class UDBDScrollBox;
+class UUniformGridPanel;
 class UCorePreConstructableList;
-class UCoreStoreSpecialPacksPackItemWidget;
 
 UCLASS(EditInlineNew)
 class UCoreStoreSpecialPacksListWidget : public UCoreBaseUserWidget, public IStoreSpecialPacksListViewInterface
@@ -17,14 +17,20 @@ class UCoreStoreSpecialPacksListWidget : public UCoreBaseUserWidget, public ISto
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditDefaultsOnly)
 	int32 _preConstructedItemsCount;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, NoClear)
-	TSubclassOf<UCoreStoreSpecialPacksPackItemWidget> _itemWidgetClass;
+	UPROPERTY(EditDefaultsOnly)
+	int32 _numOfColumns;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UVerticalBox* Content;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, NoClear)
+	TSubclassOf<UCoreStoreSpecialPackItemWidget> _itemWidgetClass;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UUniformGridPanel* ContentGrid;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UDBDScrollBox* Scroll;
 
 private:
 	UPROPERTY(Transient)
@@ -32,16 +38,7 @@ private:
 
 private:
 	UFUNCTION()
-	void OnItemCustomizationClicked(const FStoreRedirectionData& redirectionData);
-
-	UFUNCTION()
-	void OnItemCharacterClicked(const FStoreRedirectionData& redirectionData);
-
-	UFUNCTION()
-	void OnItemBuyActionClicked(const FString& packId);
-
-	UFUNCTION()
-	void OnItemArchivePassClicked(const FName& archiveId, const FString& packId);
+	void OnItemClicked(const FString& packId);
 
 public:
 	UCoreStoreSpecialPacksListWidget();

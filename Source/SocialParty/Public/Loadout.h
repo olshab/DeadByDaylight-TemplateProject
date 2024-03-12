@@ -8,22 +8,9 @@ struct FLoadout
 {
 	GENERATED_BODY()
 
-public:
-	UPROPERTY()
-	FName offering;
-
-	UPROPERTY()
-	FName item;
-
-	UPROPERTY()
-	FName addon1;
-
-	UPROPERTY()
-	FName addon2;
-
 private:
 	UPROPERTY()
-	TArray<FName> _perks;
+	TArray<FName> data;
 
 public:
 	SOCIALPARTY_API FLoadout();

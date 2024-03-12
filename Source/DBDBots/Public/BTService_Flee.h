@@ -28,6 +28,9 @@ public:
 	FBlackboardKeySelector BBEvadePointCrossingDest;
 
 	UPROPERTY(EditInstanceOnly)
+	FBlackboardKeySelector BBIgnoreHostileStimulusInCooldown;
+
+	UPROPERTY(EditInstanceOnly)
 	TSubclassOf<UPathStrategySelector> PathStrategySelectorClass;
 
 	UPROPERTY(EditInstanceOnly)

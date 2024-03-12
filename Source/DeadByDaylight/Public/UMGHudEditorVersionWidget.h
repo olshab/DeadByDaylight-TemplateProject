@@ -13,7 +13,7 @@ class DEADBYDAYLIGHT_API UUMGHudEditorVersionWidget : public UUserWidget
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UButton* VersionButton;
 
 private:

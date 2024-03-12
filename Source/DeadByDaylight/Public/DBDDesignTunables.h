@@ -94,6 +94,10 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	TArray<FGameplayTag> _conspicuousActionEvents;
 
+private:
+	UFUNCTION()
+	void OnPluginDataPathAdded(const FString& dataPath);
+
 public:
 	UFUNCTION(BlueprintPure)
 	float GetTunableValue(FName ID, bool warnIfRowMissing) const;

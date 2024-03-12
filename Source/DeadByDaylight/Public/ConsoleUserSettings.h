@@ -145,6 +145,9 @@ public:
 	bool BeginnerMode;
 
 	UPROPERTY(SaveGame)
+	bool FogCommunications;
+
+	UPROPERTY(SaveGame)
 	bool Subtitles;
 
 	UPROPERTY(SaveGame)
@@ -155,6 +158,9 @@ public:
 
 	UPROPERTY(SaveGame)
 	bool IsAnonymousMode;
+
+	UPROPERTY(SaveGame)
+	bool AllowCopyrightedMusic;
 
 	UPROPERTY(SaveGame)
 	bool HideYourName;

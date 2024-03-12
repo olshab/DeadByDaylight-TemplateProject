@@ -12,7 +12,7 @@ class ANIMATIONUTILITIES_API USlaveAnimInstance : public UAnimInstance
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadOnly, Transient, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, Transient, meta=(BindWidgetOptional))
 	TWeakObjectPtr<USkeletalMeshComponent> _masterMesh;
 
 public:

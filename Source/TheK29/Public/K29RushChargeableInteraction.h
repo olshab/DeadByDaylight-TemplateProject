@@ -28,13 +28,13 @@ class THEK29_API UK29RushChargeableInteraction : public UChargeableInteractionDe
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	UK29RushChargesHandlerComponent* _rushChargesHandlerComponent;
 
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	UK29PowerStatusHandlerComponent* _powerStatusHandlerComponent;
 
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	UK29PathingCalculatorComponent* _pathingCalculatorComponent;
 
 	UPROPERTY(Transient)

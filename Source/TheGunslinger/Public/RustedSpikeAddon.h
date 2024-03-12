@@ -16,6 +16,9 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UStatusEffect> _mangledStatusEffectClass;
 
+	UPROPERTY(EditDefaultsOnly)
+	float _mangledEffectLifetime;
+
 public:
 	URustedSpikeAddon();
 };

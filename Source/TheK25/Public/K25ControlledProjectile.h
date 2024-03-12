@@ -19,13 +19,13 @@ class AK25ControlledProjectile : public AK25Projectile, public ISpectatingActorL
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UStaticMeshComponent* _killerViewProjectileStaticMesh;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	USpringArmComponent* _killerSpringArm;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UCameraComponent* _killerCameraPlacement;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)

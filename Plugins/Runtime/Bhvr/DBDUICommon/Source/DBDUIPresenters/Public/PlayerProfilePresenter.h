@@ -4,7 +4,6 @@
 #include "ECurrencyType.h"
 #include "ESpecialEventStatus.h"
 #include "Presenter.h"
-#include "CombinedSpecialEventData.h"
 #include "Templates/SubclassOf.h"
 #include "ShopWalletUpdate.h"
 #include "PlayerProfilePresenter.generated.h"
@@ -49,6 +48,9 @@ private:
 	void OnUpdatePlayerCardAnimationMode() const;
 
 	UFUNCTION()
+	void OnSpecialEventStatusChanged(FName specialEventId, ESpecialEventStatus specialEventStatus);
+
+	UFUNCTION()
 	void OnResetPlayerProfileFilter();
 
 	UFUNCTION()
@@ -59,9 +61,6 @@ private:
 
 	UFUNCTION()
 	void OnPlayerProfileClicked();
-
-	UFUNCTION()
-	void OnCurrentSpecialEventChanged(const FCombinedSpecialEventData& previousSpecialEvent, ESpecialEventStatus previousSpecialEventStatus, const FCombinedSpecialEventData& currentSpecialEvent, ESpecialEventStatus currentSpecialEventStatus);
 
 	UFUNCTION()
 	void HidePlayerProfile();

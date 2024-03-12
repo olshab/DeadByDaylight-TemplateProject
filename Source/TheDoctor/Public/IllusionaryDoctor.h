@@ -13,7 +13,7 @@ class AIllusionaryDoctor : public ABaseHusk
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDOutlineComponent* _dbdOutline;
 
 public:

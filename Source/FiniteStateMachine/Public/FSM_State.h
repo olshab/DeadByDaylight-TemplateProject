@@ -27,7 +27,7 @@ protected:
 	UPROPERTY(EditAnywhere, Export)
 	TArray<UFSM_Transition*> _transitions;
 
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	UFiniteStateMachine* _stateMachine;
 
 	UPROPERTY(Transient)

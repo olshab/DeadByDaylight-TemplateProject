@@ -12,5 +12,6 @@ enum class EGameType : uint8
 	TutorialBotMatch,
 	SecretBotMatch,
 	DreadByDaylight = 10,
+	Cake,
 	None,
 };

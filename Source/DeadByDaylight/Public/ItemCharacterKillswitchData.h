@@ -15,6 +15,9 @@ public:
 	FCharacterFallbackData CharacterFallback;
 
 	UPROPERTY()
+	TMap<FString, FCharacterFallbackData> FallbacksByGameType;
+
+	UPROPERTY()
 	TMap<FString, FDisabledItemData> DisabledItems;
 
 	UPROPERTY(SkipSerialization)

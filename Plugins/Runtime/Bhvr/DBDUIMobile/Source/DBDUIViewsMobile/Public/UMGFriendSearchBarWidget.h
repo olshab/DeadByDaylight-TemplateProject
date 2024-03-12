@@ -13,10 +13,10 @@ class UUMGFriendSearchBarWidget : public UMobileBaseUserWidget
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(meta=(BindWidget))
+	UPROPERTY(meta=(BindWidgetOptional))
 	UEditableTextBox* InputTextField;
 
-	UPROPERTY(meta=(BindWidget))
+	UPROPERTY(meta=(BindWidgetOptional))
 	UUMGBaseButtonWidget* SearchButton;
 
 private:

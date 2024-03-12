@@ -13,7 +13,7 @@ class DBDGAMEPLAY_API UPowerChargePresentationItemProgressComponent : public UPr
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UPowerChargeComponent* _powerChargeComponent;
 
 private:

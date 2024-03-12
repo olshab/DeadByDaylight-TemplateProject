@@ -5,6 +5,7 @@
 class USceneComponent;
 class UParticleSystemComponent;
 class AActor;
+class UCameraComponent;
 
 void UCameraHandlerComponent::SetSocketID(EDBDCameraSocketID mode)
 {
@@ -42,6 +43,11 @@ float UCameraHandlerComponent::GetDesiredFOV() const
 }
 
 AActor* UCameraHandlerComponent::GetCurrentCamera()
+{
+	return NULL;
+}
+
+UCameraComponent* UCameraHandlerComponent::GetCameraComponentBySocket(EDBDCameraSocketID socket) const
 {
 	return NULL;
 }

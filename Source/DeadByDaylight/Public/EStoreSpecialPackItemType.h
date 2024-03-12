@@ -10,4 +10,5 @@ enum class EStoreSpecialPackItemType : uint8
 	Character,
 	Currency,
 	RiftPass,
+	RiftTier,
 };

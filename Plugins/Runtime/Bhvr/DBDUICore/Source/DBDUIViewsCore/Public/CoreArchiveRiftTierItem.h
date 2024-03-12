@@ -24,10 +24,10 @@ protected:
 	UPROPERTY()
 	FArchiveRiftTierItemUnlockAnimationComplete _unlockAnimationCompleteDelegate;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UGridPanel* FreeRewardsContainer;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UGridPanel* PremiumRewardsContainer;
 
 	UPROPERTY(BlueprintReadWrite, Transient, Export)

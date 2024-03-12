@@ -1,6 +1,7 @@
 #include "CoreCommonUIUtils.h"
 #include "Components/SlateWrapperTypes.h"
 #include "EItemRarity.h"
+#include "ERemainingTimeFormat.h"
 #include "UObject/NoExportTypes.h"
 
 class UWidget;
@@ -22,6 +23,11 @@ bool UCoreCommonUIUtils::HasOuter(const UObject* object, UObject* root)
 }
 
 FText UCoreCommonUIUtils::GetTextBasedOnRarity(const EItemRarity rarity)
+{
+	return FText::GetEmpty();
+}
+
+FText UCoreCommonUIUtils::GetRemainingTimeText(const FDateTime& endDateTime, ERemainingTimeFormat timeFormat, const int32 numberOfDigits)
 {
 	return FText::GetEmpty();
 }

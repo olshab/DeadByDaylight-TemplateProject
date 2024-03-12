@@ -13,6 +13,10 @@ class DBDGAMEPLAY_API AMapCollectable : public ABaseCamperCollectable
 {
 	GENERATED_BODY()
 
+private:
+	UFUNCTION()
+	void OnReadMapInteractionFinished();
+
 public:
 	UFUNCTION(BlueprintImplementableEvent)
 	UChargerComponent* GetChargerComponent() const;

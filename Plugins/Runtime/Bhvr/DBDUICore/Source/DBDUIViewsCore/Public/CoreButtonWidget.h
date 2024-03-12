@@ -78,10 +78,10 @@ public:
 	EAnalogCursorStickiness AnalogCursorStickiness;
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDButton* HitzoneButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDTextBlock* LabelTB;
 
 	UPROPERTY(EditInstanceOnly, BlueprintReadWrite)

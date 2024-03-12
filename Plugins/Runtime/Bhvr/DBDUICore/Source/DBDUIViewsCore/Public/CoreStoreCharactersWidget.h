@@ -1,22 +1,23 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "ECurrencyType.h"
 #include "StoreItemEquipClickedDelegate.h"
 #include "Layout/Margin.h"
 #include "StoreCharactersViewInterface.h"
 #include "CoreStoreBaseSubTabsWidget.h"
 #include "StoreItemEquipAllClickedDelegate.h"
 #include "StoreItemUnlockClickedDelegate.h"
+#include "StoreItemAlternativeUnlockClickedDelegate.h"
 #include "StoreItemSelectAllClickedDelegate.h"
 #include "StoreItemPlayMoriClickedDelegate.h"
-#include "StoreItemSeePackClickedDelegate.h"
-#include "Templates/SubclassOf.h"
 #include "Framework/Text/TextLayout.h"
+#include "StoreItemZoomCharmClickedDelegate.h"
+#include "Templates/SubclassOf.h"
 #include "CoreStoreCharactersWidget.generated.h"
 
-class UCoreCurrencyButtonWidget;
+class UCoreCurrencyInputSwitcherWidget;
 class UDBDTextBlock;
-class UCoreStoreCharacterPerksToastWidget;
 class UCoreButtonWidget;
 class UVerticalBox;
 class UCorePreConstructableList;
@@ -46,16 +47,19 @@ protected:
 	FStoreItemSelectAllClickedDelegate _customizationSelectAllClickedDelegate;
 
 	UPROPERTY()
-	FStoreItemSeePackClickedDelegate _characterSeePackClickedDelegate;
+	FStoreItemAlternativeUnlockClickedDelegate _characterAlternativeUnlockClickedDelegate;
 
 	UPROPERTY()
-	FStoreItemSeePackClickedDelegate _customizationSeePackClickedDelegate;
+	FStoreItemAlternativeUnlockClickedDelegate _customizationAlternativeUnlockClickedDelegate;
 
 	UPROPERTY()
 	FStoreItemPlayMoriClickedDelegate _playMoriClickedDelegate;
 
+	UPROPERTY()
+	FStoreItemZoomCharmClickedDelegate _zoomCharmClickedDelegate;
+
 	UPROPERTY(EditAnywhere, NoClear)
-	TSubclassOf<UCoreCurrencyButtonWidget> _currencyButtonWidgetClass;
+	TSubclassOf<UCoreCurrencyInputSwitcherWidget> _currencySwitcherWidgetClass;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	int32 _preConstructedCurrencyButtonCount;
@@ -66,57 +70,63 @@ protected:
 	UPROPERTY(EditAnywhere, NoClear)
 	TEnumAsByte<ETextJustify::Type> _currencyButtonAlignment;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UDBDTextBlock* SelectedCharacterName;
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UDBDTextBlock* SelectedCharacterNameTB;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UCoreStoreCharacterPerksToastWidget* PerksToast;
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UDBDTextBlock* CurrencyButtonsTitleTB;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UDBDTextBlock* CurrencyButtonsTitleText;
-
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UVerticalBox* CurrencyButtonsVerticalBox;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreButtonWidget* EquipButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreButtonWidget* EquipAllButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreButtonWidget* SelectAllButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UCoreButtonWidget* SeePackButton;
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UCoreButtonWidget* AlternativeUnlockButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UDBDTextBlock* SeePackMessageText;
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UDBDTextBlock* AlternativeUnlockMessageTB;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UDBDTextBlock* AlternativeUnlockNameTB;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreButtonWidget* PlayMoriButton;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UCoreButtonWidget* ZoomCharmButton;
 
 	UPROPERTY(Transient)
 	UCorePreConstructableList* _currencyButtonList;
 
 protected:
 	UFUNCTION()
+	void OnZoomCharmClicked(UCoreButtonWidget* buttonTarget);
+
+	UFUNCTION()
 	void OnPlayMoriClicked(UCoreButtonWidget* buttonTarget);
 
 	UFUNCTION()
-	void OnItemUnlockClicked(UCoreButtonWidget* buttonTarget);
+	void OnItemUnlockTriggered(const ECurrencyType currencyType);
 
 	UFUNCTION()
 	void OnItemSelectAllClicked(UCoreButtonWidget* buttonTarget);
-
-	UFUNCTION()
-	void OnItemSeePackClicked(UCoreButtonWidget* buttonTarget);
 
 	UFUNCTION()
 	void OnItemEquipClicked(UCoreButtonWidget* buttonTarget);
 
 	UFUNCTION()
 	void OnItemEquipAllClicked(UCoreButtonWidget* buttonTarget);
+
+	UFUNCTION()
+	void OnItemAlternativeUnlockClicked(UCoreButtonWidget* buttonTarget);
 
 public:
 	UCoreStoreCharactersWidget();

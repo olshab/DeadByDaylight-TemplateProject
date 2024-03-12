@@ -14,7 +14,7 @@ class SPECIALEVENTUTILITIES_API URespawningEventComponent : public UActorCompone
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	URespawnableStrategy* _respawnableStrategy;
 
 private:

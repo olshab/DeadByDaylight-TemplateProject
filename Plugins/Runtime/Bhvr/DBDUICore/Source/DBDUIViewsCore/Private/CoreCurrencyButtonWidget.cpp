@@ -2,12 +2,19 @@
 #include "PriceTagViewData.h"
 #include "ECurrencyType.h"
 
+class UCoreButtonWidget;
+
 void UCoreCurrencyButtonWidget::SetCurrencyData_Implementation(const FPriceTagViewData& currencyData)
 {
 
 }
 
 void UCoreCurrencyButtonWidget::SetBackgroundVisible(const bool showBackground) const
+{
+
+}
+
+void UCoreCurrencyButtonWidget::OnCurrencyButtonPressed(UCoreButtonWidget* button)
 {
 
 }

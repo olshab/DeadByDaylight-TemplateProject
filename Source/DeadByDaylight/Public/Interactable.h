@@ -22,7 +22,7 @@ class DEADBYDAYLIGHT_API AInteractable : public AActor, public IObjectStateProvi
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UPrimitiveComponent* _singleZone;
 
 	UPROPERTY(EditAnywhere)
@@ -31,7 +31,7 @@ protected:
 	UPROPERTY(Transient, Export)
 	TArray<UInteractor*> _interactors;
 
-	UPROPERTY(EditAnywhere, meta=(BindWidget))
+	UPROPERTY(EditAnywhere, meta=(BindWidgetOptional))
 	UInteractableTransformOptimizer* _transformOptimizer;
 
 private:

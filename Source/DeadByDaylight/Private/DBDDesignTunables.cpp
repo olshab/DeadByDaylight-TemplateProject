@@ -4,6 +4,11 @@
 
 class UObject;
 
+void UDBDDesignTunables::OnPluginDataPathAdded(const FString& dataPath)
+{
+
+}
+
 float UDBDDesignTunables::GetTunableValue(FName ID, bool warnIfRowMissing) const
 {
 	return 0.0f;

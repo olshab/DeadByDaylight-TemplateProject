@@ -15,13 +15,13 @@ class DBDGAMEPLAY_API ABaseHusk : public ABaseVFX
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(EditDefaultsOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, meta=(BindWidgetOptional))
 	USceneComponent* _rootComponent;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDSkeletalMeshComponentBudgeted* _huskMesh;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCustomizedSkeletalMesh* _huskCustomizedSkeletalMesh;
 
 	UPROPERTY(EditDefaultsOnly)

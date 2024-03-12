@@ -1,8 +1,9 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "LTEData.h"
 #include "SpecialEventMiscRewards.h"
+#include "EventTrackerObjective.h"
+#include "LTEData.h"
 #include "SpecialEventMilestoneRewards.h"
 #include "EventPeriod.h"
 #include "RewardResponseItem.h"
@@ -53,6 +54,12 @@ public:
 
 	UPROPERTY(SkipSerialization)
 	bool EventPeriods_IsSet;
+
+	UPROPERTY()
+	TArray<FEventTrackerObjective> EventTrackerObjectives;
+
+	UPROPERTY(SkipSerialization)
+	bool EventTrackerObjectives_IsSet;
 
 public:
 	DEADBYDAYLIGHT_API FSpecialEventsData();

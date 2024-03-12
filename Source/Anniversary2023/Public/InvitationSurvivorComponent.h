@@ -19,10 +19,10 @@ protected:
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UInteractionDefinition> _fragilePalletInteraction;
 
-	UPROPERTY(Replicated, meta=(BindWidget))
+	UPROPERTY(Replicated, meta=(BindWidgetOptional))
 	UInteractionDefinition* _reverseBamboozle;
 
-	UPROPERTY(Replicated, meta=(BindWidget))
+	UPROPERTY(Replicated, meta=(BindWidgetOptional))
 	UInteractionDefinition* _fragilePallet;
 
 public:

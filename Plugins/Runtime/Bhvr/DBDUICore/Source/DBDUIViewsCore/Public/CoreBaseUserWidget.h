@@ -18,7 +18,7 @@ class UCoreBaseUserWidget : public UUserWidget, public ICoreBaseViewInterface, p
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UScaleBox* ScaleContainer;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)

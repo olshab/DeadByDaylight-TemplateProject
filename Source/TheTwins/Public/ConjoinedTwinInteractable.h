@@ -12,19 +12,19 @@ class AConjoinedTwinInteractable : public APlayerInteractable
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadOnly, Transient, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, Transient, meta=(BindWidgetOptional))
 	UChargeableComponent* _possessKillerChargeable;
 
-	UPROPERTY(BlueprintReadOnly, Transient, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, Transient, meta=(BindWidgetOptional))
 	UChargeableComponent* _twinBeingPossessedChargeable;
 
-	UPROPERTY(BlueprintReadOnly, Transient, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, Transient, meta=(BindWidgetOptional))
 	UChargeableComponent* _chargeTwinJumpChargeable;
 
-	UPROPERTY(BlueprintReadOnly, Transient, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, Transient, meta=(BindWidgetOptional))
 	UChargeableComponent* _removeTwinChargeable;
 
-	UPROPERTY(BlueprintReadOnly, Transient, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, Transient, meta=(BindWidgetOptional))
 	UChargeableComponent* _destroyTwinChargeable;
 
 public:

@@ -2,7 +2,8 @@
 
 FStoreRecommendationRuntimeData::FStoreRecommendationRuntimeData()
 {
+	this->FeaturedCustomizationRecommendations = TArray<FStoreRecommendationCustomizationRuntimeData>();
 	this->FeaturedCharacterRecommendations = TArray<FStoreFeaturedCharacterRecommendationData>();
 	this->FeaturedChapterPackRecommendations = TArray<FStoreFeaturedChapterPackRecommendationData>();
-	this->SpecialsRecommendations = TArray<FStoreSpecialsRecommendationData>();
+	this->SpecialsRecommendations = TArray<FStoreRecommendationCustomizationRuntimeData>();
 }

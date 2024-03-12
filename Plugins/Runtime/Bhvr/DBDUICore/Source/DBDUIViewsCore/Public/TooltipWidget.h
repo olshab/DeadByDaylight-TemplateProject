@@ -15,6 +15,13 @@ protected:
 	FMargin _tooltipMargin;
 
 public:
+	UFUNCTION()
+	void OnShowTooltip();
+
+	UFUNCTION()
+	void OnHideTooltip();
+
+public:
 	UTooltipWidget();
 };
 

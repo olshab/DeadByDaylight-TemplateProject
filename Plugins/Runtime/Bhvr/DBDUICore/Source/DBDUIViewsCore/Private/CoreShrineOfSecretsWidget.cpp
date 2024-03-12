@@ -17,7 +17,7 @@ UCoreShrineOfSecretsWidget::UCoreShrineOfSecretsWidget()
 	this->TitleTB = NULL;
 	this->SubtitleTB = NULL;
 	this->TimerTB = NULL;
-	this->ItemsHorizontalBox = NULL;
+	this->ItemsContainer = NULL;
 	this->InfoTB = NULL;
 	this->BackInputSwitcher = NULL;
 	this->_preConstructedItemsCount = 4;

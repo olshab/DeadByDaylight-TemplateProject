@@ -22,13 +22,13 @@ protected:
 	UPROPERTY(EditDefaultsOnly, NoClear)
 	TSubclassOf<UCoreStoreFeaturedCustomizationItemWidget> ItemTileClass;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCanvasPanel* Root;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreInputSwitcherWidget* LeftArrow;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreInputSwitcherWidget* RightArrow;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)

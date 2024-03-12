@@ -18,7 +18,7 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	float InactiveThreshold;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UCanvasPanel* Container;
 
 	UPROPERTY(EditAnywhere, NoClear)

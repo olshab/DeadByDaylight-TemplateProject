@@ -17,10 +17,10 @@ class DBDGAMEPLAY_API AMedkit : public ABaseCamperCollectable
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UAkComponent* _akComponent;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UChargerComponent* _charger;
 
 	UPROPERTY(EditDefaultsOnly)

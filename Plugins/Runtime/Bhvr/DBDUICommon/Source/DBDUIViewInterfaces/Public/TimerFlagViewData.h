@@ -1,6 +1,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "ERemainingTimeFormat.h"
+#include "UObject/NoExportTypes.h"
 #include "EFlagType.h"
 #include "EFlagSize.h"
 #include "EFlagItemType.h"
@@ -23,6 +25,18 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
 	FString TimerText;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
+	bool ShouldTick;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
+	FDateTime EndDate;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
+	ERemainingTimeFormat DisplayFormat;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
+	int32 NumberOfUnitsInDisplay;
 
 public:
 	DBDUIVIEWINTERFACES_API FTimerFlagViewData();

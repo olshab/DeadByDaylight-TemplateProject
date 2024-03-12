@@ -11,12 +11,12 @@ void UGhostStalkPowerComponent::OnLeanStateChanged(ELeanState leanState)
 
 }
 
-void UGhostStalkPowerComponent::OnIsCrouchedChanged(bool isCrouched)
+void UGhostStalkPowerComponent::Authority_OnStalkModeChanged(bool isInStalkMode)
 {
 
 }
 
-void UGhostStalkPowerComponent::Authority_OnStalkModeChanged(bool isInStalkMode)
+void UGhostStalkPowerComponent::Authority_OnIsCrouchedChanged(bool isCrouched)
 {
 
 }

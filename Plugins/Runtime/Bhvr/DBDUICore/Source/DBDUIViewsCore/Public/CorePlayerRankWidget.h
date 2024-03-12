@@ -20,10 +20,10 @@ protected:
 	UPROPERTY(EditInstanceOnly)
 	bool _showTooltipOnHover;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDImage* LevelBG;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDImage* RankNumberImage;
 
 public:

@@ -24,7 +24,7 @@ protected:
 	UPROPERTY(EditDefaultsOnly)
 	float _globalJumpScareChanceInitialValue;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UAkComponent* _akQuesitaComponent;
 
 private:

@@ -78,19 +78,19 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	float _struggleThreshold;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UCharacterPusherComponent* _characterPusher;
 
-	UPROPERTY(BlueprintReadWrite, Transient, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, Transient, meta=(BindWidgetOptional))
 	UCapsuleComponent* _slasherCollisionBlocker;
 
-	UPROPERTY(BlueprintReadWrite, Transient, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, Transient, meta=(BindWidgetOptional))
 	UCapsuleComponent* _conditionalSlasherCollisionBlocker;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 	FGameplayTagContainer _conditionalSlasherCollisionBlockerPresenceTags;
 
-	UPROPERTY(EditDefaultsOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, meta=(BindWidgetOptional))
 	UChargeableComponent* _antiCampUnhookChargeable;
 
 	UPROPERTY(EditDefaultsOnly)

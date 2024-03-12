@@ -14,7 +14,7 @@ class ACharm : public AActor, public IStandDisplayable
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDSkeletalMeshComponentBudgeted* _skeletalMeshComponent;
 
 private:

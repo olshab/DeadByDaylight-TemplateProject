@@ -221,6 +221,9 @@ private:
 	bool BeginnerMode;
 
 	UPROPERTY()
+	bool FogCommunications;
+
+	UPROPERTY()
 	bool Subtitles;
 
 	UPROPERTY()
@@ -231,6 +234,9 @@ private:
 
 	UPROPERTY()
 	bool IsAnonymousMode;
+
+	UPROPERTY()
+	bool AllowCopyrightedMusic;
 
 	UPROPERTY()
 	bool HideYourName;

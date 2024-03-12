@@ -22,6 +22,9 @@ public:
 
 private:
 	UFUNCTION()
+	void RequestDailyRitualsContext() const;
+
+	UFUNCTION()
 	void OnTutorialButtonClicked();
 
 	UFUNCTION()
@@ -50,6 +53,9 @@ private:
 
 	UFUNCTION()
 	void OnNewsButtonClicked();
+
+	UFUNCTION()
+	void OnMarketingInvitationButtonClicked();
 
 	UFUNCTION()
 	void OnMainMenuFadeCompleted(EDBDCameraViewType view);

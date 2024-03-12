@@ -11,26 +11,25 @@
 #include "UObject/SoftObjectPtr.h"
 #include "DBDGameInstance.generated.h"
 
-class UDBDAuthentication;
-class UCharacterXPManager;
 class UDBDDesignTunables;
 class USpecialEventManager;
 class UDataAsset;
-class UShopManager;
 class UDBDEasyAntiCheat;
 class UContentScheduleManager;
-class UWalletHandler;
+class UShopManager;
 class UOnlineTransactionServiceComponent;
 class UControllerPairingManager;
 class UPlayerProfileDAL;
+class UWalletHandler;
 class UOfferingEffectCollection;
 class UFriendManager;
+class UDBDAuthentication;
+class UOnlineSystemHandler;
+class UOfferingHandler;
+class UDBDPlayerLevelManager;
 class ABaseSky;
 class UDateTimerUpdater;
 class UChunkingManager;
-class UOnlineSystemHandler;
-class UDBDPlayerLevelManager;
-class UOfferingHandler;
 class URegionFinder;
 class AOfferingSequenceManager;
 class AActor;
@@ -41,28 +40,26 @@ class UPlayerNameRegistration;
 class UDBDKeyDisplayInfo;
 class UDecalSpawnerCollection;
 class UNewsContentManager;
+class UAssetLibraryManager;
+class ULocalPlayer;
 class UCharacterProgressionManager;
 class APlayerController;
 class UDedicatedServerManager;
 class UPrimitiveCollection;
 class UBloodwebManager;
-class UDBDTimeTravelManager;
-class UCDNPatchManager;
-class UAtlantaRitualsManager;
 class UBonusPointEventsManager;
 class ADBDPlayer;
 class UDBDHud;
 class UActorKnowledgeCollection;
 class UFearMarketManager;
-class ULocalPlayer;
-class UAssetLibraryManager;
+class UWorld;
 class UPopupFactory;
 class UObject;
 class UDBDPersistentData;
 class UDBDPartyFacade;
 class UPlayerDataStorageFacade;
-class UAtlantaTooltipManager;
 class URankManager;
+class UDBDTimeTravelManager;
 class UInteractionProficiency;
 class UToastManager;
 class UPenaltyTracker;
@@ -70,13 +67,12 @@ class UPopupSequencer;
 class ULightingHelper;
 class UConsentManager;
 class UMapActorDB;
-class ULocalEventManager;
 class UInventoryHandler;
+class ULocalEventManager;
 class USoftBanManager;
 class UDBDTimeUtilities;
 class ULightingInterpolator;
 class ADBDPlayerState;
-class UWorld;
 
 UCLASS(NonTransient)
 class DEADBYDAYLIGHT_API UDBDGameInstance : public UGameInstance
@@ -148,16 +144,7 @@ public:
 	UContentScheduleManager* ContentScheduleManager;
 
 	UPROPERTY(Transient)
-	UCDNPatchManager* CDNPatchManager;
-
-	UPROPERTY(Transient)
 	UCharacterProgressionManager* CharacterProgressionManager;
-
-	UPROPERTY(Transient)
-	UCharacterXPManager* CharacterXPManager;
-
-	UPROPERTY(Transient)
-	UAtlantaRitualsManager* AtlRitualsManager;
 
 	UPROPERTY(Transient)
 	FString AuthOrEACErrorAdditionalInfo;
@@ -330,9 +317,6 @@ private:
 
 	UPROPERTY(Transient)
 	UPrimitiveCollection* _characterClippingPrimitiveCollection;
-
-	UPROPERTY(Transient)
-	UAtlantaTooltipManager* _atlantaTooltipManager;
 
 	UPROPERTY(Transient)
 	uint32 LastProviderErrorCode;

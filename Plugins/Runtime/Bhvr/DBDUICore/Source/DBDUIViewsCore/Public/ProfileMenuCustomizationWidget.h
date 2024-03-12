@@ -20,19 +20,19 @@ class DBDUIVIEWSCORE_API UProfileMenuCustomizationWidget : public UCoreTabConten
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreSortButtonWidget* SortButton;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int32 _sortingOptions;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCustomizationItemGridContainer* CustomizationGrid;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreImagePreviewAreaWidget* PreviewArea;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreInputSwitcherWidget* EquipInputSwitcher;
 
 	UPROPERTY(BlueprintReadOnly)

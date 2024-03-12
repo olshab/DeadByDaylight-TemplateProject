@@ -22,25 +22,25 @@ class DBDUIVIEWSCORE_API UCoreArchiveTierPurchasePopupWidget : public UCoreGener
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(meta=(BindWidget))
+	UPROPERTY(meta=(BindWidgetOptional))
 	UCoreInputSwitcherWidget* LessInputSwitcher;
 
-	UPROPERTY(meta=(BindWidget))
+	UPROPERTY(meta=(BindWidgetOptional))
 	UCoreInputSwitcherWidget* MoreInputSwitcher;
 
-	UPROPERTY(meta=(BindWidget))
+	UPROPERTY(meta=(BindWidgetOptional))
 	UDBDRichTextBlock* CurrentQuantityText;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UDBDImage* ImageContainer;
 
-	UPROPERTY(meta=(BindWidget))
+	UPROPERTY(meta=(BindWidgetOptional))
 	UOverlay* PriceContainer;
 
-	UPROPERTY(meta=(BindWidget))
+	UPROPERTY(meta=(BindWidgetOptional))
 	UDBDTextBlock* PriceText;
 
-	UPROPERTY(meta=(BindWidget))
+	UPROPERTY(meta=(BindWidgetOptional))
 	UDBDTextBlock* DiscountText;
 
 	UPROPERTY(EditDefaultsOnly)

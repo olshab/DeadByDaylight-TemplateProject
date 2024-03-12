@@ -86,7 +86,6 @@ void UBlightPowerStateComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProp
 
 	DOREPLIFETIME(UBlightPowerStateComponent, _stateTimer);
 	DOREPLIFETIME(UBlightPowerStateComponent, _dashTokens);
-	DOREPLIFETIME(UBlightPowerStateComponent, _consecutiveTokenCount);
 }
 
 UBlightPowerStateComponent::UBlightPowerStateComponent()
@@ -97,5 +96,4 @@ UBlightPowerStateComponent::UBlightPowerStateComponent()
 	this->_blightPowerStates = TArray<UBlightPowerState*>();
 	this->_currentBlightPowerState = NULL;
 	this->_dashTokens = 0;
-	this->_consecutiveTokenCount = 0;
 }

@@ -25,7 +25,7 @@ protected:
 	UPROPERTY(BlueprintAssignable)
 	FTutorialSelectedDelegate TutorialSelectedDelegate;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UUserWidget* LoadingWidget;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)

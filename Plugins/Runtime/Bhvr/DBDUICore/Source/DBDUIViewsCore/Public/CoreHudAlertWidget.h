@@ -46,7 +46,7 @@ protected:
 	UPROPERTY(EditAnywhere, NoClear)
 	TSubclassOf<UCoreHudStatusEffectAlertItem> CoreHudStatusEffectAlertItemClass;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UGridPanel* AlertContainer;
 
 private:

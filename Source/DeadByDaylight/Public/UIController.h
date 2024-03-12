@@ -4,7 +4,6 @@
 #include "UObject/NoExportTypes.h"
 #include "UIController.generated.h"
 
-class UMobileBaseUserWidget;
 class UGFxObject;
 
 UCLASS()
@@ -15,9 +14,6 @@ class DEADBYDAYLIGHT_API UUIController : public UObject
 private:
 	UPROPERTY(Transient)
 	UGFxObject* m_UIControllerObj;
-
-	UPROPERTY(Transient, Export)
-	UMobileBaseUserWidget* _atlantaLoadingWidget;
 
 public:
 	UUIController();

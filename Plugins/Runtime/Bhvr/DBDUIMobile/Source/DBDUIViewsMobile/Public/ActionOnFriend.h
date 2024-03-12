@@ -7,7 +7,7 @@
 
 class UUMGBaseFriendListElement;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FActionOnFriend
 {
 	GENERATED_BODY()

@@ -9,6 +9,7 @@
 
 class UCoreStoreChapterPackItemWidget;
 class UVerticalBox;
+class UScrollBox;
 class UCorePreConstructableList;
 
 UCLASS(EditInlineNew)
@@ -23,8 +24,11 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, NoClear)
 	TSubclassOf<UCoreStoreChapterPackItemWidget> _itemWidgetClass;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UVerticalBox* Content;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UScrollBox* Scroll;
 
 private:
 	UPROPERTY(Transient)
@@ -32,7 +36,7 @@ private:
 
 private:
 	UFUNCTION()
-	void OnItemRedirectClicked(const FString& chapterPackId, const FString& heritagePackId);
+	void OnItemSeen(const FString& packId);
 
 	UFUNCTION()
 	void OnItemCustomizationClicked(const FStoreRedirectionData& redirectionData);

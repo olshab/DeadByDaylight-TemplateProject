@@ -29,10 +29,10 @@ protected:
 	UPROPERTY(EditInstanceOnly, NoClear)
 	FMargin TabPadding;
 
-	UPROPERTY(EditAnywhere, NoClear)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, NoClear)
 	TSubclassOf<UCoreTabWidget> CoreTabClass;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UGridPanel* TabContainer;
 
 	UPROPERTY(EditInstanceOnly, BlueprintReadOnly, NoClear)

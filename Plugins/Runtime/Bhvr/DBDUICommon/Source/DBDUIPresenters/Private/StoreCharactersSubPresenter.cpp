@@ -2,6 +2,7 @@
 #include "ECurrencyType.h"
 #include "ESortingOption.h"
 #include "ECustomizationCategory.h"
+#include "AnimationPreviewRequest.h"
 #include "ESortingOrder.h"
 #include "StoreCharactersFiltersData.h"
 
@@ -12,7 +13,12 @@ void UStoreCharactersSubPresenter::PlayMoriAnimation()
 
 }
 
-void UStoreCharactersSubPresenter::OnMoriComplete(UAnimationPreviewSubsystem* animationPreviewSubsystem)
+void UStoreCharactersSubPresenter::OnZoomCharmClicked()
+{
+
+}
+
+void UStoreCharactersSubPresenter::OnPresetSelected(const int32 presetId)
 {
 
 }
@@ -47,7 +53,7 @@ void UStoreCharactersSubPresenter::OnCustomizationSelectAllClicked()
 
 }
 
-void UStoreCharactersSubPresenter::OnCustomizationSeePackClicked()
+void UStoreCharactersSubPresenter::OnCustomizationSearchBarTextChanged(const FString& enteredText)
 {
 
 }
@@ -63,6 +69,11 @@ void UStoreCharactersSubPresenter::OnCustomizationEquipClicked()
 }
 
 void UStoreCharactersSubPresenter::OnCustomizationEquipAllClicked()
+{
+
+}
+
+void UStoreCharactersSubPresenter::OnCustomizationAlternativeUnlockClicked()
 {
 
 }
@@ -87,17 +98,17 @@ void UStoreCharactersSubPresenter::OnCharactersSortingChanged(const ESortingOpti
 
 }
 
+void UStoreCharactersSubPresenter::OnCharactersSearchBarTextChanged(const FString& enteredText)
+{
+
+}
+
 void UStoreCharactersSubPresenter::OnCharactersFiltersChanged(const FStoreCharactersFiltersData& charactersFilterData)
 {
 
 }
 
 void UStoreCharactersSubPresenter::OnCharacterSelected(const int32 characterIndex)
-{
-
-}
-
-void UStoreCharactersSubPresenter::OnCharacterSeePackClicked()
 {
 
 }
@@ -112,7 +123,17 @@ void UStoreCharactersSubPresenter::OnCharacterEquipClicked()
 
 }
 
+void UStoreCharactersSubPresenter::OnCharacterAlternativeUnlockClicked()
+{
+
+}
+
 void UStoreCharactersSubPresenter::OnCategorySelected(const ECustomizationCategory category)
+{
+
+}
+
+void UStoreCharactersSubPresenter::OnAnimationPreviewComplete(UAnimationPreviewSubsystem* animationPreviewSubsystem, const FAnimationPreviewRequest& request, bool completedSuccessfully)
 {
 
 }

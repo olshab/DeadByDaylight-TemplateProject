@@ -26,7 +26,6 @@ class ACamperExposerInstance;
 class UKillerBloodFXComponent;
 class UStillnessTrackerComponent;
 class UMoriComponent;
-class UAimAssistComponent;
 class UHitValidatorConfigurator;
 class ULoudNoiseHUDIndicator;
 class USlasherHitsWhileCarryingTrackerComponent;
@@ -86,13 +85,13 @@ public:
 	FOnStalkModeChangedEvent OnStalkModeChangedEvent;
 
 protected:
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	TWeakObjectPtr<UAkComponent> _audioComponent;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UDBDNavModifierComponent* _terrorNavModifierComponent;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UKillerBloodFXComponent* _bloodFXComponent;
 
 	UPROPERTY(Transient)
@@ -104,11 +103,8 @@ protected:
 	UPROPERTY(Transient)
 	TMap<ADBDPlayer*, FTargetFocusTimer> _stalkTimers;
 
-	UPROPERTY(VisibleInstanceOnly, Transient, meta=(BindWidget))
+	UPROPERTY(VisibleInstanceOnly, Transient, meta=(BindWidgetOptional))
 	UStillnessTrackerComponent* _stillnessTracker;
-
-	UPROPERTY(Transient, meta=(BindWidget))
-	UAimAssistComponent* _aimAssistComponent;
 
 	UPROPERTY(Transient)
 	FDBDTimer _recentlyCloakedTimer;
@@ -459,6 +455,9 @@ public:
 	UFUNCTION(BlueprintPure)
 	float GetBlindedPercent() const;
 
+	UFUNCTION(BlueprintImplementableEvent)
+	USceneComponent* GetAttackZonePivot();
+
 	UFUNCTION(BlueprintPure)
 	float GetAnimDirection() const;
 
@@ -494,9 +493,6 @@ public:
 
 	UFUNCTION(BlueprintNativeEvent)
 	bool CanSlashAttack_BP() const;
-
-	UFUNCTION(BlueprintPure)
-	bool CanPickupSurvivor() const;
 
 	UFUNCTION(BlueprintPure, BlueprintNativeEvent)
 	bool CanPerformKillerAbility(EKillerAbilities killerAbility) const;

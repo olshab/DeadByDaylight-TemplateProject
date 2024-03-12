@@ -20,6 +20,9 @@ private:
 	UPROPERTY(Transient, Export)
 	TArray<UCoreBaseUserWidget*> _widgetList;
 
+	UPROPERTY(Transient, Export)
+	TArray<UCoreBaseUserWidget*> _shownWidgetList;
+
 	UPROPERTY(Transient)
 	TSubclassOf<UCoreBaseUserWidget> _userWidgetClass;
 

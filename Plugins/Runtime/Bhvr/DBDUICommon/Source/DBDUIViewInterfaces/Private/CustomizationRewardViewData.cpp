@@ -11,6 +11,7 @@ FCustomizationRewardViewData::FCustomizationRewardViewData()
 	this->IsEquipped = false;
 	this->IsUnbreakable = false;
 	this->IsEventItem = false;
+	this->EventId = NAME_None;
 	this->TooltipData = FCustomizationTooltipViewData{};
 	this->CustomizationCategory = ECustomizationCategory::None;
 	this->AssociatedCharacter = 0;

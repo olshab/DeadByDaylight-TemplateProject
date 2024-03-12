@@ -146,6 +146,11 @@ void ADBDPlayerState::Client_SetInParadise_Implementation()
 
 }
 
+void ADBDPlayerState::Client_SetHasActiveDSQuestUpdate_Implementation(bool isEnabled)
+{
+
+}
+
 void ADBDPlayerState::Client_SetGameRole_Implementation(EPlayerRole newRole)
 {
 
@@ -182,6 +187,11 @@ void ADBDPlayerState::Client_HandleEscapeScoreEvent_Implementation()
 }
 
 void ADBDPlayerState::Client_HandleEndOfMatch_Implementation(bool success, const FEndOfMatchRPCData& response)
+{
+
+}
+
+void ADBDPlayerState::Client_FireQuestRepetitionValueChangeEvent_Implementation(int32 repetition, const FString& questEventId)
 {
 
 }
@@ -255,6 +265,7 @@ ADBDPlayerState::ADBDPlayerState()
 	this->IsPlayerReady = false;
 	this->GameRole = EPlayerRole::VE_None;
 	this->DedicatedServerHandler = NULL;
+	this->DSQuestEventsHandler = NULL;
 	this->_awardedScoresByType = TMap<FName, FAwardedScores>();
 	this->_ongoingScoreEvents = TArray<FOngoingScoreData>();
 	this->_inParadise = false;
@@ -277,4 +288,5 @@ ADBDPlayerState::ADBDPlayerState()
 	this->_isReplacementBot = false;
 	this->_replacementBotName = TEXT("");
 	this->_disconnectedPlayerScore = 0;
+	this->_hasActiveDSQuestUpdate = false;
 }

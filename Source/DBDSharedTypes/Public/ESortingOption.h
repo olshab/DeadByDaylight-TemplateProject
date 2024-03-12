@@ -12,4 +12,5 @@ enum class ESortingOption : uint8
 	ByName = 4,
 	ByOwnership = 8,
 	ByPrice = 16,
+	ByReleaseImportance = 32,
 };

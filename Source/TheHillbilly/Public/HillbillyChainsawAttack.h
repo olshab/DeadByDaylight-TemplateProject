@@ -5,7 +5,9 @@
 #include "StatProperty.h"
 #include "HillbillyChainsawAttack.generated.h"
 
-UCLASS(meta=(BlueprintSpawnableComponent))
+class ADBDPlayer;
+
+UCLASS(Blueprintable, meta=(BlueprintSpawnableComponent))
 class THEHILLBILLY_API UHillbillyChainsawAttack : public UBaseChainsawAttack
 {
 	GENERATED_BODY()
@@ -31,6 +33,10 @@ private:
 
 	UPROPERTY(EditDefaultsOnly)
 	FStatProperty _obstructionZoneScaleFactor;
+
+protected:
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCosmetic)
+	void Cosmetic_OnAttackFinished(ADBDPlayer* player);
 
 public:
 	UHillbillyChainsawAttack();

@@ -13,7 +13,7 @@ class UTimerObject;
 class UPowerChargeComponent;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
-class UHillbillyChainsawOverheatComponent : public UActorComponent
+class THEHILLBILLY_API UHillbillyChainsawOverheatComponent : public UActorComponent
 {
 	GENERATED_BODY()
 

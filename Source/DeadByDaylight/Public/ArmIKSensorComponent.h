@@ -15,7 +15,7 @@ class DEADBYDAYLIGHT_API UArmIKSensorComponent : public UActorComponent
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	USkeletalMeshComponent* _mesh;
 
 	UPROPERTY(EditAnywhere, EditFixedSize)

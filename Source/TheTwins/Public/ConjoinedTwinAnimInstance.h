@@ -44,13 +44,13 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool _isAttacking;
 
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	UDBDAttackerComponent* _attackerComponent;
 
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	UTwinAttachmentComponent* _twinAttachmentComponent;
 
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	UTwinLockerBlockerComponent* _twinLockerBlockerComponent;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)

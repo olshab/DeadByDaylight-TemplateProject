@@ -35,7 +35,7 @@ protected:
 	UPROPERTY(EditAnywhere)
 	int32 KeyPoseNumber;
 
-	UPROPERTY(VisibleAnywhere, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, meta=(BindWidgetOptional))
 	USplineComponent* CameraTrack;
 
 public:

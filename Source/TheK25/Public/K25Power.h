@@ -33,10 +33,10 @@ class AK25Power : public ACollectable
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UChargeableComponent* _k25ChainStrikeInteractionChargeableComponent;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UChargeableComponent* _k25TeleportChargeableComponent;
 
 	UPROPERTY(EditDefaultsOnly)

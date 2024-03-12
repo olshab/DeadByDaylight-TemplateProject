@@ -11,6 +11,9 @@ class DBDBOTS_API UNavigationQueryFilter_Camper : public UNavigationQueryFilter_
 
 public:
 	UPROPERTY(EditDefaultsOnly)
+	bool IgnoreOnAttackCooldown;
+
+	UPROPERTY(EditDefaultsOnly)
 	float SlasherAreaBoundsLimit;
 
 	UPROPERTY(EditDefaultsOnly)

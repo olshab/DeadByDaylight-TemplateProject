@@ -1,7 +1,7 @@
 #include "CoreStoreChapterPacksListWidget.h"
 #include "StoreRedirectionData.h"
 
-void UCoreStoreChapterPacksListWidget::OnItemRedirectClicked(const FString& chapterPackId, const FString& heritagePackId)
+void UCoreStoreChapterPacksListWidget::OnItemSeen(const FString& packId)
 {
 
 }
@@ -26,5 +26,6 @@ UCoreStoreChapterPacksListWidget::UCoreStoreChapterPacksListWidget()
 	this->_preConstructedItemsCount = 5;
 	this->_itemWidgetClass = NULL;
 	this->Content = NULL;
+	this->Scroll = NULL;
 	this->_itemList = NULL;
 }

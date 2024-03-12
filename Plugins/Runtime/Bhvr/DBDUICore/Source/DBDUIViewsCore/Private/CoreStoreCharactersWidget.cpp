@@ -1,23 +1,24 @@
 #include "CoreStoreCharactersWidget.h"
+#include "ECurrencyType.h"
 
 class UCoreButtonWidget;
+
+void UCoreStoreCharactersWidget::OnZoomCharmClicked(UCoreButtonWidget* buttonTarget)
+{
+
+}
 
 void UCoreStoreCharactersWidget::OnPlayMoriClicked(UCoreButtonWidget* buttonTarget)
 {
 
 }
 
-void UCoreStoreCharactersWidget::OnItemUnlockClicked(UCoreButtonWidget* buttonTarget)
+void UCoreStoreCharactersWidget::OnItemUnlockTriggered(const ECurrencyType currencyType)
 {
 
 }
 
 void UCoreStoreCharactersWidget::OnItemSelectAllClicked(UCoreButtonWidget* buttonTarget)
-{
-
-}
-
-void UCoreStoreCharactersWidget::OnItemSeePackClicked(UCoreButtonWidget* buttonTarget)
 {
 
 }
@@ -32,20 +33,26 @@ void UCoreStoreCharactersWidget::OnItemEquipAllClicked(UCoreButtonWidget* button
 
 }
 
+void UCoreStoreCharactersWidget::OnItemAlternativeUnlockClicked(UCoreButtonWidget* buttonTarget)
+{
+
+}
+
 UCoreStoreCharactersWidget::UCoreStoreCharactersWidget()
 {
-	this->_currencyButtonWidgetClass = NULL;
+	this->_currencySwitcherWidgetClass = NULL;
 	this->_preConstructedCurrencyButtonCount = 2;
 	this->_currencyButtonAlignment = ETextJustify::Right;
-	this->SelectedCharacterName = NULL;
-	this->PerksToast = NULL;
-	this->CurrencyButtonsTitleText = NULL;
+	this->SelectedCharacterNameTB = NULL;
+	this->CurrencyButtonsTitleTB = NULL;
 	this->CurrencyButtonsVerticalBox = NULL;
 	this->EquipButton = NULL;
 	this->EquipAllButton = NULL;
 	this->SelectAllButton = NULL;
-	this->SeePackButton = NULL;
-	this->SeePackMessageText = NULL;
+	this->AlternativeUnlockButton = NULL;
+	this->AlternativeUnlockMessageTB = NULL;
+	this->AlternativeUnlockNameTB = NULL;
 	this->PlayMoriButton = NULL;
+	this->ZoomCharmButton = NULL;
 	this->_currencyButtonList = NULL;
 }

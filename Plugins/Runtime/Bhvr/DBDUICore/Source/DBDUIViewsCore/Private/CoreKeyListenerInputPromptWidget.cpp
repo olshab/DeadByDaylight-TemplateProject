@@ -31,6 +31,11 @@ void UCoreKeyListenerInputPromptWidget::SetEnabled(bool isEnabled)
 
 }
 
+void UCoreKeyListenerInputPromptWidget::SetChargeable(bool isChargeable, UCurveFloat* holdingAnimCurve, float duration)
+{
+
+}
+
 void UCoreKeyListenerInputPromptWidget::SetBetaFeatureOverlayVisible(bool isVisible)
 {
 

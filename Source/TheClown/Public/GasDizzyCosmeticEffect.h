@@ -12,7 +12,7 @@ class THECLOWN_API AGasDizzyCosmeticEffect : public AActor
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UPostProcessComponent* _dizzyPostProcess;
 
 public:

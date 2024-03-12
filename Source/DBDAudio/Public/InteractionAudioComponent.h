@@ -14,7 +14,7 @@ class DBDAUDIO_API UInteractionAudioComponent : public UActorComponent
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UAkComponent* _audioComponent;
 
 private:

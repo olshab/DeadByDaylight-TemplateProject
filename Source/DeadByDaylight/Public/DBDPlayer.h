@@ -221,7 +221,7 @@ public:
 	TSubclassOf<APlayerInteractable> Interactable;
 
 protected:
-	UPROPERTY(EditAnywhere, Transient, meta=(BindWidget))
+	UPROPERTY(EditAnywhere, Transient, meta=(BindWidgetOptional))
 	UCharacterInventoryComponent* _characterInventoryComponent;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -230,16 +230,16 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float _pitchOffsetForInteractionPriority;
 
-	UPROPERTY(VisibleAnywhere, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, meta=(BindWidgetOptional))
 	UBoxOcclusionQueryComponent* _renderedPixelCounter;
 
-	UPROPERTY(VisibleAnywhere, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, meta=(BindWidgetOptional))
 	UBoxComponent* _standingOcclusionBox;
 
-	UPROPERTY(VisibleAnywhere, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, meta=(BindWidgetOptional))
 	UBoxComponent* _crouchingOcclusionBox;
 
-	UPROPERTY(VisibleAnywhere, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, meta=(BindWidgetOptional))
 	UActivatorComponent* _activator;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
@@ -287,16 +287,16 @@ protected:
 	UPROPERTY(EditDefaultsOnly)
 	FName CollectableAttachPoint;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UStateMachine* _stateMachine;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UPlayerInteractionHandler* _interactionHandler;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UPerkManager* _perkManager;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDPlayerData* _playerData;
 
 	UPROPERTY(ReplicatedUsing=OnRep_Interactable, Transient)
@@ -314,22 +314,22 @@ protected:
 	UPROPERTY(Transient)
 	TArray<ADBDPlayer*> _hitTargets;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, ReplicatedUsing=OnRep_DreamworldComponent, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, ReplicatedUsing=OnRep_DreamworldComponent, meta=(BindWidgetOptional))
 	UCharacterDreamworldComponent* _dreamworldComponent;
 
-	UPROPERTY(EditAnywhere, Transient, meta=(BindWidget))
+	UPROPERTY(EditAnywhere, Transient, meta=(BindWidgetOptional))
 	UCharacterChaseVisualComponent* _characterChaseVisualComponent;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Transient, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Transient, meta=(BindWidgetOptional))
 	UCameraHandlerComponent* _cameraHandlerComponent;
 
-	UPROPERTY(VisibleAnywhere, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, meta=(BindWidgetOptional))
 	UReversibleActionSystemComponent* _reversibleActionSystemComponent;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	USceneComponent* _itemDropOffPosition;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UAIPerceptionStimuliSourceComponent* _perceptionStimuliComponent;
 
 	UPROPERTY(Transient)
@@ -341,13 +341,13 @@ protected:
 	UPROPERTY(Transient)
 	TMap<USceneComponent*, bool> _detectionZoneEnabledMap;
 
-	UPROPERTY(meta=(BindWidget))
+	UPROPERTY(meta=(BindWidgetOptional))
 	UChargeableComponent* _blindingChargeableComponent;
 
 	UPROPERTY(EditDefaultsOnly)
 	bool _shouldUpdateStateMachineDriverOnPossessed;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UBlindableComponent* _blindableComponent;
 
 private:
@@ -455,7 +455,7 @@ public:
 	void TriggerAnimNotify(EAnimNotifyType animNotifyType);
 
 	UFUNCTION(BlueprintCallable)
-	void SnapCharacter(bool snapPosition, FVector position, float stopSnapDistance, bool snapRotation, FRotator rotation, float time, bool useZCoord, bool sweepOnFinalSnap, bool snapRoll);
+	void SnapCharacter(bool snapPosition, const FVector& position, float stopSnapDistance, bool snapRotation, const FRotator& rotation, float time, bool useZCoord, bool sweepOnFinalSnap, bool snapRoll);
 
 	UFUNCTION(BlueprintPure)
 	bool ShouldPlayCarryAnim() const;
@@ -892,6 +892,9 @@ public:
 
 	UFUNCTION(BlueprintNativeEvent)
 	APlayerState* GetAssociatedPlayerState() const;
+
+	UFUNCTION(BlueprintNativeEvent)
+	ADBDPlayer* GetAssociatedPlayer() const;
 
 	UFUNCTION(BlueprintPure)
 	FVector GetActorLocationFromFeetLocation(const FVector feetLocation) const;

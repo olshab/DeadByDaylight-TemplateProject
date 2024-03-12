@@ -18,6 +18,7 @@ class UDBDImage;
 class UScaleBox;
 class UCoreOnHoverBorderWidget;
 class UTextBlock;
+class UCorePreConstructableList;
 class UStoreItemViewData;
 class UCoreButtonWidget;
 
@@ -42,35 +43,44 @@ protected:
 	UPROPERTY(EditAnywhere, NoClear)
 	TSubclassOf<UCoreTimerFlagWidget> _timerFlagWidgetClass;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	int32 _preConstructedPriceTagCount;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	int32 _preConstructedTimerFlagCount;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	ETooltipHorizontalAlignment _tooltipHorizontalAlignment;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	ETooltipVerticalAlignment _tooltipVerticalAlignment;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UDBDImage* ItemIcon;
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UDBDImage* ItemIMG;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UScaleBox* LayoutScale;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UWidget* SelectedOverlay;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreOnHoverBorderWidget* OnHoverBorder;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UVerticalBox* TimerFlagVerticalBox;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UVerticalBox* PriceTagsVerticalBox;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UTextBlock* OwnedTagText;
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UTextBlock* UnavailableTagTB;
 
-	UPROPERTY(BlueprintReadOnly, Transient, Export)
-	TArray<UCoreTimerFlagWidget*> _timerFlagWidgets;
+	UPROPERTY(Transient)
+	UCorePreConstructableList* _priceTagsList;
+
+	UPROPERTY(Transient)
+	UCorePreConstructableList* _timerFlagsList;
 
 	UPROPERTY(BlueprintReadWrite, Transient)
 	EFlagSize _flagSize;
@@ -90,6 +100,9 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void SetScale(float scale);
+
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+	void SetNotificationTag(const bool isNew);
 
 protected:
 	UFUNCTION()

@@ -16,7 +16,7 @@ class DBDGAMEPLAY_API ASteamPipeResetSwitch : public AInteractable
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UDBDSkeletalMeshComponentBudgeted* _skeletalMeshComponent;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)

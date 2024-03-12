@@ -1,24 +1,17 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "StoreRedirectionData.h"
 #include "StoreSubPresenter.h"
-#include "Templates/SubclassOf.h"
 #include "StoreHeritagePackViewData.h"
 #include "StoreSpecialPacksSubPresenter.generated.h"
 
-class UUserWidget;
 class UStoreSpecialPackViewData;
 class UStoreChapterPackViewData;
 
-UCLASS(BlueprintType)
+UCLASS()
 class DBDUIPRESENTERS_API UStoreSpecialPacksSubPresenter : public UStoreSubPresenter
 {
 	GENERATED_BODY()
-
-public:
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	TSubclassOf<UUserWidget> StoreBundlesWidgetClass;
 
 private:
 	UPROPERTY(Transient)
@@ -32,22 +25,25 @@ private:
 
 private:
 	UFUNCTION()
-	void RequestMoveToCharactersPage(const FStoreRedirectionData& redirectionData);
+	void OnSpecialPackClicked(const FString& packId);
 
 	UFUNCTION()
-	void OnSpecialPackBuyClicked(const FString& packId);
+	void OnPackBuyClicked(const FString& packId);
 
 	UFUNCTION()
 	void OnHeritagePackBuyClicked(const FString& packId);
 
 	UFUNCTION()
-	void OnChapterPackRedirectClicked(const FString& chapterId, const FString& heritageId);
+	void OnCustomizationClicked(const FString& packId, const FName& customizationId);
 
 	UFUNCTION()
-	void OnChapterPackBuyClicked(const FString& packId);
+	void OnCharacterClicked(const FString& packId, const int32 characterIndex);
 
 	UFUNCTION()
-	void OnArchivePassItemClicked(const FName& archiveId, const FString& packId);
+	void OnChapterPackClicked(const FString& packId);
+
+	UFUNCTION()
+	void OnArchivePassClicked(const FString& packId, const FName& archiveId);
 
 public:
 	UStoreSpecialPacksSubPresenter();

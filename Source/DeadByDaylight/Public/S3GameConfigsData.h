@@ -12,6 +12,7 @@
 #include "S3KrakenSdkValidationConfig.h"
 #include "S3MatchConfig.h"
 #include "S3OnlineConfig.h"
+#include "S3SeenPopupsConfig.h"
 #include "HitValidationGameConfig.h"
 #include "AnimBudgeterGameConfig.h"
 #include "JwtGameConfig.h"
@@ -89,6 +90,9 @@ public:
 	bool EnablePlayStationTrophiesIISSync;
 
 	UPROPERTY()
+	bool EnableDSQuestsUpdate;
+
+	UPROPERTY()
 	TMap<FString, bool> CrossPromoManagerPlatforms;
 
 	UPROPERTY(SkipSerialization)
@@ -137,6 +141,9 @@ public:
 	FS3DisconnectionBotReplacementConfig DisconnectionBotReplacement;
 
 	UPROPERTY()
+	TMap<FString, FS3SeenPopupsConfig> SeenPopupsConfig;
+
+	UPROPERTY()
 	TMap<FString, bool> SocialCrossfriendsPlatforms;
 
 	UPROPERTY()
@@ -159,6 +166,12 @@ public:
 
 	UPROPERTY()
 	bool EnableLobbyLeaveSave;
+
+	UPROPERTY()
+	bool EnableLocalStartSnapping;
+
+	UPROPERTY()
+	bool EnableContainerAgressiveMemorySaving;
 
 public:
 	DEADBYDAYLIGHT_API FS3GameConfigsData();

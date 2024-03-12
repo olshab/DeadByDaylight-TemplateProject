@@ -13,10 +13,10 @@ class DBDUIVIEWSCORE_API UArchiveRewardNodeTooltipWidget : public UTooltipWidget
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCustomizationTooltipWidget* CustomizationTooltip;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCurrencyProgressionTooltipWidget* CurrencyProgressionTooltip;
 
 public:

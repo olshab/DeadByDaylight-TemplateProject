@@ -38,13 +38,13 @@ public:
 	FOnBaseButtonLongPress OnBaseButtonLongPressEvent;
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UButton* Button;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UImage* IconPicture;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UTextBlock* ButtonLabel;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)

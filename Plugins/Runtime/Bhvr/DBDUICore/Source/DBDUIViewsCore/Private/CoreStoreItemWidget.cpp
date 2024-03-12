@@ -73,15 +73,18 @@ UCoreStoreItemWidget::UCoreStoreItemWidget()
 	this->_layoutMask = 0;
 	this->_priceTagWidgetClass = NULL;
 	this->_timerFlagWidgetClass = NULL;
+	this->_preConstructedPriceTagCount = 1;
+	this->_preConstructedTimerFlagCount = 0;
 	this->_tooltipHorizontalAlignment = ETooltipHorizontalAlignment::Default;
 	this->_tooltipVerticalAlignment = ETooltipVerticalAlignment::Default;
-	this->ItemIcon = NULL;
+	this->ItemIMG = NULL;
 	this->LayoutScale = NULL;
 	this->SelectedOverlay = NULL;
 	this->OnHoverBorder = NULL;
 	this->TimerFlagVerticalBox = NULL;
 	this->PriceTagsVerticalBox = NULL;
-	this->OwnedTagText = NULL;
-	this->_timerFlagWidgets = TArray<UCoreTimerFlagWidget*>();
+	this->UnavailableTagTB = NULL;
+	this->_priceTagsList = NULL;
+	this->_timerFlagsList = NULL;
 	this->_flagSize = EFlagSize::Short;
 }

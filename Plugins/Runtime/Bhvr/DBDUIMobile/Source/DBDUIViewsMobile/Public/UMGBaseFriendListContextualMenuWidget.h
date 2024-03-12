@@ -14,19 +14,19 @@ class DBDUIVIEWSMOBILE_API UUMGBaseFriendListContextualMenuWidget : public UMobi
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(meta=(BindWidget))
+	UPROPERTY(meta=(BindWidgetOptional))
 	UUMGFriendButtonWidget* InviteToPartyButton;
 
-	UPROPERTY(meta=(BindWidget))
+	UPROPERTY(meta=(BindWidgetOptional))
 	UUMGFriendButtonWidget* MuteButton;
 
-	UPROPERTY(meta=(BindWidget))
+	UPROPERTY(meta=(BindWidgetOptional))
 	UUMGFriendButtonWidget* UnmuteButton;
 
-	UPROPERTY(meta=(BindWidget))
+	UPROPERTY(meta=(BindWidgetOptional))
 	UUMGFriendButtonWidget* RemoveFriendButton;
 
-	UPROPERTY(meta=(BindWidget))
+	UPROPERTY(meta=(BindWidgetOptional))
 	UUMGFriendButtonWidget* RemovePlayerFromPartyButton;
 
 	UPROPERTY(EditAnywhere)

@@ -18,10 +18,10 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float LargeTextScale;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UScaleBox* LargeTextScaleBox;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDTextBlock* ActionTB;
 
 private:

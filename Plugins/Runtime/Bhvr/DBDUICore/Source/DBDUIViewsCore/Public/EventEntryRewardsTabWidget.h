@@ -19,7 +19,7 @@ protected:
 	UPROPERTY(BlueprintReadOnly)
 	FEventEntryPopupSkinUIData _skinData;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UEventEntryRewardsDisplayWidget* EventEntryRewardsDisplayWidget;
 
 	UPROPERTY(BlueprintAssignable)

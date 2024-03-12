@@ -16,6 +16,9 @@ class DBDUIVIEWINTERFACES_API IMainMenuButtonViewInterface : public IInterface
 	GENERATED_BODY()
 
 public:
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+	void SetNotificationVisibility(bool isVisible);
+
 	UFUNCTION(BlueprintNativeEvent)
 	void SetMainMenuButtonType(EMainMenuButtonType mainMenuButtonType);
 

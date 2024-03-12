@@ -7,7 +7,6 @@
 #include "Engine/NetSerialization.h"
 #include "TormentTrailController.generated.h"
 
-class AMobileTormentTrailRenderer;
 class ATormentTrailPoint;
 
 UCLASS()
@@ -18,9 +17,6 @@ class ATormentTrailController : public ATrailControllerBase
 private:
 	UPROPERTY(Replicated)
 	FReplicatedTrailPointList _trailPointList;
-
-	UPROPERTY(Transient)
-	AMobileTormentTrailRenderer* _mobileTormentTrailRenderer;
 
 private:
 	UFUNCTION(Server, Reliable, WithValidation)

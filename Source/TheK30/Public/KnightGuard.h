@@ -28,7 +28,7 @@ class AKnightGuard : public ADBDPlayer
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	USceneComponent* _attackZonePivot;
 
 	UPROPERTY(EditDefaultsOnly)

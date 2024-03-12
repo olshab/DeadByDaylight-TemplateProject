@@ -28,6 +28,9 @@ private:
 	void Server_SetPlayerReady();
 
 	UFUNCTION(Server, Reliable)
+	void Server_SetMutatorComponentReady();
+
+	UFUNCTION(Server, Reliable)
 	void Server_SetMapSpecificComponentReady();
 
 	UFUNCTION(Server, Reliable)

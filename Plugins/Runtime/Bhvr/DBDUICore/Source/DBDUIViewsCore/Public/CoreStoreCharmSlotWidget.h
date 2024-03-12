@@ -12,7 +12,7 @@ class DBDUIVIEWSCORE_API UCoreStoreCharmSlotWidget : public UCoreSelectableButto
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreOnHoverBorderWidget* OnHoverBorder;
 
 public:

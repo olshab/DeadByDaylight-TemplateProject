@@ -1,6 +1,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "ArchivePassTooltipViewData.h"
+#include "TimerFlagViewData.h"
 #include "StoreArchivePassViewData.generated.h"
 
 USTRUCT(BlueprintType)
@@ -16,13 +18,19 @@ public:
 	FName ArchiveId;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Transient)
-	FText DisplayName;
+	FText ItemName;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Transient)
-	FText Description;
+	FText ArchiveTitle;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Transient)
+	FArchivePassTooltipViewData TooltipData;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Transient)
 	bool IsOwned;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Transient)
+	FTimerFlagViewData TimerFlagViewData;
 
 public:
 	DBDUIVIEWINTERFACES_API FStoreArchivePassViewData();

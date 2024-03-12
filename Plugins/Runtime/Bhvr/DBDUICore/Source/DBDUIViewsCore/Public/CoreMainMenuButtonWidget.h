@@ -35,16 +35,16 @@ protected:
 	UPROPERTY(EditAnywhere, NoClear)
 	TSubclassOf<UCoreTimerFlagWidget> _timerFlagWidgetClass;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UVerticalBox* TimerFlagContainer;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDTextBlock* BonusLabelTB;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDTextBlock* BonusValueTB;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDTextBlock* SubtitleTB;
 
 	UPROPERTY(BlueprintReadWrite)
@@ -77,9 +77,6 @@ public:
 
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
 	void SetSubtitle(const FText& subtitle);
-
-	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-	void SetNotificationVisibility(bool isVisible);
 
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
 	void SetIcon(const FString& eventId);

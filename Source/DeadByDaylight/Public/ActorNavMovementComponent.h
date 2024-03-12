@@ -16,7 +16,7 @@ protected:
 	UPROPERTY(Transient, DuplicateTransient)
 	AActor* _owningActor;
 
-	UPROPERTY(Transient, DuplicateTransient, meta=(BindWidget))
+	UPROPERTY(Transient, DuplicateTransient, meta=(BindWidgetOptional))
 	UPathFollowingComponent* _pathFollowingComponent;
 
 	UPROPERTY(Transient)

@@ -17,7 +17,7 @@ protected:
 	UPROPERTY(BlueprintReadOnly)
 	EK31DroneStateID _droneState;
 
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	UK31DroneStateController* _droneStateController;
 
 	UPROPERTY(Transient)

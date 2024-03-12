@@ -9,9 +9,10 @@
 
 class UEventTabViewData;
 class UDBDImage;
-class UDBDScrollBox;
 class UCoreInputSwitcherWidget;
+class UDBDScrollBox;
 class UDBDRichTextBlock;
+class UEventObjectiveTrackerWidget;
 
 UCLASS(EditInlineNew)
 class UEventEntryEventTabWidget : public UCoreTabContentWidget, public IEventInfoViewInterface
@@ -25,19 +26,22 @@ protected:
 	UPROPERTY(BlueprintReadOnly)
 	FEventEntryPopupSkinUIData _skinData;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDImage* ImageContainer;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDScrollBox* ScrollBox;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDRichTextBlock* MessageText;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDRichTextBlock* AdditionalInformationText;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UEventObjectiveTrackerWidget* EventObjectiveTracker;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreInputSwitcherWidget* ArchivesButton;
 
 	UPROPERTY(BlueprintReadOnly)

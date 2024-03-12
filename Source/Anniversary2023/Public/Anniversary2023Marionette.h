@@ -16,7 +16,7 @@ class ANNIVERSARY2023_API AAnniversary2023Marionette : public AActor
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	URespawnableComponent* _respawnableComponent;
 
 	UPROPERTY(BlueprintReadWrite, Transient)

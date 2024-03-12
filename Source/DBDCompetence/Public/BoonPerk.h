@@ -17,7 +17,7 @@ protected:
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UBlessedStatusEffect> _blessedStatusEffectClass;
 
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	UBlessedStatusEffect* _blessedStatusEffect;
 
 private:

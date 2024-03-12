@@ -6,13 +6,14 @@
 #include "MontageStartedDelegate.h"
 #include "MontageEndedDelegate.h"
 #include "UObject/NoExportTypes.h"
+#include "ContextualAnimationMapping.h"
 #include "MontageBlendingOutDelegate.h"
 #include "AnimationMontageDescriptor.h"
 #include "MontagePlayer.generated.h"
 
 class UAnimMontage;
-class USkeletalMeshComponent;
 class UDataTable;
+class USkeletalMeshComponent;
 class UAnimInstance;
 
 UCLASS(BlueprintType, EditInlineNew, meta=(BlueprintSpawnableComponent))
@@ -37,6 +38,9 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UDataTable* _playerSpecificMappingsTable;
 
+	UPROPERTY(EditDefaultsOnly)
+	TArray<FContextualAnimationMapping> _contextualAnimationMappings;
+
 private:
 	UPROPERTY(Transient)
 	UAnimMontage* _currentlyPlayingMontage;
@@ -55,6 +59,9 @@ private:
 
 	UPROPERTY(Transient)
 	TMap<UAnimMontage*, FName> _montageToNameMap;
+
+	UPROPERTY(Transient)
+	TArray<UDataTable*> _loadedMappingTables;
 
 public:
 	UFUNCTION(BlueprintCallable)

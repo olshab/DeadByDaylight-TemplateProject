@@ -8,7 +8,6 @@
 #include "CharacterChaseVisualComponent.generated.h"
 
 class UMaterialHelperUnaffectedStaticMeshComponent;
-class ADBDPlayer;
 
 UCLASS(BlueprintType, meta=(BlueprintSpawnableComponent))
 class DEADBYDAYLIGHT_API UCharacterChaseVisualComponent : public UActorComponent
@@ -39,9 +38,6 @@ private:
 	float _fovModifyFactor;
 
 public:
-	UFUNCTION()
-	void OnObservedCharacterChange(ADBDPlayer* player);
-
 	UFUNCTION()
 	void OnAllChaseEnd();
 

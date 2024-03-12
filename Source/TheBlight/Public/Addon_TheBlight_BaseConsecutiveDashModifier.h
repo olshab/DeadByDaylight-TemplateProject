@@ -20,9 +20,6 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	float _defaultModifierValue;
 
-	UPROPERTY(EditDefaultsOnly)
-	int32 _maxConsecutiveCount;
-
 public:
 	UAddon_TheBlight_BaseConsecutiveDashModifier();
 };

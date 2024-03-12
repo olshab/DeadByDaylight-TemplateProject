@@ -19,10 +19,10 @@ class AKnifeProjectile : public AKillerProjectile
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UPrimitiveComponent* _worldCollider;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UPrimitiveComponent* _camperDetector;
 
 private:

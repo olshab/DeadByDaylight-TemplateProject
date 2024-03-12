@@ -24,7 +24,7 @@ protected:
 	UPROPERTY(EditInstanceOnly, BlueprintReadOnly, NoClear)
 	float _scrollSpeed;
 
-	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, NoClear, meta=(BindWidget))
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, NoClear, meta=(BindWidgetOptional))
 	UCoreKeyListenerInputPromptWidget* _displayPrompt;
 
 	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, NoClear)
@@ -36,7 +36,7 @@ protected:
 	UPROPERTY(EditInstanceOnly, NoClear)
 	bool IsUsingSmoothMask;
 
-	UPROPERTY(EditInstanceOnly, NoClear, meta=(BindWidget))
+	UPROPERTY(EditInstanceOnly, NoClear, meta=(BindWidgetOptional))
 	URetainerBox* SmoothMaskRetainerBox;
 
 private:

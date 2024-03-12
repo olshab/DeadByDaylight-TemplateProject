@@ -16,6 +16,10 @@ protected:
 	UPROPERTY(EditAnywhere)
 	float _inputResetSpeed;
 
+private:
+	UPROPERTY(EditDefaultsOnly)
+	float _minDistToLookAtChain;
+
 public:
 	UK25ChainStrikeState_ShootControlledProjectile();
 };

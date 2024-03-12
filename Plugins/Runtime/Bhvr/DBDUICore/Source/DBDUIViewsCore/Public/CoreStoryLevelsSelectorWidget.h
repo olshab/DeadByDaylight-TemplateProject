@@ -23,13 +23,13 @@ protected:
 	UPROPERTY(EditDefaultsOnly, NoClear)
 	TSubclassOf<UCoreStoryLevelButtonWidget> CoreStoryLevelButtonWidgetClass;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UGridPanel* LevelButtonsContainer;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreInputSwitcherWidget* PreviousLevelInputSwitcher;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreInputSwitcherWidget* NextLevelInputSwitcher;
 
 private:

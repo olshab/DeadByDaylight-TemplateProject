@@ -12,7 +12,7 @@ class DBDCOMPETENCE_API URampingBlindEffect : public UStatusEffect
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	UBlindableComponent* _ownerBlindable;
 
 public:

@@ -18,7 +18,7 @@ protected:
 	UPROPERTY(EditDefaultsOnly, NoClear)
 	TSubclassOf<UCoreStoreFeaturedCharacterWidget> CharacterTileClass;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UHorizontalBox* Root;
 
 private:

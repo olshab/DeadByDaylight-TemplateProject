@@ -16,7 +16,7 @@ protected:
 	UPROPERTY(EditDefaultsOnly)
 	EK31DroneStateID _id;
 
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	UK31DroneStateController* _stateController;
 
 public:

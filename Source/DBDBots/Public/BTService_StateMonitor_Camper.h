@@ -106,6 +106,12 @@ public:
 	float ChasedMinimumScore;
 
 	UPROPERTY(EditInstanceOnly)
+	float HeightAmplifier;
+
+	UPROPERTY(EditInstanceOnly)
+	float HeightAmplifierActivationHeight;
+
+	UPROPERTY(EditInstanceOnly)
 	FAITunableParameter ChasedScoreKillerAtMinimumDistance;
 
 	UPROPERTY(EditInstanceOnly)

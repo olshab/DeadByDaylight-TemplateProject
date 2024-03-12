@@ -2,10 +2,12 @@
 
 #include "CoreMinimal.h"
 #include "LoadoutTooltipData.h"
+#include "UObject/SoftObjectPtr.h"
 #include "PriceTagViewData.h"
 #include "ShrineOfSecretsItemViewData.generated.h"
 
 class UMenuPerkViewData;
+class UTexture2D;
 
 USTRUCT(BlueprintType)
 struct FShrineOfSecretsItemViewData
@@ -13,26 +15,32 @@ struct FShrineOfSecretsItemViewData
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintReadOnly, Transient)
 	FName ItemId;
 
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintReadOnly, Transient)
 	int32 BPCost;
 
 	UPROPERTY(BlueprintReadOnly, Transient)
 	UMenuPerkViewData* Perk;
 
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintReadOnly, Transient)
 	FLoadoutTooltipData PerkTooltip;
 
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintReadOnly, Transient)
+	FPriceTagViewData PriceTag;
+
+	UPROPERTY(BlueprintReadOnly, Transient)
 	bool PerkMaxed;
 
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintReadOnly, Transient)
 	bool BPClaimed;
 
-	UPROPERTY(BlueprintReadOnly)
-	FPriceTagViewData PriceTag;
+	UPROPERTY(BlueprintReadOnly, Transient)
+	bool IsASurvivor;
+
+	UPROPERTY(BlueprintReadOnly, Transient)
+	TSoftObjectPtr<UTexture2D> Portrait;
 
 public:
 	DBDUIVIEWINTERFACES_API FShrineOfSecretsItemViewData();

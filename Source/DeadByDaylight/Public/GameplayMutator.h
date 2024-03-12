@@ -5,7 +5,7 @@
 #include "GameplayMutator.generated.h"
 
 UCLASS(Abstract, meta=(BlueprintSpawnableComponent))
-class UGameplayMutator : public UActorComponent
+class DEADBYDAYLIGHT_API UGameplayMutator : public UActorComponent
 {
 	GENERATED_BODY()
 

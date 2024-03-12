@@ -12,7 +12,7 @@ class UCorePremiumCurrencyButtonWidget : public UCoreButtonWidget
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDTextBlock* PriceTextBlock;
 
 public:

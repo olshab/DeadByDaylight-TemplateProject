@@ -25,6 +25,9 @@ public:
 	UPROPERTY()
 	UClass* AttachParentClass;
 
+	UPROPERTY()
+	TArray<FName> Tags;
+
 public:
 	DEADBYDAYLIGHT_API FSpawnInfo();
 };

@@ -17,7 +17,7 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 	FGameplayTagContainer _hackedGameEvents;
 
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	UWormholeFatherHackingComponent* _hackingComponent;
 
 protected:

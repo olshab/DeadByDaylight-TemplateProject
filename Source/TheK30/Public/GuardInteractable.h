@@ -12,7 +12,7 @@ class AGuardInteractable : public APlayerInteractable
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UInteractionDefinition* _startHuntInteraction;
 
 public:

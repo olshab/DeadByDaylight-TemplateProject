@@ -1,13 +1,17 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GenericTextInputPopupPresenter.h"
+#include "GenericPopupPresenter.h"
 #include "FriendSearchPopupPresenter.generated.h"
 
 UCLASS(EditInlineNew)
-class UFriendSearchPopupPresenter : public UGenericTextInputPopupPresenter
+class UFriendSearchPopupPresenter : public UGenericPopupPresenter
 {
 	GENERATED_BODY()
+
+protected:
+	UFUNCTION()
+	void OnSearchBarTextChanged(const FString& enteredText);
 
 public:
 	UFriendSearchPopupPresenter();

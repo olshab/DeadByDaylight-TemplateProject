@@ -1,5 +1,15 @@
 #include "StoreSpecialPackViewData.h"
 
+bool UStoreSpecialPackViewData::ContainsArchivePassFragments() const
+{
+	return false;
+}
+
+bool UStoreSpecialPackViewData::ContainsArchivePass() const
+{
+	return false;
+}
+
 UStoreSpecialPackViewData::UStoreSpecialPackViewData()
 {
 	this->Id = TEXT("");

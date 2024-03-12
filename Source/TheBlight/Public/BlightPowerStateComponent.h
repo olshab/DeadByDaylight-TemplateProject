@@ -65,9 +65,6 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	FTunableStat _tokenChargeRate;
 
-	UPROPERTY(Replicated, Transient)
-	uint8 _consecutiveTokenCount;
-
 private:
 	UFUNCTION(Server, Reliable, WithValidation)
 	void Server_SetWallGrabState(const EWallGrabState newState);

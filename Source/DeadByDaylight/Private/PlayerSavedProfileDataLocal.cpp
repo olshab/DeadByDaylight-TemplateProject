@@ -41,6 +41,7 @@ FPlayerSavedProfileDataLocal::FPlayerSavedProfileDataLocal()
 	this->_specialEvent = TMap<FName, FSpecialEventSavedData>();
 	this->_seenCinematics = TSet<FName>();
 	this->_seenFeatures = TSet<FName>();
+	this->_seenPopupsData = TMap<FName, FSavedSeenPopupData>();
 	this->_releases = TMap<FString, FReleaseSavedData>();
 	this->_hasBeginnerTooltipsBeenDisabledAtLevel = false;
 }

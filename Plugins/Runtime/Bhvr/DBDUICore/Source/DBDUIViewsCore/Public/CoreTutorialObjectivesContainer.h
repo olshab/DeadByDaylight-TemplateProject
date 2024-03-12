@@ -21,7 +21,7 @@ protected:
 	UPROPERTY(EditAnywhere, NoClear)
 	int32 BasePooledInstanceAmount;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UGridPanel* ObjectiveContainer;
 
 private:

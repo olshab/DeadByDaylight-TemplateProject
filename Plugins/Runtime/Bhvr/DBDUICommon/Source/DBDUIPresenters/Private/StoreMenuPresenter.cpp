@@ -1,7 +1,18 @@
 #include "StoreMenuPresenter.h"
 #include "EStoreMenuState.h"
+#include "ECurrencyType.h"
 
 class USubPresenter;
+
+void UStoreMenuPresenter::ShowArchivePassPopup(const FName& archiveId)
+{
+
+}
+
+void UStoreMenuPresenter::ResetBackActionLabel() const
+{
+
+}
 
 void UStoreMenuPresenter::OpenRedeemCodePopup()
 {
@@ -23,7 +34,17 @@ void UStoreMenuPresenter::OnStartSubPresenterAsyncOperation(USubPresenter* subPr
 
 }
 
+void UStoreMenuPresenter::OnNotEnoughCurrencyModalButtonClicked(const ECurrencyType currencyType)
+{
+
+}
+
 void UStoreMenuPresenter::OnMenuTabSelected(EStoreMenuState menuState)
+{
+
+}
+
+void UStoreMenuPresenter::OnBackActionLabelChangeRequested(const FText& newLabel) const
 {
 
 }
@@ -33,7 +54,7 @@ void UStoreMenuPresenter::OnBackAction()
 
 }
 
-void UStoreMenuPresenter::OnAllStoreDataLoadComplete(bool success)
+void UStoreMenuPresenter::OnAsyncLoadSuccess()
 {
 
 }
@@ -51,4 +72,5 @@ UStoreMenuPresenter::UStoreMenuPresenter()
 	this->_storeSurvivorsSubPresenter = NULL;
 	this->_activeSubPresenter = NULL;
 	this->_shopManager = NULL;
+	this->_matchmakingMonitor = NULL;
 }

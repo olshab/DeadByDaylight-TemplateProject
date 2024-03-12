@@ -5,6 +5,7 @@
 #include "CharacterCustomizationDropdown.h"
 #include "DebugLoadoutPerk.h"
 #include "DebugLoadoutAddon.h"
+#include "OfferingDropdown.h"
 #include "SlasherLoadout.generated.h"
 
 USTRUCT(BlueprintType)
@@ -30,6 +31,9 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	FCharacterCustomizationDropdown Slasher;
+
+	UPROPERTY(EditAnywhere)
+	FOfferingDropdown Offering;
 
 public:
 	DEADBYDAYLIGHT_API FSlasherLoadout();

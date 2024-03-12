@@ -1,7 +1,19 @@
 #include "CoreStoreArchivePassItemWidget.h"
 #include "StoreArchivePassViewData.h"
 
+class UCoreButtonWidget;
+
 void UCoreStoreArchivePassItemWidget::SetData_Implementation(const FStoreArchivePassViewData& data)
+{
+
+}
+
+void UCoreStoreArchivePassItemWidget::OnButtonUnhovered(UCoreButtonWidget* targetButton)
+{
+
+}
+
+void UCoreStoreArchivePassItemWidget::OnButtonHovered(UCoreButtonWidget* targetButton)
 {
 
 }

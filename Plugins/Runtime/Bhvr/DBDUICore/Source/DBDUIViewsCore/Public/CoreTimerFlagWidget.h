@@ -14,7 +14,7 @@ class UCoreTimerFlagWidget : public UCoreBaseUserWidget
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UDBDTextBlock* TimerTB;
 
 private:
@@ -30,6 +30,14 @@ public:
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void SetData(const FTimerFlagViewData& data);
+
+protected:
+	UFUNCTION()
+	void OnTimerTick(int32 remainingTime);
+
+public:
+	UFUNCTION()
+	void NativeDestruct();
 
 	UFUNCTION(BlueprintPure)
 	bool IsDataSet() const;

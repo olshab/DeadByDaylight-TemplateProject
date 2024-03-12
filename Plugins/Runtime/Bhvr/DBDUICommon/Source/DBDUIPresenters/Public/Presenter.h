@@ -31,10 +31,10 @@ protected:
 	UPROPERTY(EditAnywhere)
 	int32 _widgetZOrder;
 
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	UUserWidget* _widget;
 
-	UPROPERTY(EditAnywhere, meta=(BindWidget))
+	UPROPERTY(EditAnywhere, meta=(BindWidgetOptional))
 	UPresenterParentInfo* _parentInfo;
 
 	UPROPERTY(EditAnywhere)

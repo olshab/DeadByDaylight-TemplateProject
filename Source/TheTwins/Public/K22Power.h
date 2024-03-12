@@ -18,10 +18,10 @@ class AK22Power : public ACollectable
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadOnly, Transient, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, Transient, meta=(BindWidgetOptional))
 	UChargeableComponent* _releaseConjoinedTwinChargeable;
 
-	UPROPERTY(BlueprintReadOnly, Transient, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, Transient, meta=(BindWidgetOptional))
 	UChargeableComponent* _possessConjoinedTwinChargeable;
 
 private:

@@ -7,6 +7,8 @@
 #include "EItemRarity.h"
 #include "CustomizationTooltipViewData.generated.h"
 
+class UCustomizationRewardOutfitPartsViewData;
+
 USTRUCT(BlueprintType)
 struct FCustomizationTooltipViewData
 {
@@ -75,6 +77,9 @@ public:
 
 	UPROPERTY(BlueprintReadOnly, Transient)
 	FString EventBannerLabel;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Transient)
+	UCustomizationRewardOutfitPartsViewData* OutfitParts;
 
 public:
 	DBDUIVIEWINTERFACES_API FCustomizationTooltipViewData();

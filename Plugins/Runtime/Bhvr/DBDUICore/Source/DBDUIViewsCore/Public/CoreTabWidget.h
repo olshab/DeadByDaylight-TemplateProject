@@ -17,13 +17,13 @@ class DBDUIVIEWSCORE_API UCoreTabWidget : public UCoreSelectableButtonWidget
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UDBDTextBlock* TabTextField;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UDBDImage* TabImage;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UWidget* NotificationWidget;
 
 	UPROPERTY(BlueprintReadOnly)

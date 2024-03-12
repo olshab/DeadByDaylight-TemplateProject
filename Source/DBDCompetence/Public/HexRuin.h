@@ -18,6 +18,9 @@ private:
 	UPROPERTY(Transient)
 	TMap<AGenerator*, FFastTimer> _curseActivationTimers;
 
+	UPROPERTY(Transient)
+	TArray<AGenerator*> _authority_blockedGeneratorsToStartRegression;
+
 	UPROPERTY(EditDefaultsOnly)
 	float _regressionModifier;
 

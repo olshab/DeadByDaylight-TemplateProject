@@ -100,6 +100,9 @@ public:
 	UPROPERTY(BlueprintReadOnly, Transient)
 	FString RemainingTimeDiscount;
 
+	UPROPERTY(BlueprintReadOnly, Transient)
+	TArray<FText> SearchTags;
+
 public:
 	DEADBYDAYLIGHT_API FStoreItemSlotData();
 };

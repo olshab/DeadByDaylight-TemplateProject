@@ -1,18 +1,13 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "ECollectionItemScaleType.h"
 #include "CoreBaseUserWidget.h"
-#include "Templates/SubclassOf.h"
 #include "CoreStoreCollectionsItemWidget.generated.h"
 
 class UStoreCollectionViewData;
-class UCoreStoreCustomizationItemWidget;
 class UDBDTextBlock;
-class UHorizontalBox;
-class UCorePreConstructableList;
-class UCoreStoreCollectionsItemWidget;
 class UDBDButton;
-class UCoreButtonWidget;
 
 UCLASS(EditInlineNew)
 class UCoreStoreCollectionsItemWidget : public UCoreBaseUserWidget
@@ -20,65 +15,29 @@ class UCoreStoreCollectionsItemWidget : public UCoreBaseUserWidget
 	GENERATED_BODY()
 
 public:
-	DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnItemClicked, const FString&, collectionId, FName, clickedItemCustomizationId);
-
-	DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnCollectionUnfocused, UCoreStoreCollectionsItemWidget*, widget, const FString&, collectionId);
-
-	DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnCollectionFocused, UCoreStoreCollectionsItemWidget*, widget, const FString&, collectionId);
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBannerClickedDelegate, const UStoreCollectionViewData*, collectionViewData);
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UDBDTextBlock* TimerText;
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UDBDTextBlock* CountTB;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UDBDTextBlock* CountText;
-
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UHorizontalBox* StoreCustomizationListBox;
-
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDButton* BannerButton;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, NoClear)
-	TSubclassOf<UCoreStoreCustomizationItemWidget> _storeCustomizationItemWidgetClass;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, NoClear)
-	int32 _preConstructedItemsCount;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int32 _layoutMask;
-
 private:
-	UPROPERTY(Transient)
-	UCorePreConstructableList* _itemList;
-
 	UPROPERTY(Transient)
 	UStoreCollectionViewData* _collectionViewData;
 
-	UPROPERTY(Transient)
-	bool _isExpanded;
-
 public:
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-	void SetupView(UStoreCollectionViewData* collectionViewData);
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+	void SetupVisuals(UStoreCollectionViewData* collectionViewData, const ECollectionItemScaleType collectionItemScale);
 
 	UFUNCTION(BlueprintCallable)
-	void SetExpanded(bool expanded);
-
-private:
-	UFUNCTION()
-	void OnItemClickedInternal(UCoreButtonWidget* buttonTarget);
+	void SetData(UStoreCollectionViewData* collectionViewData, const ECollectionItemScaleType collectionItemScale);
 
 protected:
-	UFUNCTION(BlueprintImplementableEvent)
-	void OnExpandedChanged();
-
 	UFUNCTION()
 	void OnBannerButtonClicked();
-
-public:
-	UFUNCTION(BlueprintPure)
-	bool IsExpanded() const;
 
 public:
 	UCoreStoreCollectionsItemWidget();

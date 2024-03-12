@@ -17,10 +17,10 @@ public:
 	EAtlantaDisplayStandPosition StandPosition;
 
 protected:
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	USceneComponent* SurvivorPositionMarker;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	USceneComponent* KillerPositionMarker;
 
 public:

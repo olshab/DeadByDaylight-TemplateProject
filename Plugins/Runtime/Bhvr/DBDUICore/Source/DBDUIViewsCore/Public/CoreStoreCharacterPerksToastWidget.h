@@ -9,6 +9,7 @@
 class UCoreMenuPowerWidget;
 class UMenuPowerViewData;
 class UWidget;
+class UDBDTextBlock;
 class UCoreMenuPerkWidget;
 class UCoreButtonWidget;
 class UCharacterPerkViewData;
@@ -19,26 +20,30 @@ class DBDUIVIEWSCORE_API UCoreStoreCharacterPerksToastWidget : public UCoreBaseU
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(BindWidget))
-	UWidget* SafeArea;
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UDBDTextBlock* Title;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreMenuPowerWidget* CoreKillerPower;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreMenuPerkWidget* CorePerk_1;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreMenuPerkWidget* CorePerk_2;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreMenuPerkWidget* CorePerk_3;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UCoreButtonWidget* OpenButton;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Export)
+	TArray<UWidget*> _ignoreClickWidgets;
 
 	UPROPERTY(BlueprintReadOnly)
 	bool _isOpen;
+
+public:
+	UFUNCTION(BlueprintCallable)
+	void ToggleToastVisibility();
 
 private:
 	UFUNCTION(BlueprintCallable)
@@ -66,9 +71,6 @@ public:
 private:
 	UFUNCTION()
 	void OnPlayerClick(const FPointerEvent& pointerEvent);
-
-	UFUNCTION()
-	void OnOpenButtonClick(UCoreButtonWidget* button);
 
 	UFUNCTION(BlueprintCallable)
 	void HideTooltip(UCoreButtonWidget* unhoveredSlotWidget);

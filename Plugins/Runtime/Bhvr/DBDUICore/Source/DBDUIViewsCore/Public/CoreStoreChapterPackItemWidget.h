@@ -2,20 +2,19 @@
 
 #include "CoreMinimal.h"
 #include "ChapterPackCustomizationClickedDelegate.h"
-#include "ChapterPackRedirectButtonActionDelegate.h"
 #include "CoreSelectableButtonWidget.h"
+#include "ChapterPackSeenDelegate.h"
 #include "ChapterPackBuyButtonActionDelegate.h"
 #include "ChapterPackCharacterClickedDelegate.h"
 #include "Templates/SubclassOf.h"
 #include "CoreStoreChapterPackItemWidget.generated.h"
 
-class UStoreChapterPackViewData;
-class UCoreKeyListenerButtonWidget;
-class UCoreStoreCustomizationItemWidget;
-class UDBDTextBlock;
 class UCorePreConstructableList;
 class UHorizontalBox;
 class UCorePremiumCurrencyButtonWidget;
+class UStoreChapterPackViewData;
+class UCoreStoreCustomizationItemWidget;
+class UDBDTextBlock;
 class UCoreStoreCharacterItemWidget;
 class UCoreButtonWidget;
 
@@ -26,10 +25,10 @@ class DBDUIVIEWSCORE_API UCoreStoreChapterPackItemWidget : public UCoreSelectabl
 
 public:
 	UPROPERTY()
-	FChapterPackBuyButtonActionDelegate BuyPremiumActionDelegate;
+	FChapterPackSeenDelegate SeenDelegate;
 
 	UPROPERTY()
-	FChapterPackRedirectButtonActionDelegate RedirectActionDelegate;
+	FChapterPackBuyButtonActionDelegate BuyPremiumActionDelegate;
 
 	UPROPERTY()
 	FChapterPackCharacterClickedDelegate CharacterClickedDelegate;
@@ -38,20 +37,17 @@ public:
 	FChapterPackCustomizationClickedDelegate CustomizationClickedDelegate;
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDTextBlock* TitleText;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UHorizontalBox* CharactersBox;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UHorizontalBox* CustomizationsBox;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCorePremiumCurrencyButtonWidget* PremiumBuyButton;
-
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UCoreKeyListenerButtonWidget* RedirectButton;
 
 	UPROPERTY(BlueprintReadWrite, Transient)
 	bool _isExpanded;
@@ -80,16 +76,13 @@ protected:
 	void ToggleExpanded();
 
 public:
-	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void SetExpanded(bool expanded);
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void SetData(UStoreChapterPackViewData* data);
 
 protected:
-	UFUNCTION()
-	void OnRedirectButtonClicked(UCoreButtonWidget* button);
-
 	UFUNCTION()
 	void OnPremiumBuyButtonClicked(UCoreButtonWidget* button);
 

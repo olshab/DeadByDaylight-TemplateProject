@@ -4,6 +4,11 @@
 #include "EDBDCameraViewType.h"
 #include "NewsContentDetails.h"
 
+void UMainMenuPresenter::RequestDailyRitualsContext() const
+{
+
+}
+
 void UMainMenuPresenter::OnTutorialButtonClicked()
 {
 
@@ -50,6 +55,11 @@ void UMainMenuPresenter::OnNewsContentReceived(bool success, const TArray<FNewsC
 }
 
 void UMainMenuPresenter::OnNewsButtonClicked()
+{
+
+}
+
+void UMainMenuPresenter::OnMarketingInvitationButtonClicked()
 {
 
 }

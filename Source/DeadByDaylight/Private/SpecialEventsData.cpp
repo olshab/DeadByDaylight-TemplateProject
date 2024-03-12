@@ -15,4 +15,6 @@ FSpecialEventsData::FSpecialEventsData()
 	this->MilestoneRewards_IsSet = false;
 	this->EventPeriods = TArray<FEventPeriod>();
 	this->EventPeriods_IsSet = false;
+	this->EventTrackerObjectives = TArray<FEventTrackerObjective>();
+	this->EventTrackerObjectives_IsSet = false;
 }

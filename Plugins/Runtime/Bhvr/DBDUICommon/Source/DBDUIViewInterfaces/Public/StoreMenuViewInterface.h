@@ -37,6 +37,9 @@ public:
 	void SetMenuState(EStoreMenuState state);
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	void SetBackButtonLabel(const FText& label);
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	TScriptInterface<IStoreCharactersViewInterface> GetStoreSurvivorsInterface() const;
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)

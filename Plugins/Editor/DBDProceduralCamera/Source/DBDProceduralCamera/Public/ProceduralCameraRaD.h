@@ -14,7 +14,7 @@ class DBDPROCEDURALCAMERA_API AProceduralCameraRaD : public APawn
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(VisibleAnywhere, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, meta=(BindWidgetOptional))
 	UCameraComponent* CameraComp;
 
 	UPROPERTY(EditAnywhere)

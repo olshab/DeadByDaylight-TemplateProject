@@ -14,7 +14,7 @@ class AWormholeFatherRoomZoneOverlap : public AActor
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidgetOptional))
 	USpherePlayerOverlapComponent* _wormholeFatherRoomZone;
 
 protected:

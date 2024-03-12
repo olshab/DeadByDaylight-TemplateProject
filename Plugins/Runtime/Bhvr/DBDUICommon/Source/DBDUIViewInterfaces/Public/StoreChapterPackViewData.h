@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/SoftObjectPtr.h"
+#include "TimerFlagViewData.h"
 #include "StoreChapterPackViewData.generated.h"
 
 class UTexture2D;
@@ -44,6 +45,15 @@ public:
 
 	UPROPERTY(BlueprintReadOnly, Transient)
 	bool IsIndividuallyAvailable;
+
+	UPROPERTY(BlueprintReadOnly, Transient)
+	FDateTime ActivationStartDate;
+
+	UPROPERTY(BlueprintReadOnly, Transient)
+	FDateTime ActivationEndDate;
+
+	UPROPERTY(BlueprintReadWrite, Transient)
+	FTimerFlagViewData TimerViewData;
 
 public:
 	UStoreChapterPackViewData();

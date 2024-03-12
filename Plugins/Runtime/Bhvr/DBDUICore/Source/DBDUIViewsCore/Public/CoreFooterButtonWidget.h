@@ -10,6 +10,7 @@
 #include "EDBDFeatureType.h"
 #include "CoreFooterButtonWidget.generated.h"
 
+class UTexture2D;
 class UDBDImage;
 
 UCLASS(EditInlineNew)
@@ -39,7 +40,7 @@ protected:
 	UPROPERTY(BlueprintReadOnly)
 	FText _betaFeatureText;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UDBDImage* IconIMG;
 
 protected:
@@ -52,6 +53,12 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void SetSubPanelText(const FText& title, const FText& description);
+
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+	void SetNotificationVisible(bool isVisible);
+
+	UFUNCTION(BlueprintCallable)
+	void SetIconTexture(UTexture2D* iconTexture);
 
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
 	void SetHoveredColor();

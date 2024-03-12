@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "StoreRedirectionData.h"
 #include "StoreSubPresenter.h"
+#include "PremiumPurchaseCompleteData.h"
 #include "UObject/ScriptInterface.h"
 #include "StoreSpecialsSubPresenter.generated.h"
 
@@ -26,13 +27,13 @@ private:
 	void RequestMoveToCharactersPage(const FStoreRedirectionData& storeRedirectionData);
 
 	UFUNCTION()
-	void OnPremiumTransactionCompleted(bool success);
-
-	UFUNCTION()
-	void OnAuricCellSpecialOtherOptions();
+	void OnPremiumTransactionCompleted(bool success, FName itemId, const FPremiumPurchaseCompleteData& purchaseCompleteData);
 
 	UFUNCTION()
 	void OnAuricCellSpecialBuyAction(FName bundleId);
+
+	UFUNCTION()
+	void OnArchivePassBannerClicked(const FName& archiveId);
 
 public:
 	UStoreSpecialsSubPresenter();

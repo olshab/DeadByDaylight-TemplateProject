@@ -10,10 +10,10 @@
 #include "EAIDifficultyLevel.h"
 #include "PlayerGameplayEventDelegate.h"
 #include "AIFinishedPlayingEvent.h"
+#include "PlayerStateData.h"
 #include "GameEventData.h"
 #include "EPlatformFlag.h"
 #include "CharacterStateData.h"
-#include "PlayerStateData.h"
 #include "AwardedScores.h"
 #include "AwardedScore.h"
 #include "UserGameStats.h"
@@ -28,6 +28,7 @@
 #include "EndOfMatchRPCData.h"
 #include "DBDPlayerState.generated.h"
 
+class UDSQuestEventsHandlerComponent;
 class AActor;
 class UDedicatedServerHandlerComponent;
 class UGameplayNotificationManager;
@@ -60,6 +61,9 @@ public:
 
 	UPROPERTY(BlueprintReadOnly, Transient, Export)
 	UDedicatedServerHandlerComponent* DedicatedServerHandler;
+
+	UPROPERTY(Transient, Export)
+	UDSQuestEventsHandlerComponent* DSQuestEventsHandler;
 
 	UPROPERTY(ReplicatedUsing=OnRep_DisplayData, Transient)
 	FCharacterStateData CamperData;
@@ -153,6 +157,9 @@ private:
 	UPROPERTY(Replicated, Transient)
 	int32 _disconnectedPlayerScore;
 
+	UPROPERTY(Transient)
+	bool _hasActiveDSQuestUpdate;
+
 protected:
 	UFUNCTION()
 	void UpdateOngoingScores();
@@ -236,6 +243,9 @@ private:
 	UFUNCTION(Client, Reliable)
 	void Client_SetInParadise();
 
+	UFUNCTION(Client, Reliable)
+	void Client_SetHasActiveDSQuestUpdate(bool isEnabled);
+
 protected:
 	UFUNCTION(Client, Reliable)
 	void Client_SetGameRole(EPlayerRole newRole);
@@ -263,6 +273,9 @@ public:
 private:
 	UFUNCTION(Client, Reliable)
 	void Client_HandleEndOfMatch(bool success, const FEndOfMatchRPCData& response);
+
+	UFUNCTION(Client, Reliable)
+	void Client_FireQuestRepetitionValueChangeEvent(int32 repetition, const FString& questEventId);
 
 	UFUNCTION(Client, Reliable)
 	void Client_FetchCoreRituals(bool hasClaimableRitual);

@@ -1,12 +1,11 @@
 #include "StoreSpecialPacksSubPresenter.h"
-#include "StoreRedirectionData.h"
 
-void UStoreSpecialPacksSubPresenter::RequestMoveToCharactersPage(const FStoreRedirectionData& redirectionData)
+void UStoreSpecialPacksSubPresenter::OnSpecialPackClicked(const FString& packId)
 {
 
 }
 
-void UStoreSpecialPacksSubPresenter::OnSpecialPackBuyClicked(const FString& packId)
+void UStoreSpecialPacksSubPresenter::OnPackBuyClicked(const FString& packId)
 {
 
 }
@@ -16,24 +15,28 @@ void UStoreSpecialPacksSubPresenter::OnHeritagePackBuyClicked(const FString& pac
 
 }
 
-void UStoreSpecialPacksSubPresenter::OnChapterPackRedirectClicked(const FString& chapterId, const FString& heritageId)
+void UStoreSpecialPacksSubPresenter::OnCustomizationClicked(const FString& packId, const FName& customizationId)
 {
 
 }
 
-void UStoreSpecialPacksSubPresenter::OnChapterPackBuyClicked(const FString& packId)
+void UStoreSpecialPacksSubPresenter::OnCharacterClicked(const FString& packId, const int32 characterIndex)
 {
 
 }
 
-void UStoreSpecialPacksSubPresenter::OnArchivePassItemClicked(const FName& archiveId, const FString& packId)
+void UStoreSpecialPacksSubPresenter::OnChapterPackClicked(const FString& packId)
+{
+
+}
+
+void UStoreSpecialPacksSubPresenter::OnArchivePassClicked(const FString& packId, const FName& archiveId)
 {
 
 }
 
 UStoreSpecialPacksSubPresenter::UStoreSpecialPacksSubPresenter()
 {
-	this->StoreBundlesWidgetClass = NULL;
 	this->_specialPacks = TArray<UStoreSpecialPackViewData*>();
 	this->_chapterPacks = TArray<UStoreChapterPackViewData*>();
 	this->_heritagePacks = TArray<FStoreHeritagePackViewData>();

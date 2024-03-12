@@ -22,7 +22,7 @@ protected:
 	UPROPERTY(EditDefaultsOnly, NoClear)
 	TSubclassOf<UCoreHudDirectionalMiniGameItemWidget> WormholeItemWidgetClass;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UHorizontalBox* Container;
 
 private:

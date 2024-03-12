@@ -12,7 +12,7 @@ class DBDGAMEPLAY_API UFlashlightablePointsLightingStrategy : public UFlashlight
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(EditAnywhere, NoClear, meta=(BindWidget))
+	UPROPERTY(EditAnywhere, NoClear, meta=(BindWidgetOptional))
 	UPointsProvider* _pointsProvider;
 
 	UPROPERTY(EditAnywhere)

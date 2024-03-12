@@ -22,22 +22,22 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, NoClear)
 	TSubclassOf<UCoreShrineOfSecretsItemWidget> _shrineOfSecretsItemClass;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDTextBlock* TitleTB;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDTextBlock* SubtitleTB;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDTextBlock* TimerTB;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UHorizontalBox* ItemsHorizontalBox;
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UHorizontalBox* ItemsContainer;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDTextBlock* InfoTB;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreInputSwitcherWidget* BackInputSwitcher;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)

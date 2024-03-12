@@ -26,7 +26,7 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	EBombType _gasType;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UPoolableProjectileComponent* _poolableProjectile;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -71,19 +71,19 @@ protected:
 	UPROPERTY(BlueprintReadWrite, Transient)
 	TArray<ACamperPlayer*> _overlappingSurvivors;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UParticleSystemComponent* _gasParticleSystem;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	USphereComponent* _simpleCollider;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	USphereComponent* _complexCollider;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	USpherePlayerOverlapComponent* _survivorDetector;
 
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	UActiveGasCloudTrackerComponent* _activeGasCloudTracker;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)

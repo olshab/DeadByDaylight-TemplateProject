@@ -49,10 +49,10 @@ private:
 	void OnLeanStateChanged(ELeanState leanState);
 
 	UFUNCTION()
-	void OnIsCrouchedChanged(bool isCrouched);
+	void Authority_OnStalkModeChanged(bool isInStalkMode);
 
 	UFUNCTION()
-	void Authority_OnStalkModeChanged(bool isInStalkMode);
+	void Authority_OnIsCrouchedChanged(bool isCrouched);
 
 public:
 	UGhostStalkPowerComponent();

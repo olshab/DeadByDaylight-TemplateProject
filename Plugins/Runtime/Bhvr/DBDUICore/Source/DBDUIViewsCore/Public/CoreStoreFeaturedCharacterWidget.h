@@ -18,7 +18,7 @@ public:
 	FOnMoveToCharactersBioPageButtonClickedDelegate OnMoveToCharactersBioPageButtonClickedDelegate;
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreButtonWidget* MoveToCharactersBioPageButton;
 
 public:

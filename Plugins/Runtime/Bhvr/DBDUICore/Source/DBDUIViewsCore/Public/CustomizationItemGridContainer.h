@@ -50,10 +50,10 @@ protected:
 	UPROPERTY(EditAnywhere)
 	bool _fillGridWithEmptyItems;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UUniformGridPanel* GridContainer;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDScrollBox* ScrollBox;
 
 	UPROPERTY(BlueprintReadOnly)

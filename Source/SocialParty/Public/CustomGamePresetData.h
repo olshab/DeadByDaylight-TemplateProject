@@ -11,28 +11,28 @@ struct FCustomGamePresetData
 
 private:
 	UPROPERTY()
-	TArray<uint8> _mapAvailabilities;
+	TArray<uint8> mapAvails;
 
 	UPROPERTY()
-	bool _arePerkAvailable;
+	bool perkAvail;
 
 	UPROPERTY()
-	bool _areOfferingAvailable;
+	bool offeringAvail;
 
 	UPROPERTY()
-	bool _areItemAvailable;
+	bool itemAvail;
 
 	UPROPERTY()
-	bool _areItemAddonAvailable;
+	bool itemAddonAvail;
 
 	UPROPERTY()
-	bool _areDlcContentAllowed;
+	bool dlcContentAllowed;
 
 	UPROPERTY()
-	bool _isPrivateMatch;
+	bool privateMatch;
 
 	UPROPERTY()
-	FCustomGameBotsData _botsData;
+	FCustomGameBotsData bots;
 
 public:
 	SOCIALPARTY_API FCustomGamePresetData();

@@ -6,9 +6,9 @@
 #include "CustomizationItemOriginViewData.h"
 #include "CustomizationItemOriginWidget.generated.h"
 
-class UDBDImage;
-class UCoreCurrencySwitcherWidget;
 class UDBDRichTextBlock;
+class UDBDImage;
+class UCoreCurrencyInputSwitcherWidget;
 class UCoreInputSwitcherWidget;
 
 UCLASS(EditInlineNew)
@@ -17,25 +17,25 @@ class UCustomizationItemOriginWidget : public UCoreBaseUserWidget
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDRichTextBlock* InstructionText;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDImage* InstructionImage;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDRichTextBlock* UnlockTitle;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDRichTextBlock* UnlockSubtitle;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UCoreCurrencySwitcherWidget* CurrencyButton;
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UCoreCurrencyInputSwitcherWidget* CurrencyButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreInputSwitcherWidget* ArchivesButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreInputSwitcherWidget* StoreButton;
 
 protected:

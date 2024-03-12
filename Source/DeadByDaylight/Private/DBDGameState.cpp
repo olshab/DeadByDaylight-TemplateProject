@@ -9,7 +9,6 @@
 #include "SelectedOffering.h"
 #include "InGameAssetPreloaderComponent.h"
 #include "ServerTimeProviderComponent.h"
-#include "MutatorGameplaySpawnerComponent.h"
 #include "CollectableCollection.h"
 #include "OnSlasherSetDelegate.h"
 #include "EndGameStateComponent.h"
@@ -656,6 +655,7 @@ void ADBDGameState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLif
 	DOREPLIFETIME(ADBDGameState, _serverRegion);
 	DOREPLIFETIME(ADBDGameState, _serverMatchId);
 	DOREPLIFETIME(ADBDGameState, _leaveSpectateRequested);
+	DOREPLIFETIME(ADBDGameState, _eventTrackerObjectiveLevel);
 }
 
 ADBDGameState::ADBDGameState()
@@ -663,7 +663,6 @@ ADBDGameState::ADBDGameState()
 	this->IntroState = EIntroState::WaitingToStart;
 	this->_specialEventGameplaySpawnerComponent = CreateDefaultSubobject<USpecialEventGameplaySpawnerComponent>(TEXT("SpecialEventSpawnerComponent"));
 	this->_specialBehaviourGameplaySpawnerComponent = CreateDefaultSubobject<USpecialBehaviourGameplaySpawnerComponent>(TEXT("SpecialBehaviourEventSpawnerComponent"));
-	this->_mutatorGameplaySpawnerComponent = CreateDefaultSubobject<UMutatorGameplaySpawnerComponent>(TEXT("MutatorSpawnerComponent"));
 	this->SecondsLeftInLobby = -1;
 	this->Slasher = NULL;
 	this->_renderingSequencer = CreateDefaultSubobject<URenderingFeaturesSequencer>(TEXT("RenderingSequencer"));
@@ -723,4 +722,5 @@ ADBDGameState::ADBDGameState()
 	this->_serverMatchId = TEXT("");
 	this->_introDuration = 8.500000;
 	this->_leaveSpectateRequested = false;
+	this->_eventTrackerObjectiveLevel = 0;
 }

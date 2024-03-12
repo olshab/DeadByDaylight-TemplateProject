@@ -12,10 +12,10 @@ class DBDUIVIEWSMOBILE_API UUMGSuggestionsListTabWidget : public UUMGFriendBaseT
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(meta=(BindWidget))
+	UPROPERTY(meta=(BindWidgetOptional))
 	UUMGExpandableListWidget* PlayedWithFriendsExpandableList;
 
-	UPROPERTY(meta=(BindWidget))
+	UPROPERTY(meta=(BindWidgetOptional))
 	UUMGExpandableListWidget* SocialFriendsExpandableList;
 
 public:

@@ -29,7 +29,7 @@ protected:
 	UPROPERTY(EditAnywhere)
 	TEnumAsByte<ECollisionChannel> _collisionChannel;
 
-	UPROPERTY(meta=(BindWidget))
+	UPROPERTY(meta=(BindWidgetOptional))
 	USkeletalMeshComponent* _meshComponent;
 
 public:

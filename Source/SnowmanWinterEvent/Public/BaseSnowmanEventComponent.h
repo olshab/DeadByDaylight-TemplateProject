@@ -21,7 +21,7 @@ protected:
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<USnowmanSpawnPlacementStrategy> _snowmanSpawnPlacementStrategyClass;
 
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	USnowmanSpawnPlacementStrategy* _snowmanSpawnPlacementStrategy;
 
 private:

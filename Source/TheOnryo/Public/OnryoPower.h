@@ -32,9 +32,6 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	FDBDTunableRowHandle _teleportCooldownTime;
 
-	UPROPERTY(EditDefaultsOnly)
-	FDBDTunableRowHandle _cooldownTimeToAllowCondemn;
-
 	UPROPERTY(Transient)
 	FPlayerStatusEffectSpawnerHelper _effectSpawner;
 

@@ -18,10 +18,10 @@ class DBDUIVIEWSCORE_API UCoreInteractionPromptsContainerWidget : public UCoreBa
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDWrapBox* CenterContainerBox;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDWrapBox* ContainerBox;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)

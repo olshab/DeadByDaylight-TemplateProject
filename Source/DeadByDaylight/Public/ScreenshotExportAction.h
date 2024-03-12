@@ -16,6 +16,9 @@ public:
 	bool IncludeDLCFolder;
 
 	UPROPERTY(EditAnywhere)
+	bool IncludeCharacterFolder;
+
+	UPROPERTY(EditAnywhere)
 	TArray<FString> Directories;
 
 public:

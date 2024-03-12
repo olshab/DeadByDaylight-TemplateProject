@@ -18,7 +18,7 @@ protected:
 	UPROPERTY()
 	FDisplayStandRotationEvent _displayStandRotationDelegate;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UDragZone* DragZone;
 
 protected:

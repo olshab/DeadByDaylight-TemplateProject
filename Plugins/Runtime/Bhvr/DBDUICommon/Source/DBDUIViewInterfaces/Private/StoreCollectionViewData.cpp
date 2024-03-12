@@ -37,4 +37,6 @@ UStoreCollectionViewData::UStoreCollectionViewData()
 	this->AdditionalImages = TArray<FSoftRemoteContentCacheObjectPtr>();
 	this->IsNew = false;
 	this->Items = TArray<UStoreCustomizationItemViewData*>();
+	this->AvailableItemsCount = 0;
+	this->OwnedItemsCount = 0;
 }

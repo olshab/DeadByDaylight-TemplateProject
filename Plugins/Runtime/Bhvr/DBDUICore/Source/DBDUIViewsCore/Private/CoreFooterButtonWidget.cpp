@@ -1,6 +1,13 @@
 #include "CoreFooterButtonWidget.h"
 
+class UTexture2D;
+
 void UCoreFooterButtonWidget::UpdateLockedFeatureVisuals_Implementation(bool isLockedFeature)
+{
+
+}
+
+void UCoreFooterButtonWidget::SetIconTexture(UTexture2D* iconTexture)
 {
 
 }

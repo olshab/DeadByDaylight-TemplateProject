@@ -98,6 +98,9 @@ private:
 	UFUNCTION(NetMulticast, Reliable)
 	void Multicast_DropSurvivor(ACamperPlayer* leftSurvivor);
 
+	UFUNCTION(BlueprintCallable)
+	bool IsInfectionIncreasingForSurvivor(const ACamperPlayer* survivor);
+
 public:
 	UFUNCTION(BlueprintCallable)
 	int32 GetMaxInfectionLevel();

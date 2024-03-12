@@ -20,10 +20,10 @@ protected:
 	UPROPERTY(BlueprintReadWrite)
 	FStoreSubTabSelectedDelegate _menuTabSelectedDelegate;
 
-	UPROPERTY(EditDefaultsOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreTabContainerWidget* SubTabsContainer;
 
-	UPROPERTY(EditDefaultsOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UWidgetSwitcher* TabContentSwitcher;
 
 protected:

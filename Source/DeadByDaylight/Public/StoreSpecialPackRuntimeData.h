@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "ECurrencyType.h"
 #include "StoreSpecialPackRuntimeItem.h"
+#include "UObject/NoExportTypes.h"
 #include "StoreSpecialPackRuntimeData.generated.h"
 
 USTRUCT()
@@ -11,6 +12,9 @@ struct FStoreSpecialPackRuntimeData
 	GENERATED_BODY()
 
 public:
+	UPROPERTY(Transient)
+	bool IsValid;
+
 	UPROPERTY(Transient)
 	FString Id;
 
@@ -30,7 +34,16 @@ public:
 	float Discount;
 
 	UPROPERTY(Transient)
+	FDateTime StartDate;
+
+	UPROPERTY(Transient)
+	FDateTime EndDate;
+
+	UPROPERTY(Transient)
 	bool IsOwned;
+
+	UPROPERTY(Transient)
+	bool IsNew;
 
 	UPROPERTY(Transient)
 	FString Image;

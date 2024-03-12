@@ -3,16 +3,20 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "StoreSpecialsViewInterface.h"
-#include "SpecialItemClickedDelegate.h"
 #include "CoreBaseUserWidget.h"
+#include "SpecialItemClickedDelegate.h"
+#include "ArchivePassBannerClickedDelegate.h"
 #include "CoreStoreSpecialsWidget.generated.h"
 
-class UDBDWrapBox;
 class UCorePreConstructableList;
 class UCoreAuricCellsSpecialOfferWidget;
-class UCoreButtonWidget;
+class UHorizontalBox;
 class UCoreStoreSpecialsItemWidget;
 class UDBDTextBlock;
+class UOverlay;
+class UCoreArchivePassBannerWidget;
+class UDBDWrapBox;
+class UCoreButtonWidget;
 
 UCLASS(EditInlineNew)
 class UCoreStoreSpecialsWidget : public UCoreBaseUserWidget, public IStoreSpecialsViewInterface
@@ -23,37 +27,67 @@ protected:
 	UPROPERTY(EditAnywhere, NoClear)
 	TSubclassOf<UCoreStoreSpecialsItemWidget> _itemWidgetClass;
 
-	UPROPERTY(EditAnywhere, NoClear)
-	int32 _preConstructedItemsCount;
-
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int32 _layoutMask;
 
-	UPROPERTY(EditAnywhere)
-	float _itemScale;
+	UPROPERTY(EditAnywhere, NoClear)
+	int32 _highlightPreConstructedItemsCount;
 
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(EditAnywhere)
+	float _highlightItemsScale;
+
+	UPROPERTY(EditAnywhere, NoClear)
+	int32 _regularPreConstructedItemsCount;
+
+	UPROPERTY(EditAnywhere)
+	float _regularItemsScale;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreAuricCellsSpecialOfferWidget* AuricCellSpecialOffer;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDTextBlock* NoAuricCellsTitleTB;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDTextBlock* NoAuricCellsTextTB;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UDBDWrapBox* Container;
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UDBDTextBlock* HighlightSectionTitleTB;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UOverlay* ArchivePassBannerContainer;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UCoreArchivePassBannerWidget* ArchivePassBanner;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UHorizontalBox* HighlightSectionContainer;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UDBDTextBlock* RegularSectionTitleTB;
+
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
+	UDBDWrapBox* RegularSectionContainer;
 
 	UPROPERTY()
 	FSpecialItemClickedDelegate SpecialItemClickedDelegate;
 
+	UPROPERTY()
+	FArchivePassBannerClickedDelegate ArchivePassBannerClickedDelegate;
+
 private:
 	UPROPERTY(Transient)
-	UCorePreConstructableList* _itemList;
+	UCorePreConstructableList* _highlightItemList;
+
+	UPROPERTY(Transient)
+	UCorePreConstructableList* _regularItemList;
 
 private:
 	UFUNCTION()
 	void OnSpecialItemClicked(UCoreButtonWidget* buttonTarget);
+
+	UFUNCTION()
+	void OnArchivePassBannerClicked(UCoreButtonWidget* buttonTarget);
 
 public:
 	UCoreStoreSpecialsWidget();

@@ -16,7 +16,7 @@ protected:
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag _id;
 
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	UStateController* _stateController;
 
 public:

@@ -12,7 +12,7 @@ class UCoreCursor : public UUserWidget
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(BlueprintReadWrite, meta=(BindWidgetOptional))
 	UScaleBox* CursorScaleBox;
 
 public:

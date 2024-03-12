@@ -13,7 +13,7 @@ class DBDUIVIEWSCORE_API UCoreSubtitlesWidget : public UCoreBaseUserWidget, publ
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDTextBlock* SubtitlesTB;
 
 public:

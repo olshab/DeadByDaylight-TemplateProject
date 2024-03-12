@@ -4,8 +4,8 @@
 #include "StoreItemViewData.h"
 #include "CharacterRewardViewData.h"
 #include "EPlayerRole.h"
+#include "PrestigeViewData.h"
 #include "ECharacterDifficulty.h"
-#include "SpecialEventInfoViewData.h"
 #include "StoreCharacterItemViewData.generated.h"
 
 UCLASS()
@@ -27,31 +27,19 @@ public:
 	FText Biography;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
+	FName BackgroundImagePath;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
 	EPlayerRole PlayerRole;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
 	ECharacterDifficulty Difficulty;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
-	FSpecialEventInfoViewData EventInfo;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
 	FName KillerPowerId;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
 	bool IsEquipped;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
-	bool IsUnlocked;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
-	int32 UnlockInfo;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
-	int32 ItemsOwned;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
-	int32 TotalItems;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
 	bool HasNonSelectedPerks;
@@ -61,6 +49,12 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
 	bool IsLegacyRewardPrestigeEnabled;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
+	FPrestigeViewData Prestige;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
+	int32 NewItemsCount;
 
 public:
 	UStoreCharacterItemViewData();

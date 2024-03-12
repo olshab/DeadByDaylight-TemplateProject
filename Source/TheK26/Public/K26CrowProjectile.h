@@ -94,31 +94,31 @@ protected:
 	UPROPERTY(BlueprintReadOnly)
 	EK26ProjectileState _currentProjectileState;
 
-	UPROPERTY(EditDefaultsOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, meta=(BindWidgetOptional))
 	UK26PowerOutlineUpdateStrategy* _outlineUpdateStrategy;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UK26PowerOutlineUpdateStrategy* _crowFlockOutlineUpdateStrategy;
 
-	UPROPERTY(EditDefaultsOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, meta=(BindWidgetOptional))
 	UDBDOutlineComponent* _outlineComponent;
 
-	UPROPERTY(EditDefaultsOnly, Replicated, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, Replicated, meta=(BindWidgetOptional))
 	USplineComponent* _pathSplineComponent;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UStaticMeshComponent* _collisionStaticMeshComponent;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UStaticMeshComponent* _killerInstinctStaticMeshComponent;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDSkeletalMeshComponentBudgeted* _visualSkeletalMeshComponent;
 
-	UPROPERTY(EditDefaultsOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, meta=(BindWidgetOptional))
 	USceneComponent* _rootComponent;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UDBDNavModifierComponent* _dangerNavModifierComponent;
 
 	UPROPERTY(BlueprintAssignable)

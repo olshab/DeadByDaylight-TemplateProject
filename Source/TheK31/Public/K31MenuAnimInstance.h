@@ -12,7 +12,7 @@ class THEK31_API UK31MenuAnimInstance : public UBaseMenuAnimInstance
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCustomizationAnimationSelector* _animationSelector;
 
 protected:

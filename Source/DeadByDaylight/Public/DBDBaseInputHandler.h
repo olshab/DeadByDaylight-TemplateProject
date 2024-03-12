@@ -16,7 +16,7 @@ protected:
 	UPROPERTY(Transient)
 	APawn* _pawn;
 
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	USpringArmComponent* _cameraBoom;
 
 public:

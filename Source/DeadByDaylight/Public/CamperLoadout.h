@@ -5,6 +5,7 @@
 #include "CharacterCustomizationDropdown.h"
 #include "CharmDropdown.h"
 #include "ItemIdDropdown.h"
+#include "OfferingDropdown.h"
 #include "DebugLoadoutAddon.h"
 #include "CamperLoadout.generated.h"
 
@@ -34,6 +35,9 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	TArray<FDebugLoadoutPerk> Perks;
+
+	UPROPERTY(EditAnywhere)
+	FOfferingDropdown Offering;
 
 public:
 	DEADBYDAYLIGHT_API FCamperLoadout();

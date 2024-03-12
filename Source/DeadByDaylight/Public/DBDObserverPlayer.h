@@ -12,7 +12,7 @@ class ADBDObserverPlayer : public ACharacter
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UDBDPlayerData* _playerData;
 
 public:

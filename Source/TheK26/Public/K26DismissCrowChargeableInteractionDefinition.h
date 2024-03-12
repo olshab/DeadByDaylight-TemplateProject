@@ -19,7 +19,7 @@ protected:
 	UPROPERTY(EditDefaultsOnly)
 	FTunableStat _chargeTime;
 
-	UPROPERTY(meta=(BindWidget))
+	UPROPERTY(meta=(BindWidgetOptional))
 	UK26PowerStatusHandlerComponent* _k26PowerStatusHandlerComponent;
 
 private:

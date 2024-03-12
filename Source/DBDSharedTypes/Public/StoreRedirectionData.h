@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "ECustomizationCategory.h"
 #include "EPlayerRole.h"
+#include "EStorePackType.h"
 #include "StoreRedirectionData.generated.h"
 
 USTRUCT(BlueprintType)
@@ -22,6 +23,12 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	EPlayerRole PlayerRole;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FString PackId;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	EStorePackType PackType;
 
 public:
 	DBDSHAREDTYPES_API FStoreRedirectionData();

@@ -12,6 +12,9 @@ class STARTUPINITIALIZER_API UClientStartupInitializer : public UStartupInitiali
 
 private:
 	UFUNCTION()
+	void OnMysteryBoxStatusLoaded(bool succeeded);
+
+	UFUNCTION()
 	void OnDynamicContentLoaded(bool success);
 
 public:

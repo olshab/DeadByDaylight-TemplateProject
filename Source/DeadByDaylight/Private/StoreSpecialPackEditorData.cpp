@@ -12,5 +12,7 @@ FStoreSpecialPackEditorData::FStoreSpecialPackEditorData()
 	this->SortOrder = 0;
 	this->DLCId = TEXT("");
 	this->Content = TArray<FStoreSpecialPackItem>();
-	this->Activation = FStoreSpecialPackActivation{};
+	this->AvailabilityDates = 0;
+	this->StartDate = FDateTime{};
+	this->EndDate = FDateTime{};
 }

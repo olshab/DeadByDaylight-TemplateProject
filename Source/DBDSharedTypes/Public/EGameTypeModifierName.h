@@ -62,4 +62,5 @@ enum class EGameTypeModifierName : uint8
 	MenuNavigationDataPrefix,
 	DisabledInventory,
 	DisabledPanelTabs,
+	GrantedCharacters,
 };

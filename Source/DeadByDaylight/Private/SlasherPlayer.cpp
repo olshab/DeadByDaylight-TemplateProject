@@ -381,11 +381,6 @@ bool ASlasherPlayer::CanSlashAttack_BP_Implementation() const
 	return false;
 }
 
-bool ASlasherPlayer::CanPickupSurvivor() const
-{
-	return false;
-}
-
 bool ASlasherPlayer::CanPerformKillerAbility_Implementation(EKillerAbilities killerAbility) const
 {
 	return false;
@@ -465,7 +460,6 @@ ASlasherPlayer::ASlasherPlayer()
 	this->_defaultAmountToSquish = 1.000000;
 	this->_stalkTimers = TMap<ADBDPlayer*, FTargetFocusTimer>();
 	this->_stillnessTracker = CreateDefaultSubobject<UStillnessTrackerComponent>(TEXT("StillnessTracker"));
-	this->_aimAssistComponent = NULL;
 	this->_predictedCamperHitMontages = TMap<ADBDPlayer*, FAnimationMontageDescriptor>();
 	this->_loudNoiseIndicator = NULL;
 	this->_hitsWhileCarryingTracker = CreateDefaultSubobject<USlasherHitsWhileCarryingTrackerComponent>(TEXT("HitsWhileCarryingTracker"));

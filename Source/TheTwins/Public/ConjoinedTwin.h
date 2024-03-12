@@ -32,16 +32,16 @@ class THETWINS_API AConjoinedTwin : public ADBDPlayer
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(VisibleAnywhere, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, meta=(BindWidgetOptional))
 	URangeToActorsTrackerComponent* _restrictedPossessionAreaTracker;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UTwinOutlineUpdateStrategy* _twinOutlineUpdateStrategy;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, meta=(BindWidget))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, meta=(BindWidgetOptional))
 	UAkComponent* _twinLullabyAudioComponent;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UKillerBlindingFXComponent* _twinBlindingFX;
 
 	UPROPERTY(EditAnywhere)

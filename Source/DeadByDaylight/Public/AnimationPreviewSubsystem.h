@@ -4,9 +4,7 @@
 #include "Subsystems/GameInstanceSubsystem.h"
 #include "AnimationPreviewSubsystem.generated.h"
 
-class UKillInteractionDefinition;
-class ACamperPlayer;
-class ASlasherPlayer;
+class UAnimationPreview;
 
 UCLASS(BlueprintType)
 class DEADBYDAYLIGHT_API UAnimationPreviewSubsystem : public UGameInstanceSubsystem
@@ -15,29 +13,11 @@ class DEADBYDAYLIGHT_API UAnimationPreviewSubsystem : public UGameInstanceSubsys
 
 private:
 	UPROPERTY(Transient)
-	ASlasherPlayer* _killer;
-
-	UPROPERTY(Transient)
-	ACamperPlayer* _survivor;
-
-	UPROPERTY(Transient, Export)
-	UKillInteractionDefinition* _moriKillInteraction;
+	UAnimationPreview* _activePreview;
 
 private:
 	UFUNCTION()
-	void OnPawnClassesLoaded();
-
-	UFUNCTION()
-	void OnInteractionFinished();
-
-	UFUNCTION()
-	void OnFadeOutForClosureComplete();
-
-	UFUNCTION()
-	void OnFadeOutComplete();
-
-	UFUNCTION()
-	void OnFadeInComplete();
+	void OnAnimationPreviewEnd(UAnimationPreview* preview, bool completedSuccessfully);
 
 public:
 	UFUNCTION(BlueprintPure)

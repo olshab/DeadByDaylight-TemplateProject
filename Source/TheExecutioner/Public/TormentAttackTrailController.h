@@ -12,7 +12,6 @@
 
 class AActor;
 class ATormentAttackTrailPoint;
-class AMobileTormentTrailRenderer;
 
 UCLASS()
 class ATormentAttackTrailController : public ATrailControllerBase
@@ -58,9 +57,6 @@ private:
 
 	UPROPERTY(BlueprintReadWrite, meta=(AllowPrivateAccess=true))
 	float _soundDistanceOnTrail;
-
-	UPROPERTY(Transient)
-	AMobileTormentTrailRenderer* _mobileTormentTrailRenderer;
 
 protected:
 	UFUNCTION(BlueprintNativeEvent)

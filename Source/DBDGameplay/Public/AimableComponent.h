@@ -21,7 +21,7 @@ protected:
 	UPROPERTY(EditAnywhere)
 	float _maxAimDistance;
 
-	UPROPERTY(EditAnywhere, meta=(BindWidget))
+	UPROPERTY(EditAnywhere, meta=(BindWidgetOptional))
 	UAimDirectionProvider* _aimDirectionProvider;
 
 	UPROPERTY(EditAnywhere)

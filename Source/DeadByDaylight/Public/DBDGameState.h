@@ -28,15 +28,14 @@ class ASlasherPlayer;
 class ADBDPlayer;
 class UDBDDangerPredictionComponent;
 class UOnScreenDebugComponent;
-class ADBDPlayerState_Menu;
 class UInGameAssetPreloaderComponent;
+class ADBDPlayerState_Menu;
 class UServerTimeProviderComponent;
-class AClipManager;
-class UMutatorGameplaySpawnerComponent;
 class USpecialEventGameplaySpawnerComponent;
 class USpecialBehaviourGameplaySpawnerComponent;
 class AMeatHook;
 class URenderingFeaturesSequencer;
+class AClipManager;
 class AFadeManager;
 class ASearchable;
 class UHudStateComponent;
@@ -91,9 +90,6 @@ public:
 
 	UPROPERTY(BlueprintReadWrite, Transient, Export)
 	USpecialBehaviourGameplaySpawnerComponent* _specialBehaviourGameplaySpawnerComponent;
-
-	UPROPERTY(BlueprintReadWrite, Transient, Export)
-	UMutatorGameplaySpawnerComponent* _mutatorGameplaySpawnerComponent;
 
 	UPROPERTY(BlueprintAssignable)
 	FAllPlayerLoadedEvent AuthorityOnAllPlayerLoaded;
@@ -309,6 +305,9 @@ private:
 
 	UPROPERTY(Replicated, Transient)
 	bool _leaveSpectateRequested;
+
+	UPROPERTY(Replicated, Transient)
+	int32 _eventTrackerObjectiveLevel;
 
 public:
 	UFUNCTION(BlueprintPure=false, BlueprintCallable)

@@ -2,8 +2,9 @@
 
 #include "CoreMinimal.h"
 #include "EStoreMenuState.h"
+#include "ECurrencyType.h"
+#include "UObject/SoftObjectPtr.h"
 #include "Presenter.h"
-#include "Templates/SubclassOf.h"
 #include "StoreMenuPresenter.generated.h"
 
 class UStoreSpecialPacksSubPresenter;
@@ -14,6 +15,7 @@ class UStoreSpecialsSubPresenter;
 class UUserWidget;
 class UStoreFeaturedSubPresenter;
 class UStoreSubPresenter;
+class UMatchmakingMonitor;
 class USubPresenter;
 
 UCLASS(EditInlineNew)
@@ -23,7 +25,7 @@ class DBDUIPRESENTERS_API UStoreMenuPresenter : public UPresenter
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	TSubclassOf<UUserWidget> StoreMenuWidgetClass;
+	TSoftClassPtr<UUserWidget> StoreMenuWidgetClass;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	FName DisplayStandName;
@@ -56,7 +58,16 @@ private:
 	UPROPERTY(Transient)
 	UShopManager* _shopManager;
 
+	UPROPERTY(Transient)
+	UMatchmakingMonitor* _matchmakingMonitor;
+
 private:
+	UFUNCTION()
+	void ShowArchivePassPopup(const FName& archiveId);
+
+	UFUNCTION()
+	void ResetBackActionLabel() const;
+
 	UFUNCTION()
 	void OpenRedeemCodePopup();
 
@@ -70,13 +81,19 @@ private:
 	void OnStartSubPresenterAsyncOperation(USubPresenter* subPresenter);
 
 	UFUNCTION()
+	void OnNotEnoughCurrencyModalButtonClicked(const ECurrencyType currencyType);
+
+	UFUNCTION()
 	void OnMenuTabSelected(EStoreMenuState menuState);
+
+	UFUNCTION()
+	void OnBackActionLabelChangeRequested(const FText& newLabel) const;
 
 	UFUNCTION()
 	void OnBackAction();
 
 	UFUNCTION()
-	void OnAllStoreDataLoadComplete(bool success);
+	void OnAsyncLoadSuccess();
 
 public:
 	UStoreMenuPresenter();

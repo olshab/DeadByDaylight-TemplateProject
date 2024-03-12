@@ -6,7 +6,9 @@ FShrineOfSecretsItemViewData::FShrineOfSecretsItemViewData()
 	this->BPCost = 0;
 	this->Perk = NULL;
 	this->PerkTooltip = FLoadoutTooltipData{};
+	this->PriceTag = FPriceTagViewData{};
 	this->PerkMaxed = false;
 	this->BPClaimed = false;
-	this->PriceTag = FPriceTagViewData{};
+	this->IsASurvivor = false;
+	this->Portrait = NULL;
 }

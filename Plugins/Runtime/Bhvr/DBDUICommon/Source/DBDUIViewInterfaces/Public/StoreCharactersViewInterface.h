@@ -3,12 +3,9 @@
 #include "CoreMinimal.h"
 #include "UObject/Interface.h"
 #include "StoreCharactersActionButtonsViewData.h"
-#include "EPlayerRole.h"
 #include "UObject/ScriptInterface.h"
 #include "StoreCharactersViewInterface.generated.h"
 
-class UMenuPowerViewData;
-class UCharacterPerkViewData;
 class IStoreCharactersBioViewInterface;
 class IStoreCharactersCustomizationsViewInterface;
 class IStoreCharactersSelectionViewInterface;
@@ -25,13 +22,13 @@ class DBDUIVIEWINTERFACES_API IStoreCharactersViewInterface : public IInterface
 
 public:
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-	void SetKillerPower(UMenuPowerViewData* killerPowerViewData);
-
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void SetCustomizationButtons(const FStoreCharactersActionButtonsViewData& buttonsViewData);
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-	void SetCharacterData(const FText& characterName, EPlayerRole role, const TArray<UCharacterPerkViewData*>& characterPerks);
+	void SetCurrencyButtonsEnabled(const bool isEnabled) const;
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	void SetCharacterData(const FText& characterName);
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void SetCharacterButtons(const FStoreCharactersActionButtonsViewData& buttonsViewData);

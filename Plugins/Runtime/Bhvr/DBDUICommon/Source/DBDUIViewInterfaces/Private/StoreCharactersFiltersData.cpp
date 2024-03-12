@@ -2,7 +2,7 @@
 
 FStoreCharactersFiltersData::FStoreCharactersFiltersData()
 {
-	this->IsFavorite = false;
+	this->IsAvailable = false;
 	this->IsOwned = false;
 	this->_rarityFiltersMap = TMap<EItemRarity, bool>();
 }

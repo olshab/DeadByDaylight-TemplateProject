@@ -29,7 +29,7 @@ public:
 	FOnCustomizationReadyBP OnCustomizationReady;
 
 protected:
-	UPROPERTY(Transient, meta=(BindWidget))
+	UPROPERTY(Transient, meta=(BindWidgetOptional))
 	USkinnedMeshComponent* _meshOwner;
 
 private:

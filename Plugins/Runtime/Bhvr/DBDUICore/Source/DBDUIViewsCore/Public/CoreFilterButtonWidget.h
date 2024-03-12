@@ -5,32 +5,20 @@
 #include "EItemRarity.h"
 #include "CoreFilterButtonWidget.generated.h"
 
-class UDBDImage;
-class UTexture2D;
-
 UCLASS(EditInlineNew)
 class DBDUIVIEWSCORE_API UCoreFilterButtonWidget : public UCoreButtonWidget
 {
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
-	UDBDImage* LabelIMG;
-
 	UPROPERTY(EditInstanceOnly, BlueprintReadOnly)
-	bool _isFavoriteOption;
+	bool _isAvailableOption;
 
 	UPROPERTY(EditInstanceOnly, BlueprintReadOnly)
 	bool _isOwnedOption;
 
 	UPROPERTY(EditInstanceOnly, BlueprintReadOnly)
 	EItemRarity _itemRarityFilterOption;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	UTexture2D* FavoriteTagTexture;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	UTexture2D* OwnedTagTexture;
 
 	UPROPERTY(BlueprintReadOnly)
 	bool _isToggled;
@@ -43,13 +31,10 @@ public:
 	void UpdateVisualState();
 
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-	void SetupTextOnly(const FText& label);
+	void SetupTextLabel(const FText& label);
 
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-	void SetupImageOnly(UTexture2D* texture);
-
-	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-	void SetupImageAndText(UTexture2D* texture, const FText& label);
+	void SetupOwnedTagLabel();
 
 	UFUNCTION(BlueprintCallable)
 	void SetToggledState(bool isToggled);

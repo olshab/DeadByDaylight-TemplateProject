@@ -12,7 +12,7 @@ class PROJECTILE_API APhysicsBasedProjectile : public ABaseProjectile
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta=(BindWidgetOptional))
 	UPhysicsBasedProjectileMovementComponent* Movement;
 
 public:

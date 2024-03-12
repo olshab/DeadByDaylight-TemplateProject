@@ -5,7 +5,9 @@
 #include "EPlayerRole.h"
 #include "EButtonDisableState.h"
 #include "TimerFlagViewData.h"
+#include "EGameType.h"
 #include "EMainMenuButtonType.h"
+#include "ECurrencyType.h"
 #include "MainMenuViewInterface.generated.h"
 
 UINTERFACE(Blueprintable)
@@ -35,10 +37,16 @@ public:
 	void SetMatchmakingIncentive(const FName& gameMode, EPlayerRole role, int32 percentAmount);
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-	void SetLTEButtons(const TArray<FName>& eventNames);
+	void SetMarketingInvitationPopupButtonIcon(ECurrencyType currencyType) const;
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	void SetLTEButtons(const TArray<FName>& eventNames, const TArray<EGameType>& eventGameTypes);
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void SetLabelButton(EMainMenuButtonType buttonType, const FText& label);
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	void SetExitButtonEnabled(bool isEnabled) const;
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void SetChangeAccountInputSwitcherVisible(bool visible);

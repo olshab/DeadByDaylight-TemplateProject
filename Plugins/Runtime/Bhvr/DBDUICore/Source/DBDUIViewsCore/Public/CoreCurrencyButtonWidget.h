@@ -7,6 +7,7 @@
 #include "CoreCurrencyButtonWidget.generated.h"
 
 class UCorePriceTagWidget;
+class UCoreButtonWidget;
 class UCurveFloat;
 
 UCLASS(EditInlineNew)
@@ -15,7 +16,7 @@ class UCoreCurrencyButtonWidget : public UCoreKeyListenerButtonWidget
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCorePriceTagWidget* PriceTag;
 
 	UPROPERTY(EditDefaultsOnly)
@@ -31,6 +32,11 @@ public:
 	UFUNCTION(BlueprintPure=false, BlueprintCallable)
 	void SetBackgroundVisible(const bool showBackground) const;
 
+private:
+	UFUNCTION()
+	void OnCurrencyButtonPressed(UCoreButtonWidget* button);
+
+public:
 	UFUNCTION(BlueprintPure)
 	ECurrencyType GetCurrencyType() const;
 

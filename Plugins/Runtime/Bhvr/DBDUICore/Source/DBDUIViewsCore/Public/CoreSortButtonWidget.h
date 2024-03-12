@@ -17,10 +17,10 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int32 _sortingOptions;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreButtonWidget* SortingOrderButton;
 
-	UPROPERTY(BlueprintReadOnly, meta=(BindWidget))
+	UPROPERTY(BlueprintReadOnly, meta=(BindWidgetOptional))
 	UCoreButtonWidget* SortingOptionButton;
 
 protected:

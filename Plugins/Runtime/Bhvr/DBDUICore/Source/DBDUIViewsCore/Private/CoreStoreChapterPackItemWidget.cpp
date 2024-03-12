@@ -3,12 +3,12 @@
 class UStoreChapterPackViewData;
 class UCoreButtonWidget;
 
-void UCoreStoreChapterPackItemWidget::SetData_Implementation(UStoreChapterPackViewData* data)
+void UCoreStoreChapterPackItemWidget::SetExpanded_Implementation(bool expanded)
 {
 
 }
 
-void UCoreStoreChapterPackItemWidget::OnRedirectButtonClicked(UCoreButtonWidget* button)
+void UCoreStoreChapterPackItemWidget::SetData_Implementation(UStoreChapterPackViewData* data)
 {
 
 }
@@ -34,7 +34,6 @@ UCoreStoreChapterPackItemWidget::UCoreStoreChapterPackItemWidget()
 	this->CharactersBox = NULL;
 	this->CustomizationsBox = NULL;
 	this->PremiumBuyButton = NULL;
-	this->RedirectButton = NULL;
 	this->_isExpanded = true;
 	this->_initialItemPoolSize = 2;
 	this->_characterItemWidgetClass = NULL;
